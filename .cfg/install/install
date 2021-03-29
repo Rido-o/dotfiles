@@ -4,7 +4,7 @@
 # enter github credentials to download dots, and enter password to change shell
 
 # Manual commands to begin installation
-# sh <(wget -qO- https://raw.githubusercontent.com/Rido-o/rice/master/install)
+# sh <(wget -qO- https://raw.githubusercontent.com/Rido-o/dotfiles/master/.cfg/install/install)
 
 # check if cronie is working
 # yay installs didn't work # bitwarden not working
@@ -16,13 +16,12 @@
 sudo pacman -Sy
 install -D /dev/null -m -x $HOME/.config/wgetrc
 sudo pacman -S --noconfirm git
-git clone https://github.com/Rido-o/rice.git $HOME/.cache/rice
 
 # Dot file install
-git clone --bare https://github.com/Rido-o/dotfiles.git $HOME/.cfg
+git clone --bare https://github.com/Rido-o/dotfiles.git $HOME/.cfg/dotfiles
 # enter github login details
-/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME $@ checkout
-/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME $@ config status.showUntrackedFiles no
+/usr/bin/git --git-dir=$HOME/.cfg/dotfiles --work-tree=$HOME $@ checkout
+/usr/bin/git --git-dir=$HOME/.cfg/dotfiles --work-tree=$HOME $@ config status.showUntrackedFiles no
 
 # Install AUR helper
 sudo git clone https://aur.archlinux.org/yay.git /opt/yay
@@ -102,18 +101,18 @@ nvim --headless +PlugInstall +qall
 
 # Install cover art support for ncmpcpp # Move to after git clone
 chmod +x $HOME/.config/ncmpcpp/ncmpcpp-ueberzug/ncmpcpp-ueberzug $HOME/.config/ncmpcpp/ncmpcpp-ueberzug/ncmpcpp_cover_art.sh
-patch $HOME/.config/ncmpcpp/ncmpcpp-ueberzug/ncmpcpp_cover_art.sh $HOME/.cache/rice/ncmpcpp-ueberzug-settings.diff
+patch $HOME/.config/ncmpcpp/ncmpcpp-ueberzug/ncmpcpp_cover_art.sh $HOME/.cfg/install/patches/ncmpcpp-ueberzug-settings.diff
 
-# Installing browser # Import 4chanX and OneeChan settings manually in ~/.cache/rice
+# Installing browser # Import 4chanX and OneeChan settings manually in ~/.cfg/install/
 wget -P $HOME/.config/qutebrowser/greasemonkey https://www.4chan-x.net/builds/4chan-X.user.js
 wget -P $HOME/.config/qutebrowser/greasemonkey https://raw.githubusercontent.com/KevinParnell/OneeChan/master/builds/OneeChan.user.js
 
 # Installing bitwarden # Manually login to bw with bw login to use keybinds in qutebrowser
-patch /usr/share/qutebrowser/userscripts/qute-bitwarden $HOME/.cache/rice/qute-bitwarden-dmenu.diff
+patch /usr/share/qutebrowser/userscripts/qute-bitwarden $HOME/.cfg/install/patches/qute-bitwarden-dmenu.diff
 
 # Install umpv script
 wget -P $HOME/.local/bin https://raw.githubusercontent.com/mpv-player/mpv/master/TOOLS/umpv
-patch $HOME/.local/bin/umpv $HOME/.cache/rice/umpv-socket-location.diff
+patch $HOME/.local/bin/umpv $HOME/.cfg/install/patches/umpv-socket-location.diff
 chmod +x $HOME/.local/bin/umpv
 
 # Install rifle_sxiv script
@@ -129,7 +128,7 @@ sudo sed -i -E "s/sxiv/rifle_sxiv/" /usr/share/applications/rifle_sxiv.desktop
 
 # Install cronie
 sudo systemctl enable cronie
-crontab $HOME/.cache/rice/cronjobs
+crontab $HOME/.cfg/install/cronjobs
 
 # Remove uneeded files
 rm $HOME/.bash_history $HOME/.bash_profile $HOME/.bash_logout $HOME/.bashrc $HOME/.npmrc $HOME/.wget-hsts
