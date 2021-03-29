@@ -8,6 +8,11 @@
 
 # ----------------------------------------------------------------
 
+# Print output of commands to log file
+exec 3>&1 4>&2
+trap 'exec 2>&4 1>&3' 0 1 2 3
+exec 1>log.out 2>&1
+
 # Update package list
 sudo pacman -Sy
 mkdir -p $HOME/.config && touch $HOME/.config/wgetrc
@@ -39,6 +44,7 @@ pacList=("zsh" "zsh-syntax-highlighting" "zsh-autosuggestions" # Install zsh and
 	 "fzf" # Used in nnn # Seperately installed for nvim via pluginstall?
 	 "cronie" # Install cronie
 	 "glib2" # Fixes libpango symbol lookup errors
+	 "reflector" "rsync" # Used for updating mirrorlist
 	)
 
 yayList=("dashbinsh" # Used to make sure dash remains as /bin/sh # might need to link dash as /bin/sh first
