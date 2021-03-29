@@ -1,0 +1,23 @@
+#!/bin/sh
+
+choices="music
+qutebrowser
+gotop
+newsboat
+bitwarden
+nnn
+pfetch
+wallpapers"
+
+choice=$(echo "$choices" | dmenu -i -l 10 -p Run)
+
+case "$choice" in
+	music) setsid -f "$TERMINAL" ncmpcpp-ueberzug && setsid -f "$TERMINAL" ncmpcpp -s media_library -c $HOME/.config/ncmpcpp/config-main && setsid -f "$TERMINAL" ncmpcpp -s visualizer -c $HOME/.config/ncmpcpp/config-main;;
+	qutebrowser) qutebrowser ;;
+	gotop) setsid -f "$TERMINAL" gotop ;;
+	newsboat) setsid -f "$TERMINAL" newsboat ;;
+	bitwarden) bitwarden ;;
+	nnn) setsid -f "$TERMINAL" nnn -e -D;;
+	pfetch) setsid -f "$TERMINAL" sh -c 'pfetch; read junk';; # Not installed
+	wallpapers) sxiv-wallpaper ;;
+esac

@@ -1,0 +1,167 @@
+#!/bin/sh
+
+# Change Nvim theme
+
+sd "(^\s+?)([^\"\s])" '$1\"$2' $HOME/.config/nvim/config/colorschemes.vim
+sd "(.+?)\"(.+?$NVIMNAME)" '$1$2' $HOME/.config/nvim/config/colorschemes.vim
+
+# Change Xresources
+
+Xresource () {
+	sd "($1: ).+" "\${1}$2" $HOME/.config/x11/xresources
+}
+
+Xresource "foreground" $FOREGROUND
+Xresource "background" $BACKGROUND
+Xresource "cursorColor" $CURSORCOLOR
+
+Xresource "borderColor" $BORDERCOLOR
+
+Xresource "color0" $BLACK
+Xresource "color8" $DARKGREY
+
+Xresource "color1" $RED
+Xresource "color9" $DARKRED
+
+Xresource "color2" $GREEN
+Xresource "color10" $DARKGREEN
+
+Xresource "color3" $YELLOW
+Xresource "color11" $DARKYELLOW
+
+Xresource "color4" $BLUE
+Xresource "color12" $DARKBLUE
+
+Xresource "color5" $MAGENTA
+Xresource "color13" $DARKMAGENTA
+
+Xresource "color6" $CYAN
+Xresource "color14" $DARKCYAN
+
+Xresource "color7" $WHITE
+Xresource "color15" $BLUE
+
+Xresource "dwm\.normfgcolor" $BLUE
+Xresource "dwm\.normbgcolor" $BACKGROUND
+Xresource "dwm\.normbordercolor" $DARKGREY
+Xresource "dwm\.normfloatcolor" $DARKGREY
+
+Xresource "dwm\.selfgcolor" $BACKGROUND
+Xresource "dwm\.selbgcolor" $BLUE
+Xresource "dwm\.selbordercolor" $BLUE
+Xresource "dwm\.selfloatcolor" $BLUE
+
+Xresource "dwm\.titlenormfgcolor" $BLUE
+Xresource "dwm\.titlenormbgcolor" $BACKGROUND
+Xresource "dwm\.titlenormbordercolor" $BACKGROUND
+
+Xresource "dwm\.titleselfgcolor" $BACKGROUND
+Xresource "dwm\.titleselbgcolor" $BLUE
+Xresource "dwm\.titleselbordercolor" $BLUE
+
+Xresource "dwm\.tagsnormfgcolor" $BLUE
+Xresource "dwm\.tagsnormbgcolor" $BACKGROUND
+Xresource "dwm\.tagsnormbordercolor" $BACKGROUND
+
+Xresource "dwm\.tagsselfgcolor" $BACKGROUND
+Xresource "dwm\.tagsselbgcolor" $BLUE
+Xresource "dwm\.tagsselbordercolor" $BLUE
+
+# Change zathurarc
+
+zathurarc () {
+	sd "($1 \").+" "\${1}$2\"" $HOME/.config/zathura/zathurarc
+}
+
+zathurarc "notification-bg" $BACKGROUND
+zathurarc "notification-fg" $FOREGROUND
+zathurarc "notification-error-bg" $RED
+zathurarc "notification-error-fg" $FOREGROUND
+zathurarc "notification-warning-bg" $RED
+zathurarc "notification-warning-fg" $FOREGROUND
+
+zathurarc "completion-bg" $BACKGROUND
+zathurarc "completion-fg" $FOREGROUND
+zathurarc "completion-group-bg" $BACKGROUND
+zathurarc "completion-group-fg" $GREEN
+zathurarc "completion-highlight-bg" $FOREGROUND
+zathurarc "completion-highlight-fg" $BACKGROUND
+
+zathurarc "index-bg" $BACKGROUND
+zathurarc "index-fg" $FOREGROUND
+zathurarc "index-active-bg" $FOREGROUND
+zathurarc "index-active-fg" $BACKGROUND
+
+zathurarc "inputbar-bg" $BACKGROUND
+zathurarc "inputbar-fg" $FOREGROUND
+
+zathurarc "statusbar-bg" $BACKGROUND
+zathurarc "statusbar-fg" $FOREGROUND
+
+zathurarc "highlight-color" $GREEN
+zathurarc "highlight-active-color" $BACKGROUND
+
+zathurarc "default-bg" $BACKGROUND
+zathurarc "default-fg" $FOREGROUND
+
+zathurarc "recolor-lightcolor" $BACKGROUND
+zathurarc "recolor-darkcolor" $FOREGROUND
+
+# Change dunstrc
+
+dunstrc () {
+	sd "($1 = \").+" "\${1}$2\"" $HOME/.config/dunst/dunstrc
+}
+
+# Currently all urgencies get set to the same colors
+dunstrc "frame_color" $GREEN
+dunstrc "background" $BACKGROUND
+dunstrc "foreground" $FOREGROUND
+
+# Change qutebrowser colors # Notworking
+
+quteconfig () {
+	sd "($1': ')#.{6}" "\${1}$2" $HOME/.config/qutebrowser/config.py
+}
+
+quteconfig "color1" $BACKGROUND
+quteconfig "color2" $BLACK
+quteconfig "color3" $DARKGREY
+quteconfig "color4" $FOREGROUND
+quteconfig "color5" $RED
+quteconfig "color6" $GREEN
+quteconfig "color7" $YELLOW
+quteconfig "color8" $BLUE
+quteconfig "color9" $MAGENTA
+quteconfig "color10" $CYAN
+
+# Change slock text color
+
+sudo sd "(color = \").+" "\${1}$FOREGROUND\";" $HOME/.local/src/slock/config.def.h
+
+# Change dwmblocks colors
+
+dwmblocks () {
+	sudo sd "(#.{6})(.+?$1)" "$2\${2}" $HOME/.local/src/dwmblocks/config.h
+}
+
+dwmblocks "status-rss" $BLUE
+dwmblocks "weather" $YELLOW
+dwmblocks "memory" $RED
+dwmblocks "datetime" $GREEN
+dwmblocks "internet" $MAGENTA
+dwmblocks "volume" $MAGENTA
+sudo sd "(delim.+?)(#.{6})" "\${1}$FOREGROUND" $HOME/.local/src/dwmblocks/config.h
+
+# Change xmenu colors
+
+xmenu () {
+	sudo sd "($1.+?)(#.{6})" "\${1}$2" $HOME/.local/src/xmenu/config.h
+}
+
+xmenu "\.background_color" $BACKGROUND
+xmenu "\.foreground_color" $BLUE
+xmenu "\.selbackground_color" $BLUE
+xmenu "\.selforeground_color" $BACKGROUND
+xmenu "\.separator_color" $BLUE
+xmenu "\.border_color" $BLUE

@@ -1,0 +1,9 @@
+#!/bin/sh
+
+export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$(id -u $USER)/bus
+DISPLAY=:0
+. $HOME/.zshenv
+
+trash-empty &&
+notify-send "Trash has been emptied" ||
+notify-send "Trash has failed to empty"

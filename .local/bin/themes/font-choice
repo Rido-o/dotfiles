@@ -1,0 +1,47 @@
+#!/bin/sh
+
+choices="cozette\nhack"
+
+choice=$(echo "$choices" | dmenu -i -l 10)
+
+changefont () {
+	sd "(font:).+" "\$1 $1" $HOME/.config/x11/xresources
+	sd "(font).+" "\$1 \"$2\"" $HOME/.config/zathura/zathurarc
+	sd "(font =).+" "\$1 $3" $HOME/.config/dunst/dunstrc
+	sd "(fonts.default_family = \[').*('\])" "\${1}$4\${2}" $HOME/.config/qutebrowser/config.py
+	sd "(fonts.default_size =')\w" "\$1 $5" $HOME/.config/qutebrowser/config.py
+	sd "(font.+?\").+?(\")" "\${1}$1\${2}" $HOME/.local/src/dwm-flexipatch/config.def.h
+
+	rm $HOME/.local/src/dwm-flexipatch/config.h &
+	sudo make clean install -C $HOME/.local/src/dwm-flexipatch
+	sudo mv $HOME/.local/src/dwm-flexipatch/dwm /bin
+
+	# Restart Programs
+	xrdb $HOME/.config/x11/xresources &
+	kill -HUP $(pidof dwm) &
+	killall dunst; setsid dunst &
+	killall dwmblocks; setsid dwmblocks &
+}
+
+cozettefont (){
+	FONT="cozette:pixelsize=11"
+	ZATHURAFONT="cozette 11"
+	DUNSTFONT="cozette 5"
+	QUTEFONT="cozette"
+	QUTESIZE="12px"
+	changefont "$FONT" "$ZATHURAFONT" "$DUNSTFONT" "$QUTEFONT" "$QUTESIZE"
+}
+
+hackfont (){
+	FONT="Hack Nerd Font:pixelsize=13:antialias=true:autohint=true"
+	ZATHURAFONT="Hack Nerd Font 11"
+	DUNSTFONT="Hack Nerd Font 5"
+	QUTEFONT="Hack Nerd Font"
+	QUTESIZE="12px"
+	changefont "$FONT" "$ZATHURAFONT" "$DUNSTFONT" "$QUTEFONT" "$QUTESIZE"
+}
+
+case "$choice" in
+	cozette) cozettefont;;
+	hack) hackfont;;
+esac

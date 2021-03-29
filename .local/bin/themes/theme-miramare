@@ -1,0 +1,87 @@
+#!/bin/sh
+
+# Miramare
+
+NVIMNAME="miramare"
+FOREGROUND="#e6d6ac"
+BACKGROUND="#2A2426"
+CURSORCOLOR="#e6d6ac"
+
+BORDERCOLOR="#e6d6ac"
+
+# black
+BLACK="#2A2426"
+DARKGREY="#444444"
+
+# red
+RED="#e68183"
+DARKRED="#e68183"
+
+# green
+GREEN="#87af87"
+DARKGREEN="#87af87"
+
+# yellow
+YELLOW="#d9bb80"
+DARKYELLOW="#d9bb80"
+
+# blue
+BLUE="#89beba"
+DARKBLUE="#89beba"
+
+# magenta
+MAGENTA="#d3a0bc"
+DARKMAGENTA="#d3a0bc"
+
+# cyan
+CYAN="#87c095"
+DARKCYAN="#87c095"
+
+# white
+WHITE="#d8caac"
+LIGHTGREY="#5b5b5b"
+
+# orange
+ORANGE="#e39b7b"
+DARKORANGE="#e39b7b"
+
+# run default scheme
+. color-main
+
+# custom colors
+Xresource "dwm\.normfgcolor" $YELLOW
+
+Xresource "dwm\.selbgcolor" $YELLOW
+Xresource "dwm\.selbordercolor" $YELLOW
+Xresource "dwm\.selfloatcolor" $YELLOW
+
+Xresource "dwm\.titlenormfgcolor" $YELLOW
+
+Xresource "dwm\.titleselbgcolor" $YELLOW
+Xresource "dwm\.titleselbordercolor" $YELLOW
+
+Xresource "dwm\.tagsnormfgcolor" $YELLOW
+
+Xresource "dwm\.tagsselbgcolor" $YELLOW
+Xresource "dwm\.tagsselbordercolor" $YELLOW
+
+xmenu "\.foreground_color" $YELLOW
+xmenu "\.selbackground_color" $YELLOW
+xmenu "\.separator_color" $YELLOW
+xmenu "\.border_color" $YELLOW
+
+# Rebuild slock
+sudo rm $HOME/.local/src/slock/config.h
+sudo make clean install -C $HOME/.local/src/slock
+
+# Rebuild dwmblocks
+sudo make clean install -C $HOME/.local/src/dwmblocks
+
+# Rebuild xmenu
+sudo make install -C $HOME/.local/src/xmenu
+
+# Restart Programs
+xrdb $HOME/.config/x11/xresources
+kill -HUP $(pidof dwm) &
+killall dunst; setsid dunst &
+killall dwmblocks; setsid dwmblocks &

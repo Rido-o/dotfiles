@@ -1,0 +1,4 @@
+prefix=${XDG_DATE_HOME}/npm
+cache=${XDG_CACHE_HOME}/npm
+tmp=${XDG_RUNTIME_HOME}/npm
+init-module=${XDG_CONFIG_HOME}/npm

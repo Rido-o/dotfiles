@@ -1,0 +1,9 @@
+#!/bin/sh
+
+music_library="$HOME/Music"
+fallback_image="$HOME/.config/ncmpcpp/ncmpcpp-ueberzug/img/fallback.png"
+now_playing=$(mpc -f "%artist%\n%album% - %title%" status | head -3)
+
+ffmpeg -y -i "$(mpc --format "$music_library"/%file% | head -n 1)" /tmp/mpd_cover.jpg > /dev/null 2>&1 && \
+
+notify-send -i /tmp/mpd_cover.jpg "Now Playing:" "$now_playing" || notify-send -i $fallback_image "Now Playing:" "$now_playing"

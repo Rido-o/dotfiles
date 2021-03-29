@@ -1,0 +1,10 @@
+#!/bin/sh
+
+case $BLOCK_BUTTON in
+	1) mpc toggle ;;
+	3) music-notification ;;
+	4) mpc prev ;;
+	5) mpc next ;;
+esac
+
+mpc current

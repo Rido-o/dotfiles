@@ -1,0 +1,37 @@
+# Keybindings
+
+# Scroll up/down
+def_key "j"
+	scroll_down
+def_key "k"
+	scroll_up
+
+# Scroll left/right
+def_key "h"
+	previous_column
+def_key "l"
+	next_column
+
+# Large scroll up/down
+def_key "ctrl-u"
+	page_up
+def_key "ctrl-d"
+	page_down
+
+# Goto top/bottom of list
+def_key "g"
+	move_home
+def_key "G"
+	move_end
+
+# Goto next/previous item
+def_key "n"
+	next_found_item
+def_key "N"
+	previous_found_item
+
+# Switch clock and volume up
+def_key "+"
+	show_clock
+def_key "="
+	volume_up

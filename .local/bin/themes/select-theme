@@ -1,0 +1,10 @@
+#!/bin/sh
+
+choices="fonts\ncolors"
+
+choice=$(echo "$choices" | dmenu -i -l 10)
+
+case "$choice" in
+	fonts) font-choice ;;
+	colors) color-choice ;;
+esac

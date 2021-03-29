@@ -1,0 +1,66 @@
+#!/bin/sh
+
+# Tokyo Nights
+
+NVIMNAME="tokyonight"
+FOREGROUND="#a9b1d6"
+BACKGROUND="#1a1b26"
+CURSORCOLOR="#a9b1d6"
+
+BORDERCOLOR="#1a1b26"
+
+# black
+#BLACK="#232433"
+BLACK="#1a1b26"
+DARKGREY="#4e5173"
+
+# red
+RED="#F7768E"
+DARKRED="#F7768E"
+
+# green
+GREEN="#9ECE6A"
+DARKGREEN="#9ECE6A"
+
+# yellow
+YELLOW="#E0AF68"
+DARKYELLOW="#E0AF68"
+
+# blue
+BLUE="#7AA2F7"
+DARKBLUE="#7AA2F7"
+
+# magenta
+MAGENTA="#ad8ee6"
+DARKMAGENTA="#ad8ee6"
+
+# cyan
+CYAN="#4abaaf"
+DARKCYAN="#4abaaf"
+
+# white
+WHITE="#acb0d0"
+LIGHTGREY="#acb0d0"
+
+# orange
+ORANGE="#FF9E64"
+DARKORANGE="#FF9E64"
+
+# run default scheme
+. color-main
+
+# Rebuild slock
+sudo rm $HOME/.local/src/slock/config.h
+sudo make clean install -C $HOME/.local/src/slock
+
+# Rebuild dwmblocks
+sudo make clean install -C $HOME/.local/src/dwmblocks
+
+# Rebuild xmenu
+sudo make install -C $HOME/.local/src/xmenu
+
+# Restart Programs
+xrdb $HOME/.config/x11/xresources
+kill -HUP $(pidof dwm) &
+killall dunst; setsid dunst &
+killall dwmblocks; setsid dwmblocks &

@@ -1,0 +1,12 @@
+#!/bin/sh
+
+choices="Lock\nLogout\nReboot\nShutdown"
+
+choice=$(echo "$choices" | dmenu -i -l 4)
+
+case "$choice" in
+	Lock) slockcow ;;
+	Logout) kill -TERM $(pidof dwm) ;;
+	Reboot) reboot ;;
+	Shutdown) poweroff ;;
+esac

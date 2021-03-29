@@ -1,0 +1,15 @@
+#!/bin/sh
+
+cat <<EOF | xmenu | sh &
+Applications
+	Web Browser	qutebrowser
+Colors
+	Miramare	theme-miramare
+	tokyonight	theme-tokyonight
+Terminal		st
+
+Lock			slockcow
+Logout			kill -TERM $(pidof dwm)
+Reboot			reboot
+Shutdown		poweroff
+EOF

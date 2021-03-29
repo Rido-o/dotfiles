@@ -1,0 +1,9 @@
+#!/bin/sh
+
+case $BLOCK_BUTTON in
+	1) pidof newsboat || setsid "$TERMINAL" -e newsboat ;;
+esac
+
+pidof newsboat 2>/dev/null >/dev/null || newsboat -x print-unread | sd '(^\w).*' '$1' > $HOME/.cache/rss-unread
+CURRENT=$(cat $HOME/.cache/rss-unread)
+echo " $CURRENT"

@@ -1,0 +1,51 @@
+# Fonts
+set font "cozette 11"
+
+# Statusbar
+set statusbar-h-padding "20"
+set statusbar-v-padding "10"
+set statusbar-basename "true"
+#set statusbar-home-tilde "true"
+
+set sandbox none
+
+# Colors
+set notification-bg "#2A2426"
+set notification-fg "#e6d6ac"
+set notification-error-bg "#e68183"
+set notification-error-fg "#e6d6ac"
+set notification-warning-bg "#e68183"
+set notification-warning-fg "#e6d6ac"
+
+set completion-bg "#2A2426"
+set completion-fg "#e6d6ac"
+set completion-group-bg "#2A2426"
+set completion-group-fg "#87af87"
+set completion-highlight-bg "#e6d6ac"
+set completion-highlight-fg "#2A2426"
+
+set index-bg "#2A2426"
+set index-fg "#e6d6ac"
+set index-active-bg "#e6d6ac"
+set index-active-fg "#2A2426"
+
+set inputbar-bg "#2A2426"
+set inputbar-fg "#e6d6ac"
+
+set statusbar-bg "#2A2426"
+set statusbar-fg "#e6d6ac"
+
+set highlight-color "#87af87"
+set highlight-active-color "#2A2426"
+
+set default-bg "#2A2426"
+set default-fg "#e6d6ac"
+
+#set render-loading true
+#set render-loading-bg "#1a1b26"
+#set render-loading-fg "#a9b1d6"
+
+# Recolor book
+set recolor true
+set recolor-lightcolor "#2A2426"
+set recolor-darkcolor "#e6d6ac"

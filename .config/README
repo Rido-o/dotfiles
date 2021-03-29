@@ -1,0 +1,16 @@
+= Customisation =
+
+	== color ==
+	* Xresources
+	* Zathurarc
+	* qutebrowser config
+	* dunstrc
+	* nvim
+	* textcolor in slock
+	* dwmblocks status colors
+	~ sort of newsboat
+
+	== font ==
+	* dwm config.h for font
+	~ maybe font in slock
+	~ maybe font in dmenu

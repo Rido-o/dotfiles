@@ -1,0 +1,82 @@
+! xrdb ~/Xresources
+
+! Fonts
+*font: cozette:pixelsize=11
+
+! Tokyonight
+! general
+*foreground: #e6d6ac
+*background: #2A2426
+*cursorColor: #e6d6ac
+
+! terminal padding color
+*borderColor: #e6d6ac
+
+! black
+*color0: #2A2426
+*color8: #444444
+
+! red
+*color1: #e68183
+*color9: #e68183
+
+! green
+*color2: #87af87
+*color10: #87af87
+
+! yellow
+*color3: #d9bb80
+*color11: #d9bb80
+
+! blue
+*color4: #89beba
+*color12: #89beba
+
+! magenta
+*color5: #d3a0bc
+*color13: #d3a0bc
+
+! cyan
+*color6: #87c095
+*color14: #87c095
+
+! white
+*color7: #d8caac
+*color15: #89beba
+
+! dwm
+dwm.normfgcolor: #d9bb80
+dwm.normbgcolor: #2A2426
+dwm.normbordercolor: #444444
+dwm.normfloatcolor: #444444
+
+dwm.selfgcolor: #2A2426
+dwm.selbgcolor: #d9bb80
+dwm.selbordercolor: #d9bb80
+dwm.selfloatcolor: #d9bb80
+
+dwm.titlenormfgcolor: #d9bb80
+dwm.titlenormbgcolor: #2A2426
+dwm.titlenormbordercolor: #2A2426
+
+dwm.titleselfgcolor: #2A2426
+dwm.titleselbgcolor: #d9bb80
+dwm.titleselbordercolor: #d9bb80
+
+dwm.tagsnormfgcolor: #d9bb80
+dwm.tagsnormbgcolor: #2A2426
+dwm.tagsnormbordercolor: #2A2426
+
+dwm.tagsselfgcolor: #2A2426
+dwm.tagsselbgcolor: #d9bb80
+dwm.tagsselbordercolor: #d9bb80
+
+! font settings
+
+!Xft.dpi: 96
+!Xft.antialias: true
+!Xft.hinting: true
+!Xft.rgba: rgb
+!Xft.autohint: false
+!Xft.hintstyle: hintslight
+!Xft.lcdfilter: lcddefault
