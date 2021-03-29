@@ -19,7 +19,6 @@ sudo pacman -S --noconfirm git
 
 # Dot file install
 git clone --bare https://github.com/Rido-o/dotfiles.git $HOME/.cfg/dotfiles
-# enter github login details
 /usr/bin/git --git-dir=$HOME/.cfg/dotfiles --work-tree=$HOME $@ checkout
 /usr/bin/git --git-dir=$HOME/.cfg/dotfiles --work-tree=$HOME $@ config status.showUntrackedFiles no
 
