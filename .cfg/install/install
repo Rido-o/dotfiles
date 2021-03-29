@@ -14,7 +14,7 @@ mkdir -p $HOME/.config && touch $HOME/.config/wgetrc
 sudo pacman -S --noconfirm git
 
 # Dot file install
-git clone --bare https://github.com/Rido-o/dotfiles.git $HOME/.cfg
+git clone --bare https://github.com/Rido-o/dotfiles.git $HOME/.cfg/dotfiles
 /usr/bin/git --git-dir=$HOME/.cfg/dotfiles --work-tree=$HOME $@ checkout
 /usr/bin/git --git-dir=$HOME/.cfg/dotfiles --work-tree=$HOME $@ config status.showUntrackedFiles no
 
