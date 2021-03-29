@@ -1,0 +1,25 @@
+From 3ab471e336557e298f9a12d4675987e85233e9e5 Mon Sep 17 00:00:00 2001
+From: Rido <rido@airmail.cc>
+Date: Tue, 9 Mar 2021 16:43:06 +1100
+Subject: [PATCH] changed umpv socket location
+
+---
+ umpv | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/umpv b/umpv
+index 6b41c82..2e43908 100755
+--- a/umpv
++++ b/umpv
+@@ -55,7 +55,7 @@ def make_abs(filename):
+ 
+ files = (make_abs(f) for f in files)
+ 
+-SOCK = os.path.join(os.getenv("HOME"), ".umpv_socket")
++SOCK = os.path.join(os.getenv("HOME"), ".cache/.umpv_socket")
+ 
+ sock = None
+ try:
+-- 
+2.30.1
+

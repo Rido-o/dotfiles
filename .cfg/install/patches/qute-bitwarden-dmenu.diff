@@ -1,0 +1,32 @@
+From 0dc316121c08f871f3beb68e88e660e26c0529e7 Mon Sep 17 00:00:00 2001
+From: Rido <rido@airmail.cc>
+Date: Sat, 6 Mar 2021 23:43:40 +1100
+Subject: [PATCH] made ask_password function use dmenu by default
+
+---
+ qute-bitwarden | 7 +++----
+ 1 file changed, 3 insertions(+), 4 deletions(-)
+
+diff --git a/qute-bitwarden b/qute-bitwarden
+index 8f6f928..23bc1e1 100755
+--- a/qute-bitwarden
++++ b/qute-bitwarden
+@@ -100,12 +100,11 @@ def qute_command(command):
+ 
+ def ask_password():
+     process = subprocess.run([
+-        'rofi',
+-        '-dmenu',
++        'dmenu',
++        '-P',
+         '-p',
+         'Master Password',
+-        '-password',
+-        '-lines',
++        '-l',
+         '0',
+     ], universal_newlines=True, stdout=subprocess.PIPE)
+     if process.returncode > 0:
+-- 
+2.30.1
+

@@ -1,0 +1,40 @@
+From fff19454f1641d836fb19268e67b2e10cdfa8fac Mon Sep 17 00:00:00 2001
+From: Rido <rido@airmail.cc>
+Date: Wed, 3 Mar 2021 16:52:21 +1100
+Subject: [PATCH] changed settings to fit with ncmpcpp config
+
+---
+ ncmpcpp_cover_art.sh | 16 ++++++++--------
+ 1 file changed, 8 insertions(+), 8 deletions(-)
+
+diff --git a/ncmpcpp_cover_art.sh b/ncmpcpp_cover_art.sh
+index 16d8281..10766c4 100755
+--- a/ncmpcpp_cover_art.sh
++++ b/ncmpcpp_cover_art.sh
+@@ -2,15 +2,15 @@
+ # Cover art script for ncmpcpp-ueberzug
+ 
+ # SETTINGS
+-music_library="$HOME/music"
+-fallback_image="$HOME/.ncmpcpp/ncmpcpp-ueberzug/img/fallback.png"
+-padding_top=3
++music_library="$HOME/Audio/Music"
++fallback_image="$HOME/.config/ncmpcpp/ncmpcpp-ueberzug/img/fallback.png"
++padding_top=0
+ padding_bottom=1
+-padding_right=1
+-max_width=0
+-reserved_playlist_cols=30
+-reserved_cols_in_percent="false"
+-force_square="false"
++padding_right=0
++max_width=35
++reserved_playlist_cols=55
++reserved_cols_in_percent="true"
++force_square="true"
+ square_alignment="top"
+ 
+ left_aligned="false"
+-- 
+2.30.1
+

@@ -1,0 +1,2 @@
+@daily $HOME/.local/bin/cronjobs/cron-trash-empty
+*/10 * * * * $HOME/.local/bin/cronjobs/cron-newsboat-reload

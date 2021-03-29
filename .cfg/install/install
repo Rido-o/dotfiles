@@ -1,0 +1,145 @@
+#!/bin/bash
+
+# In route directory of a fresh install as a modded user
+# enter github credentials to download dots, and enter password to change shell
+
+# Manual commands to begin installation
+# sh <(wget -qO- https://raw.githubusercontent.com/Rido-o/rice/master/install)
+
+# check if cronie is working
+# yay installs didn't work # bitwarden not working
+# dunst producing an error # getting similar error for bitwarden
+
+# ----------------------------------------------------------------
+
+# Update package list
+sudo pacman -Sy
+install -D /dev/null -m -x $HOME/.config/wgetrc
+sudo pacman -S --noconfirm git
+git clone https://github.com/Rido-o/rice.git $HOME/.cache/rice
+
+# Dot file install
+git clone --bare https://github.com/Rido-o/dotfiles.git $HOME/.cfg
+# enter github login details
+/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME $@ checkout
+/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME $@ config status.showUntrackedFiles no
+
+# Install AUR helper
+sudo git clone https://aur.archlinux.org/yay.git /opt/yay
+sudo chown -R mrbones:users /opt/yay
+(cd /opt/yay && makepkg --noconfirm -si)
+
+# Pacman list
+pacList=("zsh" "zsh-syntax-highlighting" "zsh-autosuggestions" # Install zsh and extenstions
+	 "dash" # Install dash
+	 "man-db" "man-pages" "texinfo" "most" # Install support for man pages
+	 "xorg-xinit" "xorg" "xclip" "xdg-user-dirs" # Install Xorg and other utilties
+	 "neovim" "python" "python-pip" "nodejs" "npm" "hyperfine" # Install Nvim and related utilities
+	 "pulseaudio" "pamixer" "pulsemixer" # Install audio
+	 "mpd" "mpc" "ncmpcpp" # Install music player
+	 "imlib2" # Install slock dependency
+	 "curl" "ffmpeg" "dunst" "network-manager-applet" # Install dwm statusbar dependencies
+	 "fortune-mod" "cowsay" "xautolock" # Install slock autolock script dependencies
+	 "zathura" "zathura-pdf-mupdf" "sxiv" "xwallpaper" "newsboat" "picom" "mpv" "z" "youtube-dl" "sd" "fd" # Installing misc
+	 "exiv2" "imagemagick" # Install exiv2 and imagemagick for image dimensions in sxiv statusbar
+	 "fzf" # Used in nnn # Seperately installed for nvim via pluginstall?
+	 "cronie" # Install cronie
+	)
+
+yayList=("dashbinsh" # Used to make sure dash remains as /bin/sh # might need to link dash as /bin/sh first
+	 "cozette-otb" "nerd-fonts-hack" # Install fonts
+	 "gotop-bin" "networkmanager-dmenu-git" # Install dwm statusbar dependencies
+	 "qutebrowser-git" "python-adblock" # Install browser
+	 "bitwarden-bin" "bitwarden-cli" # Installing bitwarden
+	 "lazygit" # Installing misc
+	)
+
+pipList=("pynvim" "black" # Used together with nvim
+	 "ueberzug" # Used for album art support in ncmpcpp
+	 "tldextract" # Related to bitwarden
+	 "trash-cli" # Used in nnn # arch repo has old as fuck build
+	)
+
+# Install Packages
+sudo pacman -S --noconfirm "${pacList[@]}"
+yay -S --answerdiff None --answerclean ALL --noconfirm "${yayList[@]}"
+pip install "${pipList[@]}"
+
+# Git clone
+git clone https://github.com/alnj/ncmpcpp-ueberzug.git $HOME/.config/ncmpcpp/ncmpcpp-ueberzug
+git clone https://github.com/Rido-o/st.git $HOME/.local/src/st
+git clone https://github.com/Rido-o/dmenu.git $HOME/.local/src/dmenu
+git clone https://github.com/Rido-o/dwmblocks.git $HOME/.local/src/dwmblocks
+git clone https://github.com/Rido-o/dwm-flexipatch.git $HOME/.local/src/dwm-flexipatch
+git clone https://github.com/Rido-o/slock.git $HOME/.local/src/slock
+git clone https://github.com/dylanaraps/pfetch.git $HOME/.local/src/pfetch
+git clone https://github.com/Rido-o/xmenu.git $HOME/.local/src/xmenu
+git clone https://github.com/jarun/nnn.git $HOME/.local/src/nnn
+git clone https://github.com/EliverLara/Nordic.git $HOME/.themes/Nordic # Install gtk theme
+
+# Make install
+sudo make clean install -C $HOME/.local/src/st
+sudo make clean install -C $HOME/.local/src/dmenu
+sudo make clean install -C $HOME/.local/src/dwmblocks
+sudo make clean install -C $HOME/.local/src/dwm-flexipatch
+sudo make clean install -C $HOME/.local/src/slock
+sudo make install -C $HOME/.local/src/pfetch
+sudo make install -C $HOME/.local/src/xmenu
+sudo make install O_NERD=1 -C $HOME/.local/src/nnn
+
+# Install Zsh
+install -D /dev/null -m -x $HOME/.cache/zsh/history
+sudo chsh -s /usr/bin/zsh $(whoami)
+
+# Install dash as #!/bin/sh
+sudo ln -sfT dash /usr/bin/sh
+
+# Install Nvim
+mkdir -p $HOME/.cache/nvim/undodir
+mkdir -p $HOME/.local/share/nvim/site/autoload
+wget -xO $HOME/.local/share/nvim/site/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+nvim --headless +PlugInstall +qall
+
+# Install cover art support for ncmpcpp # Move to after git clone
+chmod +x $HOME/.config/ncmpcpp/ncmpcpp-ueberzug/ncmpcpp-ueberzug $HOME/.config/ncmpcpp/ncmpcpp-ueberzug/ncmpcpp_cover_art.sh
+patch $HOME/.config/ncmpcpp/ncmpcpp-ueberzug/ncmpcpp_cover_art.sh $HOME/.cache/rice/ncmpcpp-ueberzug-settings.diff
+
+# Installing browser # Import 4chanX and OneeChan settings manually in ~/.cache/rice
+wget -P $HOME/.config/qutebrowser/greasemonkey https://www.4chan-x.net/builds/4chan-X.user.js
+wget -P $HOME/.config/qutebrowser/greasemonkey https://raw.githubusercontent.com/KevinParnell/OneeChan/master/builds/OneeChan.user.js
+
+# Installing bitwarden # Manually login to bw with bw login to use keybinds in qutebrowser
+patch /usr/share/qutebrowser/userscripts/qute-bitwarden $HOME/.cache/rice/qute-bitwarden-dmenu.diff
+
+# Install umpv script
+wget -P $HOME/.local/bin https://raw.githubusercontent.com/mpv-player/mpv/master/TOOLS/umpv
+patch $HOME/.local/bin/umpv $HOME/.cache/rice/umpv-socket-location.diff
+chmod +x $HOME/.local/bin/umpv
+
+# Install rifle_sxiv script
+wget -P $HOME/.local/bin https://raw.githubusercontent.com/ranger/ranger/master/examples/rifle_sxiv.sh
+mv $HOME/.local/bin/rifle_sxiv.sh $HOME/.local/bin/rifle_sxiv
+sudo chmod +x $HOME/.local/bin/rifle_sxiv # strange that this requires sudo
+
+# Install nnn
+wget -O - https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh
+# Changing default programs
+sudo cp /usr/share/applications/sxiv.desktop /usr/share/applications/rifle_sxiv.desktop
+sudo sed -i -E "s/sxiv/rifle_sxiv/" /usr/share/applications/rifle_sxiv.desktop
+
+# Install cronie
+sudo systemctl enable cronie
+crontab $HOME/.cache/rice/cronjobs
+
+# Remove uneeded files
+rm $HOME/.bash_history $HOME/.bash_profile $HOME/.bash_logout $HOME/.bashrc $HOME/.npmrc $HOME/.wget-hsts
+rm -r $HOME/.pkg-cache $HOME/.nvm $HOME/Desktop $HOME/Music $HOME/Public $HOME/Templates
+#yay -Yc --noconfirm # clean uneeded dependencies
+
+# Creating root folder tree structure
+mkdir Adult Archives Audio Audio/Music Audio/Web/Youtube Documents Downloads Education Games Literature Images Images/Screenshots Projects Video Video/Web/Youtube Work
+
+# Run a theme?
+# Follow manual settings
+
+reboot
