@@ -115,6 +115,7 @@ n ()
 
 # General aliases
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/dotfiles --work-tree=$HOME'
+alias configp='/usr/bin/git --git-dir=$HOME/.cfg/dotfiles-private --work-tree=$HOME'
 alias ls='ls --color=auto --group-directories-first'
 alias n='n -e -D'
 alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'
@@ -122,6 +123,7 @@ alias gsudo='sudo git -c include.path=$HOME/.config/git/config'
 alias j='z'
 alias lg='lazygit'
 alias lgc='lazygit --git-dir=$HOME/.cfg/dotfiles --work-tree=$HOME'
+alias lgp='lazygit --git-dir=$HOME/.cfg/dotfiles-private --work-tree=$HOME'
 
 # Trash aliases
 alias tp='trash-put'
