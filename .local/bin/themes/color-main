@@ -145,13 +145,14 @@ dwmblocks () {
 	sudo sd "(\^c).+?(\^)" "\${1}$1\${2}" $2
 }
 
-dwmblocks $ORANGE $HOME/.local/bin/statusbar/status-music
-dwmblocks $BLUE $HOME/.local/bin/statusbar/status-rss
-dwmblocks $YELLOW $HOME/.local/bin/statusbar/status-weather
-dwmblocks $RED $HOME/.local/bin/statusbar/status-memory
-dwmblocks $GREEN $HOME/.local/bin/statusbar/status-datetime
-dwmblocks $MAGENTA $HOME/.local/bin/statusbar/status-internet
-dwmblocks $MAGENTA $HOME/.local/bin/statusbar/status-volume
+STATUSPATH="$HOME/.local/bin/statusbar"
+dwmblocks $ORANGE $STATUSPATH/status-music
+dwmblocks $BLUE $STATUSPATH/status-rss
+dwmblocks $YELLOW $STATUSPATH/status-weather
+dwmblocks $RED $STATUSPATH/status-memory
+dwmblocks $GREEN $STATUSPATH/status-datetime
+dwmblocks $MAGENTA $STATUSPATH/status-internet
+dwmblocks $MAGENTA $STATUSPATH/status-volume
 
 sudo sd "(delim.+?)(#.{6})" "\${1}$FOREGROUND" $HOME/.local/src/dwmblocks/config.h
 
