@@ -1,0 +1,9 @@
+#!/bin/sh
+
+export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$(id -u $USER)/bus
+DISPLAY=:0
+. $HOME/.zshenv
+
+sudo pacman -Sy &&
+notify-send "Pacman package database has been updated" ||
+notify-send "Pacman package database has failed to update"
