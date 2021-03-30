@@ -1,3 +1,4 @@
 #!/bin/sh
 
-date '+%a, %d %b - %I:%M%p'
+DATE=$(date '+%a, %d %b - %I:%M%p')
+echo "^c#87af87^$DATE"

@@ -1,9 +1,9 @@
 #!/bin/sh
 
 case $BLOCK_BUTTON in
-	1) pidof newsboat || setsid "$TERMINAL" -e newsboat ;;
+	1) pidof newsboat 2>/dev/null >/dev/null || setsid "$TERMINAL" -e newsboat ;;
 esac
 
-pidof newsboat 2>/dev/null >/dev/null || newsboat -x print-unread | sd '(^\w).*' '$1' > $HOME/.cache/rss-unread
+pidof newsboat 2>/dev/null >/dev/null || newsboat -x print-unread 2>/dev/null | sd '(^\w).*' '$1' > $HOME/.cache/rss-unread
 CURRENT=$(cat $HOME/.cache/rss-unread)
-echo " $CURRENT"
+[ ! -z "$CURRENT" ] && echo "^c#89beba^ $CURRENT"

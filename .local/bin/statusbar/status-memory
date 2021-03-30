@@ -4,4 +4,5 @@ case $BLOCK_BUTTON in
 	1) setsid -f "$TERMINAL" gotop ;;
 esac
 
-free -h | awk '/^Mem/ { print $3"/"$2 }' | sd 'i' ''
+MEMORY=$(free -h | awk '/^Mem/ { print $3"/"$2 }' | sd 'i' '')
+echo "^c#e68183^Mem: ^d^$MEMORY"

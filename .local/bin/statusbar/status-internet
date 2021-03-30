@@ -3,3 +3,5 @@
 case $BLOCK_BUTTON in
 	1) networkmanager_dmenu;;
 esac
+
+echo "^c#d3a0bc^"
