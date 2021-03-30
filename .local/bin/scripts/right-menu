@@ -2,7 +2,8 @@
 
 cat <<EOF | xmenu | sh &
 Applications
-	Web Browser	qutebrowser
+	Web Browser		qutebrowser
+	File Explorer	setsid -f "$TERMINAL" nnn -e -D
 Colors
 	Miramare	theme-miramare
 	tokyonight	theme-tokyonight
