@@ -1,3 +1,4 @@
 #!/bin/sh
 
-sxiv -t $(fd --type f . "$HOME/Images/Wallpapers/Desktop-Wallpapers")
+WALLPAPERS=$(fd --type f . "$HOME/Images/Wallpapers/Desktop-Wallpapers" 2>/dev/null)
+[ ! -z $WALLPAPERS ] && sxiv -t $WALLPAPERS || notify-send "No Wallpapers"
