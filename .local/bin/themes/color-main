@@ -142,15 +142,17 @@ sudo sd "(color = \").+" "\${1}$FOREGROUND\";" $HOME/.local/src/slock/config.def
 # Change dwmblocks colors
 
 dwmblocks () {
-	sudo sd "(#.{6})(.+?$1)" "$2\${2}" $HOME/.local/src/dwmblocks/config.h
+	sudo sd "(\^c).+?(\^)" "\${1}$1\${2}" $2
 }
 
-dwmblocks "status-rss" $BLUE
-dwmblocks "weather" $YELLOW
-dwmblocks "memory" $RED
-dwmblocks "datetime" $GREEN
-dwmblocks "internet" $MAGENTA
-dwmblocks "volume" $MAGENTA
+dwmblocks $ORANGE $HOME/.local/bin/statusbar/status-music
+dwmblocks $BLUE $HOME/.local/bin/statusbar/status-rss
+dwmblocks $YELLOW $HOME/.local/bin/statusbar/status-weather
+dwmblocks $RED $HOME/.local/bin/statusbar/status-memory
+dwmblocks $GREEN $HOME/.local/bin/statusbar/status-datetime
+dwmblocks $MAGENTA $HOME/.local/bin/statusbar/status-internet
+dwmblocks $MAGENTA $HOME/.local/bin/statusbar/status-volume
+
 sudo sd "(delim.+?)(#.{6})" "\${1}$FOREGROUND" $HOME/.local/src/dwmblocks/config.h
 
 # Change xmenu colors
