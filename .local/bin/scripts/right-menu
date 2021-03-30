@@ -8,7 +8,11 @@ Applications
 	Task Manager		setsid -f "$TERMINAL" gotop
 	RSS Reader			setsid -f "$TERMINAL" newsboat
 	Choose Wallpaper	sxiv-wallpaper
-	Music Setup			setsid -f "$TERMINAL" ncmpcpp-ueberzug && setsid -f "$TERMINAL" ncmpcpp -s media_library -c $HOME/.config/ncmpcpp/config-main && setsid -f "$TERMINAL" ncmpcpp -s visualizer -c $HOME/.config/ncmpcpp/config-main
+Music
+	Setup				setsid -f "$TERMINAL" ncmpcpp-ueberzug && setsid -f "$TERMINAL" ncmpcpp -s media_library -c $HOME/.config/ncmpcpp/config-main && setsid -f "$TERMINAL" ncmpcpp -s visualizer -c $HOME/.config/ncmpcpp/config-main
+	Playlist			setsid -f "$TERMINAL" ncmpcpp-ueberzug
+	Albums				setsid -f "$TERMINAL" ncmpcpp
+	Visualiser			setsid -f "$TERMINAL" ncmpcpp -s visualizer -c $HOME/.config/ncmpcpp/config-main
 Colors
 	Miramare			theme-miramare
 	Tokyonight			theme-tokyonight
