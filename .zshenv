@@ -1,5 +1,5 @@
 # Xinit location
-export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
+export XINITRC="$XDG_CONFIG_HOME/x11/xinitrc"
 
 # ZSH folder location
 export ZDOTDIR="$HOME/.config/zsh"
