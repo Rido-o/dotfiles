@@ -1,9 +1,5 @@
 #!/bin/sh
 
-choices="cozette\nhack"
-
-choice=$(echo "$choices" | dmenu -i -l 10)
-
 changefont () {
 	sd "(font:).+" "\$1 $1" $HOME/.config/x11/xresources
 	sd "(font).+" "\$1 \"$2\"" $HOME/.config/zathura/zathurarc
@@ -14,7 +10,6 @@ changefont () {
 
 	rm $HOME/.local/src/dwm-flexipatch/config.h &
 	sudo make clean install -C $HOME/.local/src/dwm-flexipatch
-	sudo mv $HOME/.local/src/dwm-flexipatch/dwm /bin
 
 	# Restart Programs
 	xrdb $HOME/.config/x11/xresources &
@@ -23,7 +18,7 @@ changefont () {
 	killall dwmblocks; setsid dwmblocks &
 }
 
-cozettefont (){
+cozettefont () {
 	FONT="cozette:pixelsize=11"
 	ZATHURAFONT="cozette 11"
 	DUNSTFONT="cozette 5"
@@ -32,7 +27,7 @@ cozettefont (){
 	changefont "$FONT" "$ZATHURAFONT" "$DUNSTFONT" "$QUTEFONT" "$QUTESIZE"
 }
 
-hackfont (){
+hackfont () {
 	FONT="Hack Nerd Font:pixelsize=13:antialias=true:autohint=true"
 	ZATHURAFONT="Hack Nerd Font 11"
 	DUNSTFONT="Hack Nerd Font 5"
@@ -41,7 +36,14 @@ hackfont (){
 	changefont "$FONT" "$ZATHURAFONT" "$DUNSTFONT" "$QUTEFONT" "$QUTESIZE"
 }
 
-case "$choice" in
-	cozette) cozettefont;;
-	hack) hackfont;;
-esac
+choosefont () {
+	choices="cozette\nhack"
+	choice=$(echo "$choices" | dmenu -i -l 10)
+
+	case "$choice" in
+		cozette) cozettefont;;
+		hack) hackfont;;
+	esac
+}
+
+"$@"

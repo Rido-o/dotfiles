@@ -18,7 +18,9 @@ Music
 Colors
 	Miramare			theme-miramare
 	Tokyonight			theme-tokyonight
-Fonts					font-choice
+Fonts
+	Cozette				font-choice cozettefont
+	Hack				font-choice hackfont
 
 Lock					slockcow
 Logout					kill -TERM $(pidof dwm)

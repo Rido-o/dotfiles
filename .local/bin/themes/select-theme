@@ -5,6 +5,6 @@ choices="fonts\ncolors"
 choice=$(echo "$choices" | dmenu -i -l 10)
 
 case "$choice" in
-	fonts) font-choice ;;
+	fonts) font-choice choosefont ;;
 	colors) color-choice ;;
 esac
