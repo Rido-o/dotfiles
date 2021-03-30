@@ -44,9 +44,9 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " Undodir
 if g:os == "Linux"
-	set undodir="$HOME/.cache/nvim/undodir"
+	set undodir=$HOME/.cache/nvim/undodir
 elseif g:os == "Windows"
-	set undodir="~/AppData/Local/nvim-data/undo"
+	set undodir=~/AppData/Local/nvim-data/undo
 endif
 
 " Set shell to Windows PowerShell if on windows. Relies on function in init.vim
