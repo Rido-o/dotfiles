@@ -10,12 +10,12 @@ Applications
 	Choose Wallpaper	sxiv-wallpaper
 	Music Setup			setsid -f "$TERMINAL" ncmpcpp-ueberzug && setsid -f "$TERMINAL" ncmpcpp -s media_library -c $HOME/.config/ncmpcpp/config-main && setsid -f "$TERMINAL" ncmpcpp -s visualizer -c $HOME/.config/ncmpcpp/config-main
 Colors
-	Miramare	theme-miramare
-	Tokyonight	theme-tokyonight
-Terminal		st
+	Miramare			theme-miramare
+	Tokyonight			theme-tokyonight
+Terminal				st
 
-Lock			slockcow
-Logout			kill -TERM $(pidof dwm)
-Reboot			reboot
-Shutdown		poweroff
+Lock					slockcow
+Logout					kill -TERM $(pidof dwm)
+Reboot					reboot
+Shutdown				poweroff
 EOF
