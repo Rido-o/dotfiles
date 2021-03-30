@@ -1,6 +1,7 @@
 #!/bin/sh
 
 cat <<EOF | xmenu | sh &
+Terminal				setsid -f "$TERMINAL"
 Applications
 	Web Browser			qutebrowser
 	Password Manager	bitwarden
@@ -13,10 +14,10 @@ Music
 	Playlist			setsid -f "$TERMINAL" ncmpcpp-ueberzug
 	Albums				setsid -f "$TERMINAL" ncmpcpp
 	Visualiser			setsid -f "$TERMINAL" ncmpcpp -s visualizer -c $HOME/.config/ncmpcpp/config-main
+
 Colors
 	Miramare			theme-miramare
 	Tokyonight			theme-tokyonight
-Terminal				st
 
 Lock					slockcow
 Logout					kill -TERM $(pidof dwm)
