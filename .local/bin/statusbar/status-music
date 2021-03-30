@@ -7,4 +7,5 @@ case $BLOCK_BUTTON in
 	5) mpc next ;;
 esac
 
-mpc current
+CURRENT=$(mpc current)
+[ ! -z "$CURRENT" ] && echo "^c#e39b7b^ $CURRENT"
