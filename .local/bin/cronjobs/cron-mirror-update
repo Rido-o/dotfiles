@@ -4,6 +4,6 @@ export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$(id -u $USER)/bus
 DISPLAY=:0
 . $HOME/.zshenv
 
-sudo reflector --country Australia --sort rate --download-timeout 20 --save /etc/pacman.d/mirrorlist &&
+sudo reflector --country Australia --protocol http,https --sort rate --download-timeout 20 --save /etc/pacman.d/mirrorlist &&
 notify-send "Mirrorlist has been updated" ||
 notify-send "Mirrorlist has failed to update"
