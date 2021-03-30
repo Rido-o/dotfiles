@@ -12,7 +12,7 @@ Applications
 Music
 	Setup				setsid -f "$TERMINAL" ncmpcpp-ueberzug && setsid -f "$TERMINAL" ncmpcpp -s media_library -c $HOME/.config/ncmpcpp/config-main && setsid -f "$TERMINAL" ncmpcpp -s visualizer -c $HOME/.config/ncmpcpp/config-main
 	Playlist			setsid -f "$TERMINAL" ncmpcpp-ueberzug
-	Albums				setsid -f "$TERMINAL" ncmpcpp
+	Albums				setsid -f "$TERMINAL" ncmpcpp -s media_library
 	Visualiser			setsid -f "$TERMINAL" ncmpcpp -s visualizer -c $HOME/.config/ncmpcpp/config-main
 
 Colors
