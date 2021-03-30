@@ -45,6 +45,7 @@ pacList=("zsh" "zsh-syntax-highlighting" "zsh-autosuggestions" # Install zsh and
 	 "cronie" # Install cronie
 	 "glib2" # Fixes libpango symbol lookup errors
 	 "reflector" "rsync" # Used for updating mirrorlist
+	 "ripgrep" # Grep replacement
 	)
 
 yayList=("dashbinsh" # Used to make sure dash remains as /bin/sh # might need to link dash as /bin/sh first
