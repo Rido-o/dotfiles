@@ -2,3 +2,4 @@
 @weekly $HOME/.local/bin/cronjobs/cron-pacman-update
 @daily $HOME/.local/bin/cronjobs/cron-trash-empty
 */10 * * * * $HOME/.local/bin/cronjobs/cron-newsboat-reload
+*/30 * * * * $HOME/.local/bin/cronjobs/cron-weather-download
