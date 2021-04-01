@@ -122,9 +122,10 @@
 
 " nnn settings
 	let g:nnn#set_default_mappings = 0
-	let g:nnn#command = 'nnn -D -o'
+	let g:nnn#command = 'nnn -D'
 	let g:nnn#layout = { 'window': { 'width': 0.9, 'height': 0.6} }
 	let g:nnn#action = {
-		\ '<c-t>': 'tab split',
 		\ 's': 'split',
-		\ 'v': 'vsplit' }
+		\ 'v': 'vsplit',
+		\ 'l': 'e',
+		\ 'e': 'e'}
