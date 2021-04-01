@@ -1,0 +1,8 @@
+#!/bin/sh
+
+case $BLOCK_BUTTON in
+	1) setsid -f "$TERMINAL" sh -c "sed '37q' $HOME/.cache/weathercolor; read junk" ;;
+esac
+
+TEMP=$(sed '4q;d' $HOME/.cache/weathertext | rg -o "\b.+\s°C" | sd "\s" "")
+echo "^c#d9bb80^ $TEMP"
