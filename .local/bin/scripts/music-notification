@@ -1,6 +1,6 @@
 #!/bin/sh
 
-music_library="$HOME/Music"
+music_library="$HOME/Audio/Music"
 fallback_image="$HOME/.config/ncmpcpp/ncmpcpp-ueberzug/img/fallback.png"
 now_playing=$(mpc -f "%artist%\n%album% - %title%" status | head -3)
 
