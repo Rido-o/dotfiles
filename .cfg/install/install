@@ -39,7 +39,7 @@ pacList=("zsh" "zsh-syntax-highlighting" "zsh-autosuggestions" # Install zsh and
 	 "fzf" # Used in nnn # Seperately installed for nvim via pluginstall?
 	 "cronie" # Install cronie
 	 "glib2" # Fixes libpango symbol lookup errors
-	 "reflector" "rsync" # Used for updating mirrorlist
+	 "reflector" # Used for updating mirrorlist
 	 "ripgrep" # Grep replacement
 	)
 
