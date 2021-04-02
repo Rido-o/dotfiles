@@ -22,6 +22,7 @@ export EDITOR="nvim"
 export TERMINAL="st"
 export BROWSER="qutebrowser"
 export PAGER="most"
+export AUDIOPATH="$HOME/Audio"
 
 # $HOME cleanup
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
