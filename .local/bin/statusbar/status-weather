@@ -2,7 +2,7 @@
 
 case $BLOCK_BUTTON in
 	1) setsid -f "$TERMINAL" sh -c "sed '37q' $HOME/.cache/weathercolor; read junk" ;;
-	3) $HOME/.local/bin/cronjobs/cron-download-weather
+	3) cron-download-weather
 esac
 
 TEMP=$(sed '4q;d' $HOME/.cache/weathertext | rg -o "\b.+\s°C" | sd "\s" "")

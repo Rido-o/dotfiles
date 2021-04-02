@@ -14,6 +14,7 @@ export PATH="$HOME/.local/bin":$PATH
 export PATH="$HOME/.local/bin/scripts":$PATH
 export PATH="$HOME/.local/bin/statusbar":$PATH
 export PATH="$HOME/.local/bin/themes":$PATH
+export PATH="$HOME/.local/bin/cronjobs":$PATH
 export PATH="$HOME/.config/ncmpcpp/ncmpcpp-ueberzug":$PATH
 
 # Environment variables
