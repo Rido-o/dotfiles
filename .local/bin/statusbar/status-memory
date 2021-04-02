@@ -5,4 +5,4 @@ case $BLOCK_BUTTON in
 esac
 
 MEMORY=$(free -h | awk '/^Mem/ { print $3"/"$2 }' | sd 'i' '')
-echo "^c#e68183^Mem: ^d^$MEMORY"
+echo "^c#e68183^✹ ^d^$MEMORY"
