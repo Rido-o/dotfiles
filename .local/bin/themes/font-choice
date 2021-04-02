@@ -7,9 +7,12 @@ changefont () {
 	sd "(fonts.default_family = \[').*('\])" "\${1}$4\${2}" $HOME/.config/qutebrowser/config.py
 	sd "(fonts.default_size =')\w" "\$1 $5" $HOME/.config/qutebrowser/config.py
 	sd "(font.+?\").+?(\")" "\${1}$1\${2}" $HOME/.local/src/dwm-flexipatch/config.def.h
+	sd "(\slineheight\s=\s)\d+" "\${1}$DMENUHEIGHT" $HOME/.local/src/dmenu/config.def.h
 
 	rm $HOME/.local/src/dwm-flexipatch/config.h &
 	sudo make clean install -C $HOME/.local/src/dwm-flexipatch
+	rm $HOME/.local/src/dmenu/config.h &
+	sudo make clean install -C $HOME/.local/src/dmenu
 
 	# Restart Programs
 	xrdb $HOME/.config/x11/xresources &
@@ -24,7 +27,8 @@ cozettefont () {
 	DUNSTFONT="cozette 5"
 	QUTEFONT="cozette"
 	QUTESIZE="12px"
-	changefont "$FONT" "$ZATHURAFONT" "$DUNSTFONT" "$QUTEFONT" "$QUTESIZE"
+	DMENUHEIGHT="23"
+	changefont "$FONT" "$ZATHURAFONT" "$DUNSTFONT" "$QUTEFONT" "$QUTESIZE" "$DMENUHEIGHT"
 }
 
 hackfont () {
@@ -33,6 +37,7 @@ hackfont () {
 	DUNSTFONT="Hack Nerd Font 5"
 	QUTEFONT="Hack Nerd Font"
 	QUTESIZE="12px"
+	DMENUHEIGHT="27"
 	changefont "$FONT" "$ZATHURAFONT" "$DUNSTFONT" "$QUTEFONT" "$QUTESIZE"
 }
 
