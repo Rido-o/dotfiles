@@ -5,5 +5,5 @@ case $BLOCK_BUTTON in
 	3) cron-download-weather
 esac
 
-TEMP=$(sed '4q;d' $HOME/.cache/weathertext | rg -o "\b.+\s°C" | sd "\s" "")
+TEMP=$(sed '4q;d' $HOME/.cache/weathertext | sd "\)|\(" " " | rg -o "\d+\s°C" | sd "\s" "")
 echo "^c#d9bb80^ $TEMP"
