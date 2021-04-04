@@ -35,3 +35,7 @@ def_key "+"
 	show_clock
 def_key "="
 	volume_up
+
+# Bind ? to help
+def_key "?"
+	show_help
