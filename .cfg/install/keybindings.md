@@ -4,6 +4,7 @@
 
 ## DWM
 Superkey is the windows key
+* `Super-?` - Open help menu
 * `Super-o` - Open dmenu
 * `Super-p` - Open program launcher
 * `Super-Enter` - Open st
