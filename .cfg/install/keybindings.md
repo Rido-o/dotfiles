@@ -8,6 +8,7 @@ Superkey is the windows key
 * `Super-o` - Open dmenu
 * `Super-p` - Open program launcher
 * `Super-Enter` - Open st
+* `Super-Curse` - Open scratchpad
 * `Super-n` - Open nnn
 * `Super-q` - Close current window
 * `Super-Shift-q` - Bring up shutdown options
