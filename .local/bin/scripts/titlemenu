@@ -1,0 +1,5 @@
+#!/bin/sh
+
+cat <<EOF | xmenu
+X Close	1
+EOF
