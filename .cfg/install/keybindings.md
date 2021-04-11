@@ -29,6 +29,9 @@ Superkey is the windows key
 * `Super-m` - Set tag layout to monocle
 ### Window management
 * `Super-Space` - Toggle floating
+* `Super-y` - Toggle fullscreen
+* `Super-Shift-j` - Move window up the stack
+* `Super-Shift-k` - Move window down the stack
 * `Super-i` - Increase the amount of master windows
 * `Super-d` - Decrease the amount of master windows
 * `Super-h` - Decrease the amount of space the master windows take up
@@ -36,8 +39,8 @@ Superkey is the windows key
 * `Super-Shift-h` - Decrease the current windows size
 * `Super-Shift-l` - Increase the current windows size
 * `Super-Shift-o` - Return the current window to the default size
-* `Super-j` - Move up the stack
-* `Super-k` - Move down the stack
+* `Super-j` - Move focus up the stack
+* `Super-k` - Move focus down the stack
 * `Super-Shift-Enter` - Move window to the top of the stack
 ### Manage Gaps
 * `Super-Alt-...` - Increase type
