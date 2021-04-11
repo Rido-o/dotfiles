@@ -1,13 +1,13 @@
 #!/bin/sh
 
 case $BLOCK_BUTTON in
-	1) setsid -f "$TERMINAL" -e pulsemixer ;;
+	1) setsid -f "$TERMINAL" -n floatcenter -g 120x50 -e pulsemixer ;;
 	2) pamixer -t ;;
 	4) pamixer --allow-boost -i 5 ;;
 	5) pamixer --allow-boost -d 5 ;;
 	3) notify-send " Volume module" "\- Shows volume ,  if muted.
 - Middle click to mute." ;;
-	6) "$TERMINAL" -e "$EDITOR" "$0" ;;
+	6) "$TERMINAL" -n floatcenter -g 120x50 -e "$EDITOR" "$0" ;;
 esac
 
 [ $(pamixer --get-mute) = true ] && echo  && exit

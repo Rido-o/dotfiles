@@ -2,6 +2,7 @@
 
 case $BLOCK_BUTTON in
 	1) mpc toggle ;;
+	2) "$TERMINAL" -n floatcenter -g 100x50 ncmpcpp -c $HOME/.config/ncmpcpp/config-play ;;
 	3) music-notification ;;
 	4) mpc prev ;;
 	5) mpc next ;;
