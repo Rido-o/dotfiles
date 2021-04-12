@@ -1,0 +1,4 @@
+= Keybinds =
+
+== Basic ==
+* `o` - Open rss link in browser

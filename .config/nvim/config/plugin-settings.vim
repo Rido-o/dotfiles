@@ -117,7 +117,7 @@
 	if g:os == "Windows"
 		let g:vimwiki_list = [{'path': '~/Documents/Wiki/'}]
 	elseif g:os == "Linux"
-		let g:vimwiki_list = [{'path': '$HOME/Documents/Wiki/'}]
+		let g:vimwiki_list = [{'path': '$HOME/.cfg/wiki/'}]
 	endif
 
 " nnn settings

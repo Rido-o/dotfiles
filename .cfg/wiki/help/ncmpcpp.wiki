@@ -1,0 +1,14 @@
+= Keybinds =
+
+== Modes ==
+* `?` - Show help
+* `1` - Show playlist
+* `2` - Show browser
+* `3` - Show search engine
+* `4` - Show media library
+* `5` - Show playlist editor
+* `6` - Show tag editor
+* `7` - Show outputs
+* `8` - Show music visualizer
+* `+` - Show clock
+* `@` - Show server info

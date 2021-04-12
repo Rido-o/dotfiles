@@ -1,0 +1,7 @@
+= Keybinds =
+
+== Basic ==
+* `Enter` - Toggle between single image and gallery mode
+
+== Scripts ==
+* `Ctrl-x w` - Set the wallpaper to selected image

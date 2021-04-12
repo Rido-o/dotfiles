@@ -1,0 +1,6 @@
+= Keybinds =
+
+== Clipboard ==
+* `Shift-Insert` - Insert from clipboard
+* `Ctrl-Shift-C` - Copy highlighted text in the terminal
+* `Ctrl-Shift-V` - Paste into the terminal in insert mode

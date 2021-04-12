@@ -1,0 +1,3 @@
+= Oops I've messed up =
+* `Ctrl-Alt-F1` - Return to graphical environment
+* `Ctrl-Alt-[F2-F6]` - Access corresponding tty
