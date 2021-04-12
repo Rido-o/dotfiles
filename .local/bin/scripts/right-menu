@@ -22,8 +22,9 @@ Fonts
 	Cozette				font-choice cozettefont
 	Hack				font-choice hackfont
 
-Lock					slockcow
-Logout					kill -TERM $(pidof dwm)
-Reboot					reboot
-Shutdown				poweroff
+Session
+	Lock					slockcow
+	Logout					kill -TERM $(pidof dwm)
+	Reboot					reboot
+	Shutdown				poweroff
 EOF
