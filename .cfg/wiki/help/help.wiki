@@ -1,4 +1,5 @@
 = Help =
+* [[/index|Index]]
 
 == System ==
 * [[oops|Oops]]
