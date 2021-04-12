@@ -2,6 +2,19 @@
 
 == Basic ==
 * `Enter` - Toggle between single image and gallery mode
+* `b` - Toggle info bar
+
+== Thumbnail mode ==
+
+== Image mode ==
+* `n`, `Space` - Next image
+* `p`, `Backspace` - Previous image
+=== Zooming ===
+* `=` - Set zoom to 100%
+* `w` - Set zoom to 100%, but fit large images into window
+* `W` - Fit image to window
+* `e` - Fit image to window width
+* `E` - Fit image to window height
 
 == Scripts ==
 * `Ctrl-x w` - Set the wallpaper to selected image
