@@ -1,0 +1,28 @@
+#!/bin/sh
+
+torrent_file_or_magnet_link="$1"
+
+# Edit rtorrent.rc to automatically start downloads when a .torrent file
+# appears in this directory.
+cd "$XDG_CACHE_HOME/rtorrent/watch/"
+
+# XT stands for "exact topic".
+# BTIH is the BitTorrent info hash:
+# https://en.wikipedia.org/wiki/Magnet_URI_scheme#BitTorrent_info_hash_(BTIH)
+# This is the hex-encoded SHA-1 hash of the torrent file info section
+magnet_regex="xt=urn:btih:([^&/]+)"
+if [[ "$torrent_file_or_magnet_link" =~ $magnet_regex ]]; then
+  torrent_hash=${BASH_REMATCH[1]};
+  magnet_link_length=${#torrent_file_or_magnet_link}
+  # To conform with the bencode encoding, the magnet link's number of characters
+  # must be part of the torrent file, otherwise rTorrent can't read it.
+  # Same for the "e" at the end.
+  # See https://en.wikipedia.org/wiki/Bencode
+  torrent_file_content="d10:magnet-uri${magnet_link_length}:${torrent_file_or_magnet_link}e"
+
+  # Note that rTorrent will read this torrent file, start downloading
+  # the file and then remove the torrent file
+  echo "$torrent_file_content" > "$torrent_hash.torrent"
+else
+  cp "$torrent_file_or_magnet_link" .
+fi
