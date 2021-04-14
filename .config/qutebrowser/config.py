@@ -704,6 +704,7 @@ config.bind(',rt', 'hint images run :open -t http://tineye.com/search?url={hint-
 
 #download to a specific folder
 config.bind(',dp', 'hint images run :download --dest "~/Pictures/ {hint-url}')
+config.bind(',dt', 'hint links run :download --dest "~/.cache/rtorrent/watch/ {hint-url}')
 
 #opens all of the manga sites i check for updates, ;; signifies start a new command
 config.bind(',om', 'open -t https://leviatanscans.com/home ;;open -t https://jaiminisbox.com/ ;;open -t https://www.hatigarmscans.net/ ;;open -t https://www.mangaruru.ml/ ;;open -t https://www.viz.com/shonenjump/chapters/act-age ;;open -t https://ptscans.com/')
