@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=pass-to-rtorrent
+GenericName=Torrent Handler
+Exec=pass-to-rtorrent
+MimeType=x-scheme-handler/magnet;application/x-bittorrent;
+NoDisplay=true
+Icon=rtorrent
