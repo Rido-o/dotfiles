@@ -49,6 +49,7 @@ yayList=("dashbinsh" # Used to make sure dash remains as /bin/sh # might need to
 	 "qutebrowser-git" "python-adblock" # Install browser
 	 "bitwarden-bin" "bitwarden-cli" # Installing bitwarden
 	 "lazygit" # Installing misc
+	 "rtorrent-color" # or rtorrent-ps # Install torrent client
 	)
 
 pipList=("pynvim" "black" # Used together with nvim
@@ -123,13 +124,14 @@ sudo chmod +x $HOME/.local/bin/rifle_sxiv # strange that this requires sudo
 
 # Install nnn
 wget -O - https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh
-# Changing default programs
-sudo cp /usr/share/applications/sxiv.desktop /usr/share/applications/rifle_sxiv.desktop
-sudo sed -i -E "s/sxiv/rifle_sxiv/" /usr/share/applications/rifle_sxiv.desktop
 
 # Install cronie
 sudo systemctl enable cronie
 crontab $HOME/.cfg/install/cronjobs
+
+# Create rtorrent directories
+mkdir -p $HOME/.cache/rtorrent/session
+mkdir -p $HOME/.cache/rtorrent/watch
 
 # Remove uneeded files
 rm $HOME/.bash_history $HOME/.bash_profile $HOME/.bash_logout $HOME/.bashrc $HOME/.npmrc $HOME/.wget-hsts
