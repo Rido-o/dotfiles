@@ -6,4 +6,4 @@ case $BLOCK_BUTTON in
 esac
 
 TEMP=$(sed '4q;d' $HOME/.cache/weathertext | sd "\)|\(" " " | rg -o "\d+\s+°C" | sd "\s" "")
-echo "^c#d9bb80^ $TEMP"
+[ ! -z "$TEMP" ] && echo "^c#d9bb80^ $TEMP"
