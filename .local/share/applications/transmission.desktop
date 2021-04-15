@@ -1,8 +1,8 @@
 [Desktop Entry]
 Type=Application
-Name=rtorrent
+Name=transmission
 GenericName=Torrent Handler
-Exec=pass-to-rtorrent
+Exec=pass-to-transmission
 MimeType=x-scheme-handler/magnet;application/x-bittorrent;
 NoDisplay=true
-Icon=rtorrent
+Icon=transmission

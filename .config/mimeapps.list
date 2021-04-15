@@ -3,5 +3,5 @@ image/png=rifle_sxiv.desktop
 image/jpeg=rifle_sxiv.desktop
 image/jpg=rifle_sxiv.desktop
 image/gif=rifle_sxiv.desktop
-x-scheme-handler/magnet=rtorrent.desktop
-application/x-bittorrent=rtorrent.desktop
+x-scheme-handler/magnet=transmission.desktop
+application/x-bittorrent=transmission.desktop
