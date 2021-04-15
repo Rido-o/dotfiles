@@ -4,6 +4,7 @@
 xrandr -s 1680x1050
 set-wallpaper
 xrdb -load ~/.config/x11/xresources
+exec transmission-daemon &
 exec xautolock -secure -time 10 -locker slockcow &
 exec dwmblocks &
 exec status-musicupdate &
