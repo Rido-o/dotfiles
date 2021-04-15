@@ -146,6 +146,7 @@ dwmblocks () {
 }
 
 STATUSPATH="$HOME/.local/bin/statusbar"
+dwmblocks $MAGENTA $STATUSPATH/status-torrent
 dwmblocks $ORANGE $STATUSPATH/status-music
 dwmblocks $BLUE $STATUSPATH/status-rss
 dwmblocks $YELLOW $STATUSPATH/status-weather

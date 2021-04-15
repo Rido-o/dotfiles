@@ -1,0 +1,22 @@
+#!/bin/bash
+
+case $BLOCK_BUTTON in
+	1) setsid -f "$TERMINAL" -n floatcenter -g 128x40 stig ;;
+esac
+
+sum=($(transmission-remote -l | tail -n 1))
+
+speed () {
+	rate=$(echo ${sum[$1]} | sd "\..*" "")
+	if [ ${#rate} -ge 4 ]
+		then
+			echo $rate | sd "(.)(.).." '${1}.${2}M'
+		else
+			echo "$rate""k"
+	fi
+}
+
+up=$(speed 3)
+down=$(speed 4)
+
+echo "^c#d3a0bc^↑$up ↓$down"
