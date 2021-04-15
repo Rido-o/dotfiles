@@ -131,7 +131,7 @@ crontab $HOME/.cfg/install/cronjobs
 
 # Create rtorrent directories
 mkdir -p $HOME/.cache/rtorrent/session
-mkdir -p $HOME/.cache/rtorrent/watch
+mkdir -p $HOME/.cache/torrents
 
 # Remove uneeded files
 rm $HOME/.bash_history $HOME/.bash_profile $HOME/.bash_logout $HOME/.bashrc $HOME/.npmrc $HOME/.wget-hsts

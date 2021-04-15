@@ -37,7 +37,7 @@
 
 # Default directory to save the downloaded torrents.
 #
-directory.default.set = ~/Downloads
+directory.default.set = ~/Downloads/Torrents
 
 # Default session directory. Make sure you don't run multiple instance
 # of rTorrent using the same session directory. Perhaps using a
@@ -48,7 +48,7 @@ session.path.set = ~/.cache/rtorrent/session
 # Watch a directory for new torrents, and stop those that have been
 # deleted.
 #
-schedule2 = watch_directory,5,5,"load.normal=~/.cache/rtorrent/watch/*.torrent"
+schedule2 = watch_directory,5,5,"load.normal=~/.cache/torrents/*.torrent"
 
 # Send a notification on completed download
 #
