@@ -27,3 +27,5 @@ This will install and setup the vast majority of the system with just a few rema
 ### Import Greasemonkey script settings
 * open 4chan and import settings for 4chanx and oneechan
 * the settings are located in $HOME/.cache/rice/patches
+### Edit Transmission settings
+* open ~/.config/transmission-daemon/settings.json and change the usernames in that file to the one you are using
