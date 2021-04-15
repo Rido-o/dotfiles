@@ -1,3 +1,3 @@
 #!/bin/sh
 
-transmission-remote --start-paused -a "$1" && notify-send "Torrent added"
+transmission-remote -a "$1" && notify-send "Torrent added"
