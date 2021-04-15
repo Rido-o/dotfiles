@@ -1,7 +1,7 @@
 #!/bin/bash
 
 case $BLOCK_BUTTON in
-	1) setsid -f "$TERMINAL" -n floatcenter -g 128x40 stig ;;
+	1) setsid -f "$TERMINAL" -n floatcenter -g 120x50 stig ;;
 esac
 
 sum=($(transmission-remote -l | tail -n 1))
