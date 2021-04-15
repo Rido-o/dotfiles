@@ -27,9 +27,9 @@ export AUDIOPATH="$HOME/Audio"
 # $HOME cleanup
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 export NVM_DIR="$XDG_DATA_HOME/nvm"
-export MOST_INITFILE="$XDG_CONFIG_HOME/mostrc"
+export MOST_INITFILE="$XDG_CONFIG_HOME/most/mostrc"
 export _Z_DATA="$XDG_DATA_HOME/z"
-export WGETRC="$XDG_CONFIG_HOME/wgetrc"
+export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
 
 # Weechat settings
 export WEECHAT_HOME="$HOME/.config/weechat"

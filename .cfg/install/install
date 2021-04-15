@@ -10,7 +10,6 @@
 
 # Update package list
 sudo pacman -Sy
-mkdir -p $HOME/.config && touch $HOME/.config/wgetrc
 sudo pacman -S --noconfirm git
 
 # Dot file install
