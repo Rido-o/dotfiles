@@ -50,6 +50,10 @@ session.path.set = ~/.cache/rtorrent/session
 #
 schedule2 = watch_directory,5,5,"load.normal=~/.cache/rtorrent/watch/*.torrent"
 
+# Send a notification on completed download
+#
+method.set_key = event.download.finished,notify_me,"execute2=notify-send,$d.name="
+
 # Close torrents when disk-space is low.
 #
 #schedule2 = low_diskspace,5,60,close_low_diskspace=100M

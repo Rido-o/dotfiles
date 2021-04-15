@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 torrent_file_or_magnet_link="$1"
 

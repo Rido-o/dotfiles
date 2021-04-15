@@ -4,4 +4,4 @@ image/jpeg=rifle_sxiv.desktop
 image/jpg=rifle_sxiv.desktop
 image/gif=rifle_sxiv.desktop
 x-scheme-handler/magnet=pass-to-rtorrent.desktop
-appliction/x-bittorrent=pass-to-rtorrent.desktop
+application/x-bittorrent=pass-to-rtorrent.desktop
