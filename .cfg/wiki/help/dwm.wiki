@@ -6,7 +6,7 @@ Superkey is the windows key
 * `Super-o` - Open dmenu
 * `Super-p` - Open program launcher
 * `Super-t` - Open theme selector
-* `Super-Enter` - Open st
+* `Super-Enter` - Open $TERMINAL
 * `Super-Curse` - Open scratchpad
 * `Super-n` - Open nnn
 * `Super-m` - Open music playlist
