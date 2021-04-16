@@ -40,7 +40,7 @@ pacList=("zsh" "zsh-syntax-highlighting" "zsh-autosuggestions" # Install zsh and
 	 "glib2" # Fixes libpango symbol lookup errors
 	 "reflector" # Used for updating mirrorlist
 	 "ripgrep" # Grep replacement
-	 "transmission-cli"
+	 "transmission-cli" # Torrent daemon
 	)
 
 yayList=("dashbinsh" # Used to make sure dash remains as /bin/sh # might need to link dash as /bin/sh first
@@ -50,7 +50,7 @@ yayList=("dashbinsh" # Used to make sure dash remains as /bin/sh # might need to
 	 "bitwarden-bin" "bitwarden-cli" # Installing bitwarden
 	 "lazygit" # Installing misc
 	 #"rtorrent-color" # or rtorrent-ps # Install torrent client
-	 "stig" # or transmission-remote-cli-git
+	 "stig" # or transmission-remote-cli-git # Tui transmission client
 	)
 
 pipList=("pynvim" "black" # Used together with nvim
@@ -123,7 +123,7 @@ wget -P $HOME/.local/bin https://raw.githubusercontent.com/ranger/ranger/master/
 mv $HOME/.local/bin/rifle_sxiv.sh $HOME/.local/bin/rifle_sxiv
 sudo chmod +x $HOME/.local/bin/rifle_sxiv # strange that this requires sudo
 
-# Install nnn
+# Install nnn plugins
 wget -O - https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh
 
 # Install cronie
