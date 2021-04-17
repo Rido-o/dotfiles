@@ -1,9 +1,8 @@
 #!/bin/bash
 
 # In route directory of a fresh install as a modded user
-# enter github credentials to download dots, and enter password to change shell
 
-# Manual commands to begin installation
+# Manual command to begin installation
 # sh <(wget -qO- https://raw.githubusercontent.com/Rido-o/dotfiles/master/.cfg/install/install)
 
 # ----------------------------------------------------------------
@@ -41,8 +40,8 @@ pacList=("zsh" "zsh-syntax-highlighting" "zsh-autosuggestions" # Install zsh and
 	 "reflector" # Used for updating mirrorlist
 	 "ripgrep" # Grep replacement
 	 "transmission-cli" # Torrent daemon
-	 "fvwm"
-	 "lightdm" "lightdm-gtk-greeter" "light-locker"
+	 "fvwm" # A window manager
+	 "lightdm" "lightdm-gtk-greeter" "light-locker" # Display manager and screen locker
 	)
 
 yayList=("dashbinsh" # Used to make sure dash remains as /bin/sh # might need to link dash as /bin/sh first
@@ -51,7 +50,6 @@ yayList=("dashbinsh" # Used to make sure dash remains as /bin/sh # might need to
 	 "qutebrowser-git" "python-adblock" # Install browser
 	 "bitwarden-bin" "bitwarden-cli" # Installing bitwarden
 	 "lazygit" # Installing misc
-	 #"rtorrent-color" # or rtorrent-ps # Install torrent client
 	 "stig" # or transmission-remote-cli-git # Tui transmission client
 	)
 
@@ -139,10 +137,6 @@ sudo cp $HOME/.cfg/install/lightdmxrandr /usr/share/lightdmxrandr
 sudo cp $HOME/.cfg/install/dwm.desktop /usr/share/xsessions/dwm.desktop
 sudo cp -r $HOME/.themes/Nordic /usr/share/themes/
 sudo systemctl enable lightdm
-
-# Create rtorrent directories
-#mkdir -p $HOME/.cache/rtorrent/session
-#mkdir -p $HOME/.cache/torrents
 
 # Remove uneeded files
 rm $HOME/.bash_history $HOME/.bash_profile $HOME/.bash_logout $HOME/.bashrc $HOME/.npmrc $HOME/.wget-hsts

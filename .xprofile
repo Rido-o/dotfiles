@@ -2,7 +2,6 @@
 
 . ~/.zshenv
 
-#xrandr -s 1680x1050
 set-wallpaper
 xrdb -load ~/.config/x11/xresources
 [ -s $(pidof mpd) ] && mpd
