@@ -1,11 +1,15 @@
 #!/bin/sh
 
-[ ! -s ~/.config/mpd/pid ] && mpd
+. ~/.config/zsh/.zshenv
+
+
 xrandr -s 1680x1050
 set-wallpaper
 xrdb -load ~/.config/x11/xresources
-exec transmission-daemon &
+[ -s $(pidof mpd) ] && mpd
+[ -s $(pidof transmission-daemon) ] && exec transmission-daemon &
+[ -s $(pidof dwmblocks) ] && exec dwmblocks || kill -45 "$(pidof "${STATUSBAR:-dwmblocks}")" &
 exec xautolock -secure -time 10 -locker slockcow &
-exec dwmblocks &
 exec status-musicupdate &
 exec dunst &
+rm $HOME/.xsession-errors

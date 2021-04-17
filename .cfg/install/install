@@ -41,6 +41,8 @@ pacList=("zsh" "zsh-syntax-highlighting" "zsh-autosuggestions" # Install zsh and
 	 "reflector" # Used for updating mirrorlist
 	 "ripgrep" # Grep replacement
 	 "transmission-cli" # Torrent daemon
+	 "fvwm"
+	 "lightdm" "lightdm-gtk-greeter"
 	)
 
 yayList=("dashbinsh" # Used to make sure dash remains as /bin/sh # might need to link dash as /bin/sh first
@@ -129,6 +131,10 @@ wget -O - https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | 
 # Install cronie
 sudo systemctl enable cronie
 crontab $HOME/.cfg/install/cronjobs
+
+# Install lightdm
+cp $HOME/.cfg/install/dwm.desktop /usr/share/xsessions/dwm.desktop
+sudo systemctl enable lightdm
 
 # Create rtorrent directories
 #mkdir -p $HOME/.cache/rtorrent/session

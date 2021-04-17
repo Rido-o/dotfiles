@@ -1,0 +1,40 @@
+# Init
+
+AddToFunc StartFunction
++ I Exec nm-applet
++ I Module FvwmPager
++ I Module FvwmIconMan
+
+AddToFunc InitFunction
+
+AddToFunc RestartFunction
+
+AddToFunc ExitFunction
+
+# Menus
+
+DestroyMenu MenuFvwmRoot
+AddToMenu MenuFvwmRoot "Quick Menu" Title
++ "&Terminal" exec st
++ "Shortcut" Popup MenuPrograms
++ "" Nop
++ "Refresh" Refresh
++ "Restart" Restart
++ "Quit" Module FvwmScript FvwmScript-ConfirmQuit
+
+DestroyMenu MenuPrograms
+AddToMenu MenuPrograms "Shortcut" Title
+Test (x qutebrowser) + "Qutebrowser" Exec exec Qutebrowser
+
+# Pager
+
+DesktopSize 2x2
+
+DestroyModuleConfig FvwmPager: *
+*FvwmPager: Geometry 128x100-12-12
+Style FvwmPager !Title, StaysOnTop, Sticky
+
+# IconMan
+DestroyModuleConfig FvwmIconMan: *
+*FvwmIconMan: ButtonGeometry 128x0
+Style FvwmIconMan !Title, StaysOnTop, Sticky
