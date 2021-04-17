@@ -4,5 +4,6 @@ while read file
 do
 	case "$1" in
 		"w") cp "$file" "$HOME/.cache/wallpaper.png" & set-wallpaper ;;
+		"l") sudo cp "$file" "/usr/share/pixmaps/wallpaper.png" ;;
 	esac
 done
