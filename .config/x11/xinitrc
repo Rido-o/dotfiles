@@ -1,5 +1,5 @@
-#!/bin/sh
+##!/bin/sh
 
-[ -f ~/.xprofile ] && . ~/.xprofile
+#[ -f ~/.xprofile ] && . ~/.xprofile
 #exec dwm
-exec fvwm
+#exec fvwm
