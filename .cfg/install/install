@@ -42,7 +42,7 @@ pacList=("zsh" "zsh-syntax-highlighting" "zsh-autosuggestions" # Install zsh and
 	 "ripgrep" # Grep replacement
 	 "transmission-cli" # Torrent daemon
 	 "fvwm"
-	 "lightdm" "lightdm-gtk-greeter"
+	 "lightdm" "lightdm-gtk-greeter" "light-locker"
 	)
 
 yayList=("dashbinsh" # Used to make sure dash remains as /bin/sh # might need to link dash as /bin/sh first
