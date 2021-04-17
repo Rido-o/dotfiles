@@ -133,10 +133,11 @@ sudo systemctl enable cronie
 crontab $HOME/.cfg/install/cronjobs
 
 # Install lightdm
-sudo cp $HOME/.cfg/install/dwm.desktop /usr/share/xsessions/dwm.desktop
 sudo cp $HOME/.cfg/install/lightdm.conf /etc/lightdm/lightdm.conf
 sudo cp $HOME/.cfg/install/lightdm-gtk-greeter.conf /etc/lightdm/lightdm-gtk-greeter.conf
 sudo cp $HOME/.cfg/install/lightdmxrandr /usr/share/lightdmxrandr
+sudo cp $HOME/.cfg/install/dwm.desktop /usr/share/xsessions/dwm.desktop
+sudo cp -r $HOME/.themes/Nordic /usr/share/themes/
 sudo systemctl enable lightdm
 
 # Create rtorrent directories
