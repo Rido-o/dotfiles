@@ -1,8 +1,0 @@
-#!/bin/sh
-
-ssh-keygen -t ed25519 -C "Rido@airmail.cc"
-eval `ssh-agent -s`
-cat ~/.ssh/id_ed25519.pub | xclip -selection clipboard
-
-#ssh -T git@github.com # test ssh connection
-#~/.cfg/install/ssh-switch

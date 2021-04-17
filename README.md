@@ -9,6 +9,8 @@ To begin make sure that you have a completely fresh arch install ready with an i
 This will install and setup the vast majority of the system with just a few remaining manual things to take care of.
 ## Manual Requirements
 ### Install private repository
+* run `$HOME/.cfg/install/install-private`
+* enter github credentials
 ### Setup SSH keys
 * ~ ssh-keygen -t ed25519 -C "Rido@airmail.cc"
 * hit enter
@@ -26,6 +28,6 @@ This will install and setup the vast majority of the system with just a few rema
 * bw login
 ### Import Greasemonkey script settings
 * open 4chan and import settings for 4chanx and oneechan
-* the settings are located in $HOME/.cache/rice/patches
+* the settings are located in $HOME/.cfg/install/qutesettings
 ### Edit Transmission settings
 * open ~/.config/transmission-daemon/settings.json and change the usernames in that file to the one you are using
