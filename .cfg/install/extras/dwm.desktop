@@ -1,3 +1,6 @@
+
+# sudo cp $HOME/.cfg/install/extras/dwm.desktop /usr/share/xsessions/dwm.desktop
+
 [Desktop Entry]
 Encoding=UTF-8
 Name=Dwm

@@ -18,3 +18,4 @@
 
 == Scripts ==
 * `Ctrl-x w` - Set the wallpaper to selected image
+* `Ctrl-x l` - Set the lockscreen wallpaper to selected image
