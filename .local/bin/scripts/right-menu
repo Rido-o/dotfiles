@@ -23,7 +23,7 @@ Fonts
 	Hack				font-choice hackfont
 
 Session
-	Lock				slockcow
+	Lock				locker
 	Logout				kill -TERM $(pidof dwm)
 	Reboot				reboot
 	Shutdown			poweroff

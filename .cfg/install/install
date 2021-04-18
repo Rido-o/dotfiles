@@ -40,6 +40,7 @@ pacList=("zsh" "zsh-syntax-highlighting" "zsh-autosuggestions" # Install zsh and
 	 "reflector" # Used for updating mirrorlist
 	 "ripgrep" # Grep replacement
 	 "transmission-cli" # Torrent daemon
+	 "python-adblock" # Adblock for qutebrowser
 	 "fvwm" # A window manager
 	 "lightdm" "lightdm-gtk-greeter" "light-locker" # Display manager and screen locker
 	)
@@ -47,7 +48,7 @@ pacList=("zsh" "zsh-syntax-highlighting" "zsh-autosuggestions" # Install zsh and
 yayList=("dashbinsh" # Used to make sure dash remains as /bin/sh # might need to link dash as /bin/sh first
 	 "cozette-otb" "nerd-fonts-hack" # Install fonts
 	 "gotop-bin" "networkmanager-dmenu-git" # Install dwm statusbar dependencies
-	 "qutebrowser-git" "python-adblock" # Install browser
+	 "qutebrowser-git" # Install browser
 	 "bitwarden-bin" "bitwarden-cli" # Installing bitwarden
 	 "lazygit" # Installing misc
 	 "stig" # or transmission-remote-cli-git # Tui transmission client
@@ -70,7 +71,6 @@ git clone https://github.com/Rido-o/st.git $HOME/.local/src/st
 git clone https://github.com/Rido-o/dmenu.git $HOME/.local/src/dmenu
 git clone https://github.com/Rido-o/dwmblocks.git $HOME/.local/src/dwmblocks
 git clone https://github.com/Rido-o/dwm-flexipatch.git $HOME/.local/src/dwm-flexipatch
-git clone https://github.com/Rido-o/slock.git $HOME/.local/src/slock
 git clone https://github.com/dylanaraps/pfetch.git $HOME/.local/src/pfetch
 git clone https://github.com/Rido-o/xmenu.git $HOME/.local/src/xmenu
 git clone https://github.com/jarun/nnn.git $HOME/.local/src/nnn
@@ -81,7 +81,6 @@ sudo make clean install -C $HOME/.local/src/st
 sudo make clean install -C $HOME/.local/src/dmenu
 sudo make clean install -C $HOME/.local/src/dwmblocks
 sudo make clean install -C $HOME/.local/src/dwm-flexipatch
-sudo make clean install -C $HOME/.local/src/slock
 sudo make install -C $HOME/.local/src/pfetch
 sudo make install -C $HOME/.local/src/xmenu
 sudo make install O_NERD=1 -C $HOME/.local/src/nnn
