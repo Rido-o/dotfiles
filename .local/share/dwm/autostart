@@ -1,0 +1,4 @@
+#!/bin/sh
+
+[ -s $(pidof dwmblocks) ] && exec dwmblocks &
+exec status-musicupdate &
