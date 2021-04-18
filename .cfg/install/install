@@ -43,12 +43,12 @@ pacList=("zsh" "zsh-syntax-highlighting" "zsh-autosuggestions" # Install zsh and
 	 "python-adblock" # Adblock for qutebrowser
 	 "fvwm" # A window manager
 	 "lightdm" "lightdm-gtk-greeter" "light-locker" # Display manager and screen locker
+	 "qutebrowser" # Web browser
 	)
 
 yayList=("dashbinsh" # Used to make sure dash remains as /bin/sh # might need to link dash as /bin/sh first
 	 "cozette-otb" "nerd-fonts-hack" # Install fonts
 	 "gotop-bin" "networkmanager-dmenu-git" # Install dwm statusbar dependencies
-	 "qutebrowser-git" # Install browser
 	 "bitwarden-bin" "bitwarden-cli" # Installing bitwarden
 	 "lazygit" # Installing misc
 	 "stig" # or transmission-remote-cli-git # Tui transmission client
