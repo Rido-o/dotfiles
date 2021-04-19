@@ -184,7 +184,7 @@ Style * EdgeMoveDelay 350, EdgeMoveResistance 350
 # EwmhBaseStruts [left] [right] [top] [bottom]
 # Reserves space along the edge(s) of the Screen that will not
 # be covered when maximizing or placing windows.
-EwmhBaseStruts 5 141 5 5
+EwmhBaseStruts 5 149 5 4
 
 # This sets the ClickTime and MoveThreshold used to determine
 # Double Clicks, Hold and Move for the mouse.
@@ -442,7 +442,10 @@ Silent Key F1 A C GotoDesk 0 0
 Silent Key F2 A C GotoDesk 0 1
 Silent Key F3 A C GotoDesk 0 2
 Silent Key F4 A C GotoDesk 0 3
-Silent Key Super_R A A Exec exec $[infostore.terminal]
+
+# Windows Key keybinds
+Silent Key Return A 4 Exec exec $[infostore.terminal]
+Silent Key Q A 4 Close
 
 # Window Buttons: [1 3 5 7 9  TTTTT  0 8 6 4 2]
 #   1 - Open the WindowOps menu.
@@ -536,7 +539,7 @@ DestroyModuleConfig FvwmScript:*
 *FvwmScript: Path $[scripts]
 
 DestroyModuleConfig ButtonsPager:*
-*ButtonsPager: Geometry 125x90-7+5
+*ButtonsPager: Geometry 125x90-8+5
 *ButtonsPager: Colorset 10
 *ButtonsPager: Rows 90
 *ButtonsPager: Columns 120
@@ -550,7 +553,7 @@ DestroyModuleConfig ButtonsPager:*
 *ButtonsPager: (120x5, Frame 0)
 
 DestroyModuleConfig ButtonsDesk:*
-*ButtonsDesk: Geometry 125x25-7+109
+*ButtonsDesk: Geometry 125x25-8+109
 *ButtonsDesk: Colorset 10
 *ButtonsDesk: Rows 25
 *ButtonsDesk: Columns 120
@@ -563,7 +566,7 @@ DestroyModuleConfig ButtonsDesk:*
 *ButtonsDesk: (30x25, Id desk3, Title "3", Action (Mouse 1) GotoDesk 0 3, ActiveColorset 12, Frame 1)
 
 DestroyModuleConfig ButtonsIconMan:*
-*ButtonsIconMan: Geometry 125x300-7+148
+*ButtonsIconMan: Geometry 125x300-8+148
 *ButtonsIconMan: Colorset 10
 *ButtonsIconMan: Rows 300
 *ButtonsIconMan: Columns 120
