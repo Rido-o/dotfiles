@@ -324,9 +324,11 @@ AddToMenu   MenuFvwmManPages "Help" Title
 # Session menu
 DestroyMenu MenuSession
 AddToMenu   MenuSession "Session" Title
-+ "Refresh%icons/refresh.png%" Refresh
-+ "Restart%icons/restart.png%" Restart
-+ "Quit%icons/quit.png%" Module FvwmScript FvwmScript-ConfirmQuit
++ "Refresh Fvwm%icons/refresh.png%" Refresh
++ "Restart Fvwm%icons/restart.png%" Restart
++ "Lock" Exec exec locker
++ "Logout%icons/quit.png%" Module FvwmScript FvwmScript-ConfirmQuit
++ "Restart" Exec exec reboot
 + "Shutdown" Exec exec poweroff
 
 # Window Operations Menus
@@ -470,7 +472,7 @@ Mouse 3 I    A Menu MenuIconOps
 ###########
 DestroyDecor FvwmDecor
 AddToDecor   FvwmDecor
-+ TitleStyle Centered Height 20 -- Flat
++ TitleStyle Centered Height 23 -- Flat
 #+ ButtonStyle All ActiveUp Vector 5 15x15@4 15x85@3 85x85@3 85x15@3 15x15@3 -- Flat
 #+ ButtonStyle All ToggledActiveUp Vector 5 15x15@4 15x85@3 85x85@3 85x15@3 15x15@3 -- Flat
 #+ ButtonStyle All ActiveDown Vector 5 20x20@4 20x80@3 80x80@3 80x20@3 20x20@3 -- Flat
@@ -517,6 +519,7 @@ DestroyModuleConfig FvwmIdent:*
 #     quitting fvwm.
 DestroyModuleConfig FvwmScript:*
 *FvwmScript: DefaultColorset 10
+*FvwmScript: Path $[scripts]
 
 DestroyModuleConfig ButtonsPager:*
 *ButtonsPager: Geometry 120x90-7+5
