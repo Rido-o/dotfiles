@@ -133,6 +133,20 @@ AddToFunc   ChangeDesk
 + I SendToModule FvwmButtons ChangeButton desk3 Colorset 10
 + I SendToModule FvwmButtons ChangeButton desk$0 Colorset 11
 
+# Telling a window that is already moving to AnimatedMove is not a good idea!
+# This function makes sure the user doesnt accidentally catch a window twice, by
+# setting one of the windows states while it is being moved.
+#
+# Every window has around 30 user definable states which you can test in 
+# functions, you can use them for anything you like.
+##
+DestroyFunc LockingSlide
+AddToFunc LockingSlide
++ I Test (!State 2) Break
++ I State 2 False
++ I AnimatedMove $0 $1
++ I State 2 True
+
 
 #############
 # 2: Styles #
@@ -216,9 +230,9 @@ Style * BorderColorset 3, HilightBorderColorset 4
 Style * !Icon
 
 # Window Specific Styles
-Style ButtonsPager !Title, !Handles, Sticky, WindowListSkip, NeverFocus, BorderColorset 4
-Style ButtonsDesk !Title, !Handles, Sticky, WindowListSkip, NeverFocus, BorderColorset 4
-Style ButtonsIconMan !Title, !Handles, Sticky, WindowListSkip, NeverFocus, BorderColorset 4
+Style ButtonsPager !Title, !Handles, Sticky, StaysOnBottom, WindowListSkip, NeverFocus, BorderColorset 4
+Style ButtonsDesk !Title, !Handles, Sticky, StaysOnBottom, WindowListSkip, NeverFocus, BorderColorset 4
+Style ButtonsIconMan !Title, !Handles, Sticky, StaysOnBottom, WindowListSkip, NeverFocus, BorderColorset 4
 Style ConfirmQuit !Title, PositionPlacement Center, WindowListSkip, Layer 6
 Style FvwmIdent WindowListSkip
 
@@ -522,37 +536,40 @@ DestroyModuleConfig FvwmScript:*
 *FvwmScript: Path $[scripts]
 
 DestroyModuleConfig ButtonsPager:*
-*ButtonsPager: Geometry 120x90-7+5
+*ButtonsPager: Geometry 125x90-7+5
 *ButtonsPager: Colorset 10
 *ButtonsPager: Rows 90
 *ButtonsPager: Columns 120
-*ButtonsPager: Frame 0
+*ButtonsPager: Frame 1
 *ButtonsPager: Font "xft:cozette:size=8"
+*ButtonsPager: (5x90, Action(Mouse 1) Next (CirculateHit, ButtonsPager) PipeRead 'echo LockingSlide $$(test $$(($[w.x]+$[w.width])) -le $[vp.width] && echo w$$(($[w.width]-$width))p || echo w-$$(($[w.width]-$width))p) keep')
 *ButtonsPager: (120x5, Frame 0)
 *ButtonsPager: (5x80, Frame 0)
-*ButtonsPager: (110x80, Swallow FvwmPager 'Module FvwmPager *', Frame 0)
+*ButtonsPager: (110x80, Swallow FvwmPager 'Module FvwmPager *', Frame 1)
 *ButtonsPager: (5x80, Frame 0)
 *ButtonsPager: (120x5, Frame 0)
 
 DestroyModuleConfig ButtonsDesk:*
-*ButtonsDesk: Geometry 120x25-7+109
+*ButtonsDesk: Geometry 125x25-7+109
 *ButtonsDesk: Colorset 10
 *ButtonsDesk: Rows 25
 *ButtonsDesk: Columns 120
-*ButtonsDesk: Frame 0
+*ButtonsDesk: Frame 1
 *ButtonsDesk: Font "xft:cozette:size=8"
-*ButtonsDesk: (30x25, Id desk0, Title "0", Action (Mouse 1) GotoDesk 0 0, Colorset 11, ActiveColorset 12, Frame 0)
-*ButtonsDesk: (30x25, Id desk1, Title "1", Action (Mouse 1) GotoDesk 0 1, ActiveColorset 12, Frame 0)
-*ButtonsDesk: (30x25, Id desk2, Title "2", Action (Mouse 1) GotoDesk 0 2, ActiveColorset 12, Frame 0)
-*ButtonsDesk: (30x25, Id desk3, Title "3", Action (Mouse 1) GotoDesk 0 3, ActiveColorset 12, Frame 0)
+*ButtonsDesk: (5x25, Action(Mouse 1) Next (CirculateHit, ButtonsDesk) PipeRead 'echo LockingSlide $$(test $$(($[w.x]+$[w.width])) -le $[vp.width] && echo w$$(($[w.width]-$width))p || echo w-$$(($[w.width]-$width))p) keep')
+*ButtonsDesk: (30x25, Id desk0, Title "0", Action (Mouse 1) GotoDesk 0 0, Colorset 11, ActiveColorset 12, Frame 1)
+*ButtonsDesk: (30x25, Id desk1, Title "1", Action (Mouse 1) GotoDesk 0 1, ActiveColorset 12, Frame 1)
+*ButtonsDesk: (30x25, Id desk2, Title "2", Action (Mouse 1) GotoDesk 0 2, ActiveColorset 12, Frame 1)
+*ButtonsDesk: (30x25, Id desk3, Title "3", Action (Mouse 1) GotoDesk 0 3, ActiveColorset 12, Frame 1)
 
 DestroyModuleConfig ButtonsIconMan:*
-*ButtonsIconMan: Geometry 120x300-7+148
+*ButtonsIconMan: Geometry 125x300-7+148
 *ButtonsIconMan: Colorset 10
 *ButtonsIconMan: Rows 300
 *ButtonsIconMan: Columns 120
-*ButtonsIconMan: Frame 0
+*ButtonsIconMan: Frame 1
 *ButtonsIconMan: Font "xft:cozette:size=8"
+*ButtonsIconMan: (5x300, Action(Mouse 1) Next (CirculateHit, ButtonsIconMan) PipeRead 'echo LockingSlide $$(test $$(($[w.x]+$[w.width])) -le $[vp.width] && echo w$$(($[w.width]-$width))p || echo w-$$(($[w.width]-$width))p) keep')
 *ButtonsIconMan: (120x300, Top, Swallow FvwmIconMan 'Module FvwmIconMan', Frame 0)
 
 # FvwmPager
@@ -570,6 +587,7 @@ DestroyModuleConfig FvwmPager:*
 *FvwmPager: BallonYOffset +2
 *FvwmPager: Window3dBorders
 *FvwmPager: MiniIcons
+*FvwmPager: SolidSeparators
 
 # FvwmIconMan
 #
