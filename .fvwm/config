@@ -290,7 +290,9 @@ MenuStyle * Font "xft:cozette:size=8"
 DestroyMenu MenuFvwmRoot
 AddToMenu   MenuFvwmRoot "Fvwm" Title
 + "Terminal%icons/terminal.png%" Exec exec $[infostore.terminal]
-+ "Programs%icons/programs.png%" Popup MenuPrograms
++ "Programs%icons/programs.png%" Popup MenuApplications
++ "Music" Popup MenuMusic
++ "Utilities" Popup MenuUtilities
 + "" Nop
 + "Man Pages%icons/help.png%" Popup MenuFvwmManPages
 + "Copy Config%icons/conf.png%" FvwmScript FvwmScript-ConfirmCopyConfig
@@ -298,10 +300,25 @@ AddToMenu   MenuFvwmRoot "Fvwm" Title
 + "Session" Popup MenuSession
 
 # Programs Menu
-DestroyMenu MenuPrograms
-AddToMenu   MenuPrograms "Programs" Title
-Test (x qutebrowser) + "Qutebrowser" Exec exec qutebrowser
-Test (x bitwarden) + "Bitwarden" Exec exec bitwarden
+DestroyMenu MenuApplications
+AddToMenu   MenuApplications "Applications" Title
+Test (x $[BROWSER]) + "Web Browser" Exec exec $[BROWSER]
+Test (x bitwarden) + "Password Manager" Exec exec bitwarden
+Test (x nnn) + "File Explorer" Exec exec setsid -f $[infostore.terminal] nnn -e -D
+Test (x gotop) + "Task Manager" Exec exec setsid -f $[infostore.terminal] gotop
+Test (x newsboat) + "RSS Reader" Exec exec setsid -f $[infostore.terminal] newsboat
+
+DestroyMenu MenuUtilities
+AddToMenu   MenuUtilities "Utilities" Title
++ "Choose Wallpaper" Exec exec sxiv-wallpaper
+
+# Music Menu
+DestroyMenu MenuMusic
+AddToMenu	MenuMusic "Music" Title
+Test (x ncmpcpp) + "Setup" Exec exec setsid -f $[infostore.terminal] ncmpcpp-ueberzug && setsid -f $[infostore.terminal] ncmpcpp -s media_library -c $[HOME]/.config/ncmpcpp/config-main && setsid -f $[infostore.terminal] ncmpcpp -s visualizer -c $[HOME]/.config/ncmpcpp/config-main
+Test (x ncmpcpp) + "Playlist" Exec exec setsid -f $[infostore.terminal] ncmpcpp-ueberzug
+Test (x ncmpcpp) + "Albums" Exec exec setsid -f $[infostore.terminal] ncmpcpp -s media_library
+Test (x ncmpcpp) + "Visualiser" Exec exec setsid -f $[infostore.terminal] ncmpcpp -s visualizer -c $[HOME]/.config/ncmpcpp/config-main
 
 # Fvwm Man Pages (Help) Menu
 DestroyMenu MenuFvwmManPages
@@ -388,7 +405,7 @@ AddToMenu   MenuSendToDesk
 #
 #     Numbers are buttons: [1 3 5 7 9  TTTTT  0 8 6 4 2]
 #
-# Modifiers: (A)ny, (C)ontrol, (S)hift, (M)eta, (N)othing
+# Modifiers: (A)ny (Windows Key), (C)ontrol, (S)hift, (M)eta (Alt), (N)othing
 #
 # Format: Key <X>  <Context> <Modifier> <Action>
 #         Mouse <X> <Context> <Modifier> <Action>
@@ -400,7 +417,6 @@ AddToMenu   MenuSendToDesk
 #
 # Silent supresses any errors (such as keyboards with no Menu key).
 Silent Key F1 A M Menu MenuFvwmRoot
-Silent Key Menu A A Menu MenuFvwmRoot
 Silent Key Tab A M WindowList Root c c NoDeskSort, SelectOnRelease Meta_L
 Silent Key F1 A C GotoDesk 0 0
 Silent Key F2 A C GotoDesk 0 1
