@@ -39,9 +39,6 @@ SetEnv cache $[HOME]/.fvwm/cache
 ###########
 # 1: Functions
 #
-# Fvwm can use custom functions for various tasks.
-# The syntax for defining a function named FunctionName is:
-#
 #   DestroyFunc FunctionName
 #   AddToFunc FunctionName
 #   + I [Action to do Immediately]
@@ -280,6 +277,7 @@ Test (x bitwarden) + "Password Manager" Exec exec bitwarden
 Test (x nnn) + "File Explorer" Exec exec setsid -f $[infostore.terminal] nnn -e -D
 Test (x gotop) + "Task Manager" Exec exec setsid -f $[infostore.terminal] gotop
 Test (x newsboat) + "RSS Reader" Exec exec setsid -f $[infostore.terminal] newsboat
+Test (x pulsemixer) + "Volume Mixer" Exec exec setsid -f $[infostore.terminal] pulsemixer
 
 DestroyMenu MenuUtilities
 AddToMenu   MenuUtilities "Utilities" Title
@@ -390,16 +388,31 @@ AddToMenu   MenuSendToDesk
 # Super_R (windows key) will launch a terminal.
 #
 # Silent supresses any errors (such as keyboards with no Menu key).
-Silent Key F1 A M Menu MenuFvwmRoot
-Silent Key Tab A M WindowList Root c c NoDeskSort, SelectOnRelease Meta_L
-Silent Key F1 A C GotoDesk 0 0
-Silent Key F2 A C GotoDesk 0 1
-Silent Key F3 A C GotoDesk 0 2
-Silent Key F4 A C GotoDesk 0 3
+Silent Key F1			A M Menu MenuFvwmRoot
+Silent Key Tab			A M WindowList Root c c NoDeskSort, SelectOnRelease Meta_L
+Silent Key F1			A C GotoDesk 0 0
+Silent Key F2			A C GotoDesk 0 1
+Silent Key F3			A C GotoDesk 0 2
+Silent Key F4			A C GotoDesk 0 3
 
-# Windows Key keybinds
-Silent Key Return A 4 Exec exec $[infostore.terminal]
-Silent Key Q A 4 Close
+# General Windows Key keybinds
+Silent Key Return		A 4 Exec exec $[infostore.terminal]
+Silent Key q			A 4 Close
+
+# Specific Windows Key keybinds
+Silent Key question		A 4 Exec exec $[infostore.terminal] nvim $[HOME]/.cfg/wiki/help/help.wiki
+Silent Key Print		A 4 Exec exec screenshot-desktop
+Silent Key w			A 4 Exec exec $[infostore.terminal] nvim -c ':VimwikiIndex'
+Silent Key n			A 4 Exec exec $[infostore.terminal] nnn -e -D
+Silent Key m			A 4 Exec exec $[infostore.terminal] ncmpcpp -c $HOME/.config/ncmpcpp/config-play
+
+# Music controls
+Silent Key Page_Up		A 4 Exec exec pamixer --allow-boost -i 5
+Silent Key Page_Down	A 4 Exec exec pamixer --allow-boost -d 5
+Silent Key Insert		A 4 Exec exec mpc toggle
+Silent Key Delete		A 4 Exec exec mpc stop
+Silent Key Home			A 4 Exec exec mpc next
+Silent Key End			A 4 Exec exec mpc prev
 
 ################
 # 6: Mouse Bindings

@@ -11,3 +11,4 @@
 * [[sxiv|Sxiv]]
 * [[newsboat|Newsboat]]
 * [[nnn|Nnn]]
+* [[fvwm|Fvwm]]
