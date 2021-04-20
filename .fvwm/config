@@ -60,6 +60,7 @@ AddToFunc   StartFunction
 + I Module FvwmButtons ButtonsPager
 + I Module FvwmButtons ButtonsDesk
 + I Module FvwmButtons ButtonsIconMan
++ I Module FvwmButtons ButtonsClock
 + I Module FvwmEvent EventNewDesk
 
 # Function: MoveClickX $0 $1 $2
@@ -208,6 +209,7 @@ Style * !Icon
 Style ButtonsPager !Title, !Handles, Sticky, StaysOnBottom, WindowListSkip, NeverFocus, BorderColorset 4
 Style ButtonsDesk !Title, !Handles, Sticky, StaysOnBottom, WindowListSkip, NeverFocus, BorderColorset 4
 Style ButtonsIconMan !Title, !Handles, Sticky, StaysOnBottom, WindowListSkip, NeverFocus, BorderColorset 4
+Style ButtonsClock !Title, !Handles, Sticky, StaysOnBottom, WindowListSkip, NeverFocus, BorderColorset 4
 Style ConfirmQuit !Title, PositionPlacement Center, WindowListSkip, Layer 6
 Style FvwmIdent WindowListSkip
 
@@ -377,7 +379,7 @@ AddToMenu   MenuSendToDesk
 #
 #     Numbers are buttons: [1 3 5 7 9  TTTTT  0 8 6 4 2]
 #
-# Modifiers: (A)ny (Windows Key), (C)ontrol, (S)hift, (M)eta (Alt), (N)othing
+# Modifiers: (A)ny, (C)ontrol, (S)hift, (M)eta (Alt), (N)othing, (4)Windows Key
 #
 # Format: Key <X>  <Context> <Modifier> <Action>
 #         Mouse <X> <Context> <Modifier> <Action>
@@ -406,7 +408,7 @@ Silent Key w			A 4 Exec exec $[infostore.terminal] nvim -c ':VimwikiIndex'
 Silent Key n			A 4 Exec exec $[infostore.terminal] nnn -e -D
 Silent Key m			A 4 Exec exec $[infostore.terminal] ncmpcpp -c $HOME/.config/ncmpcpp/config-play
 
-# Music controls
+# Audio controls
 Silent Key Page_Up		A 4 Exec exec pamixer --allow-boost -i 5
 Silent Key Page_Down	A 4 Exec exec pamixer --allow-boost -d 5
 Silent Key Insert		A 4 Exec exec mpc toggle
@@ -500,7 +502,7 @@ DestroyModuleConfig ButtonsPager:*
 *ButtonsPager: Geometry 125x90-8+5
 *ButtonsPager: Colorset 10
 *ButtonsPager: Rows 90
-*ButtonsPager: Columns 120
+*ButtonsPager: Columns 125
 *ButtonsPager: Frame 1
 *ButtonsPager: Font "xft:cozette:size=8"
 *ButtonsPager: (5x90, Action(Mouse 1) Next (CirculateHit, ButtonsPager) PipeRead 'echo LockingSlide $$(test $$(($[w.x]+$[w.width])) -le $[vp.width] && echo w$$(($[w.width]-$width))p || echo w-$$(($[w.width]-$width))p) keep')
@@ -514,7 +516,7 @@ DestroyModuleConfig ButtonsDesk:*
 *ButtonsDesk: Geometry 125x25-8+109
 *ButtonsDesk: Colorset 10
 *ButtonsDesk: Rows 25
-*ButtonsDesk: Columns 120
+*ButtonsDesk: Columns 125
 *ButtonsDesk: Frame 1
 *ButtonsDesk: Font "xft:cozette:size=8"
 *ButtonsDesk: (5x25, Action(Mouse 1) Next (CirculateHit, ButtonsDesk) PipeRead 'echo LockingSlide $$(test $$(($[w.x]+$[w.width])) -le $[vp.width] && echo w$$(($[w.width]-$width))p || echo w-$$(($[w.width]-$width))p) keep')
@@ -527,11 +529,21 @@ DestroyModuleConfig ButtonsIconMan:*
 *ButtonsIconMan: Geometry 125x300-8+148
 *ButtonsIconMan: Colorset 10
 *ButtonsIconMan: Rows 300
-*ButtonsIconMan: Columns 120
+*ButtonsIconMan: Columns 125
 *ButtonsIconMan: Frame 1
 *ButtonsIconMan: Font "xft:cozette:size=8"
 *ButtonsIconMan: (5x300, Action(Mouse 1) Next (CirculateHit, ButtonsIconMan) PipeRead 'echo LockingSlide $$(test $$(($[w.x]+$[w.width])) -le $[vp.width] && echo w$$(($[w.width]-$width))p || echo w-$$(($[w.width]-$width))p) keep')
 *ButtonsIconMan: (120x300, Top, Swallow FvwmIconMan 'Module FvwmIconMan', Frame 0)
+
+DestroyModuleConfig ButtonsClock:*
+*ButtonsClock: Geometry 125x45-8+461
+*ButtonsClock: Colorset 10
+*ButtonsClock: Rows 45
+*ButtonsClock: Columns 125
+*ButtonsClock: Frame 1
+*ButtonsClock: Font "xft:cozette:size=8"
+*ButtonsClock: (5x45, Action(Mouse 1) Next (CirculateHit, ButtonsIconMan) PipeRead 'echo LockingSlide $$(test $$(($[w.x]+$[w.width])) -le $[vp.width] && echo w$$(($[w.width]-$width))p || echo w-$$(($[w.width]-$width))p) keep')
+*ButtonsClock: (120x45, Swallow DateTime 'Module FvwmScript FvwmScript-DateTime', Frame 1)
 
 # FvwmPager
 #
