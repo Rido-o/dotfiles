@@ -9,7 +9,7 @@ Widget 1
 Property
  Title {Do you really want to quit Fvwm?}
  Size  200 30
- Position 22 0
+ Position 22 4
  Type ItemDraw
  Flags NoReliefString
 Main
