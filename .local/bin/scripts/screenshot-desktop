@@ -1,0 +1,3 @@
+#!/bin/sh
+
+import -window root "$HOME/Images/Screenshots/$(date '+%Y-%m-%d %X').png"

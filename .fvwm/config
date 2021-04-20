@@ -311,6 +311,7 @@ Test (x newsboat) + "RSS Reader" Exec exec setsid -f $[infostore.terminal] newsb
 DestroyMenu MenuUtilities
 AddToMenu   MenuUtilities "Utilities" Title
 + "Choose Wallpaper" Exec exec sxiv-wallpaper
++ "Screenshot" Exec exec screenshot-desktop
 
 # Music Menu
 DestroyMenu MenuMusic
