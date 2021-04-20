@@ -355,7 +355,7 @@ AddToMenu   MenuSession "Session" Title
 + "Restart Fvwm%icons/restart.png%" Restart
 + "Lock" Exec exec locker
 + "Logout%icons/quit.png%" Module FvwmScript FvwmScript-ConfirmQuit
-+ "Restart" Exec exec reboot
++ "Reboot" Exec exec reboot
 + "Shutdown" Exec exec poweroff
 
 # Window options menu
