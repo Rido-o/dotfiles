@@ -61,6 +61,7 @@ AddToFunc   StartFunction
 + I Module FvwmButtons ButtonsDesk
 + I Module FvwmButtons ButtonsIconMan
 + I Module FvwmButtons ButtonsClock
++ I Module FvwmButtons ButtonsMusic
 + I Module FvwmEvent EventNewDesk
 
 # Function: MoveClickX $0 $1 $2
@@ -210,6 +211,7 @@ Style ButtonsPager !Title, !Handles, Sticky, StaysOnBottom, WindowListSkip, Neve
 Style ButtonsDesk !Title, !Handles, Sticky, StaysOnBottom, WindowListSkip, NeverFocus, BorderColorset 4
 Style ButtonsIconMan !Title, !Handles, Sticky, StaysOnBottom, WindowListSkip, NeverFocus, BorderColorset 4
 Style ButtonsClock !Title, !Handles, Sticky, StaysOnBottom, WindowListSkip, NeverFocus, BorderColorset 4
+Style ButtonsMusic !Title, !Handles, Sticky, StaysOnBottom, WindowListSkip, NeverFocus, BorderColorset 4
 Style ConfirmQuit !Title, PositionPlacement Center, WindowListSkip, Layer 6
 Style FvwmIdent WindowListSkip
 
@@ -544,6 +546,19 @@ DestroyModuleConfig ButtonsClock:*
 *ButtonsClock: Font "xft:cozette:size=8"
 *ButtonsClock: (5x45, Action(Mouse 1) Next (CirculateHit, ButtonsIconMan) PipeRead 'echo LockingSlide $$(test $$(($[w.x]+$[w.width])) -le $[vp.width] && echo w$$(($[w.width]-$width))p || echo w-$$(($[w.width]-$width))p) keep')
 *ButtonsClock: (120x45, Swallow DateTime 'Module FvwmScript FvwmScript-DateTime', Frame 1)
+
+DestroyModuleConfig ButtonsMusic:*
+*ButtonsMusic: Geometry 125x25-8+519
+*ButtonsMusic: Colorset 10
+*ButtonsMusic: Rows 25
+*ButtonsMusic: Columns 125
+*ButtonsMusic: Frame 1
+*ButtonsMusic: Font "xft:cozette:size=8"
+*ButtonsMusic: (5x25, Action(Mouse 1) Next (CirculateHit, ButtonsIconMan) PipeRead 'echo LockingSlide $$(test $$(($[w.x]+$[w.width])) -le $[vp.width] && echo w$$(($[w.width]-$width))p || echo w-$$(($[w.width]-$width))p) keep')
+*ButtonsMusic: (30x25, Title "", Action (Mouse 1) Exec exec mpc prev, ActiveColorset 12, Frame 1)
+*ButtonsMusic: (30x25, Title "", Action (Mouse 1) Exec exec mpc toggle, ActiveColorset 12, Frame 1)
+*ButtonsMusic: (30x25, Title "", Action (Mouse 1) Exec exec mpc stop, ActiveColorset 12, Frame 1)
+*ButtonsMusic: (30x25, Title "", Action (Mouse 1) Exec exec mpc next, ActiveColorset 12, Frame 1)
 
 # FvwmPager
 #
