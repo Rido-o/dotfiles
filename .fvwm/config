@@ -209,13 +209,13 @@ Style * BorderColorset 3, HilightBorderColorset 4
 Style * !Icon
 
 # Window Specific Styles
-Style ButtonsPager !Title, !Handles, Sticky, StaysOnBottom, WindowListSkip, NeverFocus, BorderColorset 4
-Style ButtonsDesk !Title, !Handles, Sticky, StaysOnBottom, WindowListSkip, NeverFocus, BorderColorset 4
-Style ButtonsIconMan !Title, !Handles, Sticky, StaysOnBottom, WindowListSkip, NeverFocus, BorderColorset 4
-Style ButtonsClock !Title, !Handles, Sticky, StaysOnBottom, WindowListSkip, NeverFocus, BorderColorset 4
-Style ButtonsMusic !Title, !Handles, Sticky, StaysOnBottom, WindowListSkip, NeverFocus, BorderColorset 4
-Style ButtonsControls !Title, !Handles, Sticky, StaysOnBottom, WindowListSkip, NeverFocus, BorderColorset 4
-Style ButtonInfo !Title, !Handles, Sticky, StaysOnBottom, WindowListSkip, NeverFocus, BorderColorset 4
+Style ButtonsPager !Title, !Handles, Sticky, StaysOnBottom, WindowListSkip, NeverFocus, BorderColorset 4, FixedSize
+Style ButtonsDesk !Title, !Handles, Sticky, StaysOnBottom, WindowListSkip, NeverFocus, BorderColorset 4, FixedSize
+Style ButtonsIconMan !Title, !Handles, Sticky, StaysOnBottom, WindowListSkip, NeverFocus, BorderColorset 4, FixedSize
+Style ButtonsClock !Title, !Handles, Sticky, StaysOnBottom, WindowListSkip, NeverFocus, BorderColorset 4, FixedSize
+Style ButtonsMusic !Title, !Handles, Sticky, StaysOnBottom, WindowListSkip, NeverFocus, BorderColorset 4, FixedSize
+Style ButtonsControls !Title, !Handles, Sticky, StaysOnBottom, WindowListSkip, NeverFocus, BorderColorset 4, FixedSize
+Style ButtonInfo !Title, !Handles, Sticky, StaysOnBottom, WindowListSkip, NeverFocus, BorderColorset 4, FixedSize
 Style ConfirmQuit !Title, PositionPlacement Center, WindowListSkip, Layer 6
 Style FvwmIdent WindowListSkip
 
