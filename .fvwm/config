@@ -62,6 +62,8 @@ AddToFunc   StartFunction
 + I Module FvwmButtons ButtonsIconMan
 + I Module FvwmButtons ButtonsClock
 + I Module FvwmButtons ButtonsMusic
++ I Module FvwmButtons ButtonsControls
++ I Module FvwmButtons ButtonsTorrent
 + I Module FvwmEvent EventNewDesk
 
 # Function: MoveClickX $0 $1 $2
@@ -212,6 +214,8 @@ Style ButtonsDesk !Title, !Handles, Sticky, StaysOnBottom, WindowListSkip, Never
 Style ButtonsIconMan !Title, !Handles, Sticky, StaysOnBottom, WindowListSkip, NeverFocus, BorderColorset 4
 Style ButtonsClock !Title, !Handles, Sticky, StaysOnBottom, WindowListSkip, NeverFocus, BorderColorset 4
 Style ButtonsMusic !Title, !Handles, Sticky, StaysOnBottom, WindowListSkip, NeverFocus, BorderColorset 4
+Style ButtonsControls !Title, !Handles, Sticky, StaysOnBottom, WindowListSkip, NeverFocus, BorderColorset 4
+Style ButtonsTorrent !Title, !Handles, Sticky, StaysOnBottom, WindowListSkip, NeverFocus, BorderColorset 4
 Style ConfirmQuit !Title, PositionPlacement Center, WindowListSkip, Layer 6
 Style FvwmIdent WindowListSkip
 
@@ -559,6 +563,34 @@ DestroyModuleConfig ButtonsMusic:*
 *ButtonsMusic: (30x25, Title "", Action (Mouse 1) Exec exec mpc toggle, ActiveColorset 12, Frame 1)
 *ButtonsMusic: (30x25, Title "", Action (Mouse 1) Exec exec mpc stop, ActiveColorset 12, Frame 1)
 *ButtonsMusic: (30x25, Title "", Action (Mouse 1) Exec exec mpc next, ActiveColorset 12, Frame 1)
+
+DestroyModuleConfig ButtonsControls:*
+*ButtonsControls: Geometry 125x25-8+557
+*ButtonsControls: Colorset 10
+*ButtonsControls: Rows 25
+*ButtonsControls: Columns 125
+*ButtonsControls: Frame 1
+*ButtonsControls: Font "xft:cozette:size=8"
+*ButtonsControls: (5x25, Action(Mouse 1) Next (CirculateHit, ButtonsControls) PipeRead 'echo LockingSlide $$(test $$(($[w.x]+$[w.width])) -le $[vp.width] && echo w$$(($[w.width]-$width))p || echo w-$$(($[w.width]-$width))p) keep')
+*ButtonsControls: (30x25, Title "", Action (Mouse 1) Exec exec $[infostore.terminal] sh -c "sed '37q' $HOME/.cache/weathercolor; read junk", ActiveColorset 12, Frame 1)
+*ButtonsControls: (30x25, Title "✹", Action (Mouse 1) Exec exec $[infostore.terminal] gotop, ActiveColorset 12, Frame 1)
+*ButtonsControls: (30x25, Title "", Action (Mouse 1) Exec exec networkmanager_dmenu, ActiveColorset 12, Frame 1)
+*ButtonsControls: (30x25, Title "", \
+	Action (Mouse 1) Exec exec $[infostore.terminal] pulsemixer, \
+	Action (Mouse 4) Exec exec pamixer --allow-boost -i 5, \
+	Action (Mouse 5) Exec exec pamixer --allow-boost -d 5, \
+	ActiveColorset 12, Frame 1)
+
+DestroyModuleConfig ButtonsTorrent:*
+*ButtonsTorrent: Geometry 125x25-8+595
+*ButtonsTorrent: Colorset 10
+*ButtonsTorrent: Rows 25
+*ButtonsTorrent: Columns 125
+*ButtonsTorrent: Frame 1
+*ButtonsTorrent: Font "xft:cozette:size=8"
+*ButtonsTorrent: (5x25, Action(Mouse 1) Next (CirculateHit, ButtonsTorrent) PipeRead 'echo LockingSlide $$(test $$(($[w.x]+$[w.width])) -le $[vp.width] && echo w$$(($[w.width]-$width))p || echo w-$$(($[w.width]-$width))p) keep')
+*ButtonsTorrent: (30x25, Title "", Action (Mouse 1) Exec exec $[infostore.terminal] stig, ActiveColorset 12, Frame 1)
+*ButtonsTorrent: (90x25, Swallow TorrentSpeed 'Module FvwmScript FvwmScript-TorrentSpeed', Frame 1)
 
 # FvwmPager
 #

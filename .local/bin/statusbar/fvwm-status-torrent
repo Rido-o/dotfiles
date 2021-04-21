@@ -1,0 +1,18 @@
+#!/bin/bash
+
+sum=($(transmission-remote -l | tail -n 1))
+
+speed () {
+	rate=$(echo ${sum[$1]} | sd "\..*" "")
+	if [ ${#rate} -ge 4 ]
+		then
+			echo $rate | sd "(.)(.).." '${1}.${2}M'
+		else
+			echo "$rate""k"
+	fi
+}
+
+up=$(speed 3)
+down=$(speed 4)
+
+echo "↑$up ↓$down"
