@@ -248,6 +248,7 @@ Colorset 6  fg #2A2426, bg #e6d6ac, hi, sh, Plain, NoShape
 Colorset 7  fg grey30, bg #ffffff, hi, sh, Plain, NoShape
 Colorset 8  fg #ffffff, bg #e39b7b, hi, sh, Plain, NoShape
 Colorset 10 fg #2A2426, bg #d8caac, hi, sh, Plain, NoShape
+#Colorset 10 fg #2A2426, bg #d8caac, hi, sh, Plain, NoShape, TiledPixmap $[icons]/close.png
 Colorset 11 fg #ffffff, bg #e39b7b, hi, sh, Plain, NoShape
 Colorset 12 fg #2A2426, bg #e6d6ac, hi, sh, Plain, NoShape
 Colorset 13 fg #ffffff, bg #e6d6ac, hi, sh, Plain, NoShape
@@ -260,6 +261,7 @@ MenuStyle * Hilight3DOff, HilightBack, HilightTitleBack, SeparatorsLong
 MenuStyle * TrianglesSolid, TrianglesUseFore
 MenuStyle * ItemFormat "%|%3.1i%5.3l%5.3>%|"
 MenuStyle * Font "xft:cozette:size=8"
+#MenuStyle * MenuFace TiledPixmap $[icons]/close.png
 
 # Root Menu
 #
@@ -461,6 +463,7 @@ DestroyDecor FvwmDecor
 AddToDecor   FvwmDecor
 + TitleStyle Centered Height 23
 + TitleStyle ActiveUp (-- raised) ActiveDown (-- sunk)
+#+ TitleStyle TiledPixmap $[icons]/close.png
 + ButtonStyle All - Clear
 + ButtonStyle All Active ( Colorset 0 )
 + ButtonStyle All InActive ( Colorset 1 )
