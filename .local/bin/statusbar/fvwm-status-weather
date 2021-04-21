@@ -1,0 +1,4 @@
+#!/bin/sh
+
+TEMP=$(sed '4q;d' $HOME/.cache/weathertext | sd "\)|\(" " " | rg -o "\d+\s+°C" | sd "\s" "")
+[ ! -z "$TEMP" ] && echo "$TEMP"

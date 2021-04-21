@@ -582,13 +582,13 @@ DestroyModuleConfig ButtonsControls:*
 	ActiveColorset 12, Frame 1)
 
 DestroyModuleConfig ButtonInfo:*
-*ButtonInfo: Geometry 125x50-8+595
+*ButtonInfo: Geometry 125x75-8+595
 *ButtonInfo: Colorset 10
-*ButtonInfo: Rows 50
+*ButtonInfo: Rows 75
 *ButtonInfo: Columns 125
 *ButtonInfo: Frame 1
 *ButtonInfo: Font "xft:cozette:size=8"
-*ButtonInfo: (5x50, Action(Mouse 1) Next (CirculateHit, ButtonInfo) PipeRead 'echo LockingSlide $$(test $$(($[w.x]+$[w.width])) -le $[vp.width] && echo w$$(($[w.width]-$width))p || echo w-$$(($[w.width]-$width))p) keep')
+*ButtonInfo: (5x75, Action(Mouse 1) Next (CirculateHit, ButtonInfo) PipeRead 'echo LockingSlide $$(test $$(($[w.x]+$[w.width])) -le $[vp.width] && echo w$$(($[w.width]-$width))p || echo w-$$(($[w.width]-$width))p) keep')
 *ButtonInfo: (30x25, Title "©", Action (Mouse 1) Exec exec $[infostore.terminal] stig, ActiveColorset 12, Frame 1)
 *ButtonInfo: (90x25, Swallow TorrentSpeed 'Module FvwmScript FvwmScript-TorrentSpeed', Frame 1)
 *ButtonInfo: (30x25, Title "", \
@@ -597,6 +597,8 @@ DestroyModuleConfig ButtonInfo:*
 	Action (Mouse 5) Exec exec pamixer --allow-boost -d 5, \
 	ActiveColorset 12, Frame 1)
 *ButtonInfo: (90x25, Swallow Volume 'Module FvwmScript FvwmScript-Volume', Frame 1)
+*ButtonInfo: (30x25, Title "", Action (Mouse 1) Exec exec $[infostore.terminal] sh -c "sed '37q' $HOME/.cache/weathercolor; read junk", ActiveColorset 12, Frame 1)
+*ButtonInfo: (90x25, Swallow Weather 'Module FvwmScript FvwmScript-Weather', Frame 1)
 
 # FvwmPager
 #
