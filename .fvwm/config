@@ -63,7 +63,7 @@ AddToFunc   StartFunction
 + I Module FvwmButtons ButtonsClock
 + I Module FvwmButtons ButtonsMusic
 + I Module FvwmButtons ButtonsControls
-+ I Module FvwmButtons ButtonsTorrent
++ I Module FvwmButtons ButtonInfo
 + I Module FvwmEvent EventNewDesk
 
 # Function: MoveClickX $0 $1 $2
@@ -215,7 +215,7 @@ Style ButtonsIconMan !Title, !Handles, Sticky, StaysOnBottom, WindowListSkip, Ne
 Style ButtonsClock !Title, !Handles, Sticky, StaysOnBottom, WindowListSkip, NeverFocus, BorderColorset 4
 Style ButtonsMusic !Title, !Handles, Sticky, StaysOnBottom, WindowListSkip, NeverFocus, BorderColorset 4
 Style ButtonsControls !Title, !Handles, Sticky, StaysOnBottom, WindowListSkip, NeverFocus, BorderColorset 4
-Style ButtonsTorrent !Title, !Handles, Sticky, StaysOnBottom, WindowListSkip, NeverFocus, BorderColorset 4
+Style ButtonInfo !Title, !Handles, Sticky, StaysOnBottom, WindowListSkip, NeverFocus, BorderColorset 4
 Style ConfirmQuit !Title, PositionPlacement Center, WindowListSkip, Layer 6
 Style FvwmIdent WindowListSkip
 
@@ -581,16 +581,22 @@ DestroyModuleConfig ButtonsControls:*
 	Action (Mouse 5) Exec exec pamixer --allow-boost -d 5, \
 	ActiveColorset 12, Frame 1)
 
-DestroyModuleConfig ButtonsTorrent:*
-*ButtonsTorrent: Geometry 125x25-8+595
-*ButtonsTorrent: Colorset 10
-*ButtonsTorrent: Rows 25
-*ButtonsTorrent: Columns 125
-*ButtonsTorrent: Frame 1
-*ButtonsTorrent: Font "xft:cozette:size=8"
-*ButtonsTorrent: (5x25, Action(Mouse 1) Next (CirculateHit, ButtonsTorrent) PipeRead 'echo LockingSlide $$(test $$(($[w.x]+$[w.width])) -le $[vp.width] && echo w$$(($[w.width]-$width))p || echo w-$$(($[w.width]-$width))p) keep')
-*ButtonsTorrent: (30x25, Title "©", Action (Mouse 1) Exec exec $[infostore.terminal] stig, ActiveColorset 12, Frame 1)
-*ButtonsTorrent: (90x25, Swallow TorrentSpeed 'Module FvwmScript FvwmScript-TorrentSpeed', Frame 1)
+DestroyModuleConfig ButtonInfo:*
+*ButtonInfo: Geometry 125x50-8+595
+*ButtonInfo: Colorset 10
+*ButtonInfo: Rows 50
+*ButtonInfo: Columns 125
+*ButtonInfo: Frame 1
+*ButtonInfo: Font "xft:cozette:size=8"
+*ButtonInfo: (5x50, Action(Mouse 1) Next (CirculateHit, ButtonInfo) PipeRead 'echo LockingSlide $$(test $$(($[w.x]+$[w.width])) -le $[vp.width] && echo w$$(($[w.width]-$width))p || echo w-$$(($[w.width]-$width))p) keep')
+*ButtonInfo: (30x25, Title "©", Action (Mouse 1) Exec exec $[infostore.terminal] stig, ActiveColorset 12, Frame 1)
+*ButtonInfo: (90x25, Swallow TorrentSpeed 'Module FvwmScript FvwmScript-TorrentSpeed', Frame 1)
+*ButtonInfo: (30x25, Title "", \
+	Action (Mouse 1) Exec exec $[infostore.terminal] pulsemixer, \
+	Action (Mouse 4) Exec exec pamixer --allow-boost -i 5, \
+	Action (Mouse 5) Exec exec pamixer --allow-boost -d 5, \
+	ActiveColorset 12, Frame 1)
+*ButtonInfo: (90x25, Swallow Volume 'Module FvwmScript FvwmScript-Volume', Frame 1)
 
 # FvwmPager
 #
