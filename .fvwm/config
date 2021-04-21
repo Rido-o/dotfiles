@@ -460,6 +460,7 @@ Mouse 3 I    A Menu MenuWindowOps
 DestroyDecor FvwmDecor
 AddToDecor   FvwmDecor
 + TitleStyle Centered Height 23
++ TitleStyle ActiveUp (-- raised) ActiveDown (-- sunk)
 + ButtonStyle All - Clear
 + ButtonStyle All Active ( Colorset 0 )
 + ButtonStyle All InActive ( Colorset 1 )
