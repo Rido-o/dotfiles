@@ -589,7 +589,7 @@ DestroyModuleConfig ButtonsTorrent:*
 *ButtonsTorrent: Frame 1
 *ButtonsTorrent: Font "xft:cozette:size=8"
 *ButtonsTorrent: (5x25, Action(Mouse 1) Next (CirculateHit, ButtonsTorrent) PipeRead 'echo LockingSlide $$(test $$(($[w.x]+$[w.width])) -le $[vp.width] && echo w$$(($[w.width]-$width))p || echo w-$$(($[w.width]-$width))p) keep')
-*ButtonsTorrent: (30x25, Title "", Action (Mouse 1) Exec exec $[infostore.terminal] stig, ActiveColorset 12, Frame 1)
+*ButtonsTorrent: (30x25, Title "©", Action (Mouse 1) Exec exec $[infostore.terminal] stig, ActiveColorset 12, Frame 1)
 *ButtonsTorrent: (90x25, Swallow TorrentSpeed 'Module FvwmScript FvwmScript-TorrentSpeed', Frame 1)
 
 # FvwmPager
