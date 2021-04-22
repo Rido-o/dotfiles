@@ -261,6 +261,7 @@ Style ButtonsMusic !Title, !Handles, Sticky, StaysOnBottom, WindowListSkip, Neve
 Style ButtonsControls !Title, !Handles, Sticky, StaysOnBottom, WindowListSkip, NeverFocus, BorderColorset 4, FixedSize
 Style ButtonInfo !Title, !Handles, Sticky, StaysOnBottom, WindowListSkip, NeverFocus, BorderColorset 4, FixedSize
 
+Style floatcenter PositionPlacement Center
 Style ConfirmQuit !Title, PositionPlacement Center, WindowListSkip, Layer 6
 Style ConfirmReboot !Title, PositionPlacement Center, WindowListSkip, Layer 6
 Style ConfirmShutdown !Title, PositionPlacement Center, WindowListSkip, Layer 6
@@ -606,18 +607,8 @@ DestroyModuleConfig ButtonsIconMan:*
 *ButtonsIconMan: (5x300, Action(Mouse 1) Next (CirculateHit, ButtonsIconMan) PipeRead 'echo LockingSlide $$(test $$(($[w.x]+$[w.width])) -le $[vp.width] && echo w$$(($[w.width]-$width))p || echo w-$$(($[w.width]-$width))p) keep')
 *ButtonsIconMan: (120x300, Top, Swallow FvwmIconMan 'Module FvwmIconMan', Frame 0)
 
-DestroyModuleConfig ButtonsClock:*
-*ButtonsClock: Geometry 125x40-5+465
-*ButtonsClock: Colorset 10
-*ButtonsClock: Rows 40
-*ButtonsClock: Columns 125
-*ButtonsClock: Frame 1
-*ButtonsClock: Font "xft:cozette:size=8"
-*ButtonsClock: (5x40, Action(Mouse 1) Next (CirculateHit, ButtonsClock) PipeRead 'echo LockingSlide $$(test $$(($[w.x]+$[w.width])) -le $[vp.width] && echo w$$(($[w.width]-$width))p || echo w-$$(($[w.width]-$width))p) keep')
-*ButtonsClock: (120x40, Swallow DateTime 'Module FvwmScript FvwmScript-DateTime', Frame 1)
-
 DestroyModuleConfig ButtonsMusic:*
-*ButtonsMusic: Geometry 125x25-5+520
+*ButtonsMusic: Geometry 125x25-5+465
 *ButtonsMusic: Colorset 10
 *ButtonsMusic: Rows 25
 *ButtonsMusic: Columns 125
@@ -629,41 +620,44 @@ DestroyModuleConfig ButtonsMusic:*
 *ButtonsMusic: (30x25, Title "", Action (Mouse 1) Exec exec mpc stop, ActiveColorset 12, Frame 1)
 *ButtonsMusic: (30x25, Title "", Action (Mouse 1) Exec exec mpc next, ActiveColorset 12, Frame 1)
 
+DestroyModuleConfig ButtonInfo:*
+*ButtonInfo: Geometry 125x50-5+505
+*ButtonInfo: Colorset 10
+*ButtonInfo: Rows 50
+*ButtonInfo: Columns 125
+*ButtonInfo: Frame 1
+*ButtonInfo: Font "xft:cozette:size=8"
+*ButtonInfo: (5x50, Action(Mouse 1) Next (CirculateHit, ButtonInfo) PipeRead 'echo LockingSlide $$(test $$(($[w.x]+$[w.width])) -le $[vp.width] && echo w$$(($[w.width]-$width))p || echo w-$$(($[w.width]-$width))p) keep')
+*ButtonInfo: (30x25, Title "©", Action (Mouse 1) Exec exec $[infostore.terminal] -n floatcenter -g 120x50 stig, ActiveColorset 12, Frame 1)
+*ButtonInfo: (90x25, Swallow TorrentSpeed 'Module FvwmScript FvwmScript-TorrentSpeed', Frame 1)
+*ButtonInfo: (30x25, Title "", Action (Mouse 1) Exec exec $[infostore.terminal] -n floatcenter -g 128x40 sh -c "sed '37q' $HOME/.cache/weathercolor; read junk", ActiveColorset 12, Frame 1)
+*ButtonInfo: (90x25, Swallow Weather 'Module FvwmScript FvwmScript-Weather', Frame 1)
+
 DestroyModuleConfig ButtonsControls:*
-*ButtonsControls: Geometry 125x25-5+560
+*ButtonsControls: Geometry 125x25-5+570
 *ButtonsControls: Colorset 10
 *ButtonsControls: Rows 25
 *ButtonsControls: Columns 125
 *ButtonsControls: Frame 1
 *ButtonsControls: Font "xft:cozette:size=8"
 *ButtonsControls: (5x25, Action(Mouse 1) Next (CirculateHit, ButtonsControls) PipeRead 'echo LockingSlide $$(test $$(($[w.x]+$[w.width])) -le $[vp.width] && echo w$$(($[w.width]-$width))p || echo w-$$(($[w.width]-$width))p) keep')
-*ButtonsControls: (30x25, Title "", Action (Mouse 1) Exec exec $[infostore.terminal] sh -c "sed '37q' $HOME/.cache/weathercolor; read junk", ActiveColorset 12, Frame 1)
-*ButtonsControls: (30x25, Title "✹", Action (Mouse 1) Exec exec $[infostore.terminal] gotop, ActiveColorset 12, Frame 1)
-*ButtonsControls: (30x25, Title "", Action (Mouse 1) Exec exec networkmanager_dmenu, ActiveColorset 12, Frame 1)
-*ButtonsControls: (30x25, Title "", \
-	Action (Mouse 1) Exec exec $[infostore.terminal] pulsemixer, \
+*ButtonsControls: (40x25, Title "✹", Action (Mouse 1) Exec exec $[infostore.terminal] -n floatcenter -g 120x50 gotop, ActiveColorset 12, Frame 1)
+*ButtonsControls: (40x25, Title "", \
+	Action (Mouse 1) Exec exec $[infostore.terminal] -n floatcenter -g 120x50 pulsemixer, \
 	Action (Mouse 4) Exec exec pamixer --allow-boost -i 5, \
 	Action (Mouse 5) Exec exec pamixer --allow-boost -d 5, \
 	ActiveColorset 12, Frame 1)
+*ButtonsControls: (40x25, Title "", Action (Mouse 1) Exec exec networkmanager_dmenu, ActiveColorset 12, Frame 1)
 
-DestroyModuleConfig ButtonInfo:*
-*ButtonInfo: Geometry 125x75-5+600
-*ButtonInfo: Colorset 10
-*ButtonInfo: Rows 75
-*ButtonInfo: Columns 125
-*ButtonInfo: Frame 1
-*ButtonInfo: Font "xft:cozette:size=8"
-*ButtonInfo: (5x75, Action(Mouse 1) Next (CirculateHit, ButtonInfo) PipeRead 'echo LockingSlide $$(test $$(($[w.x]+$[w.width])) -le $[vp.width] && echo w$$(($[w.width]-$width))p || echo w-$$(($[w.width]-$width))p) keep')
-*ButtonInfo: (30x25, Title "©", Action (Mouse 1) Exec exec $[infostore.terminal] stig, ActiveColorset 12, Frame 1)
-*ButtonInfo: (90x25, Swallow TorrentSpeed 'Module FvwmScript FvwmScript-TorrentSpeed', Frame 1)
-*ButtonInfo: (30x25, Title "", \
-	Action (Mouse 1) Exec exec $[infostore.terminal] pulsemixer, \
-	Action (Mouse 4) Exec exec pamixer --allow-boost -i 5, \
-	Action (Mouse 5) Exec exec pamixer --allow-boost -d 5, \
-	ActiveColorset 12, Frame 1)
-*ButtonInfo: (90x25, Swallow Volume 'Module FvwmScript FvwmScript-Volume', Frame 1)
-*ButtonInfo: (30x25, Title "", Action (Mouse 1) Exec exec $[infostore.terminal] sh -c "sed '37q' $HOME/.cache/weathercolor; read junk", ActiveColorset 12, Frame 1)
-*ButtonInfo: (90x25, Swallow Weather 'Module FvwmScript FvwmScript-Weather', Frame 1)
+DestroyModuleConfig ButtonsClock:*
+*ButtonsClock: Geometry 125x40-5+610
+*ButtonsClock: Colorset 10
+*ButtonsClock: Rows 40
+*ButtonsClock: Columns 125
+*ButtonsClock: Frame 1
+*ButtonsClock: Font "xft:cozette:size=8"
+*ButtonsClock: (5x40, Action(Mouse 1) Next (CirculateHit, ButtonsClock) PipeRead 'echo LockingSlide $$(test $$(($[w.x]+$[w.width])) -le $[vp.width] && echo w$$(($[w.width]-$width))p || echo w-$$(($[w.width]-$width))p) keep')
+*ButtonsClock: (120x40, Swallow DateTime 'Module FvwmScript FvwmScript-DateTime', Frame 1)
 
 # FvwmPager
 #
