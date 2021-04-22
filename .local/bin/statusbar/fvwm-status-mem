@@ -1,0 +1,6 @@
+#!/bin/sh
+
+case $1 in
+	1) free -m | awk '/^Mem/ { print $2 }' | sd 'i' '' ;;
+	2) free -m | awk '/^Mem/ { print $3 }' | sd 'i' '' ;;
+esac
