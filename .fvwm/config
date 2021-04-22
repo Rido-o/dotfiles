@@ -204,7 +204,7 @@ Style * EdgeMoveDelay 350, EdgeMoveResistance 350
 # EwmhBaseStruts [left] [right] [top] [bottom]
 # Reserves space along the edge(s) of the Screen that will not
 # be covered when maximizing or placing windows.
-EwmhBaseStruts 5 149 5 4
+EwmhBaseStruts 5 145 5 5
 
 # This sets the ClickTime and MoveThreshold used to determine
 # Double Clicks, Hold and Move for the mouse.
@@ -570,7 +570,7 @@ DestroyModuleConfig FvwmScript:*
 *FvwmScript: Path $[scripts]
 
 DestroyModuleConfig ButtonsPager:*
-*ButtonsPager: Geometry 125x90-8+5
+*ButtonsPager: Geometry 125x90-5+5
 *ButtonsPager: Colorset 10
 *ButtonsPager: Rows 90
 *ButtonsPager: Columns 125
@@ -584,7 +584,7 @@ DestroyModuleConfig ButtonsPager:*
 *ButtonsPager: (120x5, Frame 0)
 
 DestroyModuleConfig ButtonsDesk:*
-*ButtonsDesk: Geometry 125x25-8+109
+*ButtonsDesk: Geometry 125x25-5+110
 *ButtonsDesk: Colorset 10
 *ButtonsDesk: Rows 25
 *ButtonsDesk: Columns 125
@@ -597,7 +597,7 @@ DestroyModuleConfig ButtonsDesk:*
 *ButtonsDesk: (30x25, Id desk3, Title "3", Action (Mouse 1) GotoDesk 0 3, ActiveColorset 12, Frame 1)
 
 DestroyModuleConfig ButtonsIconMan:*
-*ButtonsIconMan: Geometry 125x300-8+148
+*ButtonsIconMan: Geometry 125x300-5+150
 *ButtonsIconMan: Colorset 10
 *ButtonsIconMan: Rows 300
 *ButtonsIconMan: Columns 125
@@ -607,7 +607,7 @@ DestroyModuleConfig ButtonsIconMan:*
 *ButtonsIconMan: (120x300, Top, Swallow FvwmIconMan 'Module FvwmIconMan', Frame 0)
 
 DestroyModuleConfig ButtonsClock:*
-*ButtonsClock: Geometry 125x45-8+461
+*ButtonsClock: Geometry 125x45-5+465
 *ButtonsClock: Colorset 10
 *ButtonsClock: Rows 45
 *ButtonsClock: Columns 125
@@ -617,7 +617,7 @@ DestroyModuleConfig ButtonsClock:*
 *ButtonsClock: (120x45, Swallow DateTime 'Module FvwmScript FvwmScript-DateTime', Frame 1)
 
 DestroyModuleConfig ButtonsMusic:*
-*ButtonsMusic: Geometry 125x25-8+519
+*ButtonsMusic: Geometry 125x25-5+525
 *ButtonsMusic: Colorset 10
 *ButtonsMusic: Rows 25
 *ButtonsMusic: Columns 125
@@ -630,7 +630,7 @@ DestroyModuleConfig ButtonsMusic:*
 *ButtonsMusic: (30x25, Title "", Action (Mouse 1) Exec exec mpc next, ActiveColorset 12, Frame 1)
 
 DestroyModuleConfig ButtonsControls:*
-*ButtonsControls: Geometry 125x25-8+557
+*ButtonsControls: Geometry 125x25-5+565
 *ButtonsControls: Colorset 10
 *ButtonsControls: Rows 25
 *ButtonsControls: Columns 125
@@ -647,7 +647,7 @@ DestroyModuleConfig ButtonsControls:*
 	ActiveColorset 12, Frame 1)
 
 DestroyModuleConfig ButtonInfo:*
-*ButtonInfo: Geometry 125x75-8+595
+*ButtonInfo: Geometry 125x75-5+605
 *ButtonInfo: Colorset 10
 *ButtonInfo: Rows 75
 *ButtonInfo: Columns 125
