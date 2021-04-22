@@ -1,1 +1,68 @@
 = Keybinds =
+== General ==
+* `Alt-Tab` - Cycle between open windows
+* `Super-Enter` - Open a terminal
+* `Super-q` - Close window
+* `Ctrl-F1` - Go to Desk 0
+* `Ctrl-F2` - Go to Desk 1
+* `Ctrl-F3` - Go to Desk 2
+* `Ctrl-F4` - Go to Desk 3
+* `Super-1` - Go to page 1
+* `Super-2` - Go to page 2
+* `Super-3` - Go to page 3
+* `Super-4` - Go to page 4
+
+== Specific ==
+* `Super-?` - Bring up help document
+* `Super-Printscreen` - Take a screenshot
+* `Super-w` - Open VimWiki
+* `Super-n` - Open file manager
+* `Super-m` - Open music playlist
+
+== Tiling ==
+* `Super-Shift-h` - Maximise window to the left
+* `Super-Shift-l` - Maximise window to the right
+* `Super-Shift-k` - Maximise window to the top
+* `Super-Shift-j` - Maximise window to the bottom
+* `Super-Shift-y` - Maximise window to the top left
+* `Super-Shift-u` - Maximise window to the top right
+* `Super-Shift-b` - Maximise window to the bottom left
+* `Super-Shift-n` - Maximise window to the bottom right
+
+== Audio Controls ==
+* `Super-PageUp` - Increase volume
+* `Super-PageDown` - Decrease volume
+* `Super-Insert` - Toggle music
+* `Super-Delete` - Stop music
+* `Super-Home` - Next song
+* `Super-End` - Previous song
+
+= Mousebinds =
+== Window Buttons ==
+* `Click-1` - Open window options menu
+* `Click-2` - Close window
+* `DoubleClick-2` - Destroy window
+* `Click-4` - Maximise window
+* `RightClick-4` - Maximise window horizontally
+* `MiddleClick-4` - Maximise window vertically
+* `Click-6` - Minimise window
+
+== Title Bar ==
+* `HoldClick` - Move window
+* `Click` - Raise window
+* `DoubleClick` - Maximise window
+* `ScrollUp` - Shade the window
+* `ScrollDown` - Unshade the window
+* `RightClick` - Open window options menu
+
+== Window Frame ==
+* `HoldClick` - Resize window
+
+== Root Window ==
+* `Click` - Open root menu
+* `MiddleClick` - Open window list
+* `RightClick` - Open window options menu
+
+== Iconified Windows ==
+* `HoldClick` - Move icon
+* `RightClick` - Open window options menu

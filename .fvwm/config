@@ -468,14 +468,14 @@ Silent Key n			A 4 Exec exec $[infostore.terminal] nnn -e -D
 Silent Key m			A 4 Exec exec $[infostore.terminal] ncmpcpp -c $HOME/.config/ncmpcpp/config-play
 
 # Window Tiling
-Silent Key H			A S4 TileLeft
-Silent Key L			A S4 TileRight
-Silent Key K			A S4 TileUp
-Silent Key J			A S4 TileDown
-Silent Key Y			A S4 TileTopLeft
-Silent Key U			A S4 TileTopRight
-Silent Key B			A S4 TileBottomLeft
-Silent Key N			A S4 TileBottomRight
+Silent Key h			A S4 TileLeft
+Silent Key l			A S4 TileRight
+Silent Key k			A S4 TileUp
+Silent Key j			A S4 TileDown
+Silent Key y			A S4 TileTopLeft
+Silent Key u			A S4 TileTopRight
+Silent Key b			A S4 TileBottomLeft
+Silent Key n			A S4 TileBottomRight
 
 # Audio controls
 Silent Key Page_Up		A 4 Exec exec pamixer --allow-boost -i 5
