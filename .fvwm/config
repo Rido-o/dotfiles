@@ -214,7 +214,10 @@ Style ButtonsClock !Title, !Handles, Sticky, StaysOnBottom, WindowListSkip, Neve
 Style ButtonsMusic !Title, !Handles, Sticky, StaysOnBottom, WindowListSkip, NeverFocus, BorderColorset 4, FixedSize
 Style ButtonsControls !Title, !Handles, Sticky, StaysOnBottom, WindowListSkip, NeverFocus, BorderColorset 4, FixedSize
 Style ButtonInfo !Title, !Handles, Sticky, StaysOnBottom, WindowListSkip, NeverFocus, BorderColorset 4, FixedSize
+
 Style ConfirmQuit !Title, PositionPlacement Center, WindowListSkip, Layer 6
+Style ConfirmReboot !Title, PositionPlacement Center, WindowListSkip, Layer 6
+Style ConfirmShutdown !Title, PositionPlacement Center, WindowListSkip, Layer 6
 Style FvwmIdent WindowListSkip
 
 ##############
@@ -335,8 +338,8 @@ AddToMenu   MenuSession "Session" Title
 + "Restart Fvwm%restart.png%" Restart
 + "Lock" Exec exec locker
 + "Logout%quit.png%" Module FvwmScript FvwmScript-ConfirmQuit
-+ "Reboot" Exec exec reboot
-+ "Shutdown" Exec exec poweroff
++ "Reboot" Module FvwmScript FvwmScript-ConfirmReboot
++ "Shutdown" Module FvwmScript FvwmScript-ConfirmShutdown
 
 # Window options menu
 DestroyMenu MenuWindowOps
