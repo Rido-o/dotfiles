@@ -295,7 +295,7 @@ Colorset 6  fg #2A2426, bg #e6d6ac, hi, sh, Plain, NoShape
 Colorset 7  fg grey30, bg #ffffff, hi, sh, Plain, NoShape
 Colorset 8  fg #ffffff, bg #e39b7b, hi, sh, Plain, NoShape
 #Colorset 10 fg #2A2426, bg #d8caac, hi, sh, Plain, NoShape
-Colorset 10 fg #2A2426, bg #d8caac, hi, sh, Plain, NoShape, TiledPixmap dot.png, Alpha 10
+Colorset 10 fg #2A2426, bg #d8caac, hi, sh, Plain, NoShape, TiledPixmap line.png, Alpha 10
 Colorset 11 fg #ffffff, bg #e39b7b, hi, sh, Plain, NoShape
 Colorset 12 fg #2A2426, bg #e6d6ac, hi, sh, Plain, NoShape
 Colorset 13 fg #ffffff, bg #e6d6ac, hi, sh, Plain, NoShape
@@ -607,17 +607,17 @@ DestroyModuleConfig ButtonsIconMan:*
 *ButtonsIconMan: (120x300, Top, Swallow FvwmIconMan 'Module FvwmIconMan', Frame 0)
 
 DestroyModuleConfig ButtonsClock:*
-*ButtonsClock: Geometry 125x45-5+465
+*ButtonsClock: Geometry 125x40-5+465
 *ButtonsClock: Colorset 10
-*ButtonsClock: Rows 45
+*ButtonsClock: Rows 40
 *ButtonsClock: Columns 125
 *ButtonsClock: Frame 1
 *ButtonsClock: Font "xft:cozette:size=8"
-*ButtonsClock: (5x45, Action(Mouse 1) Next (CirculateHit, ButtonsClock) PipeRead 'echo LockingSlide $$(test $$(($[w.x]+$[w.width])) -le $[vp.width] && echo w$$(($[w.width]-$width))p || echo w-$$(($[w.width]-$width))p) keep')
-*ButtonsClock: (120x45, Swallow DateTime 'Module FvwmScript FvwmScript-DateTime', Frame 1)
+*ButtonsClock: (5x40, Action(Mouse 1) Next (CirculateHit, ButtonsClock) PipeRead 'echo LockingSlide $$(test $$(($[w.x]+$[w.width])) -le $[vp.width] && echo w$$(($[w.width]-$width))p || echo w-$$(($[w.width]-$width))p) keep')
+*ButtonsClock: (120x40, Swallow DateTime 'Module FvwmScript FvwmScript-DateTime', Frame 1)
 
 DestroyModuleConfig ButtonsMusic:*
-*ButtonsMusic: Geometry 125x25-5+525
+*ButtonsMusic: Geometry 125x25-5+520
 *ButtonsMusic: Colorset 10
 *ButtonsMusic: Rows 25
 *ButtonsMusic: Columns 125
@@ -630,7 +630,7 @@ DestroyModuleConfig ButtonsMusic:*
 *ButtonsMusic: (30x25, Title "", Action (Mouse 1) Exec exec mpc next, ActiveColorset 12, Frame 1)
 
 DestroyModuleConfig ButtonsControls:*
-*ButtonsControls: Geometry 125x25-5+565
+*ButtonsControls: Geometry 125x25-5+560
 *ButtonsControls: Colorset 10
 *ButtonsControls: Rows 25
 *ButtonsControls: Columns 125
@@ -647,7 +647,7 @@ DestroyModuleConfig ButtonsControls:*
 	ActiveColorset 12, Frame 1)
 
 DestroyModuleConfig ButtonInfo:*
-*ButtonInfo: Geometry 125x75-5+605
+*ButtonInfo: Geometry 125x75-5+600
 *ButtonInfo: Colorset 10
 *ButtonInfo: Rows 75
 *ButtonInfo: Columns 125

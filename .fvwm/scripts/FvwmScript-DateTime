@@ -1,5 +1,5 @@
 WindowTitle {DateTime}
-WindowSize  118 35
+WindowSize  118 38
 Font "xft:cozette:size=8"
 
 Init
@@ -25,8 +25,8 @@ End
 
 Widget 1
 Property
- Position 0 -2
- Size 118 20
+ Position 0 0
+ Size 118 19
  Font "xft:cozette:size=8"
  Type ItemDraw
  Flags NoReliefString
@@ -40,8 +40,8 @@ End
 
 Widget 2
 Property
- Position 0 17
- Size 118 15
+ Position 0 16
+ Size 118 19
  Font "xft:cozette:size=8"
  Type ItemDraw
  Flags NoReliefString
