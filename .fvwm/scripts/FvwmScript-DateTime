@@ -5,7 +5,7 @@ Font "xft:cozette:size=8"
 Init
  Begin
   Set $Time = (GetOutput {exec date "+%I:%M %p"} 1 -1)
-  Set $Date = (GetOutput {exec date "+%a %b %d"} 1 -1)
+  Set $Date = (GetOutput {exec date "+%a %d %b"} 1 -1)
 
   ChangeTitle 1 $Time
   ChangeTitle 2 $Date
@@ -16,7 +16,7 @@ PeriodicTasks
   If (RemainderOfDiv (GetTime) 15)==0 Then
   Begin
    Set $Time = (GetOutput {exec date "+%I:%M %p"} 1 -1)
-   Set $Date = (GetOutput {exec date "+%a %b %d"} 1 -1)
+   Set $Date = (GetOutput {exec date "+%a %d %b"} 1 -1)
 
    ChangeTitle 1 $Time
    ChangeTitle 2 $Date
