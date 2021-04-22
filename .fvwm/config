@@ -249,6 +249,9 @@ Style * BorderColorset 3, HilightBorderColorset 4
 # Comment this out or use Style * Icon to get the icons back.
 Style * !Icon
 
+# Disable resize hints from windows
+Style * ResizeHintOverride
+
 # Window Specific Styles
 Style ButtonsPager !Title, !Handles, Sticky, StaysOnBottom, WindowListSkip, NeverFocus, BorderColorset 4, FixedSize
 Style ButtonsDesk !Title, !Handles, Sticky, StaysOnBottom, WindowListSkip, NeverFocus, BorderColorset 4, FixedSize
@@ -262,8 +265,6 @@ Style ConfirmQuit !Title, PositionPlacement Center, WindowListSkip, Layer 6
 Style ConfirmReboot !Title, PositionPlacement Center, WindowListSkip, Layer 6
 Style ConfirmShutdown !Title, PositionPlacement Center, WindowListSkip, Layer 6
 Style FvwmIdent WindowListSkip
-
-Style st ResizeHintOverride
 
 ##############
 # 3: Colorsets
