@@ -26,9 +26,7 @@
 # The following is used in various menus and also sets the terminal
 # that FvwmConsole uses. Change this to your terminal of choice
 InfoStoreAdd terminal $[TERMINAL]
-
-# Set icons location
-SetEnv icons $[HOME]/.fvwm/icons
+ImagePath ${HOME}/.fvwm/images/icons:${HOME}/.fvwm/images/titlebar:${HOME}/.fvwm/images/pixmaps
 
 # Set scripts location
 SetEnv scripts $[HOME]/.fvwm/scripts
@@ -247,8 +245,8 @@ Colorset 5  fg #2A2426, bg #d8caac, hi, sh, Plain, NoShape
 Colorset 6  fg #2A2426, bg #e6d6ac, hi, sh, Plain, NoShape
 Colorset 7  fg grey30, bg #ffffff, hi, sh, Plain, NoShape
 Colorset 8  fg #ffffff, bg #e39b7b, hi, sh, Plain, NoShape
-Colorset 10 fg #2A2426, bg #d8caac, hi, sh, Plain, NoShape
-#Colorset 10 fg #2A2426, bg #d8caac, hi, sh, Plain, NoShape, TiledPixmap $[icons]/close.png
+#Colorset 10 fg #2A2426, bg #d8caac, hi, sh, Plain, NoShape
+Colorset 10 fg #2A2426, bg #d8caac, hi, sh, Plain, NoShape, TiledPixmap dot.png, Alpha 10
 Colorset 11 fg #ffffff, bg #e39b7b, hi, sh, Plain, NoShape
 Colorset 12 fg #2A2426, bg #e6d6ac, hi, sh, Plain, NoShape
 Colorset 13 fg #ffffff, bg #e6d6ac, hi, sh, Plain, NoShape
@@ -261,7 +259,7 @@ MenuStyle * Hilight3DOff, HilightBack, HilightTitleBack, SeparatorsLong
 MenuStyle * TrianglesSolid, TrianglesUseFore
 MenuStyle * ItemFormat "%|%3.1i%5.3l%5.3>%|"
 MenuStyle * Font "xft:cozette:size=8"
-#MenuStyle * MenuFace TiledPixmap $[icons]/close.png
+#MenuStyle * MenuFace TiledPixmap dot.png
 
 # Root Menu
 #
@@ -269,13 +267,13 @@ MenuStyle * Font "xft:cozette:size=8"
 # window or using alt-f1 (or menu).
 DestroyMenu MenuFvwmRoot
 AddToMenu   MenuFvwmRoot "Fvwm" Title
-+ "Terminal%icons/terminal.png%" Exec exec $[infostore.terminal]
-+ "Programs%icons/programs.png%" Popup MenuApplications
++ "Terminal%terminal.png%" Exec exec $[infostore.terminal]
++ "Programs%programs.png%" Popup MenuApplications
 + "Music" Popup MenuMusic
 + "Utilities" Popup MenuUtilities
 + "" Nop
-+ "Man Pages%icons/help.png%" Popup MenuFvwmManPages
-+ "Copy Config%icons/conf.png%" FvwmScript FvwmScript-ConfirmCopyConfig
++ "Man Pages%help.png%" Popup MenuFvwmManPages
++ "Copy Config%conf.png%" FvwmScript FvwmScript-ConfirmCopyConfig
 + "" Nop
 + "Session" Popup MenuSession
 
@@ -333,10 +331,10 @@ AddToMenu   MenuFvwmManPages "Help" Title
 # Session menu
 DestroyMenu MenuSession
 AddToMenu   MenuSession "Session" Title
-+ "Refresh Fvwm%icons/refresh.png%" Refresh
-+ "Restart Fvwm%icons/restart.png%" Restart
++ "Refresh Fvwm%refresh.png%" Refresh
++ "Restart Fvwm%restart.png%" Restart
 + "Lock" Exec exec locker
-+ "Logout%icons/quit.png%" Module FvwmScript FvwmScript-ConfirmQuit
++ "Logout%quit.png%" Module FvwmScript FvwmScript-ConfirmQuit
 + "Reboot" Exec exec reboot
 + "Shutdown" Exec exec poweroff
 
@@ -463,26 +461,26 @@ DestroyDecor FvwmDecor
 AddToDecor   FvwmDecor
 + TitleStyle Centered Height 23
 + TitleStyle ActiveUp (-- raised) ActiveDown (-- sunk)
-#+ TitleStyle TiledPixmap $[icons]/close.png
+#+ TitleStyle TiledPixmap dot.png
 + ButtonStyle All - Clear
 + ButtonStyle All Active ( Colorset 0 )
 + ButtonStyle All InActive ( Colorset 1 )
 + AddButtonStyle 2\
-	ActiveUp (Pixmap $[icons]/close.png -- Flat) \
-	ActiveDown (Pixmap $[icons]/close.png -- Flat) \
-	Inactive (Pixmap $[icons]/close.png -- Flat)
+	ActiveUp (Pixmap close.png -- Flat) \
+	ActiveDown (Pixmap close.png -- Flat) \
+	Inactive (Pixmap close.png -- Flat)
 + AddButtonStyle 4\
-	ActiveUp (Pixmap $[icons]/maximize.png -- Flat) \
-	ActiveDown (Pixmap $[icons]/maximize.png -- Flat) \
-	Inactive (Pixmap $[icons]/maximize.png -- Flat)
+	ActiveUp (Pixmap maximize.png -- Flat) \
+	ActiveDown (Pixmap maximize.png -- Flat) \
+	Inactive (Pixmap maximize.png -- Flat)
 + AddButtonStyle 6\
-	ActiveUp (Pixmap $[icons]/iconify.png -- Flat) \
-	ActiveDown (Pixmap $[icons]/iconify.png -- Flat) \
-	Inactive (Pixmap $[icons]/iconify.png -- Flat)
+	ActiveUp (Pixmap iconify.png -- Flat) \
+	ActiveDown (Pixmap iconify.png -- Flat) \
+	Inactive (Pixmap iconify.png -- Flat)
 + AddButtonStyle 1\
-	ActiveUp (Pixmap $[icons]/options.png -- Flat) \
-	ActiveDown (Pixmap $[icons]/options.png -- Flat) \
-	Inactive (Pixmap $[icons]/options.png -- Flat)
+	ActiveUp (Pixmap options.png -- Flat) \
+	ActiveDown (Pixmap options.png -- Flat) \
+	Inactive (Pixmap options.png -- Flat)
 
 #############
 # 8: Modules
