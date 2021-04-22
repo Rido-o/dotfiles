@@ -263,6 +263,8 @@ Style ConfirmReboot !Title, PositionPlacement Center, WindowListSkip, Layer 6
 Style ConfirmShutdown !Title, PositionPlacement Center, WindowListSkip, Layer 6
 Style FvwmIdent WindowListSkip
 
+Style st ResizeHintOverride
+
 ##############
 # 3: Colorsets
 #
