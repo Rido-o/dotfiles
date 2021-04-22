@@ -301,7 +301,7 @@ Colorset 10 fg #2A2426, bg #d8caac, hi, sh, Plain, NoShape, TiledPixmap line.png
 Colorset 11 fg #ffffff, bg #e39b7b, hi, sh, Plain, NoShape
 Colorset 12 fg #2A2426, bg #e6d6ac, hi, sh, Plain, NoShape
 Colorset 13 fg #ffffff, bg #e6d6ac, hi, sh, Plain, NoShape
-Colorset 14 fg #e39b7b, bg #d8caac, hi, sh, Plain, NoShape
+Colorset 14 fg #e39b7b, bg #d8caac, hi, sh, Plain, NoShape, TiledPixmap dot.png, Alpha 10
 
 ###########
 # 4: Menus
