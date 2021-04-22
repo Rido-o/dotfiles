@@ -285,6 +285,7 @@ Style FvwmIdent WindowListSkip
 #      11 - Module Hilight
 #      12 - Module ActiveButton (Mouse Hover)
 #      13 - FvwmPager Active Page
+#      14 - FvwmScript system status widgets
 ##############
 Colorset 0  fg #ffffff, bg #e39b7b, hi, sh, Plain, NoShape
 Colorset 1  fg #2A2426, bg #d8caac, hi, sh, Plain, NoShape
@@ -300,6 +301,7 @@ Colorset 10 fg #2A2426, bg #d8caac, hi, sh, Plain, NoShape, TiledPixmap line.png
 Colorset 11 fg #ffffff, bg #e39b7b, hi, sh, Plain, NoShape
 Colorset 12 fg #2A2426, bg #e6d6ac, hi, sh, Plain, NoShape
 Colorset 13 fg #ffffff, bg #e6d6ac, hi, sh, Plain, NoShape
+Colorset 14 fg #e39b7b, bg #d8caac, hi, sh, Plain, NoShape, TiledPixmap line.png, Alpha 10
 
 ###########
 # 4: Menus
@@ -621,20 +623,22 @@ DestroyModuleConfig ButtonsMusic:*
 *ButtonsMusic: (30x25, Title "", Action (Mouse 1) Exec exec mpc next, ActiveColorset 12, Frame 1)
 
 DestroyModuleConfig ButtonInfo:*
-*ButtonInfo: Geometry 125x50-5+505
+*ButtonInfo: Geometry 125x75-5+505
 *ButtonInfo: Colorset 10
-*ButtonInfo: Rows 50
+*ButtonInfo: Rows 75
 *ButtonInfo: Columns 125
 *ButtonInfo: Frame 1
 *ButtonInfo: Font "xft:cozette:size=8"
-*ButtonInfo: (5x50, Action(Mouse 1) Next (CirculateHit, ButtonInfo) PipeRead 'echo LockingSlide $$(test $$(($[w.x]+$[w.width])) -le $[vp.width] && echo w$$(($[w.width]-$width))p || echo w-$$(($[w.width]-$width))p) keep')
+*ButtonInfo: (5x75, Action(Mouse 1) Next (CirculateHit, ButtonInfo) PipeRead 'echo LockingSlide $$(test $$(($[w.x]+$[w.width])) -le $[vp.width] && echo w$$(($[w.width]-$width))p || echo w-$$(($[w.width]-$width))p) keep')
 *ButtonInfo: (30x25, Title "©", Action (Mouse 1) Exec exec $[infostore.terminal] -n floatcenter -g 120x50 stig, ActiveColorset 12, Frame 1)
 *ButtonInfo: (90x25, Swallow TorrentSpeed 'Module FvwmScript FvwmScript-TorrentSpeed', Frame 1)
 *ButtonInfo: (30x25, Title "", Action (Mouse 1) Exec exec $[infostore.terminal] -n floatcenter -g 128x40 sh -c "sed '37q' $HOME/.cache/weathercolor; read junk", ActiveColorset 12, Frame 1)
 *ButtonInfo: (90x25, Swallow Weather 'Module FvwmScript FvwmScript-Weather', Frame 1)
+*ButtonInfo: (30x25, Title "", Action (Mouse 1) Exec exec $[infostore.terminal] -n floatcenter -g 128x40 sh -c "sed '37q' $HOME/.cache/weathercolor; read junk", ActiveColorset 12, Frame 1)
+*ButtonInfo: (90x25, Swallow Memory 'Module FvwmScript FvwmScript-Memory', Frame 1)
 
 DestroyModuleConfig ButtonsControls:*
-*ButtonsControls: Geometry 125x25-5+570
+*ButtonsControls: Geometry 125x25-5+595
 *ButtonsControls: Colorset 10
 *ButtonsControls: Rows 25
 *ButtonsControls: Columns 125
@@ -650,7 +654,7 @@ DestroyModuleConfig ButtonsControls:*
 *ButtonsControls: (40x25, Title "", Action (Mouse 1) Exec exec networkmanager_dmenu, ActiveColorset 12, Frame 1)
 
 DestroyModuleConfig ButtonsClock:*
-*ButtonsClock: Geometry 125x40-5+610
+*ButtonsClock: Geometry 125x40-5+635
 *ButtonsClock: Colorset 10
 *ButtonsClock: Rows 40
 *ButtonsClock: Columns 125

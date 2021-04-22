@@ -1,0 +1,37 @@
+WindowTitle {Memory}
+WindowSize  88 23
+
+Init
+ Begin
+  Set $Total = (GetOutput { exec fvwm-status-mem-max} 1 -1)
+  Set $Used = (GetOutput { exec fvwm-status-mem-value} 1 -1) 
+
+  ChangeMaxValue 1 $Total
+  ChangeValue 1 $Used
+End
+
+PeriodicTasks
+ Begin 
+  If (RemainderOfDiv (GetTime) 5)==0 Then
+  Begin
+   Set $Used = (GetOutput { exec fvwm-status-mem-value} 1 -1)
+
+   ChangeValue 1 $Used
+  End
+End
+
+Widget 1
+Property
+ Type HDipstick
+ Position 0 0
+ Size 88 23
+ Value 0
+ MinValue 0
+ MaxValue 0
+ Colorset 14
+Main
+ Case message of
+  SingleClic :
+  Begin
+  End
+End
