@@ -130,6 +130,49 @@ AddToFunc LockingSlide
 + I AnimatedMove $0 $1
 + I State 2 True
 
+###############
+# Window tiling
+###############
+
+DestroyFunc TileLeft
+AddToFunc TileLeft
++ I ThisWindow (!Shaded, !Iconic) Maximize 50 100
++ I ThisWindow (Maximized, !Shaded, !Iconic) Move +0 +0
+
+DestroyFunc TileRight
+AddToFunc TileRight
++ I ThisWindow (!Shaded, !Iconic) Maximize 50 100
++ I ThisWindow (Maximized, !Shaded, !Iconic) Move -0 +0
+
+DestroyFunc TileTop
+AddToFunc TileTop
++ I ThisWindow (!Shaded, !Iconic) Maximize 100 50
++ I ThisWindow (Maximized, !Shaded, !Iconic) Move +0 +0
+
+DestroyFunc TileBottom
+AddToFunc TileBottom
++ I ThisWindow (!Shaded, !Iconic) Maximize 100 50
++ I ThisWindow (Maximized, !Shaded, !Iconic) Move +0 -0
+
+DestroyFunc TileTopLeft
+AddToFunc TileTopLeft
++ I ThisWindow (!Shaded, !Iconic) Maximize 50 50
++ I ThisWindow (Maximized, !Shaded, !Iconic) Move +0 +0
+
+DestroyFunc TileTopRight
+AddToFunc TileTopRight
++ I ThisWindow (!Shaded, !Iconic) Maximize 50 50
++ I ThisWindow (Maximized, !Shaded, !Iconic) Move -0 +0
+
+DestroyFunc TileBottomLeft
+AddToFunc TileBottomLeft
++ I ThisWindow (!Shaded, !Iconic) Maximize 50 50
++ I ThisWindow (Maximized, !Shaded, !Iconic) Move +0 -0
+
+DestroyFunc TileBottomRight
+AddToFunc TileBottomRight
++ I ThisWindow (!Shaded, !Iconic) Maximize 50 50
++ I ThisWindow (Maximized, !Shaded, !Iconic) Move -0 -0
 
 #############
 # 2: Styles #
@@ -416,6 +459,16 @@ Silent Key Print		A 4 Exec exec screenshot-desktop
 Silent Key w			A 4 Exec exec $[infostore.terminal] nvim -c ':VimwikiIndex'
 Silent Key n			A 4 Exec exec $[infostore.terminal] nnn -e -D
 Silent Key m			A 4 Exec exec $[infostore.terminal] ncmpcpp -c $HOME/.config/ncmpcpp/config-play
+
+# Window Tiling
+Silent Key H			A S4 TileLeft
+Silent Key L			A S4 TileRight
+Silent Key K			A S4 TileUp
+Silent Key J			A S4 TileDown
+Silent Key Y			A S4 TileTopLeft
+Silent Key U			A S4 TileTopRight
+Silent Key B			A S4 TileBottomLeft
+Silent Key N			A S4 TileBottomRight
 
 # Audio controls
 Silent Key Page_Up		A 4 Exec exec pamixer --allow-boost -i 5
