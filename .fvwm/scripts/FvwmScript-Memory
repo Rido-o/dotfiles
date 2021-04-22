@@ -1,5 +1,5 @@
 WindowTitle {Memory}
-WindowSize  88 23
+WindowSize  80 15
 
 Init
  Begin
@@ -24,8 +24,9 @@ Widget 1
 Property
  Type HDipstick
  Position 0 0
- Size 88 23
+ Size 80 15
  Value 0
+ Flags NoReliefString
  MinValue 0
  MaxValue 0
  Colorset 14

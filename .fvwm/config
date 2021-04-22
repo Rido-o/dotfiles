@@ -301,7 +301,7 @@ Colorset 10 fg #2A2426, bg #d8caac, hi, sh, Plain, NoShape, TiledPixmap line.png
 Colorset 11 fg #ffffff, bg #e39b7b, hi, sh, Plain, NoShape
 Colorset 12 fg #2A2426, bg #e6d6ac, hi, sh, Plain, NoShape
 Colorset 13 fg #ffffff, bg #e6d6ac, hi, sh, Plain, NoShape
-Colorset 14 fg #e39b7b, bg #d8caac, hi, sh, Plain, NoShape, TiledPixmap line.png, Alpha 10
+Colorset 14 fg #e39b7b, bg #d8caac, hi, sh, Plain, NoShape
 
 ###########
 # 4: Menus
@@ -634,7 +634,7 @@ DestroyModuleConfig ButtonInfo:*
 *ButtonInfo: (90x25, Swallow TorrentSpeed 'Module FvwmScript FvwmScript-TorrentSpeed', Frame 1)
 *ButtonInfo: (30x25, Title "", Action (Mouse 1) Exec exec $[infostore.terminal] -n floatcenter -g 128x40 sh -c "sed '37q' $HOME/.cache/weathercolor; read junk", ActiveColorset 12, Frame 1)
 *ButtonInfo: (90x25, Swallow Weather 'Module FvwmScript FvwmScript-Weather', Frame 1)
-*ButtonInfo: (30x25, Title "", Action (Mouse 1) Exec exec $[infostore.terminal] -n floatcenter -g 128x40 sh -c "sed '37q' $HOME/.cache/weathercolor; read junk", ActiveColorset 12, Frame 1)
+*ButtonInfo: (30x25, Title "✹", Action (Mouse 1) Exec exec $[infostore.terminal] -n floatcenter -g 120x50 gotop, ActiveColorset 12, Frame 1)
 *ButtonInfo: (90x25, Swallow Memory 'Module FvwmScript FvwmScript-Memory', Frame 1)
 
 DestroyModuleConfig ButtonsControls:*
@@ -645,13 +645,12 @@ DestroyModuleConfig ButtonsControls:*
 *ButtonsControls: Frame 1
 *ButtonsControls: Font "xft:cozette:size=8"
 *ButtonsControls: (5x25, Action(Mouse 1) Next (CirculateHit, ButtonsControls) PipeRead 'echo LockingSlide $$(test $$(($[w.x]+$[w.width])) -le $[vp.width] && echo w$$(($[w.width]-$width))p || echo w-$$(($[w.width]-$width))p) keep')
-*ButtonsControls: (40x25, Title "✹", Action (Mouse 1) Exec exec $[infostore.terminal] -n floatcenter -g 120x50 gotop, ActiveColorset 12, Frame 1)
-*ButtonsControls: (40x25, Title "", \
+*ButtonsControls: (60x25, Title "", \
 	Action (Mouse 1) Exec exec $[infostore.terminal] -n floatcenter -g 120x50 pulsemixer, \
 	Action (Mouse 4) Exec exec pamixer --allow-boost -i 5, \
 	Action (Mouse 5) Exec exec pamixer --allow-boost -d 5, \
 	ActiveColorset 12, Frame 1)
-*ButtonsControls: (40x25, Title "", Action (Mouse 1) Exec exec networkmanager_dmenu, ActiveColorset 12, Frame 1)
+*ButtonsControls: (60x25, Title "", Action (Mouse 1) Exec exec networkmanager_dmenu, ActiveColorset 12, Frame 1)
 
 DestroyModuleConfig ButtonsClock:*
 *ButtonsClock: Geometry 125x40-5+635
