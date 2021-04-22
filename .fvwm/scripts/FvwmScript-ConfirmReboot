@@ -31,7 +31,7 @@ Main
  Case message of
   SingleClic :
   Begin
-   Do {Reboot}
+   Do {exec reboot}
   End
 End
 
