@@ -1,4 +1,4 @@
-# $FVWM_USERDIR
+# Image locations
 ImagePath ${HOME}/.fvwm/images/icons:+
 ImagePath ${HOME}/.fvwm/images/titlebar:+
 ImagePath ${HOME}/.fvwm/images/pixmaps:+
