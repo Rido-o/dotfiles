@@ -1,4 +1,4 @@
-# Customisable
+# Customisable settings
 InfoStoreAdd PanelGap 5
 InfoStoreAdd PanelFont "xft:cozette:size=8"
 InfoStoreAdd PanelRawWidth 120
@@ -9,7 +9,7 @@ InfoStoreAdd PanelPagerHeight 90
 InfoStoreAdd PanelClockHeight 40
 InfoStoreAdd PanelFrame 1
 
-# Set
+# Derived settings
 InfoStoreAdd PanelOffsetTop $[infostore.PanelGap]
 InfoStoreAdd PanelOffsetBottom $[infostore.PanelGap]
 PipeRead "echo InfoStoreAdd PanelWidth $(( $[infostore.PanelRawWidth] + $[infostore.PanelHideWidth]))"

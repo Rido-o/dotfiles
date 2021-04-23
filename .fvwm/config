@@ -1,14 +1,16 @@
-InfoStoreAdd terminal $[TERMINAL]
 # $FVWM_USERDIR
 ImagePath ${HOME}/.fvwm/images/icons:+
 ImagePath ${HOME}/.fvwm/images/titlebar:+
 ImagePath ${HOME}/.fvwm/images/pixmaps:+
 
+# Set terminal
+InfoStoreAdd terminal $[TERMINAL]
+
 # Set scripts location
-SetEnv scripts $[HOME]/.fvwm/scripts
+InfoStoreAdd scripts $[HOME]/.fvwm/scripts
 
 # Set cache location
-SetEnv cache $[HOME]/.fvwm/cache
+InfoStoreAdd cache $[HOME]/.fvwm/cache
 
 # Disable resize hints from windows # Need it here for it to work properly on restart
 Style * ResizeHintOverride

@@ -16,7 +16,7 @@ DestroyModuleConfig FvwmIdent:*
 #     quitting fvwm.
 DestroyModuleConfig FvwmScript:*
 *FvwmScript: DefaultColorset 10
-*FvwmScript: Path $[scripts]
+*FvwmScript: Path $[infostore.scripts]
 
 # FvwmEvent
 #
