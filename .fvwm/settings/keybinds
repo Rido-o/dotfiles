@@ -1,0 +1,64 @@
+#################
+# 5: Key bindings
+#
+# Contexts:
+#     R = Root Window                 rrrrrrrrrrrrrrrrrrrrrr
+#     W = Application Window          rIrrrr<---------^rrrrr
+#     F = Frame Corners               rrrrrr[13TTTT642]rrrrr
+#     S = Frame Sides                 rIrrrr[wwwwwwwww]rrrrr
+#     T = Title Bar                   rrrrrr[wwwwwwwww]rrrrr
+#     I = Icon                        rIrrrrv_________>rrrrr
+#                                     rrrrrrrrrrrrrrrrrrrrrr
+#
+#     Numbers are buttons: [1 3 5 7 9  TTTTT  0 8 6 4 2]
+#
+# Modifiers: (A)ny, (C)ontrol, (S)hift, (M)eta (Alt), (N)othing, (4)Windows Key
+#
+# Format: Key <X>  <Context> <Modifier> <Action>
+#         Mouse <X> <Context> <Modifier> <Action>
+#################
+
+# Alt-F1 or Menu to load the root menu and Alt-Tab for a WindowList.
+# Ctrl-F1/F2/F3/F4 will switch between the Virtual Desktops.
+# Super_R (windows key) will launch a terminal.
+#
+# Silent supresses any errors (such as keyboards with no Menu key).
+Silent Key F1			A M Menu MenuFvwmRoot
+Silent Key Tab			A M WindowList Root c c NoDeskSort, SelectOnRelease Meta_L
+Silent Key F1			A C GotoDesk 0 0
+Silent Key F2			A C GotoDesk 0 1
+Silent Key F3			A C GotoDesk 0 2
+Silent Key F4			A C GotoDesk 0 3
+
+# General Windows Key keybinds
+Silent Key Return		A 4 Exec exec $[infostore.terminal]
+Silent Key q			A 4 Close
+Silent Key 1			A 4 GoToPage 0 0
+Silent Key 2			A 4 GoToPage 1 0
+Silent Key 3			A 4 GoToPage 0 -1
+Silent Key 4			A 4 GoToPage -1 -1
+
+# Specific Windows Key keybinds
+Silent Key question		A 4 Exec exec $[infostore.terminal] nvim $[HOME]/.cfg/wiki/help/help.wiki
+Silent Key Print		A 4 Exec exec screenshot-desktop
+Silent Key w			A 4 Exec exec $[infostore.terminal] nvim -c ':VimwikiIndex'
+Silent Key n			A 4 Exec exec $[infostore.terminal] nnn -e -D
+Silent Key m			A 4 Exec exec $[infostore.terminal] ncmpcpp -c $HOME/.config/ncmpcpp/config-play
+
+# Window Tiling
+Silent Key h			A S4 TileLeft
+Silent Key l			A S4 TileRight
+Silent Key k			A S4 TileUp
+Silent Key j			A S4 TileDown
+Silent Key y			A S4 TileTopLeft
+Silent Key u			A S4 TileTopRight
+Silent Key b			A S4 TileBottomLeft
+Silent Key n			A S4 TileBottomRight
+
+# Audio controls
+Silent Key Page_Up		A 4 Exec exec pamixer --allow-boost -i 5
+Silent Key Page_Down	A 4 Exec exec pamixer --allow-boost -d 5
+Silent Key Insert		A 4 Exec exec mpc toggle
+Silent Key Delete		A 4 Exec exec mpc stop
+Silent Key Home			A 4 Exec exec mpc next
+Silent Key End			A 4 Exec exec mpc prev

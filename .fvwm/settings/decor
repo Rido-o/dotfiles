@@ -1,0 +1,29 @@
+#######
+# 7: Window Decor
+#
+# Buttons Locations: [1 3 5 7 9  TTTTT  0 8 6 4 2]
+###########
+DestroyDecor FvwmDecor
+AddToDecor   FvwmDecor
++ TitleStyle Centered Height 23
++ TitleStyle ActiveUp (-- raised) ActiveDown (-- sunk)
+#+ TitleStyle TiledPixmap dot.png
++ ButtonStyle All - Clear
++ ButtonStyle All Active ( Colorset 0 )
++ ButtonStyle All InActive ( Colorset 1 )
++ AddButtonStyle 2\
+	ActiveUp (Pixmap close.png -- Flat) \
+	ActiveDown (Pixmap close.png -- Flat) \
+	Inactive (Pixmap close.png -- Flat)
++ AddButtonStyle 4\
+	ActiveUp (Pixmap maximize.png -- Flat) \
+	ActiveDown (Pixmap maximize.png -- Flat) \
+	Inactive (Pixmap maximize.png -- Flat)
++ AddButtonStyle 6\
+	ActiveUp (Pixmap iconify.png -- Flat) \
+	ActiveDown (Pixmap iconify.png -- Flat) \
+	Inactive (Pixmap iconify.png -- Flat)
++ AddButtonStyle 1\
+	ActiveUp (Pixmap options.png -- Flat) \
+	ActiveDown (Pixmap options.png -- Flat) \
+	Inactive (Pixmap options.png -- Flat)

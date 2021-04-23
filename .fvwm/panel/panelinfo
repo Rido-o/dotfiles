@@ -1,0 +1,17 @@
+DestroyModuleConfig ButtonsInfo:*
+*ButtonsInfo: Geometry $[infostore.PanelWidth]x$[infostore.PanelInfoHeight]-$[infostore.PanelGap]-$[infostore.PanelOffsetBottom]
+*ButtonsInfo: Colorset 10
+*ButtonsInfo: Rows 3
+*ButtonsInfo: Columns 125
+*ButtonsInfo: Frame $[infostore.PanelFrame]
+*ButtonsInfo: Font $[infostore.PanelFont]
+*ButtonsInfo: (5x3, Action(Mouse 1) Next (CirculateHit, ButtonsInfo) PipeRead 'echo LockingSlide $$(test $$(($[w.x]+$[w.width])) -le $[vp.width] && echo w$$(($[w.width]-$width+$[infostore.PanelGap]-$[infostore.PanelHideWidth]))p || echo w-$$(($[w.width]-$width+$[infostore.PanelGap]-$[infostore.PanelHideWidth]))p) keep')
+*ButtonsInfo: (30x1, Title "©", Action (Mouse 1) Exec exec $[infostore.terminal] -n floatcenter -g 120x50 stig, ActiveColorset 12)
+*ButtonsInfo: (90x1, Swallow TorrentSpeed 'Module FvwmScript FvwmScript-TorrentSpeed')
+*ButtonsInfo: (30x1, Title "", Action (Mouse 1) Exec exec $[infostore.terminal] -n floatcenter -g 128x40 sh -c "sed '37q' $HOME/.cache/weathercolor; read junk", ActiveColorset 12)
+*ButtonsInfo: (90x1, Swallow Weather 'Module FvwmScript FvwmScript-Weather')
+*ButtonsInfo: (30x1, Title "✹", Action (Mouse 1) Exec exec $[infostore.terminal] -n floatcenter -g 120x50 gotop, ActiveColorset 12)
+*ButtonsInfo: (90x1, Swallow Memory 'Module FvwmScript FvwmScript-Memory')
+AddPanelOffsetBottom $[infostore.PanelInfoHeight]
+
+Module FvwmButtons ButtonsInfo

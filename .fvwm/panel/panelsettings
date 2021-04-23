@@ -1,0 +1,28 @@
+InfoStoreAdd PanelGap 5
+InfoStoreAdd PanelFont "xft:cozette:size=8"
+InfoStoreAdd PanelOffsetTop $[infostore.PanelGap]
+InfoStoreAdd PanelOffsetBottom $[infostore.PanelGap]
+InfoStoreAdd PanelRawWidth 120
+InfoStoreAdd PanelHideWidth 5
+InfoStoreAdd PanelHeight 25
+InfoStoreAdd PanelBorderWidth 5
+InfoStoreAdd PanelPagerHeight 90
+InfoStoreAdd PanelClockHeight 40
+InfoStoreAdd PanelFrame 1
+PipeRead "echo InfoStoreAdd PanelWidth $(( $[infostore.PanelRawWidth] + $[infostore.PanelHideWidth]))"
+PipeRead "echo InfoStoreAdd PanelIconHeight $(( $[vp.height] - (($[infostore.PanelBorderWidth] * 2) + ($[infostore.PanelGap] * 2) )))"
+PipeRead "echo InfoStoreAdd PanelInfoHeight $(( $[infostore.PanelHeight] * 3 ))"
+PipeRead "echo InfoStoreAdd PanelWindWidth $(( $[infostore.PanelWidth] + ($[infostore.PanelBorderWidth] * 2) + ($[infostore.PanelGap] * 2) ))"
+
+DestroyFunc AddPanelOffsetTop
+AddToFunc AddPanelOffsetTop
++ I PipeRead "echo InfoStoreAdd PanelOffsetTop $(( $[infostore.PanelOffsetTop] + $0 + ($[infostore.PanelBorderWidth] * 2) + $[infostore.PanelGap] ))"
++ I PipeRead "echo InfoStoreAdd PanelIconHeight $(( $[infostore.PanelIconHeight] - ($0 + ($[infostore.PanelBorderWidth] * 2) + $[infostore.PanelGap] )))"
+
+DestroyFunc AddPanelOffsetBottom
+AddToFunc AddPanelOffsetBottom
++ I PipeRead "echo InfoStoreAdd PanelOffsetBottom $(( $[infostore.PanelOffsetBottom] + $0 + ($[infostore.PanelBorderWidth] * 2) + $[infostore.PanelGap] ))"
++ I PipeRead "echo InfoStoreAdd PanelIconHeight $(( $[infostore.PanelIconHeight] - ($0 + ($[infostore.PanelBorderWidth] * 2) + $[infostore.PanelGap] )))"
+
+# Sets boundries for maximized windows
+EwmhBaseStruts $[infostore.PanelGap] $[infostore.PanelWindWidth] $[infostore.PanelGap] $[infostore.PanelGap]

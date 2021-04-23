@@ -1,0 +1,29 @@
+################
+# 6: Mouse Bindings
+################
+
+# Window Buttons: [1 3 5 7 9  TTTTT  0 8 6 4 2]
+Mouse 1 1 A Menu MenuWindowOps
+Mouse 1 2 A MoveClickX Nop Close Destroy
+Mouse 1 4 A Maximize 100 100
+Mouse 2 4 A Maximize 0 100
+Mouse 3 4 A Maximize 100 0
+Mouse 1 6 A Iconify
+
+#   TitleBar: Click to Raise, Move, Double Click to Maximize
+#             Mouse Wheel Up/Down to WindowShade On/Off
+#   Borders: Click to raise, Move to Resize
+#   Root Window: Left Click - Main Menu
+#                Right Click - WindowOps Menu
+#                Middle Click - Window List Menu
+#   Right click TitleBar/Borders for WindowOps Menu
+Mouse 1	T    A MoveClickX Move Raise Maximize
+Mouse 4	T    A MoveClickX Nop Raise "WindowShade True"
+Mouse 5	T    A MoveClickX Nop Raise "WindowShade False"
+Mouse 3	T    A Menu MenuWindowOps
+Mouse 1	FS   A MoveClickX Resize Raise Nop
+Mouse 1	R    A Menu MenuFvwmRoot
+Mouse 2	R    A WindowList
+Mouse 3	R    A Menu MenuWindowOps
+Mouse 1	I    A MoveClickX Move Nop Iconify
+Mouse 3 I    A Menu MenuWindowOps

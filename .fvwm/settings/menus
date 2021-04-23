@@ -1,0 +1,119 @@
+###########
+# 4: Menus
+###########
+MenuStyle * MenuColorset 5, ActiveColorset 6, GreyedColorset 7, TitleColorset 8
+MenuStyle * Hilight3DOff, HilightBack, HilightTitleBack, SeparatorsLong
+MenuStyle * TrianglesSolid, TrianglesUseFore
+MenuStyle * ItemFormat "%|%3.1i%5.3l%5.3>%|"
+MenuStyle * Font "xft:cozette:size=8"
+#MenuStyle * MenuFace TiledPixmap dot.png
+
+# Root Menu
+#
+# The root menu will PopUp with a click in the root
+# window or using alt-f1 (or menu).
+DestroyMenu MenuFvwmRoot
+AddToMenu   MenuFvwmRoot "Fvwm" Title
++ "Terminal%terminal.png%" Exec exec $[infostore.terminal]
++ "Programs%programs.png%" Popup MenuApplications
++ "Music" Popup MenuMusic
++ "Utilities" Popup MenuUtilities
++ "" Nop
++ "Man Pages%help.png%" Popup MenuFvwmManPages
++ "Copy Config%conf.png%" FvwmScript FvwmScript-ConfirmCopyConfig
++ "" Nop
++ "Session" Popup MenuSession
+
+# Programs Menu
+DestroyMenu MenuApplications
+AddToMenu   MenuApplications "Applications" Title
+Test (x $[BROWSER]) + "Web Browser" Exec exec $[BROWSER]
+Test (x bitwarden) + "Password Manager" Exec exec bitwarden
+Test (x nnn) + "File Explorer" Exec exec setsid -f $[infostore.terminal] nnn -e -D
+Test (x gotop) + "Task Manager" Exec exec setsid -f $[infostore.terminal] gotop
+Test (x newsboat) + "RSS Reader" Exec exec setsid -f $[infostore.terminal] newsboat
+Test (x pulsemixer) + "Volume Mixer" Exec exec setsid -f $[infostore.terminal] pulsemixer
+
+DestroyMenu MenuUtilities
+AddToMenu   MenuUtilities "Utilities" Title
++ "Choose Wallpaper" Exec exec sxiv-wallpaper
++ "Screenshot" Exec exec screenshot-desktop
+
+# Music Menu
+DestroyMenu MenuMusic
+AddToMenu	MenuMusic "Music" Title
+Test (x ncmpcpp) + "Setup" Exec exec setsid -f $[infostore.terminal] ncmpcpp-ueberzug && setsid -f $[infostore.terminal] ncmpcpp -s media_library -c $[HOME]/.config/ncmpcpp/config-main && setsid -f $[infostore.terminal] ncmpcpp -s visualizer -c $[HOME]/.config/ncmpcpp/config-main
+Test (x ncmpcpp) + "Playlist" Exec exec setsid -f $[infostore.terminal] ncmpcpp-ueberzug
+Test (x ncmpcpp) + "Albums" Exec exec setsid -f $[infostore.terminal] ncmpcpp -s media_library
+Test (x ncmpcpp) + "Visualiser" Exec exec setsid -f $[infostore.terminal] ncmpcpp -s visualizer -c $[HOME]/.config/ncmpcpp/config-main
+
+# Fvwm Man Pages (Help) Menu
+DestroyMenu MenuFvwmManPages
+AddToMenu   MenuFvwmManPages "Help" Title
++ "fvwm"                ViewManPage fvwm
++ "FvwmAnimate"         ViewManPage FvwmAnimate
++ "FvwmAuto"            ViewManPage FvwmAuto
++ "FvwmBacker"          ViewManPage FvwmBacker
++ "FvwmBanner"          ViewManPage FvwmBanner
++ "FvwmButtons"         ViewManPage FvwmButtons
++ "FvwmCommand"         ViewManPage FvwmCommand
++ "FvwmConsole"         ViewManPage FvwmConsole
++ "FvwmEvent"           ViewManPage FvwmEvent
++ "FvwmForm"            ViewManPage FvwmForm
++ "FvwmIconMan"         ViewManPage FvwmIconMan
++ "FvwmIdent"           ViewManPage FvwmIdent
++ "FvwmPager"           ViewManPage FvwmPager
++ "FvwmPerl"            ViewManPage FvwmPerl
++ "FvwmProxy"           ViewManPage FvwmProxy
++ "FvwmRearrange"       ViewManPage FvwmRearrange
++ "FvwmScript"          ViewManPage FvwmScript
++ "" Nop
++ "fvwm-root"	        ViewManPage fvwm-root
++ "fvwm-menu-desktop"   ViewManPage fvwm-menu-desktop
++ "fvwm-menu-directory" ViewManPage fvwm-menu-directory
++ "fvwm-menu-headlines" ViewManPage fvwm-menu-headlines
++ "fvwm-menu-xlock"     ViewManPage fvwm-menu-xlock
++ "fvwm-config"         ViewManPage fvwm-config
+
+# Session menu
+DestroyMenu MenuSession
+AddToMenu   MenuSession "Session" Title
++ "Refresh Fvwm%refresh.png%" Refresh
++ "Restart Fvwm%restart.png%" Restart
++ "Lock" Exec exec locker
++ "Logout%quit.png%" Module FvwmScript FvwmScript-ConfirmQuit
++ "Reboot" Module FvwmScript FvwmScript-ConfirmReboot
++ "Shutdown" Module FvwmScript FvwmScript-ConfirmShutdown
+
+# Window options menu
+DestroyMenu MenuWindowOps
+AddToMenu   MenuWindowOps
++ "Move"                Move
++ "Resize"              Resize
++ "(De)Iconify"         Iconify
++ "(Un)Maximize"        Maximize
++ "(Un)Shade"           WindowShade
++ "(Un)Sticky"			Stick
++ "(No)TitleBar"		Pick (CirculateHit) ToggleTitle
++ "Send To Desk"        Popup MenuSendToDesk
++ "" Nop
++ "Close"               Close
++ "Destroy"             Destroy
++ "" Nop
++ "Raise"				Raise
++ "Lower"				Lower
++ "" Nop
++ "StaysOnTop"          Pick (CirculateHit) Layer 0 6
++ "StaysPut"            Pick (CirculateHit) Layer 0 4
++ "StaysOnBottom"       Pick (CirculateHit) Layer 0 2
++ "" Nop
++ "Identify"            Module FvwmIdent
+
+# Send window to desk
+DestroyMenu MenuSendToDesk
+AddToMenu   MenuSendToDesk
++ "Current"	MoveToDesk
++ "Desk 0"	MoveToDesk 0 0
++ "Desk 1"	MoveToDesk 0 1
++ "Desk 2"	MoveToDesk 0 2
++ "Desk 3"	MoveToDesk 0 3

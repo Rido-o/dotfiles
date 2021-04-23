@@ -1,0 +1,33 @@
+DestroyModuleConfig ButtonsPager:*
+*ButtonsPager: Geometry $[infostore.PanelWidth]x$[infostore.PanelPagerHeight]-$[infostore.PanelGap]+$[infostore.PanelOffsetTop]
+*ButtonsPager: Colorset 10
+*ButtonsPager: Rows 90
+*ButtonsPager: Columns 125
+*ButtonsPager: Frame $[infostore.PanelFrame]
+*ButtonsPager: Font $[infostore.PanelFont]
+*ButtonsPager: (5x90, Action(Mouse 1) Next (CirculateHit, ButtonsPager) PipeRead 'echo LockingSlide $$(test $$(($[w.x]+$[w.width])) -le $[vp.width] && echo w$$(($[w.width]-$width+$[infostore.PanelGap]-$[infostore.PanelHideWidth]))p || echo w-$$(($[w.width]-$width+$[infostore.PanelGap]-$[infostore.PanelHideWidth]))p) keep')
+*ButtonsPager: (120x5, Frame 0)
+*ButtonsPager: (5x80, Frame 0)
+*ButtonsPager: (110x80, Swallow FvwmPager 'Module FvwmPager *', frame $[infostore.PanelFrame])
+*ButtonsPager: (5x80, Frame 0)
+*ButtonsPager: (120x5, Frame 0)
+AddPanelOffsetTop $[infostore.PanelPagerHeight]
+
+# FvwmPager
+#
+# This module displays the location of the windows on the various Pages
+# and Desks. This is setup to show only the Pages on the current Desk.
+DestroyModuleConfig FvwmPager:*
+*FvwmPager: Colorset * 10
+*FvwmPager: HilightColorset * 13
+*FvwmPager: BalloonColorset * 10
+*FvwmPager: WindowColorsets 10 11
+*FvwmPager: Font None
+*FvwmPager: Balloons All
+*FvwmPager: BalloonFont $[infostore.PanelFont]
+*FvwmPager: BallonYOffset +2
+*FvwmPager: Window3dBorders
+*FvwmPager: MiniIcons
+*FvwmPager: SolidSeparators
+
+Module FvwmButtons ButtonsPager

@@ -1,0 +1,17 @@
+DestroyModuleConfig ButtonsControls:*
+*ButtonsControls: Geometry $[infostore.PanelWidth]x$[infostore.PanelHeight]-$[infostore.PanelGap]-$[infostore.PanelOffsetBottom]
+*ButtonsControls: Colorset 10
+*ButtonsControls: Rows 1
+*ButtonsControls: Columns 125
+*ButtonsControls: Frame $[infostore.PanelFrame]
+*ButtonsControls: Font $[infostore.PanelFont]
+*ButtonsControls: (5x1, Action(Mouse 1) Next (CirculateHit, ButtonsControls) PipeRead 'echo LockingSlide $$(test $$(($[w.x]+$[w.width])) -le $[vp.width] && echo w$$(($[w.width]-$width+$[infostore.PanelGap]-$[infostore.PanelHideWidth]))p || echo w-$$(($[w.width]-$width+$[infostore.PanelGap]-$[infostore.PanelHideWidth]))p) keep')
+*ButtonsControls: (60x1, Title "", \
+	Action (Mouse 1) Exec exec $[infostore.terminal] -n floatcenter -g 120x50 pulsemixer, \
+	Action (Mouse 4) Exec exec pamixer --allow-boost -i 5, \
+	Action (Mouse 5) Exec exec pamixer --allow-boost -d 5, \
+	ActiveColorset 12)
+*ButtonsControls: (60x1, Title "", Action (Mouse 1) Exec exec networkmanager_dmenu, ActiveColorset 12)
+AddPanelOffsetBottom $[infostore.PanelHeight]
+
+Module FvwmButtons ButtonsControls

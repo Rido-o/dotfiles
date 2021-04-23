@@ -1,0 +1,15 @@
+DestroyModuleConfig ButtonsMusic:*
+*ButtonsMusic: Geometry $[infostore.PanelWidth]x$[infostore.PanelHeight]-$[infostore.PanelGap]-$[infostore.PanelOffsetBottom]
+*ButtonsMusic: Colorset 10
+*ButtonsMusic: Rows 1
+*ButtonsMusic: Columns 125
+*ButtonsMusic: Frame $[infostore.PanelFrame]
+*ButtonsMusic: Font $[infostore.PanelFont]
+*ButtonsMusic: (5x1, Action(Mouse 1) Next (CirculateHit, ButtonsMusic) PipeRead 'echo LockingSlide $$(test $$(($[w.x]+$[w.width])) -le $[vp.width] && echo w$$(($[w.width]-$width+$[infostore.PanelGap]-$[infostore.PanelHideWidth]))p || echo w-$$(($[w.width]-$width+$[infostore.PanelGap]-$[infostore.PanelHideWidth]))p) keep')
+*ButtonsMusic: (30x1, Title "", Action (Mouse 1) Exec exec mpc prev, ActiveColorset 12)
+*ButtonsMusic: (30x1, Title "", Action (Mouse 1) Exec exec mpc toggle, ActiveColorset 12)
+*ButtonsMusic: (30x1, Title "", Action (Mouse 1) Exec exec mpc stop, ActiveColorset 12)
+*ButtonsMusic: (30x1, Title "", Action (Mouse 1) Exec exec mpc next, ActiveColorset 12)
+AddPanelOffsetBottom $[infostore.PanelHeight]
+
+Module FvwmButtons ButtonsMusic

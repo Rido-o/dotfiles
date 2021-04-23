@@ -1,0 +1,34 @@
+DestroyModuleConfig ButtonsIconMan:*
+*ButtonsIconMan: Geometry $[infostore.PanelWidth]x$[infostore.PanelIconHeight]-$[infostore.PanelGap]+$[infostore.PanelOffsetTop]
+*ButtonsIconMan: Colorset 10
+*ButtonsIconMan: Rows 1
+*ButtonsIconMan: Columns 125
+*ButtonsIconMan: Frame $[infostore.PanelFrame]
+*ButtonsIconMan: Font $[infostore.PanelFont]
+*ButtonsIconMan: (5x1, Action(Mouse 1) Next (CirculateHit, ButtonsIconMan) PipeRead 'echo LockingSlide $$(test $$(($[w.x]+$[w.width])) -le $[vp.width] && echo w$$(($[w.width]-$width+$[infostore.PanelGap]-$[infostore.PanelHideWidth]))p || echo w-$$(($[w.width]-$width+$[infostore.PanelGap]-$[infostore.PanelHideWidth]))p) keep')
+*ButtonsIconMan: (120x1, Top, Swallow FvwmIconMan 'Module FvwmIconMan', Frame 0)
+
+# FvwmIconMan
+#
+# FvwmIconMan is a powerful tool to list and manage windows. This
+# is used as the window list in the panel or taskbar.
+DestroyModuleConfig FvwmIconMan:*
+*FvwmIconMan: UseWinList true
+*FvwmIconMan: ButtonGeometry $[infostore.PanelRawWidth]x$[infostore.PanelHeight]
+*FvwmIconMan: Colorset 10
+*FvwmIconMan: FocusColorset 11
+*FvwmIconMan: FocusAndSelectColorset 12
+*FvwmIconMan: SelectColorset 12
+*FvwmIconMan: IconAndSelectColorset 12
+*FvwmIconMan: DrawIcons always
+*FvwmIconMan: ReliefThickness $[infostore.PanelFrame]
+*FvwmIconMan: Format "%t"
+*FvwmIconMan: Font $[infostore.PanelFont]
+*FvwmIconMan: Action Mouse 1 A sendcommand IconManClick
+*FvwmIconMan: Action Mouse 2 A sendcommand Nop
+*FvwmIconMan: Action Mouse 3 A sendcommand "Menu MenuWindowOps"
+*FvwmIconMan: Resolution global
+*FvwmIconMan: Tips needed
+*FvwmIconMan: Sort id
+
+Module FvwmButtons ButtonsIconMan
