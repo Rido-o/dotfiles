@@ -1,3 +1,5 @@
+PipeRead "echo InfoStoreAdd PanelInfoHeight $(( $[infostore.PanelHeight] * 3 ))"
+
 DestroyModuleConfig ButtonsInfo:*
 *ButtonsInfo: Geometry $[infostore.PanelWidth]x$[infostore.PanelInfoHeight]-$[infostore.PanelGap]-$[infostore.PanelOffsetBottom]
 *ButtonsInfo: Colorset 10

@@ -29,15 +29,15 @@ AddToFunc ImportSettings
 DestroyFunc RightPanel
 AddToFunc RightPanel
 + I Read panel/panelsettings
-# Top
+# Top # Above IconMan # Top going down
 + I Read panel/panelpager
 + I Read panel/paneldesk
-# Bottom
+# Bottom # Below IconMan # Bottom going up
 + I Read panel/panelclock
 + I Read panel/panelcontrols
 + I Read panel/panelinfo
 + I Read panel/panelmusic
-# Middle
+# Middle # IconMan filling empty space
 + I Read panel/paneliconman
 
 DestroyFunc StartFunction
