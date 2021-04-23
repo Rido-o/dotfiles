@@ -204,7 +204,7 @@ Style * EdgeMoveDelay 350, EdgeMoveResistance 350
 # EwmhBaseStruts [left] [right] [top] [bottom]
 # Reserves space along the edge(s) of the Screen that will not
 # be covered when maximizing or placing windows.
-EwmhBaseStruts 5 145 5 5
+#EwmhBaseStruts 5 145 5 5
 
 # This sets the ClickTime and MoveThreshold used to determine
 # Double Clicks, Hold and Move for the mouse.
@@ -580,14 +580,22 @@ InfoStoreAdd PanelHeight 25
 InfoStoreAdd PanelBorderWidth 5
 InfoStoreAdd PanelPagerHeight 90
 InfoStoreAdd PanelHideWidth 5
+PipeRead "echo InfoStoreAdd PanelIconHeight $(( $[vp.height] - (($[infostore.PanelBorderWidth] * 2) + ($[infostore.PanelGap] * 2) )))"
+PipeRead "echo InfoStoreAdd PanelInfoHeight $(( $[infostore.PanelHeight] * 3 ))"
+PipeRead "echo InfoStoreAdd PanelWindWidth $(( $[infostore.PanelWidth] + ($[infostore.PanelBorderWidth] * 2) + ($[infostore.PanelGap] * 2) ))"
 
 DestroyFunc AddPanelOffsetTop
 AddToFunc AddPanelOffsetTop
 + I PipeRead "echo InfoStoreAdd PanelOffsetTop $(( $[infostore.PanelOffsetTop] + $0 + ($[infostore.PanelBorderWidth] * 2) + $[infostore.PanelGap] ))"
++ I PipeRead "echo InfoStoreAdd PanelIconHeight $(( $[infostore.PanelIconHeight] - ($0 + ($[infostore.PanelBorderWidth] * 2) + $[infostore.PanelGap] )))"
 
 DestroyFunc AddPanelOffsetBottom
 AddToFunc AddPanelOffsetBottom
 + I PipeRead "echo InfoStoreAdd PanelOffsetBottom $(( $[infostore.PanelOffsetBottom] + $0 + ($[infostore.PanelBorderWidth] * 2) + $[infostore.PanelGap] ))"
++ I PipeRead "echo InfoStoreAdd PanelIconHeight $(( $[infostore.PanelIconHeight] - ($0 + ($[infostore.PanelBorderWidth] * 2) + $[infostore.PanelGap] )))"
+
+# Sets boundries for maximized windows
+EwmhBaseStruts $[infostore.PanelGap] $[infostore.PanelWindWidth] $[infostore.PanelGap] $[infostore.PanelGap]
 
 DestroyModuleConfig ButtonsPager:*
 *ButtonsPager: Geometry $[infostore.PanelWidth]x$[infostore.PanelPagerHeight]-$[infostore.PanelGap]+$[infostore.PanelOffsetTop]
@@ -605,7 +613,7 @@ DestroyModuleConfig ButtonsPager:*
 AddPanelOffsetTop $[infostore.PanelPagerHeight]
 
 DestroyModuleConfig ButtonsDesk:*
-*ButtonsDesk: Geometry 125x25-$[infostore.PanelGap]+$[infostore.PanelOffsetTop]
+*ButtonsDesk: Geometry 125x$[infostore.PanelHeight]-$[infostore.PanelGap]+$[infostore.PanelOffsetTop]
 *ButtonsDesk: Colorset 10
 *ButtonsDesk: Rows 25
 *ButtonsDesk: Columns 125
@@ -630,7 +638,7 @@ DestroyModuleConfig ButtonsClock:*
 AddPanelOffsetBottom 40
 
 DestroyModuleConfig ButtonsControls:*
-*ButtonsControls: Geometry 125x25-$[infostore.PanelGap]-$[infostore.PanelOffsetBottom]
+*ButtonsControls: Geometry 125x$[infostore.PanelHeight]-$[infostore.PanelGap]-$[infostore.PanelOffsetBottom]
 *ButtonsControls: Colorset 10
 *ButtonsControls: Rows 25
 *ButtonsControls: Columns 125
@@ -646,7 +654,7 @@ DestroyModuleConfig ButtonsControls:*
 AddPanelOffsetBottom $[infostore.PanelHeight]
 
 DestroyModuleConfig ButtonInfo:*
-*ButtonInfo: Geometry 125x75-$[infostore.PanelGap]-$[infostore.PanelOffsetBottom]
+*ButtonInfo: Geometry 125x$[infostore.PanelInfoHeight]-$[infostore.PanelGap]-$[infostore.PanelOffsetBottom]
 *ButtonInfo: Colorset 10
 *ButtonInfo: Rows 75
 *ButtonInfo: Columns 125
@@ -662,7 +670,7 @@ DestroyModuleConfig ButtonInfo:*
 AddPanelOffsetBottom 75
 
 DestroyModuleConfig ButtonsMusic:*
-*ButtonsMusic: Geometry 125x25-$[infostore.PanelGap]-$[infostore.PanelOffsetBottom]
+*ButtonsMusic: Geometry 125x$[infostore.PanelHeight]-$[infostore.PanelGap]-$[infostore.PanelOffsetBottom]
 *ButtonsMusic: Colorset 10
 *ButtonsMusic: Rows 25
 *ButtonsMusic: Columns 125
@@ -676,7 +684,7 @@ DestroyModuleConfig ButtonsMusic:*
 AddPanelOffsetBottom $[infostore.PanelHeight]
 
 DestroyModuleConfig ButtonsIconMan:*
-*ButtonsIconMan: Geometry 125x300-$[infostore.PanelGap]+$[infostore.PanelOffsetTop]
+*ButtonsIconMan: Geometry 125x$[infostore.PanelIconHeight]-$[infostore.PanelGap]+$[infostore.PanelOffsetTop]
 *ButtonsIconMan: Colorset 10
 *ButtonsIconMan: Rows 300
 *ButtonsIconMan: Columns 125
