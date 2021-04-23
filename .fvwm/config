@@ -572,8 +572,25 @@ DestroyModuleConfig FvwmScript:*
 *FvwmScript: DefaultColorset 10
 *FvwmScript: Path $[scripts]
 
+InfoStoreAdd PanelGap 5
+InfoStoreAdd PanelOffsetTop $[infostore.PanelGap]
+InfoStoreAdd PanelOffsetBottom $[infostore.PanelGap]
+InfoStoreAdd PanelWidth 125
+InfoStoreAdd PanelHeight 25
+InfoStoreAdd PanelBorderWidth 5
+InfoStoreAdd PanelPagerHeight 90
+InfoStoreAdd PanelHideWidth 5
+
+DestroyFunc AddPanelOffsetTop
+AddToFunc AddPanelOffsetTop
++ I PipeRead "echo InfoStoreAdd PanelOffsetTop $(( $[infostore.PanelOffsetTop] + $0 + ($[infostore.PanelBorderWidth] * 2) + $[infostore.PanelGap] ))"
+
+DestroyFunc AddPanelOffsetBottom
+AddToFunc AddPanelOffsetBottom
++ I PipeRead "echo InfoStoreAdd PanelOffsetBottom $(( $[infostore.PanelOffsetBottom] + $0 + ($[infostore.PanelBorderWidth] * 2) + $[infostore.PanelGap] ))"
+
 DestroyModuleConfig ButtonsPager:*
-*ButtonsPager: Geometry 125x90-5+5
+*ButtonsPager: Geometry $[infostore.PanelWidth]x$[infostore.PanelPagerHeight]-$[infostore.PanelGap]+$[infostore.PanelOffsetTop]
 *ButtonsPager: Colorset 10
 *ButtonsPager: Rows 90
 *ButtonsPager: Columns 125
@@ -585,9 +602,10 @@ DestroyModuleConfig ButtonsPager:*
 *ButtonsPager: (110x80, Swallow FvwmPager 'Module FvwmPager *', Frame 1)
 *ButtonsPager: (5x80, Frame 0)
 *ButtonsPager: (120x5, Frame 0)
+AddPanelOffsetTop $[infostore.PanelPagerHeight]
 
 DestroyModuleConfig ButtonsDesk:*
-*ButtonsDesk: Geometry 125x25-5+110
+*ButtonsDesk: Geometry 125x25-$[infostore.PanelGap]+$[infostore.PanelOffsetTop]
 *ButtonsDesk: Colorset 10
 *ButtonsDesk: Rows 25
 *ButtonsDesk: Columns 125
@@ -598,47 +616,21 @@ DestroyModuleConfig ButtonsDesk:*
 *ButtonsDesk: (30x25, Id desk1, Title "1", Action (Mouse 1) GotoDesk 0 1, ActiveColorset 12, Frame 1)
 *ButtonsDesk: (30x25, Id desk2, Title "2", Action (Mouse 1) GotoDesk 0 2, ActiveColorset 12, Frame 1)
 *ButtonsDesk: (30x25, Id desk3, Title "3", Action (Mouse 1) GotoDesk 0 3, ActiveColorset 12, Frame 1)
+AddPanelOffsetTop $[infostore.PanelHeight]
 
-DestroyModuleConfig ButtonsIconMan:*
-*ButtonsIconMan: Geometry 125x300-5+150
-*ButtonsIconMan: Colorset 10
-*ButtonsIconMan: Rows 300
-*ButtonsIconMan: Columns 125
-*ButtonsIconMan: Frame 1
-*ButtonsIconMan: Font "xft:cozette:size=8"
-*ButtonsIconMan: (5x300, Action(Mouse 1) Next (CirculateHit, ButtonsIconMan) PipeRead 'echo LockingSlide $$(test $$(($[w.x]+$[w.width])) -le $[vp.width] && echo w$$(($[w.width]-$width))p || echo w-$$(($[w.width]-$width))p) keep')
-*ButtonsIconMan: (120x300, Top, Swallow FvwmIconMan 'Module FvwmIconMan', Frame 0)
-
-DestroyModuleConfig ButtonsMusic:*
-*ButtonsMusic: Geometry 125x25-5+465
-*ButtonsMusic: Colorset 10
-*ButtonsMusic: Rows 25
-*ButtonsMusic: Columns 125
-*ButtonsMusic: Frame 1
-*ButtonsMusic: Font "xft:cozette:size=8"
-*ButtonsMusic: (5x25, Action(Mouse 1) Next (CirculateHit, ButtonsMusic) PipeRead 'echo LockingSlide $$(test $$(($[w.x]+$[w.width])) -le $[vp.width] && echo w$$(($[w.width]-$width))p || echo w-$$(($[w.width]-$width))p) keep')
-*ButtonsMusic: (30x25, Title "", Action (Mouse 1) Exec exec mpc prev, ActiveColorset 12, Frame 1)
-*ButtonsMusic: (30x25, Title "", Action (Mouse 1) Exec exec mpc toggle, ActiveColorset 12, Frame 1)
-*ButtonsMusic: (30x25, Title "", Action (Mouse 1) Exec exec mpc stop, ActiveColorset 12, Frame 1)
-*ButtonsMusic: (30x25, Title "", Action (Mouse 1) Exec exec mpc next, ActiveColorset 12, Frame 1)
-
-DestroyModuleConfig ButtonInfo:*
-*ButtonInfo: Geometry 125x75-5+505
-*ButtonInfo: Colorset 10
-*ButtonInfo: Rows 75
-*ButtonInfo: Columns 125
-*ButtonInfo: Frame 1
-*ButtonInfo: Font "xft:cozette:size=8"
-*ButtonInfo: (5x75, Action(Mouse 1) Next (CirculateHit, ButtonInfo) PipeRead 'echo LockingSlide $$(test $$(($[w.x]+$[w.width])) -le $[vp.width] && echo w$$(($[w.width]-$width))p || echo w-$$(($[w.width]-$width))p) keep')
-*ButtonInfo: (30x25, Title "©", Action (Mouse 1) Exec exec $[infostore.terminal] -n floatcenter -g 120x50 stig, ActiveColorset 12, Frame 1)
-*ButtonInfo: (90x25, Swallow TorrentSpeed 'Module FvwmScript FvwmScript-TorrentSpeed', Frame 1)
-*ButtonInfo: (30x25, Title "", Action (Mouse 1) Exec exec $[infostore.terminal] -n floatcenter -g 128x40 sh -c "sed '37q' $HOME/.cache/weathercolor; read junk", ActiveColorset 12, Frame 1)
-*ButtonInfo: (90x25, Swallow Weather 'Module FvwmScript FvwmScript-Weather', Frame 1)
-*ButtonInfo: (30x25, Title "✹", Action (Mouse 1) Exec exec $[infostore.terminal] -n floatcenter -g 120x50 gotop, ActiveColorset 12, Frame 1)
-*ButtonInfo: (90x25, Swallow Memory 'Module FvwmScript FvwmScript-Memory', Frame 1)
+DestroyModuleConfig ButtonsClock:*
+*ButtonsClock: Geometry 125x40-$[infostore.PanelGap]-$[infostore.PanelOffsetBottom]
+*ButtonsClock: Colorset 10
+*ButtonsClock: Rows 40
+*ButtonsClock: Columns 125
+*ButtonsClock: Frame 1
+*ButtonsClock: Font "xft:cozette:size=8"
+*ButtonsClock: (5x40, Action(Mouse 1) Next (CirculateHit, ButtonsClock) PipeRead 'echo LockingSlide $$(test $$(($[w.x]+$[w.width])) -le $[vp.width] && echo w$$(($[w.width]-$width))p || echo w-$$(($[w.width]-$width))p) keep')
+*ButtonsClock: (120x40, Swallow DateTime 'Module FvwmScript FvwmScript-DateTime', Frame 1)
+AddPanelOffsetBottom 40
 
 DestroyModuleConfig ButtonsControls:*
-*ButtonsControls: Geometry 125x25-5+595
+*ButtonsControls: Geometry 125x25-$[infostore.PanelGap]-$[infostore.PanelOffsetBottom]
 *ButtonsControls: Colorset 10
 *ButtonsControls: Rows 25
 *ButtonsControls: Columns 125
@@ -651,16 +643,47 @@ DestroyModuleConfig ButtonsControls:*
 	Action (Mouse 5) Exec exec pamixer --allow-boost -d 5, \
 	ActiveColorset 12, Frame 1)
 *ButtonsControls: (60x25, Title "", Action (Mouse 1) Exec exec networkmanager_dmenu, ActiveColorset 12, Frame 1)
+AddPanelOffsetBottom $[infostore.PanelHeight]
 
-DestroyModuleConfig ButtonsClock:*
-*ButtonsClock: Geometry 125x40-5+635
-*ButtonsClock: Colorset 10
-*ButtonsClock: Rows 40
-*ButtonsClock: Columns 125
-*ButtonsClock: Frame 1
-*ButtonsClock: Font "xft:cozette:size=8"
-*ButtonsClock: (5x40, Action(Mouse 1) Next (CirculateHit, ButtonsClock) PipeRead 'echo LockingSlide $$(test $$(($[w.x]+$[w.width])) -le $[vp.width] && echo w$$(($[w.width]-$width))p || echo w-$$(($[w.width]-$width))p) keep')
-*ButtonsClock: (120x40, Swallow DateTime 'Module FvwmScript FvwmScript-DateTime', Frame 1)
+DestroyModuleConfig ButtonInfo:*
+*ButtonInfo: Geometry 125x75-$[infostore.PanelGap]-$[infostore.PanelOffsetBottom]
+*ButtonInfo: Colorset 10
+*ButtonInfo: Rows 75
+*ButtonInfo: Columns 125
+*ButtonInfo: Frame 1
+*ButtonInfo: Font "xft:cozette:size=8"
+*ButtonInfo: (5x75, Action(Mouse 1) Next (CirculateHit, ButtonInfo) PipeRead 'echo LockingSlide $$(test $$(($[w.x]+$[w.width])) -le $[vp.width] && echo w$$(($[w.width]-$width))p || echo w-$$(($[w.width]-$width))p) keep')
+*ButtonInfo: (30x25, Title "©", Action (Mouse 1) Exec exec $[infostore.terminal] -n floatcenter -g 120x50 stig, ActiveColorset 12, Frame 1)
+*ButtonInfo: (90x25, Swallow TorrentSpeed 'Module FvwmScript FvwmScript-TorrentSpeed', Frame 1)
+*ButtonInfo: (30x25, Title "", Action (Mouse 1) Exec exec $[infostore.terminal] -n floatcenter -g 128x40 sh -c "sed '37q' $HOME/.cache/weathercolor; read junk", ActiveColorset 12, Frame 1)
+*ButtonInfo: (90x25, Swallow Weather 'Module FvwmScript FvwmScript-Weather', Frame 1)
+*ButtonInfo: (30x25, Title "✹", Action (Mouse 1) Exec exec $[infostore.terminal] -n floatcenter -g 120x50 gotop, ActiveColorset 12, Frame 1)
+*ButtonInfo: (90x25, Swallow Memory 'Module FvwmScript FvwmScript-Memory', Frame 1)
+AddPanelOffsetBottom 75
+
+DestroyModuleConfig ButtonsMusic:*
+*ButtonsMusic: Geometry 125x25-$[infostore.PanelGap]-$[infostore.PanelOffsetBottom]
+*ButtonsMusic: Colorset 10
+*ButtonsMusic: Rows 25
+*ButtonsMusic: Columns 125
+*ButtonsMusic: Frame 1
+*ButtonsMusic: Font "xft:cozette:size=8"
+*ButtonsMusic: (5x25, Action(Mouse 1) Next (CirculateHit, ButtonsMusic) PipeRead 'echo LockingSlide $$(test $$(($[w.x]+$[w.width])) -le $[vp.width] && echo w$$(($[w.width]-$width))p || echo w-$$(($[w.width]-$width))p) keep')
+*ButtonsMusic: (30x25, Title "", Action (Mouse 1) Exec exec mpc prev, ActiveColorset 12, Frame 1)
+*ButtonsMusic: (30x25, Title "", Action (Mouse 1) Exec exec mpc toggle, ActiveColorset 12, Frame 1)
+*ButtonsMusic: (30x25, Title "", Action (Mouse 1) Exec exec mpc stop, ActiveColorset 12, Frame 1)
+*ButtonsMusic: (30x25, Title "", Action (Mouse 1) Exec exec mpc next, ActiveColorset 12, Frame 1)
+AddPanelOffsetBottom $[infostore.PanelHeight]
+
+DestroyModuleConfig ButtonsIconMan:*
+*ButtonsIconMan: Geometry 125x300-$[infostore.PanelGap]+$[infostore.PanelOffsetTop]
+*ButtonsIconMan: Colorset 10
+*ButtonsIconMan: Rows 300
+*ButtonsIconMan: Columns 125
+*ButtonsIconMan: Frame 1
+*ButtonsIconMan: Font "xft:cozette:size=8"
+*ButtonsIconMan: (5x300, Action(Mouse 1) Next (CirculateHit, ButtonsIconMan) PipeRead 'echo LockingSlide $$(test $$(($[w.x]+$[w.width])) -le $[vp.width] && echo w$$(($[w.width]-$width))p || echo w-$$(($[w.width]-$width))p) keep')
+*ButtonsIconMan: (120x300, Top, Swallow FvwmIconMan 'Module FvwmIconMan', Frame 0)
 
 # FvwmPager
 #
