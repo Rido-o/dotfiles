@@ -5,7 +5,8 @@ InfoStoreAdd PanelRawWidth 120
 InfoStoreAdd PanelHideWidth 5
 InfoStoreAdd PanelHeight 25
 InfoStoreAdd PanelBorderWidth 5
-InfoStoreAdd PanelPagerHeight 90
+InfoStoreAdd PanelPagerTotalHeight 90
+InfoStoreAdd PanelPagerPadding 5
 InfoStoreAdd PanelClockHeight 40
 InfoStoreAdd PanelFrame 1
 
@@ -28,3 +29,5 @@ AddToFunc AddPanelOffsetBottom
 
 # Sets boundries for maximized windows
 EwmhBaseStruts $[infostore.PanelGap] $[infostore.PanelMaximiseWidth] $[infostore.PanelGap] $[infostore.PanelGap]
+
+PipeRead "echo InfoStoreAdd PanelRawWidth2 $(( $[infostore.PanelRawWidth] / 2 ))"

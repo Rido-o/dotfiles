@@ -2,11 +2,11 @@ DestroyModuleConfig ButtonsIconMan:*
 *ButtonsIconMan: Geometry $[infostore.PanelWidth]x$[infostore.PanelIconHeight]-$[infostore.PanelGap]+$[infostore.PanelOffsetTop]
 *ButtonsIconMan: Colorset 10
 *ButtonsIconMan: Rows 1
-*ButtonsIconMan: Columns 125
+*ButtonsIconMan: Columns $[infostore.PanelWidth]
 *ButtonsIconMan: Frame $[infostore.PanelFrame]
 *ButtonsIconMan: Font $[infostore.PanelFont]
-*ButtonsIconMan: (5x1, Action(Mouse 1) Next (CirculateHit, ButtonsIconMan) PipeRead 'echo LockingSlide $$(test $$(($[w.x]+$[w.width])) -le $[vp.width] && echo w$$(($[w.width]-$width+$[infostore.PanelGap]-$[infostore.PanelHideWidth]))p || echo w-$$(($[w.width]-$width+$[infostore.PanelGap]-$[infostore.PanelHideWidth]))p) keep')
-*ButtonsIconMan: (120x1, Top, Swallow FvwmIconMan 'Module FvwmIconMan', Frame 0)
+*ButtonsIconMan: ($[infostore.PanelHideWidth]x1, Action(Mouse 1) Next (CirculateHit, ButtonsIconMan) PipeRead 'echo LockingSlide $$(test $$(($[w.x]+$[w.width])) -le $[vp.width] && echo w$$(($[w.width]-$width+$[infostore.PanelGap]-$[infostore.PanelHideWidth]))p || echo w-$$(($[w.width]-$width+$[infostore.PanelGap]-$[infostore.PanelHideWidth]))p) keep')
+*ButtonsIconMan: ($[infostore.PanelRawWidth]x1, Top, Swallow FvwmIconMan 'Module FvwmIconMan', Frame 0)
 
 # FvwmIconMan
 #

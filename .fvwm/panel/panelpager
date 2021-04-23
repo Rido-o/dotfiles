@@ -1,17 +1,20 @@
+PipeRead "echo InfoStoreAdd PanelPagerWidth $(( $[infostore.PanelRawWidth] - ($[infostore.PanelPagerPadding] * 2) ))"
+PipeRead "echo InfoStoreAdd PanelPagerHeight $(( $[infostore.PanelPagerTotalHeight] - ($[infostore.PanelPagerPadding] * 2) ))"
+
 DestroyModuleConfig ButtonsPager:*
-*ButtonsPager: Geometry $[infostore.PanelWidth]x$[infostore.PanelPagerHeight]-$[infostore.PanelGap]+$[infostore.PanelOffsetTop]
+*ButtonsPager: Geometry $[infostore.PanelWidth]x$[infostore.PanelPagerTotalHeight]-$[infostore.PanelGap]+$[infostore.PanelOffsetTop]
 *ButtonsPager: Colorset 10
-*ButtonsPager: Rows 90
-*ButtonsPager: Columns 125
+*ButtonsPager: Rows $[infostore.PanelPagerTotalHeight]
+*ButtonsPager: Columns $[infostore.PanelWidth]
 *ButtonsPager: Frame $[infostore.PanelFrame]
 *ButtonsPager: Font $[infostore.PanelFont]
-*ButtonsPager: (5x90, Action(Mouse 1) Next (CirculateHit, ButtonsPager) PipeRead 'echo LockingSlide $$(test $$(($[w.x]+$[w.width])) -le $[vp.width] && echo w$$(($[w.width]-$width+$[infostore.PanelGap]-$[infostore.PanelHideWidth]))p || echo w-$$(($[w.width]-$width+$[infostore.PanelGap]-$[infostore.PanelHideWidth]))p) keep')
-*ButtonsPager: (120x5, Frame 0)
-*ButtonsPager: (5x80, Frame 0)
-*ButtonsPager: (110x80, Swallow FvwmPager 'Module FvwmPager *', frame $[infostore.PanelFrame])
-*ButtonsPager: (5x80, Frame 0)
-*ButtonsPager: (120x5, Frame 0)
-AddPanelOffsetTop $[infostore.PanelPagerHeight]
+*ButtonsPager: ($[infostore.PanelHideWidth]x$[infostore.PanelPagerTotalHeight], Action(Mouse 1) Next (CirculateHit, ButtonsPager) PipeRead 'echo LockingSlide $$(test $$(($[w.x]+$[w.width])) -le $[vp.width] && echo w$$(($[w.width]-$width+$[infostore.PanelGap]-$[infostore.PanelHideWidth]))p || echo w-$$(($[w.width]-$width+$[infostore.PanelGap]-$[infostore.PanelHideWidth]))p) keep')
+*ButtonsPager: ($[infostore.PanelRawWidth]x$[infostore.PanelPagerPadding], Frame 0)
+*ButtonsPager: ($[infostore.PanelPagerPadding]x$[infostore.PanelPagerHeight], Frame 0)
+*ButtonsPager: ($[infostore.PanelPagerWidth]x$[infostore.PanelPagerHeight], Swallow FvwmPager 'Module FvwmPager *', frame $[infostore.PanelFrame])
+*ButtonsPager: ($[infostore.PanelPagerPadding]x$[infostore.PanelPagerHeight], Frame 0)
+*ButtonsPager: ($[infostore.PanelRawWidth]x$[infostore.PanelPagerPadding], Frame 0)
+AddPanelOffsetTop $[infostore.PanelPagerTotalHeight]
 
 # FvwmPager
 #

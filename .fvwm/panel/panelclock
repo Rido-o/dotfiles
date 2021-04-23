@@ -2,11 +2,11 @@ DestroyModuleConfig ButtonsClock:*
 *ButtonsClock: Geometry $[infostore.PanelWidth]x$[infostore.PanelClockHeight]-$[infostore.PanelGap]-$[infostore.PanelOffsetBottom]
 *ButtonsClock: Colorset 10
 *ButtonsClock: Rows 1
-*ButtonsClock: Columns 125
+*ButtonsClock: Columns $[infostore.PanelWidth]
 *ButtonsClock: Frame $[infostore.PanelFrame]
 *ButtonsClock: Font $[infostore.PanelFont]
-*ButtonsClock: (5x1, Action(Mouse 1) Next (CirculateHit, ButtonsClock) PipeRead 'echo LockingSlide $$(test $$(($[w.x]+$[w.width])) -le $[vp.width] && echo w$$(($[w.width]-$width+$[infostore.PanelGap]-$[infostore.PanelHideWidth]))p || echo w-$$(($[w.width]-$width+$[infostore.PanelGap]-$[infostore.PanelHideWidth]))p) keep')
-*ButtonsClock: (120x1, Swallow DateTime 'Module FvwmScript FvwmScript-DateTime')
+*ButtonsClock: ($[infostore.PanelHideWidth]x1, Action(Mouse 1) Next (CirculateHit, ButtonsClock) PipeRead 'echo LockingSlide $$(test $$(($[w.x]+$[w.width])) -le $[vp.width] && echo w$$(($[w.width]-$width+$[infostore.PanelGap]-$[infostore.PanelHideWidth]))p || echo w-$$(($[w.width]-$width+$[infostore.PanelGap]-$[infostore.PanelHideWidth]))p) keep')
+*ButtonsClock: ($[infostore.PanelRawWidth]x1, Swallow DateTime 'Module FvwmScript FvwmScript-DateTime')
 AddPanelOffsetBottom $[infostore.PanelClockHeight]
 
 Module FvwmButtons ButtonsClock
