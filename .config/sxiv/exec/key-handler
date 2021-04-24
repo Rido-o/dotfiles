@@ -5,5 +5,6 @@ do
 	case "$1" in
 		"w") cp "$file" "$HOME/.cache/wallpaper.png" & set-wallpaper ;;
 		"l") sudo cp "$file" "/usr/share/pixmaps/wallpaper.png" ;;
+		"p") cp "$file" "$HOME/.cache/wallpaper.png" & set-wallpaper && theme-pywal ;;
 	esac
 done
