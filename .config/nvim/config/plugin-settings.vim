@@ -109,10 +109,6 @@
 	" Max number of characters to highlight
 	let g:qs_max_chars=150
 
-" Colorizer
-	" Attach to all file types
-	lua require'colorizer'.setup()
-
 " Vimwiki
 	if g:os == "Windows"
 		let g:vimwiki_list = [{'path': '~/Documents/Wiki/'}]

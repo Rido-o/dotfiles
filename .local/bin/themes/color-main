@@ -4,11 +4,14 @@
 
 sd "(^\s+?)([^\"\s])" '$1\"$2' $HOME/.config/nvim/config/colorschemes.vim
 sd "(.+?)\"(.+?$NVIMNAME)" '$1$2' $HOME/.config/nvim/config/colorschemes.vim
-if [ $NVIMNAME = "wal" ]
+
+if [ $NVIMNAME = "wal" ];
 	then
-		sd "^set termguicolors" "\"set termguicolors" $HOME/.config/nvim/config/colorscheme.vim
+		sd "^set termguicolors" "\"set termguicolors" $HOME/.config/nvim/config/colorschemes.vim
+		sd "^lua" "\"lua" $HOME/.config/nvim/config/colorschemes.vim
 	else
-		sd "^\"set termguicolors" "set termguicolors" $HOME/.config/nvim/config/colorscheme.vim
+		sd "^\"set termguicolors" "set termguicolors" $HOME/.config/nvim/config/colorschemes.vim
+		sd "^\"lua" "lua" $HOME/.config/nvim/config/colorschemes.vim
 fi
 
 

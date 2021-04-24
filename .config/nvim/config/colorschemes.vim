@@ -1,5 +1,10 @@
-set termguicolors					" Required for some color schemes. Turn off for wal, also turn off colorizer in plugin_settings
 set background=dark					" Tells vim the background color
+
+set termguicolors					" Required for some color schemes. Turn off for autoscript, also turn off colorizer in plugin_settings
+
+" Colorizer
+" Attach to all file types
+lua require'colorizer'.setup()
 
 " Color Schemes
 
