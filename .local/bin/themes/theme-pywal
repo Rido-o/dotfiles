@@ -3,6 +3,7 @@
 rm -r $HOME/.cache/wal &&
 wal -i $HOME/.cache/wallpaper.png -n &&
 . $HOME/.cache/wal/colors-all
+[ -z $BACKGROUND ] && { exit 1; }
 
 cp $HOME/.cache/wal/colors-fvwm $HOME/.fvwm/themes/wal
 
