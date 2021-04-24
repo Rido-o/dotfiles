@@ -3,6 +3,8 @@
 wal -i $HOME/.cache/wallpaper.png -n
 . $HOME/.cache/wal/colors-all
 
+cp $HOME/.cache/wal/colors-fvwm $HOME/.fvwm/themes/wal
+
 NVIMNAME="wal"
 
 # run default scheme
