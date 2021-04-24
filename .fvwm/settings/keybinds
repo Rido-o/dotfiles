@@ -40,11 +40,11 @@ Silent Key 3			A 4 GoToPage 0 -1
 Silent Key 4			A 4 GoToPage -1 -1
 
 # Specific Windows Key keybinds
-Silent Key question		A 4 Exec exec $[infostore.terminal] nvim $[HOME]/.cfg/wiki/help/help.wiki
+Silent Key question		A 4 Exec exec $[infostore.terminal] -n floatcenter -g 120x50 nvim $[HOME]/.cfg/wiki/help/help.wiki
 Silent Key Print		A 4 Exec exec screenshot-desktop
-Silent Key w			A 4 Exec exec $[infostore.terminal] nvim -c ':VimwikiIndex'
-Silent Key n			A 4 Exec exec $[infostore.terminal] nnn -e -D
-Silent Key m			A 4 Exec exec $[infostore.terminal] ncmpcpp -c $HOME/.config/ncmpcpp/config-play
+Silent Key w			A 4 Exec exec $[infostore.terminal] -n floatcenter -g 120x50 nvim -c ':VimwikiIndex'
+Silent Key n			A 4 Exec exec $[infostore.terminal] -n floatcenter -g 100x50 nnn -e -D
+Silent Key m			A 4 Exec exec $[infostore.terminal] -n floatcenter -g 100x50 ncmpcpp -c $HOME/.config/ncmpcpp/config-play
 
 # Window Tiling
 Silent Key h			A S4 TileLeft
