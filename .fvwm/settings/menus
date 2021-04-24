@@ -19,6 +19,8 @@ AddToMenu   MenuFvwmRoot "Fvwm" Title
 + "Music" Popup MenuMusic
 + "Utilities" Popup MenuUtilities
 + "" Nop
++ "Colorschemes" Popup MenuColorschemes
++ "" Nop
 + "Man Pages%help.png%" Popup MenuFvwmManPages
 + "Copy Config%conf.png%" FvwmScript FvwmScript-ConfirmCopyConfig
 + "" Nop
@@ -38,6 +40,12 @@ DestroyMenu MenuUtilities
 AddToMenu   MenuUtilities "Utilities" Title
 + "Choose Wallpaper" Exec exec sxiv-wallpaper
 + "Screenshot" Exec exec screenshot-desktop
+
+DestroyMenu MenuColorschemes
+AddToMenu   MenuColorschemes "Colorschemes" Title
++ "Miramare" Exec exec theme-miramare
++ "Tokyonight" Exec exec theme-tokyonight
++ "Pywal" Exec exec theme-pywal
 
 # Music Menu
 DestroyMenu MenuMusic

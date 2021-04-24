@@ -1,6 +1,7 @@
 #!/bin/sh
 
-wal -i $HOME/.cache/wallpaper.png -n
+rm -r $HOME/.cache/wal &&
+wal -i $HOME/.cache/wallpaper.png -n &&
 . $HOME/.cache/wal/colors-all
 
 cp $HOME/.cache/wal/colors-fvwm $HOME/.fvwm/themes/wal
