@@ -131,6 +131,7 @@ sudo systemctl enable cronie
 crontab $HOME/.cfg/install/extras/cronjobs
 
 # Install lightdm
+sudo cp "$HOME/.cfg/install/extras/wallpaper.png" "/usr/share/pixmaps/wallpaper.png"
 sudo cp $HOME/.cfg/install/extras/lightdm.conf /etc/lightdm/lightdm.conf
 sudo cp $HOME/.cfg/install/extras/lightdm-gtk-greeter.conf /etc/lightdm/lightdm-gtk-greeter.conf
 sudo cp $HOME/.cfg/install/extras/lightdmxrandr /usr/share/lightdmxrandr
