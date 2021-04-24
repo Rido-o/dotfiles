@@ -80,7 +80,7 @@ AddToFunc LockingSlide
 DestroyFunc ChangeColorscheme
 AddToFunc   ChangeColorscheme
 + I Exec "theme-$0"
-+ I Restart
+#+ I Restart
 
 ###############
 # Window tiling
