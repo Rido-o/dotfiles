@@ -70,10 +70,6 @@ xmenu "\.selbackground_color" $YELLOW
 xmenu "\.separator_color" $YELLOW
 xmenu "\.border_color" $YELLOW
 
-# Rebuild slock
-sudo rm $HOME/.local/src/slock/config.h
-sudo make clean install -C $HOME/.local/src/slock
-
 # Rebuild dwmblocks
 sudo make clean install -C $HOME/.local/src/dwmblocks
 

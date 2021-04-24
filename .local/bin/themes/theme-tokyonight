@@ -49,10 +49,6 @@ DARKORANGE="#FF9E64"
 # run default scheme
 . color-main
 
-# Rebuild slock
-sudo rm $HOME/.local/src/slock/config.h
-sudo make clean install -C $HOME/.local/src/slock
-
 # Rebuild dwmblocks
 sudo make clean install -C $HOME/.local/src/dwmblocks
 

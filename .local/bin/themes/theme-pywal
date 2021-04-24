@@ -1,16 +1,12 @@
 #!/bin/sh
 
-wal -i -n $HOME/.cache/wallpaper.png
+wal -i $HOME/.cache/wallpaper.png -n
 . $HOME/.cache/wal/colors-all
 
-NVIMNAME="tokyonight"
+NVIMNAME="wal"
 
 # run default scheme
 . color-main
-
-# Rebuild slock
-sudo rm $HOME/.local/src/slock/config.h
-sudo make clean install -C $HOME/.local/src/slock
 
 # Rebuild dwmblocks
 sudo make clean install -C $HOME/.local/src/dwmblocks

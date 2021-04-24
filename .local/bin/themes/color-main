@@ -4,6 +4,13 @@
 
 sd "(^\s+?)([^\"\s])" '$1\"$2' $HOME/.config/nvim/config/colorschemes.vim
 sd "(.+?)\"(.+?$NVIMNAME)" '$1$2' $HOME/.config/nvim/config/colorschemes.vim
+if [ $NVIMNAME = "wal" ]
+	then
+		sd "^set termguicolors" "\"set termguicolors" $HOME/.config/nvim/config/colorscheme.vim
+	else
+		sd "^\"set termguicolors" "set termguicolors" $HOME/.config/nvim/config/colorscheme.vim
+fi
+
 
 # Change Xresources
 
@@ -134,10 +141,6 @@ quteconfig "color7" $YELLOW
 quteconfig "color8" $BLUE
 quteconfig "color9" $MAGENTA
 quteconfig "color10" $CYAN
-
-# Change slock text color
-
-sudo sd "(color = \").+" "\${1}$FOREGROUND\";" $HOME/.local/src/slock/config.def.h
 
 # Change dwmblocks colors
 
