@@ -1,5 +1,5 @@
 WindowTitle {TorrentSpeed}
-WindowSize  88 23
+WindowSize 88 23
 Font "xft:cozette:size=8"
 
 Init

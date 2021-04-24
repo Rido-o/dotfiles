@@ -32,6 +32,7 @@ Silent Key F4			A C GotoDesk 0 3
 
 # General Windows Key keybinds
 Silent Key Return		A 4 Exec exec $[infostore.terminal]
+Silent Key Return		A S4 Maximize
 Silent Key q			A 4 Close
 Silent Key 1			A 4 GoToPage 0 0
 Silent Key 2			A 4 GoToPage 1 0
