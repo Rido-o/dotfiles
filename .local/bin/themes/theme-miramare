@@ -48,6 +48,9 @@ DARKORANGE="#e39b7b"
 # run default scheme
 . color-main
 
+# Restart fvwm
+killall -SIGUSR1 fvwm
+
 # custom colors
 Xresource "dwm\.normfgcolor" $YELLOW
 

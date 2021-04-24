@@ -76,12 +76,6 @@ AddToFunc LockingSlide
 + I AnimatedMove $0 $1
 + I State 2 True
 
-# Function: Change Colorscheme
-DestroyFunc ChangeColorscheme
-AddToFunc   ChangeColorscheme
-+ I Exec "theme-$0"
-#+ I Restart
-
 ###############
 # Window tiling
 ###############

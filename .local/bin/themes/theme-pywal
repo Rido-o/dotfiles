@@ -11,6 +11,9 @@ NVIMNAME="wal"
 # run default scheme
 . color-main
 
+# Restart fvwm
+killall -SIGUSR1 fvwm
+
 # Rebuild dwmblocks
 sudo make clean install -C $HOME/.local/src/dwmblocks
 

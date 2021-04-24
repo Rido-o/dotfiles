@@ -43,9 +43,9 @@ AddToMenu   MenuUtilities "Utilities" Title
 
 DestroyMenu MenuColorschemes
 AddToMenu   MenuColorschemes "Colorschemes" Title
-+ "Miramare" ChangeColorscheme miramare
-+ "Tokyonight" ChangeColorscheme theme-tokyonight
-+ "Pywal" ChangeColorscheme pywal
++ "Miramare" Exec "theme-miramare"
++ "Tokyonight" Exec "theme-tokyonight"
++ "Pywal" Exec "theme-pywal"
 
 # Music Menu
 DestroyMenu MenuMusic
