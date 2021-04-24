@@ -1,0 +1,25 @@
+#!/bin/sh
+
+wal -i -n $HOME/.cache/wallpaper.png
+. $HOME/.cache/wal/colors-all
+
+NVIMNAME="tokyonight"
+
+# run default scheme
+. color-main
+
+# Rebuild slock
+sudo rm $HOME/.local/src/slock/config.h
+sudo make clean install -C $HOME/.local/src/slock
+
+# Rebuild dwmblocks
+sudo make clean install -C $HOME/.local/src/dwmblocks
+
+# Rebuild xmenu
+sudo make install -C $HOME/.local/src/xmenu
+
+# Restart Programs
+xrdb $HOME/.config/x11/xresources
+kill -HUP $(pidof dwm) &
+killall dunst; setsid dunst &
+killall dwmblocks; setsid dwmblocks &

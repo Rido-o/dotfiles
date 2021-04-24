@@ -1,0 +1,39 @@
+#!/bin/sh
+
+FOREGROUND="{foreground}"
+BACKGROUND="{background}"
+CURSORCOLOR="{cursor}"
+
+BORDERCOLOR="{foreground}"
+
+# black
+BLACK="{color0}"
+DARKGREY="{color8}"
+
+# red
+RED="{color1}"
+DARKRED="{color9}"
+
+# green
+GREEN="{color2}"
+DARKGREEN="{color10}"
+
+# yellow
+YELLOW="{color3}"
+DARKYELLOW="{color11}"
+
+# blue
+BLUE="{color4}"
+DARKBLUE="{color12}"
+
+# magenta
+MAGENTA="{color5}"
+DARKMAGENTA="{color13}"
+
+# cyan
+CYAN="{color6}"
+DARKCYAN="{color14}"
+
+# white
+WHITE="{color7}"
+LIGHTGREY="{color15}"
