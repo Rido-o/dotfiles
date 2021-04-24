@@ -48,9 +48,6 @@ DARKORANGE="#e39b7b"
 # run default scheme
 . color-main
 
-# Restart fvwm
-killall -SIGUSR1 fvwm
-
 # custom colors
 Xresource "dwm\.normfgcolor" $YELLOW
 
@@ -73,6 +70,9 @@ xmenu "\.selbackground_color" $YELLOW
 xmenu "\.separator_color" $YELLOW
 xmenu "\.border_color" $YELLOW
 
+# Restart fvwm
+[ ! -z $(pidof fvwm) ] && killall -SIGUSR1 fvwm
+
 # Rebuild dwmblocks
 sudo make clean install -C $HOME/.local/src/dwmblocks
 
@@ -82,5 +82,5 @@ sudo make install -C $HOME/.local/src/xmenu
 # Restart Programs
 xrdb $HOME/.config/x11/xresources
 kill -HUP $(pidof dwm) &
-killall dunst; setsid dunst &
-killall dwmblocks; setsid dwmblocks &
+[ ! -z $(pidof dunst) ] && killall dunst && setsid dunst &
+[ ! -z $(pidof dwmblocks) ] && killall dwmblocks && setsid dwmblocks &

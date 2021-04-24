@@ -46,11 +46,11 @@ LIGHTGREY="#acb0d0"
 ORANGE="#FF9E64"
 DARKORANGE="#FF9E64"
 
-# Restart fvwm
-killall -SIGUSR1 fvwm
-
 # run default scheme
 . color-main
+
+# Restart fvwm
+[ ! -z $(pidof fvwm) ] && killall -SIGUSR1 fvwm
 
 # Rebuild dwmblocks
 sudo make clean install -C $HOME/.local/src/dwmblocks
@@ -61,5 +61,5 @@ sudo make install -C $HOME/.local/src/xmenu
 # Restart Programs
 xrdb $HOME/.config/x11/xresources
 kill -HUP $(pidof dwm) &
-killall dunst; setsid dunst &
-killall dwmblocks; setsid dwmblocks &
+[ ! -z $(pidof dunst) ] && killall dunst && setsid dunst &
+[ ! -z $(pidof dwmblocks) ] && killall dwmblocks && setsid dwmblocks &
