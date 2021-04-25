@@ -7,4 +7,5 @@ choice=$(echo "$choices" | dmenu -i -l 10)
 case "$choice" in
 	Miramare) theme-miramare ;;
 	Tokyonight) theme-tokyonight ;;
+	Pywal) theme-pywal ;;
 esac
