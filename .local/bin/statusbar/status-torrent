@@ -19,4 +19,9 @@ speed () {
 up=$(speed 3)
 down=$(speed 4)
 
-echo "^c#d3a0bc^↑$up ↓$down"
+runhost=$1
+
+case $runhost in
+	dwm) echo "^c#d3a0bc^↑$up ↓$down" ;;
+	fvwm) echo "↑$up ↓$down" ;;
+esac

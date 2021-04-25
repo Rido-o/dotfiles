@@ -22,4 +22,9 @@ else
 	icon=""
 fi
 
-echo "^c#d3a0bc^$icon $vol"
+runhost=$1
+
+case $runhost in
+	dwm) echo "^c#d3a0bc^$icon $vol" ;;
+	fvwm) echo "$vol" ;;
+esac
