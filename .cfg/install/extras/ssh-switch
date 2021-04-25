@@ -4,7 +4,6 @@
 /usr/bin/git --git-dir=$HOME/.cfg/dotfiles-private --work-tree=$HOME remote set-url origin git@github.com:Rido-o/dotfiles-private.git
 git -C $HOME/.local/src/st remote set-url origin git@github.com:Rido-o/st.git
 git -C $HOME/.local/src/dmenu remote set-url origin git@github.com:Rido-o/dmenu.git
-git -C $HOME/.local/src/slock remote set-url origin git@github.com:Rido-o/slock.git
 git -C $HOME/.local/src/xmenu remote set-url origin git@github.com:Rido-o/xmenu.git
 git -C $HOME/.local/src/dwmblocks remote set-url origin git@github.com:Rido-o/dwmblocks.git
 git -C $HOME/.local/src/dwm-flexipatch remote set-url origin git@github.com:Rido-o/dwm-flexipatch.git
