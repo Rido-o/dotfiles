@@ -5,9 +5,10 @@ wal -i $HOME/.cache/wallpaper.png -n &&
 . $HOME/.cache/wal/colors-all
 [ -z $BACKGROUND ] && { exit 1; }
 
+# Copy fvwm theme
 cp $HOME/.cache/wal/colors-fvwm $HOME/.fvwm/themes/wal
 
-NVIMNAME="wal"
+NAME="wal"
 
 # run default scheme
 . color-main

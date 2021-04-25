@@ -2,7 +2,7 @@
 
 # Miramare
 
-NVIMNAME="miramare"
+NAME="miramare"
 FOREGROUND="#e6d6ac"
 BACKGROUND="#2A2426"
 CURSORCOLOR="#e6d6ac"

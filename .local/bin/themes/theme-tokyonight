@@ -2,7 +2,7 @@
 
 # Tokyo Nights
 
-NVIMNAME="tokyonight"
+NAME="tokyonight"
 FOREGROUND="#a9b1d6"
 BACKGROUND="#1a1b26"
 CURSORCOLOR="#a9b1d6"

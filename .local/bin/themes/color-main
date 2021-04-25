@@ -3,9 +3,9 @@
 # Change Nvim theme
 
 sd "(^\s+?)([^\"\s])" '$1\"$2' $HOME/.config/nvim/config/colorschemes.vim
-sd "(.+?)\"(.+?$NVIMNAME)" '$1$2' $HOME/.config/nvim/config/colorschemes.vim
+sd "(.+?)\"(.+?$NAME)" '$1$2' $HOME/.config/nvim/config/colorschemes.vim
 
-if [ $NVIMNAME = "wal" ];
+if [ $NAME = "wal" ];
 	then
 		sd "^set termguicolors" "\"set termguicolors" $HOME/.config/nvim/config/colorschemes.vim
 		sd "^lua" "\"lua" $HOME/.config/nvim/config/colorschemes.vim
@@ -16,7 +16,7 @@ fi
 
 # Change Fvwm theme
 
-sd "\+ I Read themes.+" "+ I Read themes/$NVIMNAME" $HOME/.fvwm/config
+sd "\+ I Read themes.+" "+ I Read themes/$NAME" $HOME/.fvwm/config
 
 # Change Xresources
 
