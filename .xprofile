@@ -2,6 +2,9 @@
 
 . ~/.zshenv
 
+# Uncomment if using startx
+#xrandr --output Virtual-1 --primary --mode 1680x1050
+
 set-wallpaper
 xrdb -load ~/.config/x11/xresources
 [ -s $(pidof mpd) ] && mpd
