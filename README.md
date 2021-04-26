@@ -31,3 +31,8 @@ This will install and setup the vast majority of the system with just a few rema
 * the settings are located in $HOME/.cfg/install/qutesettings
 ### Edit Transmission settings
 * open ~/.config/transmission-daemon/settings.json and change the usernames in that file to the one you are using
+
+## Setting resolution on virtualbox
+* `xrandr --newmode "1920x1080" 173.0 1920 2048 2248 2576 1080 1083 1088 1120`
+* `xrandr --addmode Virtual-1 1920x1080`
+* `xrandr --output Virtual-1 --primary --mode 1920x1080`
