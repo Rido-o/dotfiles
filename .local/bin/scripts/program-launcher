@@ -9,7 +9,7 @@ nnn
 pfetch
 wallpapers"
 
-choice=$(echo "$choices" | dmenu -i -l 10 -p Run)
+choice=$(echo "$choices" | dmenu -l 10)
 
 case "$choice" in
 	music) setsid -f "$TERMINAL" ncmpcpp-ueberzug && setsid -f "$TERMINAL" ncmpcpp -s media_library -c $HOME/.config/ncmpcpp/config-main && setsid -f "$TERMINAL" ncmpcpp -s visualizer -c $HOME/.config/ncmpcpp/config-main;;
