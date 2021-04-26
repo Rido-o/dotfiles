@@ -1,5 +1,5 @@
 #!/bin/sh
 
-# sudo cp $HOME/.cfg/install/lightdmxrandr /usr/share/lightdmxrandr
+# sudo cp $HOME/.cfg/install/extras/lightdmxrandr /usr/share/lightdmxrandr
 
 xrandr --output Virtual-1 --primary --mode 1680x1050
