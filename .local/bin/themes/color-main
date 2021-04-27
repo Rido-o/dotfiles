@@ -52,7 +52,7 @@ Xresource "color6" $CYAN
 Xresource "color14" $DARKCYAN
 
 Xresource "color7" $WHITE
-Xresource "color15" $BLUE
+Xresource "color15" $LIGHTGREY
 
 Xresource "dwm\.normfgcolor" $BLUE
 Xresource "dwm\.normbgcolor" $BACKGROUND
