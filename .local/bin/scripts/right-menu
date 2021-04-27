@@ -20,7 +20,8 @@ Music
 Colors
 	Miramare			theme-miramare
 	Tokyonight			theme-tokyonight
-	Pywal				theme-pywal
+	Pywal-light			theme-light-pywal
+	Pywal-dark			theme-dark-pywal
 Fonts
 	Cozette				font-choice cozettefont
 	Hack				font-choice hackfont

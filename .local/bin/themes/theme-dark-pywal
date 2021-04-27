@@ -6,7 +6,7 @@ wal -i $HOME/.cache/wallpaper.png -n &&
 [ -z $BACKGROUND ] && { exit 1; }
 
 # Copy fvwm theme
-cp $HOME/.cache/wal/colors-fvwm $HOME/.fvwm/themes/wal
+cp $HOME/.cache/wal/colors-dark-fvwm $HOME/.fvwm/themes/dark-wal
 
 NAME="wal"
 

@@ -1,0 +1,29 @@
+#!/bin/sh
+
+rm -r $HOME/.cache/wal &&
+wal -i $HOME/.cache/wallpaper.png -n &&
+. $HOME/.cache/wal/colors-all
+[ -z $BACKGROUND ] && { exit 1; }
+
+# Copy fvwm theme
+cp $HOME/.cache/wal/colors-light-fvwm $HOME/.fvwm/themes/light-wal
+
+NAME="wal"
+
+# run default scheme
+. color-main
+
+# Restart fvwm
+[ ! -z $(pidof fvwm) ] && killall -SIGUSR1 fvwm
+
+# Rebuild dwmblocks
+sudo make clean install -C $HOME/.local/src/dwmblocks
+
+# Rebuild xmenu
+sudo make install -C $HOME/.local/src/xmenu
+
+# Restart Programs
+xrdb $HOME/.config/x11/xresources
+kill -HUP $(pidof dwm) &
+[ ! -z $(pidof dunst) ] && killall dunst && setsid dunst &
+[ ! -z $(pidof dwmblocks) ] && killall dwmblocks && setsid dwmblocks &

@@ -45,7 +45,8 @@ DestroyMenu MenuColorschemes
 AddToMenu   MenuColorschemes "Colorschemes" Title
 + "Miramare" Exec "theme-miramare"
 + "Tokyonight" Exec "theme-tokyonight"
-+ "Pywal" Exec "theme-pywal"
++ "Pywal-light" Exec "theme-light-pywal"
++ "Pywal-dark" Exec "theme-dark-pywal"
 
 # Music Menu
 DestroyMenu MenuMusic
