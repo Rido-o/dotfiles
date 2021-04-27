@@ -43,7 +43,7 @@ hackfont () {
 
 choosefont () {
 	choices="cozette\nhack"
-	choice=$(echo "$choices" | dmenu -i -l 10)
+	choice=$(echo "$choices" | dmenu -l 10)
 
 	case "$choice" in
 		cozette) cozettefont;;

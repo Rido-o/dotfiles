@@ -1,8 +1,8 @@
 #!/bin/sh
 
-choices="Miramare\nTokyonight"
+choices="Miramare\nTokyonight\nPywal-light\nPywal-dark"
 
-choice=$(echo "$choices" | dmenu -i -l 10)
+choice=$(echo "$choices" | dmenu -l 10)
 
 case "$choice" in
 	Miramare) theme-miramare ;;
