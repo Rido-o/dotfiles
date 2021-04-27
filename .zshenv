@@ -12,6 +12,7 @@ export XDG_DATA_HOME="$HOME/.local/share"
 # Path
 export PATH="$HOME/.local/bin":$PATH
 export PATH="$HOME/.local/bin/scripts":$PATH
+export PATH="$HOME/.local/bin/dwm":$PATH
 export PATH="$HOME/.local/bin/statusbar":$PATH
 export PATH="$HOME/.local/bin/themes":$PATH
 export PATH="$HOME/.local/bin/cronjobs":$PATH

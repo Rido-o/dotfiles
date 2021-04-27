@@ -38,7 +38,7 @@ Test (x pulsemixer) + "Volume Mixer" Exec exec setsid -f $[infostore.terminal] p
 
 DestroyMenu MenuUtilities
 AddToMenu   MenuUtilities "Utilities" Title
-+ "Choose Wallpaper" Exec exec sxiv-wallpaper
++ "Choose Wallpaper" Exec exec choose-wallpaper
 + "Screenshot" Exec exec screenshot-desktop
 
 DestroyMenu MenuColorschemes

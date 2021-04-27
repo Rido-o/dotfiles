@@ -19,5 +19,5 @@ case "$choice" in
 	bitwarden) bitwarden ;;
 	nnn) setsid -f "$TERMINAL" nnn -e -D;;
 	pfetch) setsid -f "$TERMINAL" sh -c 'pfetch; read junk';;
-	wallpapers) sxiv-wallpaper ;;
+	wallpapers) choose-wallpaper ;;
 esac

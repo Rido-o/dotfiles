@@ -1,0 +1,6 @@
+#!/bin/sh
+
+if [ ! -h $HOME/.xsession-errors ]; then
+	rm $HOME/.xsession-errors
+	ln -s /dev/null $HOME/.xsession-errors
+fi
