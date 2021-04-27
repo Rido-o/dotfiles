@@ -5,7 +5,8 @@ do
 	case "$1" in
 		"w") cp "$file" "$HOME/.cache/wallpaper.png" && set-wallpaper ;;
 		"l") sudo cp "$file" "/usr/share/pixmaps/wallpaper.png" ;;
-		"p") cp "$file" "$HOME/.cache/wallpaper.png" && set-wallpaper && theme-pywal ;;
+		"p") cp "$file" "$HOME/.cache/wallpaper.png" && set-wallpaper && theme-dark-pywal ;;
+		"p") cp "$file" "$HOME/.cache/wallpaper.png" && set-wallpaper && theme-light-pywal ;;
 		"r") qutebrowser "https://yandex.com/images/search?source=collections&rpt=imageview&url=$file" ;;
 	esac
 done
