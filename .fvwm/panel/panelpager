@@ -3,7 +3,7 @@ PipeRead "echo InfoStoreAdd PanelPagerHeight $(( $[infostore.PanelPagerTotalHeig
 
 DestroyModuleConfig ButtonsPager:*
 *ButtonsPager: Geometry $[infostore.PanelWidth]x$[infostore.PanelPagerTotalHeight]-$[infostore.PanelGap]+$[infostore.PanelOffsetTop]
-*ButtonsPager: Colorset 10
+*ButtonsPager: Colorset 130
 *ButtonsPager: Rows $[infostore.PanelPagerTotalHeight]
 *ButtonsPager: Columns $[infostore.PanelWidth]
 *ButtonsPager: Frame $[infostore.PanelFrame]
@@ -21,10 +21,10 @@ AddPanelOffsetTop $[infostore.PanelPagerTotalHeight]
 # This module displays the location of the windows on the various Pages
 # and Desks. This is setup to show only the Pages on the current Desk.
 DestroyModuleConfig FvwmPager:*
-*FvwmPager: Colorset * 10
-*FvwmPager: HilightColorset * 13
-*FvwmPager: BalloonColorset * 10
-*FvwmPager: WindowColorsets 10 11
+*FvwmPager: Colorset * 130
+*FvwmPager: HilightColorset * 131
+*FvwmPager: BalloonColorset * 130
+*FvwmPager: WindowColorsets 130 132
 *FvwmPager: Font None
 *FvwmPager: Balloons All
 *FvwmPager: BalloonFont $[infostore.PanelFont]

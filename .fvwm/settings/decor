@@ -9,8 +9,8 @@ AddToDecor   FvwmDecor
 + TitleStyle ActiveUp (-- raised) ActiveDown (-- sunk)
 #+ TitleStyle TiledPixmap dot.png
 + ButtonStyle All - Clear
-+ ButtonStyle All Active ( Colorset 0 )
-+ ButtonStyle All InActive ( Colorset 1 )
++ ButtonStyle All Active ( Colorset 101 )
++ ButtonStyle All InActive ( Colorset 100 )
 + AddButtonStyle 2\
 	ActiveUp (Pixmap close.png -- Flat) \
 	ActiveDown (Pixmap close.png -- Flat) \

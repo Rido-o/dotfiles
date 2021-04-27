@@ -66,21 +66,22 @@ IgnoreModifiers L25
 # Decor Styles
 Style * BorderWidth 5, HandleWidth 5, MWMButtons, \
 	MWMBorder, FirmBorder, UseDecor FvwmDecor
-Style * Colorset 1, HilightColorset 2
-Style * BorderColorset 3, HilightBorderColorset 4
+Style * Colorset 100, HilightColorset 101
+Style * BorderColorset 110, HilightBorderColorset 111
 
 # Disable Icons from appearing on desktop.
 # Comment this out or use Style * Icon to get the icons back.
 Style * !Icon
 
 # Window Specific Styles
-Style ButtonsPager !Title, !Handles, Sticky, StaysOnBottom, WindowListSkip, NeverFocus, BorderColorset 4, FixedSize
-Style ButtonsDesk !Title, !Handles, Sticky, StaysOnBottom, WindowListSkip, NeverFocus, BorderColorset 4, FixedSize
-Style ButtonsIconMan !Title, !Handles, Sticky, StaysOnBottom, WindowListSkip, NeverFocus, BorderColorset 4, FixedSize
-Style ButtonsClock !Title, !Handles, Sticky, StaysOnBottom, WindowListSkip, NeverFocus, BorderColorset 4, FixedSize
-Style ButtonsMusic !Title, !Handles, Sticky, StaysOnBottom, WindowListSkip, NeverFocus, BorderColorset 4, FixedSize
-Style ButtonsControls !Title, !Handles, Sticky, StaysOnBottom, WindowListSkip, NeverFocus, BorderColorset 4, FixedSize
-Style ButtonsInfo !Title, !Handles, Sticky, StaysOnBottom, WindowListSkip, NeverFocus, BorderColorset 4, FixedSize
+## Right Panel settings
+Style ButtonsPager !Title, !Handles, Sticky, StaysOnBottom, WindowListSkip, NeverFocus, BorderColorset 111, FixedSize
+Style ButtonsDesk !Title, !Handles, Sticky, StaysOnBottom, WindowListSkip, NeverFocus, BorderColorset 111, FixedSize
+Style ButtonsIconMan !Title, !Handles, Sticky, StaysOnBottom, WindowListSkip, NeverFocus, BorderColorset 111, FixedSize
+Style ButtonsClock !Title, !Handles, Sticky, StaysOnBottom, WindowListSkip, NeverFocus, BorderColorset 111, FixedSize
+Style ButtonsMusic !Title, !Handles, Sticky, StaysOnBottom, WindowListSkip, NeverFocus, BorderColorset 111, FixedSize
+Style ButtonsControls !Title, !Handles, Sticky, StaysOnBottom, WindowListSkip, NeverFocus, BorderColorset 111, FixedSize
+Style ButtonsInfo !Title, !Handles, Sticky, StaysOnBottom, WindowListSkip, NeverFocus, BorderColorset 111, FixedSize
 
 Style floatcenter PositionPlacement Center
 Style ConfirmQuit !Title, PositionPlacement Center, WindowListSkip, Layer 6

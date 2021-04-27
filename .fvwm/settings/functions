@@ -62,11 +62,11 @@ AddToFunc   ToggleTitle
 # Function: Function on Change Desk
 DestroyFunc ChangeDesk
 AddToFunc   ChangeDesk
-+ I SendToModule FvwmButtons ChangeButton desk0 Colorset 10
-+ I SendToModule FvwmButtons ChangeButton desk1 Colorset 10
-+ I SendToModule FvwmButtons ChangeButton desk2 Colorset 10
-+ I SendToModule FvwmButtons ChangeButton desk3 Colorset 10
-+ I SendToModule FvwmButtons ChangeButton desk$0 Colorset 11
++ I SendToModule FvwmButtons ChangeButton desk0 Colorset 130
++ I SendToModule FvwmButtons ChangeButton desk1 Colorset 130
++ I SendToModule FvwmButtons ChangeButton desk2 Colorset 130
++ I SendToModule FvwmButtons ChangeButton desk3 Colorset 130
++ I SendToModule FvwmButtons ChangeButton desk$0 Colorset 132
 
 # Function: Lock Sliding Windows
 DestroyFunc LockingSlide

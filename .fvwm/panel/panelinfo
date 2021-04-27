@@ -4,17 +4,17 @@ PipeRead "echo InfoStoreAdd PanelRawWidth34 $(( $[infostore.PanelRawWidth] - $[i
 
 DestroyModuleConfig ButtonsInfo:*
 *ButtonsInfo: Geometry $[infostore.PanelWidth]x$[infostore.PanelInfoHeight]-$[infostore.PanelGap]-$[infostore.PanelOffsetBottom]
-*ButtonsInfo: Colorset 10
+*ButtonsInfo: Colorset 130
 *ButtonsInfo: Rows 3
 *ButtonsInfo: Columns $[infostore.PanelWidth]
 *ButtonsInfo: Frame $[infostore.PanelFrame]
 *ButtonsInfo: Font $[infostore.PanelFont]
 *ButtonsInfo: ($[infostore.PanelHideWidth]x3, Action(Mouse 1) Next (CirculateHit, ButtonsInfo) PipeRead 'echo LockingSlide $$(test $$(($[w.x]+$[w.width])) -le $[vp.width] && echo w$$(($[w.width]-$width+$[infostore.PanelGap]-$[infostore.PanelHideWidth]))p || echo w-$$(($[w.width]-$width+$[infostore.PanelGap]-$[infostore.PanelHideWidth]))p) keep')
-*ButtonsInfo: ($[infostore.PanelRawWidth4]x1, Title "©", Action (Mouse 1) Exec exec $[infostore.terminal] -n floatcenter -g 120x50 stig, ActiveColorset 12)
+*ButtonsInfo: ($[infostore.PanelRawWidth4]x1, Title "©", Action (Mouse 1) Exec exec $[infostore.terminal] -n floatcenter -g 120x50 stig, ActiveColorset 131)
 *ButtonsInfo: ($[infostore.PanelRawWidth34]x1, Swallow TorrentSpeed 'Module FvwmScript FvwmScript-TorrentSpeed')
 *ButtonsInfo: ($[infostore.PanelRawWidth4]x1, Title "", Action (Mouse 1) Exec exec $[infostore.terminal] -n floatcenter -g 128x40 sh -c "sed '37q' $HOME/.cache/weathercolor; read junk", ActiveColorset 12)
 *ButtonsInfo: ($[infostore.PanelRawWidth34]x1, Swallow Weather 'Module FvwmScript FvwmScript-Weather')
-*ButtonsInfo: ($[infostore.PanelRawWidth4]x1, Title "✹", Action (Mouse 1) Exec exec $[infostore.terminal] -n floatcenter -g 120x50 gotop, ActiveColorset 12)
+*ButtonsInfo: ($[infostore.PanelRawWidth4]x1, Title "✹", Action (Mouse 1) Exec exec $[infostore.terminal] -n floatcenter -g 120x50 gotop, ActiveColorset 131)
 *ButtonsInfo: ($[infostore.PanelRawWidth34]x1, Swallow Memory 'Module FvwmScript FvwmScript-Memory')
 AddPanelOffsetBottom $[infostore.PanelInfoHeight]
 

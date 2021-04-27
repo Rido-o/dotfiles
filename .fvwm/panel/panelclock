@@ -1,6 +1,6 @@
 DestroyModuleConfig ButtonsClock:*
 *ButtonsClock: Geometry $[infostore.PanelWidth]x$[infostore.PanelClockHeight]-$[infostore.PanelGap]-$[infostore.PanelOffsetBottom]
-*ButtonsClock: Colorset 10
+*ButtonsClock: Colorset 130
 *ButtonsClock: Rows 1
 *ButtonsClock: Columns $[infostore.PanelWidth]
 *ButtonsClock: Frame $[infostore.PanelFrame]

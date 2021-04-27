@@ -1,35 +1,48 @@
 ##############
 # 3: Colorsets
-#
-#   0 - Default
-#   1 - Inactive Windows
-#   2 - Active Window
-#   3 - Inactive Windows Borders
-#   4 - Active Windows Borders
-#   5 - Menu - Inactive Item
-#   6 - Menu - Active Item
-#   7 - Menu - Grayed Item
-#   8 - Menu - Title
-#   9 - Reserved
-#  10+ Modules
-#      10 - Module Default
-#      11 - Module Hilight
-#      12 - Module ActiveButton (Mouse Hover)
-#      13 - FvwmPager Active Page
-#      14 - FvwmScript system status widgets
 ##############
-Colorset 0  fg #ffffff, bg #e39b7b, hi, sh, Plain, NoShape
-Colorset 1  fg #2A2426, bg #d8caac, hi, sh, Plain, NoShape
-Colorset 2  fg #ffffff, bg #e39b7b, hi, sh, Plain, NoShape
-Colorset 3  fg black, bg #4d4d4d, hi, sh, Plain, NoShape
-Colorset 4  fg black, bg #2d2d2d, hi, sh, Plain, NoShape
-Colorset 5  fg #2A2426, bg #d8caac, hi, sh, Plain, NoShape
-Colorset 6  fg #2A2426, bg #e6d6ac, hi, sh, Plain, NoShape
-Colorset 7  fg grey30, bg #ffffff, hi, sh, Plain, NoShape
-Colorset 8  fg #ffffff, bg #e39b7b, hi, sh, Plain, NoShape
-#Colorset 10 fg #2A2426, bg #d8caac, hi, sh, Plain, NoShape
-Colorset 10 fg #2A2426, bg #d8caac, hi, sh, Plain, NoShape, TiledPixmap line.png, Alpha 5
-Colorset 11 fg #ffffff, bg #e39b7b, hi, sh, Plain, NoShape
-Colorset 12 fg #2A2426, bg #e6d6ac, hi, sh, Plain, NoShape
-Colorset 13 fg #ffffff, bg #e6d6ac, hi, sh, Plain, NoShape
-Colorset 14 fg #e39b7b, bg #d8caac, hi, sh, Plain, NoShape, TiledPixmap dot.png, Alpha 10
+
+# fg = Foreground
+# bg = Background
+# hi = Highlight
+# sh = Shadow
+
+# Titlebar
+## Inactive  titlebar
+Colorset 100  fg #2A2426, bg #d8caac, hi, sh, Plain, NoShape
+## Active titlebar
+Colorset 101  fg #ffffff, bg #e39b7b, hi, sh, Plain, NoShape
+## Inactive  buttons
+Colorset 102  fg #2A2426, bg #d8caac, hi, sh, Plain, NoShape
+## Active buttons
+Colorset 103  fg #ffffff, bg #e39b7b, hi, sh, Plain, NoShape
+
+# Window Borders
+## Inactive window borders
+Colorset 110  fg black, bg #4d4d4d, hi, sh, Plain, NoShape
+## Active window borders
+Colorset 111  fg black, bg #2d2d2d, hi, sh, Plain, NoShape
+
+# Menu
+## Inactive menu item
+Colorset 120  fg #2A2426, bg #d8caac, hi, sh, Plain, NoShape
+## Active menu item
+Colorset 121  fg #2A2426, bg #e6d6ac, hi, sh, Plain, NoShape
+## Greyed menu item
+Colorset 122  fg grey30, bg #ffffff, hi, sh, Plain, NoShape
+## Menu title
+Colorset 123  fg #ffffff, bg #e39b7b, hi, sh, Plain, NoShape
+
+# Rightpanel
+## Rightpanel inactive
+Colorset 130 fg #2A2426, bg #d8caac, hi, sh, Plain, NoShape, TiledPixmap line.png, Alpha 5
+## Rightpanel active (hovered)
+Colorset 131 fg #2A2426, bg #e6d6ac, hi, sh, Plain, NoShape
+## Rightpanel highlight
+Colorset 132 fg #ffffff, bg #e39b7b, hi, sh, Plain, NoShape
+
+# Modules
+## FvwmPager active page
+Colorset 140 fg #ffffff, bg #e6d6ac, hi, sh, Plain, NoShape
+## FvwmScript bar widgets
+Colorset 141 fg #e39b7b, bg #d8caac, hi, sh, Plain, NoShape, TiledPixmap dot.png, Alpha 10

@@ -1,6 +1,6 @@
 DestroyModuleConfig ButtonsIconMan:*
 *ButtonsIconMan: Geometry $[infostore.PanelWidth]x$[infostore.PanelIconHeight]-$[infostore.PanelGap]+$[infostore.PanelOffsetTop]
-*ButtonsIconMan: Colorset 10
+*ButtonsIconMan: Colorset 130
 *ButtonsIconMan: Rows 1
 *ButtonsIconMan: Columns $[infostore.PanelWidth]
 *ButtonsIconMan: Frame $[infostore.PanelFrame]
@@ -15,11 +15,11 @@ DestroyModuleConfig ButtonsIconMan:*
 DestroyModuleConfig FvwmIconMan:*
 *FvwmIconMan: UseWinList true
 *FvwmIconMan: ButtonGeometry $[infostore.PanelRawWidth]x$[infostore.PanelHeight]
-*FvwmIconMan: Colorset 10
-*FvwmIconMan: FocusColorset 11
-*FvwmIconMan: FocusAndSelectColorset 12
-*FvwmIconMan: SelectColorset 12
-*FvwmIconMan: IconAndSelectColorset 12
+*FvwmIconMan: Colorset 130
+*FvwmIconMan: FocusColorset 132
+*FvwmIconMan: FocusAndSelectColorset 131
+*FvwmIconMan: SelectColorset 131
+*FvwmIconMan: IconAndSelectColorset 131
 *FvwmIconMan: DrawIcons always
 *FvwmIconMan: ReliefThickness $[infostore.PanelFrame]
 *FvwmIconMan: Format "%t"

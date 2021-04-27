@@ -3,7 +3,7 @@
 # FvwmIdent is a module that can be used to get the various info about
 # a window. One use is getting the class/resource/name of a window.
 DestroyModuleConfig FvwmIdent:*
-*FvwmIdent: Colorset 10
+*FvwmIdent: Colorset 130
 *FvwmIdent: Font "xft:cozette:size=8"
 
 # FvwmScript
@@ -15,7 +15,7 @@ DestroyModuleConfig FvwmIdent:*
 #   - Quit - This is a popup that asks for quit confirmation before
 #     quitting fvwm.
 DestroyModuleConfig FvwmScript:*
-*FvwmScript: DefaultColorset 10
+*FvwmScript: DefaultColorset 130
 *FvwmScript: Path $[infostore.scripts]
 
 # FvwmEvent
@@ -32,5 +32,5 @@ DestroyModuleConfig EventNewDesk:*
 # FvwmForm is a module that can be used to build a GUI
 # form. Used with fvwm-menu-desktop-config.fpl.
 # This sets the default colorsets.
-*FvwmFormDefault: Colorset 10
-*FvwmFormDefault: ItemColorset 13
+*FvwmFormDefault: Colorset 130
+*FvwmFormDefault: ItemColorset 131

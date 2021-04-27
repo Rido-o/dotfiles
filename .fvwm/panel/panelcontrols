@@ -2,7 +2,7 @@ PipeRead "echo InfoStoreAdd PanelRawWidth2 $(( $[infostore.PanelRawWidth] / 2 ))
 
 DestroyModuleConfig ButtonsControls:*
 *ButtonsControls: Geometry $[infostore.PanelWidth]x$[infostore.PanelHeight]-$[infostore.PanelGap]-$[infostore.PanelOffsetBottom]
-*ButtonsControls: Colorset 10
+*ButtonsControls: Colorset 130
 *ButtonsControls: Rows 1
 *ButtonsControls: Columns $[infostore.PanelWidth]
 *ButtonsControls: Frame $[infostore.PanelFrame]
@@ -12,7 +12,7 @@ DestroyModuleConfig ButtonsControls:*
 	Action (Mouse 1) Exec exec $[infostore.terminal] -n floatcenter -g 120x50 pulsemixer, \
 	Action (Mouse 4) Exec exec pamixer --allow-boost -i 5, \
 	Action (Mouse 5) Exec exec pamixer --allow-boost -d 5, \
-	ActiveColorset 12)
+	ActiveColorset 131)
 *ButtonsControls: ($[infostore.PanelRawWidth2]x1, Title "", Action (Mouse 1) Exec exec networkmanager_dmenu, ActiveColorset 12)
 AddPanelOffsetBottom $[infostore.PanelHeight]
 
