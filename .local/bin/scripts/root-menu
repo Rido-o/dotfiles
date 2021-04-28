@@ -18,13 +18,13 @@ Music
 	Visualiser			setsid -f "$TERMINAL" ncmpcpp -s visualizer -c $HOME/.config/ncmpcpp/config-main
 
 Colors
-	Miramare			theme-miramare
-	Tokyonight			theme-tokyonight
-	Pywal-light			theme-light-pywal
-	Pywal-dark			theme-dark-pywal
+	Miramare			color-miramare
+	Tokyonight			color-tokyonight
+	Pywal-light			color-light-pywal
+	Pywal-dark			color-dark-pywal
 Fonts
-	Cozette				font-choice cozettefont
-	Hack				font-choice hackfont
+	Cozette				font-cozette
+	Hack				font-hack
 
 Session
 	Lock				locker
