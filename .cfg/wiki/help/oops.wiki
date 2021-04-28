@@ -1,3 +1,4 @@
 = Oops I've messed up =
-* `Ctrl-Alt-F1` - Return to graphical environment
+* `Ctrl-Alt-F1` - Return to startx session
 * `Ctrl-Alt-[F2-F6]` - Access corresponding tty
+* Ctrl-Alt-F7 - Return to display manager session
