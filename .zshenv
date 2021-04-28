@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 # Xinit location
 export XINITRC="$XDG_CONFIG_HOME/x11/xinitrc"
 
@@ -26,7 +28,7 @@ export PATH="$HOME/.config/ncmpcpp/ncmpcpp-ueberzug":$PATH
 export EDITOR="nvim"
 export TERMINAL="st"
 export BROWSER="qutebrowser"
-export PAGER="less"
+export PAGER="most"
 export AUDIOPATH="$HOME/Audio"
 
 # $HOME cleanup
