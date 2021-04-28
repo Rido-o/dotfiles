@@ -14,7 +14,11 @@ export PATH="$HOME/.local/bin":$PATH
 export PATH="$HOME/.local/bin/scripts":$PATH
 export PATH="$HOME/.local/bin/dwm":$PATH
 export PATH="$HOME/.local/bin/statusbar":$PATH
+
 export PATH="$HOME/.local/bin/themes":$PATH
+export PATH="$HOME/.local/bin/themes/colors":$PATH
+export PATH="$HOME/.local/bin/themes/fonts":$PATH
+
 export PATH="$HOME/.local/bin/cronjobs":$PATH
 export PATH="$HOME/.config/ncmpcpp/ncmpcpp-ueberzug":$PATH
 
@@ -22,7 +26,7 @@ export PATH="$HOME/.config/ncmpcpp/ncmpcpp-ueberzug":$PATH
 export EDITOR="nvim"
 export TERMINAL="st"
 export BROWSER="qutebrowser"
-export PAGER="most"
+export PAGER="less"
 export AUDIOPATH="$HOME/Audio"
 
 # $HOME cleanup

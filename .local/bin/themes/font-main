@@ -20,35 +20,3 @@ changefont () {
 	killall dunst; setsid dunst &
 	killall dwmblocks; setsid dwmblocks &
 }
-
-cozettefont () {
-	FONT="cozette:pixelsize=11"
-	ZATHURAFONT="cozette 11"
-	DUNSTFONT="cozette 8"
-	QUTEFONT="cozette"
-	QUTESIZE="12px"
-	DMENUHEIGHT="23"
-	changefont "$FONT" "$ZATHURAFONT" "$DUNSTFONT" "$QUTEFONT" "$QUTESIZE" "$DMENUHEIGHT"
-}
-
-hackfont () {
-	FONT="Hack Nerd Font:pixelsize=13:antialias=true:autohint=true"
-	ZATHURAFONT="Hack Nerd Font 11"
-	DUNSTFONT="Hack Nerd Font 8"
-	QUTEFONT="Hack Nerd Font"
-	QUTESIZE="12px"
-	DMENUHEIGHT="27"
-	changefont "$FONT" "$ZATHURAFONT" "$DUNSTFONT" "$QUTEFONT" "$QUTESIZE"
-}
-
-choosefont () {
-	choices="cozette\nhack"
-	choice=$(echo "$choices" | dmenu -l 10)
-
-	case "$choice" in
-		cozette) cozettefont;;
-		hack) hackfont;;
-	esac
-}
-
-"$@"

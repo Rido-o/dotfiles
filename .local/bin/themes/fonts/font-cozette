@@ -1,0 +1,12 @@
+#!/bin/sh
+
+FONT="cozette:pixelsize=11"
+ZATHURAFONT="cozette 11"
+DUNSTFONT="cozette 8"
+QUTEFONT="cozette"
+QUTESIZE="12px"
+DMENUHEIGHT="23"
+
+. font-main
+
+changefont "$FONT" "$ZATHURAFONT" "$DUNSTFONT" "$QUTEFONT" "$QUTESIZE" "$DMENUHEIGHT"

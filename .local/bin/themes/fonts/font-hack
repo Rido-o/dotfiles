@@ -1,0 +1,12 @@
+#!/bin/sh
+
+FONT="Hack Nerd Font:pixelsize=13:antialias=true:autohint=true"
+ZATHURAFONT="Hack Nerd Font 11"
+DUNSTFONT="Hack Nerd Font 8"
+QUTEFONT="Hack Nerd Font"
+QUTESIZE="12px"
+DMENUHEIGHT="27"
+
+. font-main
+
+changefont "$FONT" "$ZATHURAFONT" "$DUNSTFONT" "$QUTEFONT" "$QUTESIZE"

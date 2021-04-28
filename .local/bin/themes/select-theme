@@ -1,10 +1,20 @@
 #!/bin/sh
 
+colors() {
+	color=$(ls $HOME/.local/bin/themes/colors | dmenu -l 10)
+	$color
+}
+
+fonts() {
+	font=$(ls $HOME/.local/bin/themes/fonts | dmenu -l 10)
+	$font
+}
+
 choices="fonts\ncolors"
 
 choice=$(echo "$choices" | dmenu -l 10)
 
 case "$choice" in
-	fonts) font-choice choosefont ;;
-	colors) color-choice ;;
+	fonts) fonts ;;
+	colors) colors ;;
 esac
