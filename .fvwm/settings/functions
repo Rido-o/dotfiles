@@ -76,6 +76,10 @@ AddToFunc LockingSlide
 + I AnimatedMove $0 $1
 + I State 2 True
 
+# Function: Create menu based on color themes
+AddToFunc FuncFvwmMenuDirectory
++ I PipeRead "fvwm-menu-directory -d '$0' --exec-app=^exec --Title=Choices"
+
 ###############
 # Window tiling
 ###############

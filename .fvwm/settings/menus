@@ -14,12 +14,14 @@ MenuStyle * Font "xft:cozette:size=8"
 # window or using alt-f1 (or menu).
 DestroyMenu MenuFvwmRoot
 AddToMenu   MenuFvwmRoot "Fvwm" Title
++ MissingSubmenuFunction FuncFvwmMenuDirectory
 + "Terminal%terminal.png%" Exec exec $[infostore.terminal]
 + "Programs%programs.png%" Popup MenuApplications
 + "Music" Popup MenuMusic
 + "Utilities" Popup MenuUtilities
 + "" Nop
-+ "Colorschemes" Popup MenuColorschemes
++ "Colorschemes" Popup $[HOME]/.local/bin/themes/colors
++ "Fonts" Popup $[HOME]/.local/bin/themes/fonts
 + "" Nop
 + "Man Pages%help.png%" Popup MenuFvwmManPages
 + "Copy Config%conf.png%" FvwmScript FvwmScript-ConfirmCopyConfig
@@ -40,13 +42,6 @@ DestroyMenu MenuUtilities
 AddToMenu   MenuUtilities "Utilities" Title
 + "Choose Wallpaper" Exec exec choose-wallpaper
 + "Screenshot" Exec exec screenshot-desktop
-
-DestroyMenu MenuColorschemes
-AddToMenu   MenuColorschemes "Colorschemes" Title
-+ "Miramare" Exec "theme-miramare"
-+ "Tokyonight" Exec "theme-tokyonight"
-+ "Pywal-light" Exec "theme-light-pywal"
-+ "Pywal-dark" Exec "theme-dark-pywal"
 
 # Music Menu
 DestroyMenu MenuMusic
