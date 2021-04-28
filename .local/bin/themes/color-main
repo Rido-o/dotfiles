@@ -178,3 +178,20 @@ xmenu "\.selbackground_color" $BLUE
 xmenu "\.selforeground_color" $BACKGROUND
 xmenu "\.separator_color" $BLUE
 xmenu "\.border_color" $BLUE
+
+restart() {
+	# Restart fvwm
+	[ ! -z $(pidof fvwm) ] && killall -SIGUSR1 fvwm
+
+	# Rebuild dwmblocks
+	sudo make clean install -C $HOME/.local/src/dwmblocks
+
+	# Rebuild xmenu
+	sudo make install -C $HOME/.local/src/xmenu
+
+	# Restart Programs
+	xrdb $HOME/.config/x11/xresources
+	kill -HUP $(pidof dwm) &
+	[ ! -z $(pidof dunst) ] && killall dunst && setsid dunst &
+	[ ! -z $(pidof dwmblocks) ] && killall dwmblocks && setsid dwmblocks &
+}
