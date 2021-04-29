@@ -26,8 +26,11 @@ changefont() {
 }
 
 restart() {
+	# Rebuild dwm
 	rm $HOME/.local/src/dwm-flexipatch/config.h &
 	sudo make clean install -C $HOME/.local/src/dwm-flexipatch
+
+	# Rebuild dmenu
 	rm $HOME/.local/src/dmenu/config.h &
 	sudo make clean install -C $HOME/.local/src/dmenu
 
@@ -37,6 +40,6 @@ restart() {
 	# Restart Programs
 	xrdb $HOME/.config/x11/xresources &
 	kill -HUP $(pidof dwm) &
-	killall dunst; setsid dunst &
-	killall dwmblocks; setsid dwmblocks &
+	[ ! -z $(pidof dunst) ] && killall dunst && setsid dunst &
+	[ ! -z $(pidof dwmblocks) ] && killall dwmblocks && setsid dwmblocks &
 }
