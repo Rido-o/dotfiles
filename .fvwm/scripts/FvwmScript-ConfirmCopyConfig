@@ -1,6 +1,6 @@
 WindowTitle {ConfirmCopyConfig}
 WindowSize  500 160
-Font "xft:Sans:size=10"
+Font "xft:cozette:size=8"
 Init
  Begin
   Set $DataDir=(GetOutput {echo "$FVWM_DATADIR"} 1 -1)
@@ -18,7 +18,7 @@ Init
 Widget 1
 Property
  Title {Fvwm Default Configuration}
- Font "xft:Sans:size=14"
+ Font "xft:cozette:size=8"
  Size  500 25
  Position 0 0
  Type ItemDraw
