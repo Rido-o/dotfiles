@@ -10,4 +10,5 @@ FVWMFONT="xft:cozette:size=8"
 
 . font-main
 
+changefont
 restart

@@ -10,4 +10,5 @@ FVWMFONT="xft:Hack Nerd Font:size=13"
 
 . font-main
 
+changefont
 restart

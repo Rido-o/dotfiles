@@ -1,27 +1,29 @@
 #!/bin/sh
 
-# Xresources
-sd "(font:).+" "\$1 $FONT" $HOME/.config/x11/xresources
+changefont() {
+	# Xresources
+	sd "(font:).+" "\$1 $FONT" $HOME/.config/x11/xresources
 
-# Zathura
-sd "(font).+" "\$1 \"$ZATHURAFONT\"" $HOME/.config/zathura/zathurarc
+	# Zathura
+	sd "(font).+" "\$1 \"$ZATHURAFONT\"" $HOME/.config/zathura/zathurarc
 
-# Dunst
-sd "(font =).+" "\$1 $DUNSTFONT" $HOME/.config/dunst/dunstrc
+	# Dunst
+	sd "(font =).+" "\$1 $DUNSTFONT" $HOME/.config/dunst/dunstrc
 
-# Qutebrowser
-sd "(fonts.default_family = \[').*('\])" "\${1}$QUTEFONT\${2}" $HOME/.config/qutebrowser/config.py
-sd "(fonts.default_size =')\w" "\$1 $QUTESIZE" $HOME/.config/qutebrowser/config.py
+	# Qutebrowser
+	sd "(fonts.default_family = \[').*('\])" "\${1}$QUTEFONT\${2}" $HOME/.config/qutebrowser/config.py
+	sd "(fonts.default_size =')\w" "\$1 $QUTESIZE" $HOME/.config/qutebrowser/config.py
 
-# DWM
-sd "(font.+?\").+?(\")" "\${1}$FONT\${2}" $HOME/.local/src/dwm-flexipatch/config.def.h
+	# DWM
+	sd "(font.+?\").+?(\")" "\${1}$FONT\${2}" $HOME/.local/src/dwm-flexipatch/config.def.h
 
-# Dmenu
-sd "(\slineheight\s=\s)\d+" "\${1}$DMENUHEIGHT" $HOME/.local/src/dmenu/config.def.h
+	# Dmenu
+	sd "(\slineheight\s=\s)\d+" "\${1}$DMENUHEIGHT" $HOME/.local/src/dmenu/config.def.h
 
-# FVWM
-sd "(InfoStoreAdd font \").+(\")" "\${1}$FVWMFONT\${2}" $HOME/.fvwm/config
-sd "(Font \").+(\")" "\${1}$FVWMFONT\${2}" $(fd . $HOME/.fvwm/scripts)
+	# FVWM
+	sd "(InfoStoreAdd font \").+(\")" "\${1}$FVWMFONT\${2}" $HOME/.fvwm/config
+	sd "(Font \").+(\")" "\${1}$FVWMFONT\${2}" $(fd . $HOME/.fvwm/scripts)
+}
 
 restart() {
 	rm $HOME/.local/src/dwm-flexipatch/config.h &
