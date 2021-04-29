@@ -2,10 +2,15 @@
 # 4: Menus
 ###########
 MenuStyle * MenuColorset 120, ActiveColorset 121, GreyedColorset 122, TitleColorset 123
-MenuStyle * Hilight3DOff, HilightBack, HilightTitleBack, SeparatorsLong
+MenuStyle * HilightBack, HilightTitleBack, SeparatorsLong
+MenuStyle * Hilight3dThickness 1
+MenuStyle * PopUpDelay 25
 MenuStyle * TrianglesSolid, TrianglesUseFore
-MenuStyle * ItemFormat "%|%3.1i%5.3l%5.3>%|"
+MenuStyle * ItemFormat "%|.1i%5.3l%5.3>%|"
+MenuStyle * VerticalItemSpacing +2 +2
+MenuStyle * VerticalTitleSpacing +3 +2
 MenuStyle * Font $[infostore.font]
+MenuStyle * BorderWidth 1
 #MenuStyle * MenuFace TiledPixmap dot.png
 
 # Root Menu
@@ -15,16 +20,16 @@ MenuStyle * Font $[infostore.font]
 DestroyMenu MenuFvwmRoot
 AddToMenu   MenuFvwmRoot "Fvwm" Title
 + MissingSubmenuFunction FuncFvwmMenuDirectory
-+ "Terminal%terminal.png%" Exec exec $[infostore.terminal]
-+ "Programs%programs.png%" Popup MenuApplications
++ "Terminal" Exec exec $[infostore.terminal]
++ "Programs" Popup MenuApplications
 + "Music" Popup MenuMusic
 + "Utilities" Popup MenuUtilities
 + "" Nop
 + "Colorschemes" Popup $[HOME]/.local/bin/themes/colors
 + "Fonts" Popup $[HOME]/.local/bin/themes/fonts
 + "" Nop
-+ "Man Pages%help.png%" Popup MenuFvwmManPages
-+ "Copy Config%conf.png%" FvwmScript FvwmScript-ConfirmCopyConfig
++ "Man Pages" Popup MenuFvwmManPages
++ "Copy Config" FvwmScript FvwmScript-ConfirmCopyConfig
 + "" Nop
 + "Session" Popup MenuSession
 
@@ -82,10 +87,10 @@ AddToMenu   MenuFvwmManPages "Help" Title
 # Session menu
 DestroyMenu MenuSession
 AddToMenu   MenuSession "Session" Title
-+ "Refresh Fvwm%refresh.png%" Refresh
-+ "Restart Fvwm%restart.png%" Restart
++ "Refresh Fvwm" Refresh
++ "Restart Fvwm" Restart
 + "Lock" Exec exec locker
-+ "Logout%quit.png%" Module FvwmScript FvwmScript-ConfirmQuit
++ "Logout" Module FvwmScript FvwmScript-ConfirmQuit
 + "Reboot" Module FvwmScript FvwmScript-ConfirmReboot
 + "Shutdown" Module FvwmScript FvwmScript-ConfirmShutdown
 
