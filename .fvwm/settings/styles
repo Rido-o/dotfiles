@@ -40,7 +40,7 @@ MoveThreshold 3
 Style * SloppyFocus, MouseFocusClickRaises
 
 # Default Font
-DefaultFont "xft:cozette:size=8"
+DefaultFont $[infostore.font]
 
 # Window Placement
 Style * TileCascadePlacement, GrabFocus, !UsePPosition

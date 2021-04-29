@@ -5,7 +5,7 @@ MenuStyle * MenuColorset 120, ActiveColorset 121, GreyedColorset 122, TitleColor
 MenuStyle * Hilight3DOff, HilightBack, HilightTitleBack, SeparatorsLong
 MenuStyle * TrianglesSolid, TrianglesUseFore
 MenuStyle * ItemFormat "%|%3.1i%5.3l%5.3>%|"
-MenuStyle * Font "xft:cozette:size=8"
+MenuStyle * Font $[infostore.font]
 #MenuStyle * MenuFace TiledPixmap dot.png
 
 # Root Menu
