@@ -18,10 +18,6 @@
 #         Mouse <X> <Context> <Modifier> <Action>
 #################
 
-# Alt-F1 or Menu to load the root menu and Alt-Tab for a WindowList.
-# Ctrl-F1/F2/F3/F4 will switch between the Virtual Desktops.
-# Super_R (windows key) will launch a terminal.
-#
 # Silent supresses any errors (such as keyboards with no Menu key).
 Silent Key F1			A M Menu MenuFvwmRoot
 Silent Key Tab			A M WindowList Root c c NoDeskSort, SelectOnRelease Meta_L
