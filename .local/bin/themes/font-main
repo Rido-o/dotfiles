@@ -21,7 +21,7 @@ sd "(\slineheight\s=\s)\d+" "\${1}$DMENUHEIGHT" $HOME/.local/src/dmenu/config.de
 
 # FVWM
 sd "(InfoStoreAdd font \").+(\")" "\${1}$FVWMFONT\${2}" $HOME/.fvwm/config
-sd "(Font \").+(\")" "\${1}$FVWMFONT\${2}" $(ls $HOME/.fvwm/scripts)
+sd "(Font \").+(\")" "\${1}$FVWMFONT\${2}" $(fd . $HOME/.fvwm/scripts)
 
 restart() {
 	rm $HOME/.local/src/dwm-flexipatch/config.h &
