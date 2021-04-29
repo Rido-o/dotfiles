@@ -12,6 +12,9 @@ InfoStoreAdd scripts $[HOME]/.fvwm/scripts
 # Set cache location
 InfoStoreAdd cache $[HOME]/.fvwm/cache
 
+# Set default font
+InfoStoreAdd font "xft:cozette:size=8"
+
 # Disable resize hints from windows # Need it here for it to work properly on restart
 Style * ResizeHintOverride
 
