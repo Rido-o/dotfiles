@@ -1,6 +1,6 @@
 # Customisable settings
 InfoStoreAdd PanelGap 5
-InfoStoreAdd PanelFont "xft:cozette:size=8"
+InfoStoreAdd PanelFont $[infostore.font]
 InfoStoreAdd PanelRawWidth 120
 InfoStoreAdd PanelHideWidth 5
 InfoStoreAdd PanelHeight 25
