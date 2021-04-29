@@ -7,7 +7,7 @@ sd "(font:).+" "\$1 $FONT" $HOME/.config/x11/xresources
 sd "(font).+" "\$1 \"$ZATHURAFONT\"" $HOME/.config/zathura/zathurarc
 
 # Dunst
-sd "(font =).+" "\$1 $DUNST" $HOME/.config/dunst/dunstrc
+sd "(font =).+" "\$1 $DUNSTFONT" $HOME/.config/dunst/dunstrc
 
 # Qutebrowser
 sd "(fonts.default_family = \[').*('\])" "\${1}$QUTEFONT\${2}" $HOME/.config/qutebrowser/config.py
