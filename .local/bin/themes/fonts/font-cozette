@@ -6,7 +6,8 @@ DUNSTFONT="cozette 8"
 QUTEFONT="cozette"
 QUTESIZE="12px"
 DMENUHEIGHT="23"
+FVWMFONT="xft:cozette:size=8"
 
 . font-main
 
-changefont "$FONT" "$ZATHURAFONT" "$DUNSTFONT" "$QUTEFONT" "$QUTESIZE" "$DMENUHEIGHT"
+restart

@@ -1,18 +1,36 @@
 #!/bin/sh
 
-changefont () {
-	sd "(font:).+" "\$1 $1" $HOME/.config/x11/xresources
-	sd "(font).+" "\$1 \"$2\"" $HOME/.config/zathura/zathurarc
-	sd "(font =).+" "\$1 $3" $HOME/.config/dunst/dunstrc
-	sd "(fonts.default_family = \[').*('\])" "\${1}$4\${2}" $HOME/.config/qutebrowser/config.py
-	sd "(fonts.default_size =')\w" "\$1 $5" $HOME/.config/qutebrowser/config.py
-	sd "(font.+?\").+?(\")" "\${1}$1\${2}" $HOME/.local/src/dwm-flexipatch/config.def.h
-	sd "(\slineheight\s=\s)\d+" "\${1}$DMENUHEIGHT" $HOME/.local/src/dmenu/config.def.h
+# Xresources
+sd "(font:).+" "\$1 $FONT" $HOME/.config/x11/xresources
 
+# Zathura
+sd "(font).+" "\$1 \"$ZATHURAFONT\"" $HOME/.config/zathura/zathurarc
+
+# Dunst
+sd "(font =).+" "\$1 $DUNST" $HOME/.config/dunst/dunstrc
+
+# Qutebrowser
+sd "(fonts.default_family = \[').*('\])" "\${1}$QUTEFONT\${2}" $HOME/.config/qutebrowser/config.py
+sd "(fonts.default_size =')\w" "\$1 $QUTESIZE" $HOME/.config/qutebrowser/config.py
+
+# DWM
+sd "(font.+?\").+?(\")" "\${1}$FONT\${2}" $HOME/.local/src/dwm-flexipatch/config.def.h
+
+# Dmenu
+sd "(\slineheight\s=\s)\d+" "\${1}$DMENUHEIGHT" $HOME/.local/src/dmenu/config.def.h
+
+# FVWM
+sd "(InfoStoreAdd font \").+(\")" "\${1}$FVWMFONT\${2}" $HOME/.fvwm/config
+sd "(Font \").+(\")" "\${1}$FVWMFONT\${2}" $(ls $HOME/.fvwm/scripts)
+
+restart() {
 	rm $HOME/.local/src/dwm-flexipatch/config.h &
 	sudo make clean install -C $HOME/.local/src/dwm-flexipatch
 	rm $HOME/.local/src/dmenu/config.h &
 	sudo make clean install -C $HOME/.local/src/dmenu
+
+	# Restart fvwm
+	[ ! -z $(pidof fvwm) ] && killall -SIGUSR1 fvwm
 
 	# Restart Programs
 	xrdb $HOME/.config/x11/xresources &

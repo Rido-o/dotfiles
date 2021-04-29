@@ -6,7 +6,8 @@ DUNSTFONT="Hack Nerd Font 8"
 QUTEFONT="Hack Nerd Font"
 QUTESIZE="12px"
 DMENUHEIGHT="27"
+FVWMFONT="xft:Hack Nerd Font:size=13"
 
 . font-main
 
-changefont "$FONT" "$ZATHURAFONT" "$DUNSTFONT" "$QUTEFONT" "$QUTESIZE"
+restart
