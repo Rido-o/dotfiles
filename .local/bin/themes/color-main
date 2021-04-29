@@ -16,7 +16,7 @@ fi
 
 # Change Fvwm theme
 
-sd "\+ I Read themes.+" "+ I Read themes/$NAME" $HOME/.fvwm/config
+sd "\+ I Read themes.+" "+ I Read themes/$FVWMNAME" $HOME/.fvwm/config
 
 # Change Xresources
 

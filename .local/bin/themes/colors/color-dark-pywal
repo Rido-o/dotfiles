@@ -9,6 +9,7 @@ wal -i $HOME/.cache/wallpaper.png -n &&
 cp $HOME/.cache/wal/colors-dark-fvwm $HOME/.fvwm/themes/dark-wal
 
 NAME="wal"
+FVWMNAME="dark-wal"
 
 # run default scheme
 . color-main

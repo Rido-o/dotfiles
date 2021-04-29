@@ -9,6 +9,7 @@ wal -i $HOME/.cache/wallpaper.png -n &&
 cp $HOME/.cache/wal/colors-light-fvwm $HOME/.fvwm/themes/light-wal
 
 NAME="wal"
+FVWMNAME="light-wal"
 
 # run default scheme
 . color-main
