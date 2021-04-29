@@ -86,40 +86,48 @@ AddToFunc FuncFvwmMenuDirectory
 
 DestroyFunc TileLeft
 AddToFunc TileLeft
++ I ThisWindow (Maximized) Maximize
 + I ThisWindow (!Shaded, !Iconic) Maximize 50 100
 + I ThisWindow (Maximized, !Shaded, !Iconic) Move +0 +0
 
 DestroyFunc TileRight
 AddToFunc TileRight
++ I ThisWindow (Maximized) Maximize
 + I ThisWindow (!Shaded, !Iconic) Maximize 50 100
 + I ThisWindow (Maximized, !Shaded, !Iconic) Move -0 +0
 
 DestroyFunc TileTop
 AddToFunc TileTop
++ I ThisWindow (Maximized) Maximize
 + I ThisWindow (!Shaded, !Iconic) Maximize 100 50
 + I ThisWindow (Maximized, !Shaded, !Iconic) Move +0 +0
 
 DestroyFunc TileBottom
 AddToFunc TileBottom
++ I ThisWindow (Maximized) Maximize
 + I ThisWindow (!Shaded, !Iconic) Maximize 100 50
 + I ThisWindow (Maximized, !Shaded, !Iconic) Move +0 -0
 
 DestroyFunc TileTopLeft
 AddToFunc TileTopLeft
++ I ThisWindow (Maximized) Maximize
 + I ThisWindow (!Shaded, !Iconic) Maximize 50 50
 + I ThisWindow (Maximized, !Shaded, !Iconic) Move +0 +0
 
 DestroyFunc TileTopRight
 AddToFunc TileTopRight
++ I ThisWindow (Maximized) Maximize
 + I ThisWindow (!Shaded, !Iconic) Maximize 50 50
 + I ThisWindow (Maximized, !Shaded, !Iconic) Move -0 +0
 
 DestroyFunc TileBottomLeft
 AddToFunc TileBottomLeft
++ I ThisWindow (Maximized) Maximize
 + I ThisWindow (!Shaded, !Iconic) Maximize 50 50
 + I ThisWindow (Maximized, !Shaded, !Iconic) Move +0 -0
 
 DestroyFunc TileBottomRight
 AddToFunc TileBottomRight
++ I ThisWindow (Maximized) Maximize
 + I ThisWindow (!Shaded, !Iconic) Maximize 50 50
 + I ThisWindow (Maximized, !Shaded, !Iconic) Move -0 -0

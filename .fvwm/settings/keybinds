@@ -49,8 +49,8 @@ Silent Key m			A 4 Exec exec $[infostore.terminal] -n floatcenter -g 100x50 ncmp
 # Window Tiling
 Silent Key h			A S4 TileLeft
 Silent Key l			A S4 TileRight
-Silent Key k			A S4 TileUp
-Silent Key j			A S4 TileDown
+Silent Key k			A S4 TileTop
+Silent Key j			A S4 TileBottom
 Silent Key y			A S4 TileTopLeft
 Silent Key u			A S4 TileTopRight
 Silent Key b			A S4 TileBottomLeft
