@@ -11,7 +11,6 @@ MenuStyle * VerticalItemSpacing +2 +2
 MenuStyle * VerticalTitleSpacing +3 +2
 MenuStyle * Font $[infostore.font]
 MenuStyle * BorderWidth 1
-#MenuStyle * MenuFace TiledPixmap dot.png
 
 # Root Menu
 #
