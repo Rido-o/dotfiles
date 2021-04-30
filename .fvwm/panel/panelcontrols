@@ -13,7 +13,7 @@ DestroyModuleConfig ButtonsControls:*
 	Action (Mouse 4) Exec exec pamixer --allow-boost -i 5, \
 	Action (Mouse 5) Exec exec pamixer --allow-boost -d 5, \
 	ActiveColorset 131)
-*ButtonsControls: ($[infostore.PanelRawWidth2]x1, Title "", Action (Mouse 1) Exec exec networkmanager_dmenu, ActiveColorset 12)
+*ButtonsControls: ($[infostore.PanelRawWidth2]x1, Title "", Action (Mouse 1) Exec exec networkmanager_dmenu, ActiveColorset 131)
 AddPanelOffsetBottom $[infostore.PanelHeight]
 
 Module FvwmButtons ButtonsControls
