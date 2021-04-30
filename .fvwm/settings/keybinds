@@ -30,12 +30,17 @@ Silent Key F4			A C GotoDesk 0 3
 Silent Key Return		A 4 Exec exec $[infostore.terminal]
 Silent Key Return		A S4 Maximize
 Silent Key q			A 4 Close
+Silent Key q			A S4 Module FvwmScript FvwmScript-ConfirmShutdown
+Silent Key q			A CS4 Restart
 Silent Key 1			A 4 GoToPage 0 0
 Silent Key 2			A 4 GoToPage 1 0
 Silent Key 3			A 4 GoToPage 0 -1
 Silent Key 4			A 4 GoToPage -1 -1
+Silent Key y			A 4 Maximize fullscreen
 
 # Specific Windows Key keybinds
+Silent Key o			A 4 Exec exec dmenu_run -l 10
+Silent Key p			A 4 Exec exec program-launcher
 Silent Key question		A 4 Exec exec $[infostore.terminal] -n floatcenter -g 120x50 nvim $[HOME]/.cfg/wiki/help/help.wiki
 Silent Key Print		A 4 Exec exec screenshot-desktop
 Silent Key w			A 4 Exec exec $[infostore.terminal] -n floatcenter -g 120x50 nvim -c ':VimwikiIndex'
