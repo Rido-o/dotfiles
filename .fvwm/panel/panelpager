@@ -24,7 +24,7 @@ DestroyModuleConfig FvwmPager:*
 *FvwmPager: Colorset * 130
 *FvwmPager: HilightColorset * 131
 *FvwmPager: BalloonColorset * 130
-*FvwmPager: WindowColorsets 130 132
+*FvwmPager: WindowColorsets 141 142
 *FvwmPager: Font None
 *FvwmPager: Balloons All
 *FvwmPager: BalloonFont $[infostore.PanelFont]

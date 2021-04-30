@@ -29,7 +29,7 @@ Property
  Flags NoReliefString
  MinValue 0
  MaxValue 0
- Colorset 141
+ Colorset 150
 Main
  Case message of
   SingleClic :

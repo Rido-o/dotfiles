@@ -25,7 +25,7 @@ Colorset 111  fg black, bg #2d2d2d, hi, sh, Plain, NoShape
 
 # Menu
 ## Inactive menu item
-Colorset 120  fg #2A2426, bg #acb0d0, hi, sh, Plain, NoShape
+Colorset 120  fg #2A2426, bg #acb0d0, hi, sh, Plain, NoShape, TiledPixmap line.png, Alpha 5
 ## Active menu item
 Colorset 121  fg #2A2426, bg #4abaaf, hi, sh, Plain, NoShape
 ## Greyed menu item
@@ -41,8 +41,14 @@ Colorset 131 fg #2A2426, bg #4abaaf, hi, sh, Plain, NoShape
 ## Rightpanel highlight
 Colorset 132 fg #ffffff, bg #7AA2F7, hi, sh, Plain, NoShape
 
-# Modules
+# FvwmPager
 ## FvwmPager active page
-Colorset 140 fg #ffffff, bg #7AA2F7, hi, sh, Plain, NoShape
+Colorset 140 fg #ffffff, bg #4abaaf, hi, sh, Plain, NoShape
+## FvwmPager inactive window
+Colorset 141 fg #ffffff, bg #acb0d0, hi, sh, Plain, NoShape, TiledPixmap line2.png, Alpha 5
+## FvwmPager active window
+Colorset 142 fg #ffffff, bg #7AA2F7, hi, sh, Plain, NoShape, TiledPixmap cross2.png, Alpha 7
+
+# Modules
 ## FvwmScript bar widgets
-Colorset 141 fg #7AA2F7, bg #acb0d0, hi, sh, Plain, NoShape, TiledPixmap dot.png, Alpha 10
+Colorset 150 fg #7AA2F7, bg #acb0d0, hi, sh, Plain, NoShape, TiledPixmap dot.png, Alpha 10
