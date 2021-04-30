@@ -47,7 +47,7 @@ Colorset 140 fg {foreground}, bg {color4}, hi, sh, Plain, NoShape
 ## FvwmPager inactive window
 Colorset 141 fg {foreground}, bg {background}, hi, sh, Plain, NoShape, TiledPixmap line2.png, Alpha 5
 ## FvwmPager active window
-Colorset 142 fg {foreground}, bg {color8}, hi, sh, Plain, NoShape, TiledPixmap cross2.png, Alpha 7
+Colorset 142 fg {foreground}, bg {foreground}, hi, sh, Plain, NoShape, TiledPixmap cross2.png, Alpha 7
 
 # Modules
 ## FvwmScript bar widgets
