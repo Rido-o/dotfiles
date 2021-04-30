@@ -9,13 +9,13 @@
 
 # Titlebar
 ## Inactive  titlebar
-Colorset 100  fg #2A2426, bg {color8}, hi, sh, Plain, NoShape
+Colorset 100  fg {background}, bg {color8}, hi, sh, Plain, NoShape
 ## Active titlebar
 Colorset 101  fg {background}, bg {foreground}, hi, sh, Plain, NoShape
 ## Inactive  buttons
-Colorset 102  fg #2A2426, bg {color8}, hi, sh, Plain, NoShape
+Colorset 102  fg {background}, bg {color8}, hi, sh, Plain, NoShape
 ## Active buttons
-Colorset 103  fg #ffffff, bg {foreground}, hi, sh, Plain, NoShape
+Colorset 103  fg {background}, bg {foreground}, hi, sh, Plain, NoShape
 
 # Window Borders
 ## Inactive window borders
@@ -25,24 +25,24 @@ Colorset 111  fg black, bg #2d2d2d, hi, sh, Plain, NoShape
 
 # Menu
 ## Inactive menu item
-Colorset 120  fg #2A2426, bg {color8}, hi, sh, Plain, NoShape
+Colorset 120  fg {foreground}, bg {background}, hi, sh, Plain, NoShape
 ## Active menu item
-Colorset 121  fg #2A2426, bg {color4}, hi, sh, Plain, NoShape
+Colorset 121  fg {background}, bg {color2}, hi, sh, Plain, NoShape
 ## Greyed menu item
-Colorset 122  fg grey30, bg #ffffff, hi, sh, Plain, NoShape
+Colorset 122  fg {color8}, bg {background}, hi, sh, Plain, NoShape
 ## Menu title
-Colorset 123  fg #ffffff, bg {foreground}, hi, sh, Plain, NoShape
+Colorset 123  fg {foreground}, bg {color4}, hi, sh, Plain, NoShape
 
 # Rightpanel
 ## Rightpanel inactive
-Colorset 130 fg #2A2426, bg {color8}, hi, sh, Plain, NoShape, TiledPixmap line.png, Alpha 5
+Colorset 130 fg {foreground}, bg {background}, hi, sh, Plain, NoShape
 ## Rightpanel active (hovered)
-Colorset 131 fg #2A2426, bg {color4}, hi, sh, Plain, NoShape
+Colorset 131 fg {background}, bg {color4}, hi, sh, Plain, NoShape
 ## Rightpanel highlight
-Colorset 132 fg #ffffff, bg {foreground}, hi, sh, Plain, NoShape
+Colorset 132 fg {background}, bg {foreground}, hi, sh, Plain, NoShape
 
 # Modules
 ## FvwmPager active page
-Colorset 140 fg #ffffff, bg {color4}, hi, sh, Plain, NoShape
+Colorset 140 fg {foreground} bg {color4}, hi, sh, Plain, NoShape
 ## FvwmScript bar widgets
 Colorset 141 fg {foreground}, bg {color8}, hi, sh, Plain, NoShape, TiledPixmap dot.png, Alpha 10
