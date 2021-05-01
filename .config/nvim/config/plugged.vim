@@ -24,7 +24,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 " Colorschemes
-Plug 'dylanaraps/wal.vim', { 'as': 'colors-wal'}
+Plug 'Rido-o/wal.vim', { 'as': 'colors-wal'}
 Plug 'lifepillar/vim-colortemplate', { 'as': 'colors-colortemplate'}
 Plug 'morhetz/gruvbox', { 'as': 'colors-gruvbox'}
 Plug 'joshdick/onedark.vim', { 'as': 'colors-onedark'}
