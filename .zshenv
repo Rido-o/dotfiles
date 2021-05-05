@@ -53,3 +53,8 @@ export PF_INFO="ascii title os host kernel uptime pkgs memory shell wm editor pa
 
 # GTK theme
 export GTK_THEME=Nordic:dark
+
+# IBUS settings
+export GTK_IM_MODULE='ibus'
+export QT_IM_MODULE='ibus'
+export XMODIFIERS='@im=ibus'

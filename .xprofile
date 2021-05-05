@@ -9,6 +9,7 @@ set-wallpaper
 xrdb -load ~/.config/x11/xresources
 [ -s $(pidof mpd) ] && mpd
 [ -s $(pidof transmission-daemon) ] && exec transmission-daemon &
+exec ibus-daemon -drx &
 exec light-locker &
 exec xautolock -secure -time 10 -locker locker &
 exec dunst &
