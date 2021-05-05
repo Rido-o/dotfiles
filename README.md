@@ -31,3 +31,8 @@ This will install and setup the vast majority of the system with just a few rema
 * the settings are located in $HOME/.cfg/install/qutesettings
 ### Edit Transmission settings
 * open ~/.config/transmission-daemon/settings.json and change the usernames in that file to the one you are using
+### Set language settings
+* run ibus-setup
+* add anthy as an input method
+* set keybind to shift-windows-space to change input method
+* use anthy with <ctrl-j> and <space> after kana

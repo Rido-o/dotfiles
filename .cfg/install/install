@@ -45,6 +45,7 @@ pacList=("zsh" "zsh-syntax-highlighting" "zsh-autosuggestions" # Install zsh and
 	 "lightdm" "lightdm-gtk-greeter" "light-locker" # Display manager and screen locker
 	 "qutebrowser" # Web browser
 	 "python-pywal" # Colorscheme generator
+	 "ibus" "ibus-anthy" # Japanese language support
 	)
 
 yayList=("dashbinsh" # Used to make sure dash remains as /bin/sh # might need to link dash as /bin/sh first
