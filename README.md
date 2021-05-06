@@ -19,7 +19,7 @@ This will install and setup the vast majority of the system with just a few rema
 * ~ cat ~/.ssh/id_ed25519.pub | xclip -selection clipboard
 * with the key in the clipboard add it to your github account
 * ~ ssh -T git@github.com # test connection
-* switch repository origins with - ~/.cache/rice/ssh-switch
+* switch repository origins with - ~/.cfg/install/extras/ssh-switch
 ### Nvim final touches
 * open nvim to begin installation of coc-extensions
 * run the following command while in a c/c++ file ~ :CocCommand clangd.install
