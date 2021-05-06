@@ -2,3 +2,4 @@
 
 == Basic ==
 * `o` - Open rss link in browser
+* `O` - Open all rss links in browser

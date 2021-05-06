@@ -19,3 +19,5 @@
 == Scripts ==
 * `Ctrl-x w` - Set the wallpaper to selected image
 * `Ctrl-x l` - Set the lockscreen wallpaper to selected image
+* `Ctrl-x p` - Set the wallpaper to selected image and run dark-pywal
+* `Ctrl-x P` - Set the wallpaper to selected image and run light-pywal
