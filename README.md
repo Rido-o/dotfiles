@@ -34,5 +34,4 @@ This will install and setup the vast majority of the system with just a few rema
 ### Set language settings
 * run ibus-setup
 * add anthy as an input method
-* set keybind to shift-windows-space to change input method
-* use anthy with <ctrl-j> and <space> after kana
+* change keybinds according to language help file
