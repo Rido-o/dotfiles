@@ -3,6 +3,7 @@
 
 == System ==
 * [[oops|Oops]]
+* [[language|Language]]
 
 == Programs ==
 * [[dwm|Dwm]]

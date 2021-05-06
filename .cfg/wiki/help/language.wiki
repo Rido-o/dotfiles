@@ -1,0 +1,12 @@
+= IBUS =
+
+== Keybinds ==
+* `Super-Shift-Space` - Switch input modes
+
+= Anthy =
+
+== Keybinds ==
+* `Ctrl-j` - Switch between english and kana
+* `Ctrl-,` - Switch to japanese english
+* `Ctrl-.` - Switch to hiragana
+* `Space` - After typing kana to show kanji options
