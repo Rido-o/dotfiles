@@ -41,7 +41,6 @@ pacList=("zsh" "zsh-syntax-highlighting" "zsh-autosuggestions" # Install zsh and
 	 "ripgrep" # Grep replacement
 	 "transmission-cli" # Torrent daemon
 	 "python-adblock" # Adblock for qutebrowser
-	 "fvwm" # A window manager
 	 "lightdm" "lightdm-gtk-greeter" "light-locker" # Display manager and screen locker
 	 "qutebrowser" # Web browser
 	 "python-pywal" # Colorscheme generator
@@ -54,6 +53,7 @@ yayList=("dashbinsh" # Used to make sure dash remains as /bin/sh # might need to
 	 "bitwarden-bin" "bitwarden-cli" # Installing bitwarden
 	 "lazygit" # Installing misc
 	 "stig" # or transmission-remote-cli-git # Tui transmission client
+	 "fvwm" # A window manager
 	)
 
 pipList=("pynvim" "black" # Used together with nvim
