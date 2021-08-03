@@ -50,7 +50,7 @@ pacList=("zsh" "zsh-syntax-highlighting" "zsh-autosuggestions" # Install zsh and
 yayList=("dashbinsh" # Used to make sure dash remains as /bin/sh # might need to link dash as /bin/sh first
 	 "cozette-otb" "nerd-fonts-hack" "ttf-kochi-substitute" # Install fonts
 	 "gotop-bin" "networkmanager-dmenu-git" # Install dwm statusbar dependencies
-	 "bitwarden-bin" "bitwarden-cli" # Installing bitwarden
+	 "bitwarden" "bitwarden-cli" # Installing bitwarden
 	 "lazygit" # Installing misc
 	 "stig" # or transmission-remote-cli-git # Tui transmission client
 	 "fvwm" # A window manager
