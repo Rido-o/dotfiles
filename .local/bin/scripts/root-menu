@@ -4,7 +4,7 @@ cat <<EOF | xmenu | sh &
 Terminal				setsid -f "$TERMINAL"
 Applications
 	Web Browser			"$BROWSER"
-	Password Manager	bitwarden
+	Password Manager	bitwarden-desktop
 	File Explorer		setsid -f "$TERMINAL" nnn -e -D
 	Task Manager		setsid -f "$TERMINAL" gotop
 	RSS Reader			setsid -f "$TERMINAL" newsboat
