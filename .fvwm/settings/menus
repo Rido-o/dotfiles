@@ -36,7 +36,7 @@ AddToMenu   MenuFvwmRoot "Fvwm" Title
 DestroyMenu MenuApplications
 AddToMenu   MenuApplications "Applications" Title
 Test (x $[BROWSER]) + "Web Browser" Exec exec $[BROWSER]
-Test (x bitwarden) + "Password Manager" Exec exec bitwarden-desktop
+Test (x bitwarden-desktop) + "Password Manager" Exec exec bitwarden-desktop
 Test (x nnn) + "File Explorer" Exec exec setsid -f $[infostore.terminal] nnn -e -D
 Test (x gotop) + "Task Manager" Exec exec setsid -f $[infostore.terminal] gotop
 Test (x newsboat) + "RSS Reader" Exec exec setsid -f $[infostore.terminal] newsboat
