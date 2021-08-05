@@ -25,3 +25,6 @@
 * run the command :PlugInstall
 * open nvim to install coc extensions
 * run :CocCommand clangd.install in a c/c++ file
+
+* NEW!!
+* install pyright

@@ -175,28 +175,28 @@
 		\}
 
 	" Coc
-	let g:which_key_map.a = {
-		\ 'name' : '+Coc',
-		\ 'a' : ['<plug>(coc-codeaction)' , 'Line action'],
-		\ 'd' : ['<plug>(coc-definition)' , 'Definition'],
-		\ 'r' : ['<plug>(coc-references)' , 'References'],
-		\ 't' : ['<plug>(coc-type-definition)' , 'Type definition'],
-		\ 'm' : ['<plug>(coc-rename)' , 'Rename'],
-		\ 'D' : ['<plug>(coc-declaration)' , 'Declaration'],
-		\ 'i' : ['<plug>(coc-implementation)' , 'Implementation'],
-		\ 'f' : ['<plug>(coc-format)' , 'Format'],
-		\ 'q' : ['<plug>(coc-fix-current)' , 'Quickfix'],
-		\ 'c' : ['<plug>(coc-codelens-action)' , 'Code lens'],
-		\ 'n' : ['<plug>(coc-diagnostic-next)' , 'Next diagnostic'],
-		\ 'N' : ['<plug>(coc-diagnostic-next-error)' , 'Next error'],
-		\ 'I' : [':CocList diagnostics' , 'Diagnostics'],
-		\ 'o' : [':CocList outline' , 'Search outline'],
-		\ 's' : [':CocList -l symbols' , 'References-'],
-		\ 'C' : [':CocConfig' , 'Open config lens'],
-		\ 'u' : [':CocUpdate' , 'Update Coc'],
-		\ 'E' : [':CocDisable' , 'Disable Coc'],
-		\ 'e' : [':CocEnable' , 'Enable Coc'],
-		\}
+	"let g:which_key_map.a = {
+		"\ 'name' : '+Coc',
+		"\ 'a' : ['<plug>(coc-codeaction)' , 'Line action'],
+		"\ 'd' : ['<plug>(coc-definition)' , 'Definition'],
+		"\ 'r' : ['<plug>(coc-references)' , 'References'],
+		"\ 't' : ['<plug>(coc-type-definition)' , 'Type definition'],
+		"\ 'm' : ['<plug>(coc-rename)' , 'Rename'],
+		"\ 'D' : ['<plug>(coc-declaration)' , 'Declaration'],
+		"\ 'i' : ['<plug>(coc-implementation)' , 'Implementation'],
+		"\ 'f' : ['<plug>(coc-format)' , 'Format'],
+		"\ 'q' : ['<plug>(coc-fix-current)' , 'Quickfix'],
+		"\ 'c' : ['<plug>(coc-codelens-action)' , 'Code lens'],
+		"\ 'n' : ['<plug>(coc-diagnostic-next)' , 'Next diagnostic'],
+		"\ 'N' : ['<plug>(coc-diagnostic-next-error)' , 'Next error'],
+		"\ 'I' : [':CocList diagnostics' , 'Diagnostics'],
+		"\ 'o' : [':CocList outline' , 'Search outline'],
+		"\ 's' : [':CocList -l symbols' , 'References-'],
+		"\ 'C' : [':CocConfig' , 'Open config lens'],
+		"\ 'u' : [':CocUpdate' , 'Update Coc'],
+		"\ 'E' : [':CocDisable' , 'Disable Coc'],
+		"\ 'e' : [':CocEnable' , 'Enable Coc'],
+		"\}
 	
 	" Toggle settings
 	let g:which_key_map.t = {

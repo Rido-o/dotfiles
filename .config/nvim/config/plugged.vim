@@ -44,7 +44,7 @@ Plug 'liuchengxu/vim-which-key'
 Plug 'vimwiki/vimwiki'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'lervag/vimtex' " Requres latexmk, pdfviewer(mupdf)
 "Plug 'dense-analysis/ale'
 "Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
@@ -67,16 +67,23 @@ Plug 'justinmk/vim-sneak'
 "Plug 'thinca/vim-quickrun'
 Plug 'skywind3000/asyncrun.vim'
 
+" New toys
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/nvim-compe'
+
+Plug 'hrsh7th/vim-vsnip'
+Plug 'rafamadriz/friendly-snippets'
+
 " Debugging
 "Plug 'puremourning/vimspector'
 
 call plug#end()
 
 "CocInstall
-let g:coc_global_extensions = [
-	\ 'coc-pyright',
-	\ 'coc-clangd',
-	\ 'coc-html',
-	\ 'coc-css',
-	\ 'coc-prettier',
-	\ 'coc-snippets']
+"let g:coc_global_extensions = [
+	"\ 'coc-pyright',
+	"\ 'coc-clangd',
+	"\ 'coc-html',
+	"\ 'coc-css',
+	"\ 'coc-prettier',
+	"\ 'coc-snippets']
