@@ -194,3 +194,9 @@ EOF
 		\ 'v': 'vsplit',
 		\ 'l': 'e',
 		\ 'e': 'e'}
+
+" Neoformat
+	augroup fmt
+		autocmd!
+		autocmd BufWritePre * undojoin | Neoformat
+	augroup END
