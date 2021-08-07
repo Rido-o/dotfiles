@@ -10,13 +10,13 @@ endif
 
 " Source Files
 if g:os == "Windows"
-	let s:ospath = "~/AppData/Local/nvim/config"
+	let s:osPath = "~/AppData/Local/nvim/config"
 elseif g:os == "Linux"
-	let s:ospath = "$HOME/.config/nvim/config"
+	let s:osPath = "$HOME/.config/nvim/config"
 endif
 
 function SourceFile(file)
-	exec "source " . s:ospath . a:file
+	exec "source " . s:osPath . a:file
 endfunction
 
 call SourceFile("/plugged.vim")					"Has file setting
