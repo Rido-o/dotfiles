@@ -74,6 +74,9 @@ Plug 'hrsh7th/nvim-compe'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'rafamadriz/friendly-snippets'
 
+Plug 'sbdchd/neoformat'
+" pip install black
+
 " Debugging
 "Plug 'puremourning/vimspector'
 

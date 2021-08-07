@@ -1,7 +1,3 @@
-" Fast scrolling
-nnoremap <silent> <C-j> <C-d>
-nnoremap <silent> <C-k> <C-u>
-
 " Replace
 "nnoremap <silent> rr "_cc<esc>Vp
 "nnoremap <silent> rr "_ddP
@@ -16,7 +12,7 @@ nnoremap <expr> r '"_c' . (nr2char(getchar())) . (nr2char(getchar())) . "<C-r>+<
 " Reload session
 nnoremap <F2> :source $MYVIMRC<CR>
 
-" Clear highlighting on escape in normal mode
+" Clear highlighting on enter in normal mode
 nnoremap <CR> :noh<CR>
 
 " May cuase problems for terminal

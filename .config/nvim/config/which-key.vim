@@ -52,7 +52,7 @@
 
 	autocmd VimEnter * call Mapff()
 
-	" Color column toggle
+	" Toggle color column
 	function! ColorColumn()
 		if &colorcolumn == 0
 			set colorcolumn=80
@@ -202,5 +202,4 @@
 	let g:which_key_map.t = {
 		\ 'name' : '+Toggle',
 		\ 'c' : [':call ColorColumn()' , 'Toggle color column'],
-		\ 'C' : [':set colorcolumn=80' , 'Color column on'],
 		\}
