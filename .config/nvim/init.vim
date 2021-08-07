@@ -7,32 +7,24 @@ if !exists("g:os")
 	endif
 endif
 
-" Sources
+
+" Source Files
 if g:os == "Windows"
-	" Basic
-	source ~/AppData/Local/nvim/config/plugged.vim                             "Has file setting
-	source ~/AppData/Local/nvim/config/settings.vim                            "Has ignorable file setting
-
-	" Plugin settings
-	source ~/AppData/Local/nvim/config/colorschemes.vim
-	source ~/AppData/Local/nvim/config/plugin-settings.vim
-	source ~/AppData/Local/nvim/config/remaps-basics.vim
-	source ~/AppData/Local/nvim/config/which-key.vim
-	source ~/AppData/Local/nvim/config/which-key-local-leader.vim
-	source ~/AppData/Local/nvim/config/start-page.vim                          "Has file setting
+	let s:ospath = "~/AppData/Local/nvim/config"
+elseif g:os == "Linux"
+	let s:ospath = "$HOME/.config/nvim/config"
 endif
 
-" Linux Sources
-if g:os == "Linux"
-	" Basic
-	source $HOME/.config/nvim/config/plugged.vim							   "Has file setting
-	source $HOME/.config/nvim/config/settings.vim							   "Has ignorable file setting
+function SourceFile(file)
+	exec "source " . s:ospath . a:file
+endfunction
 
-	" Plugin settings
-	source $HOME/.config/nvim/config/colorschemes.vim
-	source $HOME/.config/nvim/config/plugin-settings.vim
-	source $HOME/.config/nvim/config/remaps-basics.vim
-	source $HOME/.config/nvim/config/which-key.vim
-	source $HOME/.config/nvim/config/which-key-local-leader.vim
-	source $HOME/.config/nvim/config/start-page.vim							   "Has file setting
-endif
+call SourceFile("/plugged.vim")					"Has file setting
+call SourceFile("/settings.vim")				"Has ignorable file setting
+
+call SourceFile("/colorschemes.vim")
+call SourceFile("/plugin-settings.vim")
+call SourceFile("/remaps-basics.vim")
+call SourceFile("/which-key.vim")
+call SourceFile("/which-key-local-leader.vim")
+call SourceFile("/start-page.vim")				"Has file setting
