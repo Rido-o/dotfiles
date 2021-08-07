@@ -4,10 +4,12 @@ case $BLOCK_BUTTON in
 	1) setsid -f "$TERMINAL" -n floatcenter -g 120x50 stig ;;
 esac
 
-sum=($(transmission-remote -l | tail -n 1))
+# Get upload and download speeds
+speeds=($(transmission-remote -l | tail -n 1 | awk '{print$(NF-1), $NF}'))
 
+# Format speeds correctly
 speed () {
-	rate=$(echo ${sum[$1]} | sd "\..*" "")
+	rate=$(echo ${speeds[$1]} | sd "\..*" "")
 	if [ ${#rate} -ge 4 ]
 		then
 			echo $rate | sd "(.)(.).." '${1}.${2}M'
@@ -16,8 +18,8 @@ speed () {
 	fi
 }
 
-up=$(speed 3)
-down=$(speed 4)
+up=$(speed 0)
+down=$(speed 1)
 
 runhost=$1
 
