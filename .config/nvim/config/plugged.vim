@@ -44,10 +44,7 @@ Plug 'liuchengxu/vim-which-key'
 Plug 'vimwiki/vimwiki'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'lervag/vimtex' " Requres latexmk, pdfviewer(mupdf)
-"Plug 'dense-analysis/ale'
-"Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
@@ -81,12 +78,3 @@ Plug 'sbdchd/neoformat'
 "Plug 'puremourning/vimspector'
 
 call plug#end()
-
-"CocInstall
-"let g:coc_global_extensions = [
-	"\ 'coc-pyright',
-	"\ 'coc-clangd',
-	"\ 'coc-html',
-	"\ 'coc-css',
-	"\ 'coc-prettier',
-	"\ 'coc-snippets']
