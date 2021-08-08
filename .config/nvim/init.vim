@@ -21,9 +21,12 @@ endfunction
 call SourceFile("/plugged.vim")					"Has file setting
 call SourceFile("/settings.vim")				"Has ignorable file setting
 
-call SourceFile("/colorschemes.vim")
+"call SourceFile("/colorschemes.vim")
 call SourceFile("/plugin-settings.vim")
 call SourceFile("/remaps-basics.vim")
 call SourceFile("/which-key.vim")
 call SourceFile("/which-key-local-leader.vim")
 call SourceFile("/start-page.vim")				"Has file setting
+
+lua require('settings')
+lua require('colorschemes')
