@@ -45,6 +45,7 @@ pacList=("zsh" "zsh-syntax-highlighting" "zsh-autosuggestions" # Install zsh and
 	 "qutebrowser" # Web browser
 	 "python-pywal" # Colorscheme generator
 	 "ibus" "ibus-anthy" # Japanese language support
+	 "pyright" # Python LSP for use with nvim
 	)
 
 yayList=("dashbinsh" # Used to make sure dash remains as /bin/sh # might need to link dash as /bin/sh first
