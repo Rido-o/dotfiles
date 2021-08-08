@@ -33,5 +33,5 @@ lua require('settings')
 lua require('colorschemes')
 
 " Plugins
-lua require('plugins.nvim-compe')
-lua require('plugins.nvim-lspconfig')
+lua require('plugin-settings.nvim-compe')
+lua require('plugin-settings.nvim-lspconfig')
