@@ -28,5 +28,10 @@ call SourceFile("/which-key.vim")
 call SourceFile("/which-key-local-leader.vim")
 call SourceFile("/start-page.vim")				"Has file setting
 
+" Main files
 lua require('settings')
 lua require('colorschemes')
+
+" Plugins
+lua require('plugins.nvim-compe')
+lua require('plugins.nvim-lspconfig')
