@@ -40,7 +40,8 @@ return require('packer').startup(function()
     use 'sheerun/vim-polyglot' -- Better syntax highlighting
     --use 'jiangmiao/auto-pairs' -- Auto Brackets
     use 'windwp/nvim-autopairs'
-    use 'Yggdroot/indentLine'
+    --use 'Yggdroot/indentLine'
+    use 'lukas-reineke/indent-blankline.nvim'
     use 'preservim/nerdcommenter'
     --use 'ryanoasis/vim-devicons'
     use 'mbbill/undotree'
