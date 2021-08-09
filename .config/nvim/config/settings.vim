@@ -11,6 +11,7 @@ set clipboard+=unnamedplus			" Copy and paste between everything
 set number relativenumber			" Enables the relative numberline
 set cursorline						" Change the cursor in insert mode
 set linespace=0						" Set the space between lines
+set expandtab
 set tabstop=4 softtabstop=4			" Set the width of tabs and space tabs
 set shiftwidth=4					" Change the number of space character for indentation
 set smartindent						" Makes indenting smart
