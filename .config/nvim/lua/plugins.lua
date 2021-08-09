@@ -1,4 +1,7 @@
 return require('packer').startup(function()
+	-- Plugin Manager
+	use 'wbthomason/packer.nvim'
+
 	-- Git plugins
 	use 'tpope/vim-fugitive'
 	use 'mhinz/vim-signify'

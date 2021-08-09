@@ -97,9 +97,9 @@ sudo ln -sfT dash /usr/bin/sh
 
 # Install Nvim
 mkdir -p $HOME/.cache/nvim/undodir
-mkdir -p $HOME/.local/share/nvim/site/autoload
-wget -xO $HOME/.local/share/nvim/site/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-nvim --headless +PlugInstall +qall
+#mkdir -p $HOME/.local/share/nvim/site/autoload
+#wget -xO $HOME/.local/share/nvim/site/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+#nvim --headless +PlugInstall +qall
 
 # Install cover art support for ncmpcpp # Move to after git clone
 chmod +x $HOME/.config/ncmpcpp/ncmpcpp-ueberzug/ncmpcpp-ueberzug $HOME/.config/ncmpcpp/ncmpcpp-ueberzug/ncmpcpp_cover_art.sh
