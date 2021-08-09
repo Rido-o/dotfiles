@@ -59,10 +59,52 @@ require("which-key").setup {
     },
 }
 
+-- Set leader
 vim.g.mapleader = ' '
 
-local wk = require('which-key')
+---- Toggle NERDTree based on the current buffer
+--function NERDTreeToggleInCurDir()
+--    -- If NERDTree is open in the current buffer
+--    if (exists("t:NERDTreeBufName") and bufwinnr(t:NERDTreeBufName) ~= -1) then
+--        exe ":NERDTreeClose"
+--    -- If in git directory open root directory
+--    elseif fugitive#head() ~= '' then
+--        exe ":NERDTreeToggleVCS %"
+--    -- If current buffer is empty open NERDTree in CWD
+--    elseif line('$') == 1 && getline(1) == '' then
+--        exe ":NERDTreeCWD"
+--    -- Else open nerdtree in directory of current file
+--    else
+--        exe ":NERDTree %"
+--    end
+--end
 
+-- Set ff based on weather in a git directory
+vim.api.nvim_set_keymap('n', '<leader>ff', ':Files<CR>', {})
+function Mapff()
+    -- If in git directory search for repository files
+    if vim.fn['fugitive#head']() ~= '' then
+       --vim.cmd('noremap <leader>ff :GFiles --cached --others --exclude-standard<CR>')
+       vim.api.nvim_set_keymap('n', '<leader>ff', ':GFiles --cached --others --exclude-standard<CR>')
+    -- Else search for current directory files
+    else
+       --vim.cmd('noremap <leader>ff :Files<CR>')
+       vim.api.nvim_set_keymap('n', '<leader>ff', ':Files<CR>')
+    end
+end
+
+--autocmd VimEnter * call Mapff()
+
+-- Toggle color column
+function ColorColumn()
+    if vim.o.colorcolumn == '0' then
+        vim.o.colorcolumn = '80'
+    else
+        vim.o.colorcolumn = '0'
+    end
+end
+
+local wk = require('which-key')
 wk.register({
     -- Single Mappings
     s = {':wincmd s' , 'Horizontal split'},
@@ -74,7 +116,7 @@ wk.register({
     u = {'gt' , 'Next tab'},
     y = {'gT' , 'Previous tab'},
     w = {':w<CR>' , 'Write'},
-    q = {'q' , 'Quit'},
+    q = {':q<CR>' , 'Quit'},
     n = {':call NERDTreeToggleInCurDir()' , 'Toggle file explorer'},
     U = {':UndotreeToggle' , 'Open undo tree'},           -- Undo tree toggle
     d = {':NnnPicker' , 'Open nnn'},
@@ -84,7 +126,7 @@ wk.register({
     u = {':bn' , 'Next buffer'},
     y = {':bp' , 'Previous Buffer'},
     b = {
-        name = '+Buffers',
+        name = 'Buffers',
         q = {':Bdelete' , 'Close buffer'},
         d = {':cd %:p:h|call Mapff()', 'Change CWD to file directory'},
         f = {'gf' , 'Open file'},
@@ -108,7 +150,7 @@ wk.register({
 
     -- NerdCommenter
     c = {
-        name = '+Comment',
+        name = 'Comment',
         c = {'<plug>NERDCommenterComment' , 'Comment'},
         n = {'<plug>NERDCommenterNested' , 'Nested comment'},
         ['<space>'] = {'<plug>NERDCommenterToggle' , 'Toggle comment'},
@@ -126,7 +168,7 @@ wk.register({
 
     -- Fugitive
     g = {
-        name = '+Git',
+        name = 'Git',
         i = {':Git init', 'Git init'},
         a = {':Git add .', 'Git add all'},
         c = {':Git commit', 'Git commit'},
@@ -144,8 +186,8 @@ wk.register({
 
     -- Fzf
     f = {
-        name = '+Find',
-        f = {'' , 'Find files'},
+        name = 'Find',
+        f = {'Find files'},
         F = {':Files' , 'Find files'},
         o = {':History' , 'Find MRU'},
         e = {':History:' , 'Search command history'},
@@ -162,13 +204,13 @@ wk.register({
 
     -- Vimwiki
     W = {
-        name = '+Vimwiki',
+        name = 'Vimwiki',
         i = {'<plug>VimwikiDiaryIndex' , 'Open Vimwiki diary'},
         s = {'<plug>VimwikiUISelect' , 'Select Vimwiki'},
         t = {'<plug>VimwikiTabIndex' , 'Tab Index'},
         w = {'<plug>VimwikiIndex' , 'Open Vimwiki'},
         ['<space>'] = {
-            name = '+Vimwiki Diary',
+            name = 'Vimwiki Diary',
             i = {'<plug>VimwikiDiaryGenerateLinks' , 'Generate links'},
             m = {'<plug>VimwikiMakeTomorrowDiaryNote' , 'Tomorrows diary'},
             t = {'<plug>VimwikiTabMakeDiaryNote' , 'Tab todays diary'},
@@ -203,7 +245,7 @@ wk.register({
 
     -- Toggle settings
     t = {
-        name = '+Toggle',
-        c = {':call ColorColumn()' , 'Toggle color column'},
+        name = 'Toggle',
+        c = {':lua ColorColumn()<CR>' , 'Toggle color column'},
     }
 }, { prefix = '<leader>' })
