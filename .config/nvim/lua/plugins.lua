@@ -12,7 +12,7 @@ return require('packer').startup(function()
     use 'preservim/nerdtree'
     use 'Xuyuanp/nerdtree-git-plugin'
     use 'tiagofumo/vim-nerdtree-syntax-highlight'
-
+    
     -- nnn
     use 'mcchrish/nnn.vim'
 
@@ -28,7 +28,7 @@ return require('packer').startup(function()
 
     -- Colorschemes
     use {'Rido-o/wal.vim', as = 'colors-wal'}
-    use {'lifepillar/vim-colortemplate', as = 'colors-colortemplate'}
+    --use {'lifepillar/vim-colortemplate', as = 'colors-colortemplate'}
     use {'morhetz/gruvbox', as = 'colors-gruvbox'}
     use {'joshdick/onedark.vim', as = 'colors-onedark'}
     use {'reedes/vim-colors-pencil', as = 'colors-pencil'}
@@ -37,7 +37,7 @@ return require('packer').startup(function()
     use {'franbach/miramare', as = 'colors-miramare'}
     use {'ntk148v/vim-horizon', as = 'colors-horizon'}
 
-    use 'sheerun/vim-polyglot' -- Better syntax highlighting
+    --use 'sheerun/vim-polyglot' -- Better syntax highlighting
     --use 'jiangmiao/auto-pairs' -- Auto Brackets
     use 'windwp/nvim-autopairs'
     --use 'Yggdroot/indentLine'
