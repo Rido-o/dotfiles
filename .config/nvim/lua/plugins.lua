@@ -61,7 +61,7 @@ return require('packer').startup(function()
 
     -- Snippets
     --use 'SirVer/ultisnips' -- If not using coc
-    use 'honza/vim-snippets'
+    --use 'honza/vim-snippets'
 
     -- Movement
     use 'unblevable/quick-scope'
@@ -76,6 +76,7 @@ return require('packer').startup(function()
     use 'hrsh7th/nvim-compe'
 
     use 'hrsh7th/vim-vsnip'
+    use 'hrsh7th/vim-vsnip-integ'
     use 'rafamadriz/friendly-snippets'
 
     -- treesitter
