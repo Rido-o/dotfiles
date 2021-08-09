@@ -89,6 +89,7 @@
 	elseif g:os == "Linux"
 		let g:vimwiki_list = [{'path': '$HOME/.cfg/wiki/'}]
 	endif
+    let g:vimwiki_map_prefix = '<space>W'
 
 " nnn settings
 	let g:nnn#set_default_mappings = 0
