@@ -78,6 +78,13 @@ return require('packer').startup(function()
     use 'hrsh7th/vim-vsnip'
     use 'rafamadriz/friendly-snippets'
 
+    -- treesitter
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        branch = '0.5-compat',
+        run = ':TSUpdate',
+    }
+
     use 'sbdchd/neoformat'
     -- pip install black
 
