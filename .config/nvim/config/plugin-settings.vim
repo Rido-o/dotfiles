@@ -9,7 +9,7 @@
 
 	" Airline symbols
 	if !exists('g:airline_symbols')
-		let g:airline_symbols = {}
+	    let g:airline_symbols = {}
 	endif
 	let g:airline_left_sep = ''
 	let g:airline_left_alt_sep = ''
@@ -23,12 +23,15 @@
 
 " Indentline
 	"let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+    "let g:indentLine_setColors = 0
+    let g:indentLine_defaultGroup = 'SpecialKey'
 	let g:indentLine_char = '┊'
+    let g:indentLine_fileTypeExclude = [""]
 
 " nvim-compe
 	inoremap <silent><expr> <C-Space> compe#complete()
-	"inoremap <silent><expr> <CR>      compe#confirm('<CR>')
-	inoremap <silent><expr> <CR>      compe#confirm(luaeval("require 'nvim-autopairs'.autopairs_cr()"))
+	inoremap <silent><expr> <CR>      compe#confirm('<CR>')
+	"inoremap <silent><expr> <CR>      compe#confirm(luaeval("require 'nvim-autopairs'.autopairs_cr()"))
 	inoremap <silent><expr> <C-e>     compe#close('<C-e>')
 	inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
 	inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
