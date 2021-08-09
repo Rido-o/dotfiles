@@ -17,8 +17,14 @@ return require('packer').startup(function()
 	use 'mcchrish/nnn.vim'
 
 	-- Airline
-	use 'vim-airline/vim-airline'
-	use 'vim-airline/vim-airline-themes'
+	--use 'vim-airline/vim-airline'
+	--use 'vim-airline/vim-airline-themes'
+
+	-- Lualine
+	use {
+		'hoob3rt/lualine.nvim',
+		requires = {'kyazdani42/nvim-web-devicons', opt = true}
+	}
 
 	-- Colorschemes
 	use {'Rido-o/wal.vim', as = 'colors-wal'}
@@ -26,15 +32,17 @@ return require('packer').startup(function()
 	use {'morhetz/gruvbox', as = 'colors-gruvbox'}
 	use {'joshdick/onedark.vim', as = 'colors-onedark'}
 	use {'reedes/vim-colors-pencil', as = 'colors-pencil'}
-	use {'Rido-o/tokyonight-vim', as = 'colors-tokyonight'}
+	--use {'Rido-o/tokyonight-vim', as = 'colors-tokyonight'}
+	use {'folke/tokyonight.nvim', as = 'colors-tokyonight'}
 	use {'franbach/miramare', as = 'colors-miramare'}
 	use {'ntk148v/vim-horizon', as = 'colors-horizon'}
 
 	use 'sheerun/vim-polyglot' -- Better syntax highlighting
-	use 'jiangmiao/auto-pairs' -- Auto Brackets
+	--use 'jiangmiao/auto-pairs' -- Auto Brackets
+	use 'windwp/nvim-autopairs'
 	use 'Yggdroot/indentLine'
 	use 'preservim/nerdcommenter'
-	use 'ryanoasis/vim-devicons'
+	--use 'ryanoasis/vim-devicons'
 	use 'mbbill/undotree'
 	use 'mhinz/vim-startify'
 	use 'liuchengxu/vim-which-key'

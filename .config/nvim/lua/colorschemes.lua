@@ -19,16 +19,17 @@ require 'colorizer'.setup()
 --vim.g.airline_theme = 'pencil'
 
 -- Tokyonight
---vim.g.tokyonight_style = 'night'
---vim.g.tokyonight_disable_italic_comment = '1'
---vim.cmd('colorscheme tokyonight')
+vim.g.tokyonight_style = 'night'
+vim.g.tokyonight_disable_italic_comment = '1'
+vim.g.tokyonight_lualine_bold = true
+vim.cmd('colorscheme tokyonight')
 --vim.g.airline_theme = 'tokyonight'
 
 -- Miramare
-vim.g.miramare_enable_italic = '1'
-vim.g.miramare_disable_italic_comment = '1'
-vim.cmd('colorscheme miramare')
-vim.g.airline_theme = 'miramare'
+--vim.g.miramare_enable_italic = '1'
+--vim.g.miramare_disable_italic_comment = '1'
+--vim.cmd('colorscheme miramare')
+--vim.g.airline_theme = 'miramare'
 
 -- Horizon
 --vim.cmd('colorscheme horizon')
