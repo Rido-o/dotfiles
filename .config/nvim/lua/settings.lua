@@ -1,7 +1,7 @@
 -- Basics
----vim.o.syntax = true                -- Enables syntax highlighting
+vim.o.syntax = 'true'               -- Enables syntax highlighting
 --filetype plugin on                  -- Enables filetypes to be used
---vim.o.nocompatible = true           -- Required for some other settings
+vim.o.compatible = false            -- Required for some other settings
 vim.o.encoding = 'utf-8'            -- The encoding displayed
 vim.o.fileencoding = 'utf-8'
 vim.o.fileencodings = 'utf-8'       -- Causes problems with fugitive
@@ -38,10 +38,10 @@ vim.o.listchars = 'trail:-,tab:  '
 --vim.o.listchars = ''
 --vim.o.listchars = vim.o.listchars .. 'trail:­,'
 --vim.o.listchars = vim.o.listchars .. 'tab:  '
---set listchars+=extends:»
---set listchars+=precedes:«
---set listchars+=nbsp:⣿
---set listchars+=eol:¬
+--vim.o.listchars = vim.o.listchars .. 'extends:»'
+--vim.o.listchars = vim.o.listchars .. 'precedes:«'
+--vim.o.listchars = vim.o.listchars .. 'nbsp:⣿'
+--vim.o.listchars = vim.o.listchars .. 'eol:¬'
 
 -- Disable auto-commenting
 --autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
