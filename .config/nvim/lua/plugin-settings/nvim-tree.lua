@@ -94,6 +94,8 @@ vim.g.nvim_tree_icons = {
 -- a list of groups can be found at `:help nvim_tree_highlight`
 --highlight NvimTreeFolderIcon guibg=blue
 
+vim.g.nvim_tree_disable_default_keybindings = 1
+
 local tree_cb = require'nvim-tree.config'.nvim_tree_callback
 vim.g.nvim_tree_bindings = {
     { key = {"<CR>", "o", "<2-LeftMouse>"}, cb = tree_cb("edit") },
