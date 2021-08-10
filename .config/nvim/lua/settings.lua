@@ -31,6 +31,7 @@ vim.o.updatetime = 100              -- For vim signify
 vim.o.hidden = true                 -- Enables hidden buffers
 vim.o.autoread = true               -- Enables auto reading of files for open buffers
 vim.o.signcolumn = 'yes:1'          -- Add permanant column for signs
+vim.o.undodir = vim.fn.stdpath 'cache' .. '/undo'-- Undo directory
 
 -- List settings
 vim.o.list = true
@@ -44,14 +45,7 @@ vim.o.listchars = 'trail:-,tab:  '
 --vim.o.listchars = vim.o.listchars .. 'eol:¬'
 
 -- Disable auto-commenting
---autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-
--- Undodir
---if g:os == 'Linux' then
-    --set undodir=$HOME/.cache/nvim/undodir
---elseif g:os == 'Windows' then
-    --set undodir=~/AppData/Local/nvim-data/undo
---end
+vim.cmd('autocmd BufWinEnter * setlocal formatoptions-=c formatoptions-=r formatoptions-=o')
 
 -- Set shell to Windows PowerShell if on windows. Relies on function in init.vim
 --if g:os == 'Windows' then
