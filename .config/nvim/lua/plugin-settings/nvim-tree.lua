@@ -32,18 +32,25 @@ vim.g.nvim_tree_window_picker_exclude = {
 -- Dictionary of buffer option names mapped to a list of option values that
 -- indicates to the window picker that the buffer's window should not be
 -- selectable.
---vim.g.nvim_tree_special_files = { {'README.md' = '1'}, {'Makefile' = '1'}, {'MAKEFILE' = '1'} } -- List of filenames that gets highlighted with NvimTreeSpecialFile
+
+-- List of filenames that gets highlighted with NvimTreeSpecialFile
+vim.g.nvim_tree_special_files = { 
+    ['README.md'] = 1,
+    ['Makefile'] = 1,
+    ['MAKEFILE'] = 1,
+}
+
+-- If 0, do not show the icons for one of 'git' 'folder' and 'files'
+-- 1 by default, notice that if 'files' is 1, it will only display
+-- if nvim-web-devicons is installed and on your runtimepath.
+-- if folder is 1, you can also tell folder_arrows 1 to show small arrows next to the folder icons.
+-- but this will not work when you set indent_markers (because of UI conflict)
 vim.g.nvim_tree_show_icons = {
     git = 1,
     folders = 1,
     files = 1,
     folder_arrows = 0,
     }
--- If 0, do not show the icons for one of 'git' 'folder' and 'files'
--- 1 by default, notice that if 'files' is 1, it will only display
--- if nvim-web-devicons is installed and on your runtimepath.
--- if folder is 1, you can also tell folder_arrows 1 to show small arrows next to the folder icons.
--- but this will not work when you set indent_markers (because of UI conflict)
 
 -- default will show icon by default if no icon is provided
 -- default shows no icon by default
