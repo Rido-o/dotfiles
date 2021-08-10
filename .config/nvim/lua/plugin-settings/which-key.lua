@@ -109,15 +109,16 @@ wk.register({
     -- Single Mappings
     s = {':wincmd s' , 'Horizontal split'},
     v = {':wincmd v' , 'Vertical split'},
-    h = {':wincmd h' , 'Move left'},
-    j = {':wincmd j' , 'Move down'},
-    k = {':wincmd k' , 'Move up'},
-    l = {':wincmd l' , 'Move right'},
+    h = {':wincmd h<CR>' , 'Move left'},
+    j = {':wincmd j<CR>' , 'Move down'},
+    k = {':wincmd k<CR>' , 'Move up'},
+    l = {':wincmd l<CR>' , 'Move right'},
     u = {'gt' , 'Next tab'},
     y = {'gT' , 'Previous tab'},
     w = {':w<CR>' , 'Write'},
     q = {':q<CR>' , 'Quit'},
-    n = {':call NERDTreeToggleInCurDir()' , 'Toggle file explorer'},
+    --n = {':call NERDTreeToggleInCurDir()' , 'Toggle file explorer'},
+    n = {':NvimTreeToggle<CR>' , 'Toggle file explorer'},
     U = {':UndotreeToggle' , 'Open undo tree'},           -- Undo tree toggle
     d = {':NnnPicker' , 'Open nnn'},
     S = {':Startify' , 'Open start screen'},              -- Open startify
