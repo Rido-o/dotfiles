@@ -59,6 +59,14 @@ require("which-key").setup {
     },
 }
 
+-- Highlights
+vim.cmd("hi! def link WhichKey Function")
+vim.cmd("hi! def link WhichKeyGroup Keyword")
+vim.cmd("hi! def link WhichKeySeparator DiffAdded")
+vim.cmd("hi! def link WhichKeyDesc Identifier")
+vim.cmd("hi! def link WhichKeyFloat NormalFloat")
+vim.cmd("hi! def link WhichKeyValue Comment")
+
 -- Set leader
 vim.g.mapleader = ' '
 

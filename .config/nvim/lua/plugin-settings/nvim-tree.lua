@@ -131,3 +131,7 @@ vim.g.nvim_tree_bindings = {
     { key = "q",                            cb = tree_cb("close") },
     { key = "g?",                           cb = tree_cb("toggle_help") },
 }
+
+-- Highlights
+vim.cmd('hi! def link NvimTreeNormal Normal')
+vim.cmd('hi! def link NvimTreeVertSplit SignColumn')
