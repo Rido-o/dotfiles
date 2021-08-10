@@ -1,6 +1,6 @@
 -- Basics
----vim.o.syntax = true                 -- Enables syntax highlighting
---filetype plugin on                -- Enables filetypes to be used
+---vim.o.syntax = true                -- Enables syntax highlighting
+--filetype plugin on                  -- Enables filetypes to be used
 --vim.o.nocompatible = true           -- Required for some other settings
 vim.o.encoding = 'utf-8'            -- The encoding displayed
 vim.o.fileencoding = 'utf-8'
@@ -9,7 +9,7 @@ vim.o.splitbelow = true             -- Split down instead of up
 vim.o.splitright = true             -- Split right instead of left
 vim.o.clipboard = 'unnamedplus'     -- Copy and paste between everything
 vim.o.number = true
-vim.o.relativenumber = true         -- Enables the relative numberline
+vim.o.relativenumber    = true         -- Enables the relative numberline
 vim.o.cursorline = true             -- Change the cursor in insert mode
 vim.o.linespace = 0                 -- Set the space between lines
 vim.o.expandtab = true
@@ -17,9 +17,9 @@ vim.o.tabstop = 4
 vim.o.softtabstop = 4               -- Set the width of tabs and space tabs
 vim.o.shiftwidth = 4                -- Change the number of space character for indentation
 vim.o.smartindent = true            -- Makes indenting smart
-vim.cmd('set nowrap')                 -- Display long lines as just one line
-vim.cmd('noswapfile')             -- Disable swap files
-vim.cmd('set nobackup')               -- Disable backup files
+vim.o.wrap = false                  -- Display long lines as just one line
+vim.o.swapfile = false              -- Disable swap files
+vim.o.backup = false                -- Disable backup files
 vim.o.undofile = true               -- Allow undo files
 vim.o.incsearch = true              -- Allow included search
 vim.o.ignorecase = true
