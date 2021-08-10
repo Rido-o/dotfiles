@@ -1,7 +1,7 @@
 " Plugins
 
 " NERDTree
-	let NERDTreeShowHidden=1
+	"let NERDTreeShowHidden=1
 
 " Airline
 	"let g:airline#extensions#tabline#enabled = 1

@@ -9,9 +9,15 @@ return require('packer').startup(function()
     --use 'tpope/vim-rhubarb'
 
     -- Nerdtree
-    use 'preservim/nerdtree'
-    use 'Xuyuanp/nerdtree-git-plugin'
-    use 'tiagofumo/vim-nerdtree-syntax-highlight'
+    --use 'preservim/nerdtree'
+    --use 'Xuyuanp/nerdtree-git-plugin'
+    --use 'tiagofumo/vim-nerdtree-syntax-highlight'
+
+    -- Nvim-tree
+    use {
+        'kyazdani42/nvim-tree.lua',
+        requires = 'kyazdani42/nvim-web-devicons',
+    }
     
     -- nnn
     use 'mcchrish/nnn.vim'
