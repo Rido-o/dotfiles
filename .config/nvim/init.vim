@@ -19,7 +19,7 @@ function SourceFile(file)
 endfunction
 
 "call SourceFile("/plugged.vim")					"Has file setting
-call SourceFile("/settings.vim")				"Has ignorable file setting
+"call SourceFile("/settings.vim")				"Has ignorable file setting
 
 "call SourceFile("/colorschemes.vim")
 call SourceFile("/plugin-settings.vim")
