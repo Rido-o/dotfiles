@@ -92,6 +92,7 @@ return require('packer').startup(function()
         run = ':TSUpdate',
     }
 
+    use 'airblade/vim-rooter'
     use 'sbdchd/neoformat'
     -- pip install black
 
