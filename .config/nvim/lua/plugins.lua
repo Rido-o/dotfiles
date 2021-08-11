@@ -35,9 +35,7 @@ return require('packer').startup(function()
     use {
         'hoob3rt/lualine.nvim',
         requires = {'kyazdani42/nvim-web-devicons'},
-        config = function()
-            require('plugin-settings.lualine')
-        end
+        config = [[ require('plugin-settings.lualine') ]]
     }
     use {
         'lukas-reineke/indent-blankline.nvim',
@@ -51,7 +49,10 @@ return require('packer').startup(function()
     -----------------
     -- Filetype
     -----------------
-    use 'lervag/vimtex' -- Requres latexmk, pdfviewer(mupdf)
+    use {
+        'lervag/vimtex', -- Requres latexmk, pdfviewer(mupdf)
+        ft = 'tex'
+    }
 
     -------------------------
     -- File Exploration
