@@ -1,5 +1,6 @@
 -- Basics
-vim.o.syntax = 'true'               -- Enables syntax highlighting
+vim.cmd('syntax enable')						-- Enables syntax highlighting
+--vim.o.syntax = 'enable'               -- Enables syntax highlighting
 --filetype plugin on                  -- Enables filetypes to be used
 vim.o.compatible = false            -- Required for some other settings
 vim.o.encoding = 'utf-8'            -- The encoding displayed

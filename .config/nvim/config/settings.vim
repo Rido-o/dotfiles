@@ -1,5 +1,5 @@
 " Basics
-"syntax enable						" Enables syntax highlighting
+syntax enable						" Enables syntax highlighting
 filetype plugin on					" Enables filetypes to be used
 set nocompatible					" Required for some other settings
 set encoding=utf-8					" The encoding displayed
