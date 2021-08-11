@@ -143,18 +143,6 @@ wk.register({
         Q = {':w|%bd|e#|bd#<CR>', 'Close all except current'},
     },
 
-    -- Airline buffer maps
-    -- vim.g.airline#extensions#tabline#buffer_idx_mode = 1
-    --['1'] = {'<Plug>AirlineSelectTab1' , 'Buffer 1'},
-    --['2'] = {'<Plug>AirlineSelectTab2' , 'Buffer 2'},
-    --['3'] = {'<Plug>AirlineSelectTab3' , 'Buffer 3'},
-    --['4'] = {'<Plug>AirlineSelectTab4' , 'Buffer 4'},
-    --['5'] = {'<Plug>AirlineSelectTab5' , 'Buffer 5'},
-    --['6'] = {'<Plug>AirlineSelectTab6' , 'Buffer 6'},
-    --['7'] = {'<Plug>AirlineSelectTab7' , 'Buffer 7'},
-    --['8'] = {'<Plug>AirlineSelectTab8' , 'Buffer 8'},
-    --['9'] = {'<Plug>AirlineSelectTab9' , 'Buffer 9'},
-
     -- NerdCommenter
     c = {
         name = 'Comment',
@@ -191,22 +179,18 @@ wk.register({
         T = {':SignifyToggleHighlight<CR>', 'Toggle highlights'},
     },
 
-    -- Fzf
+    -- Telescope
     f = {
         name = 'Find',
-        f = {'Find files'},
-        F = {':Files<CR>' , 'Find files'},
-        o = {':History<CR>' , 'Find MRU'},
-        e = {':History:<CR>' , 'Search command history'},
-        E = {':Commands<CR>' , 'Find commands'},
-        b = {':Buffers<CR>' , 'Find buffers'},
-        s = {':Colors<CR>' , 'Find colorschemes'},
-        c = {':Commits<CR>' , 'Find commits'},
-        C = {':BCommits<CR>' , 'Find buffer commits'},
-        w = {':Windows<CR>' , 'Find windows'},
-        l = {':Lines<CR>' , 'Find lines in open buffers'},
-        L = {':BLines<CR>' , 'Find lines in current buffer'},
-        g = {':GFiles --cached --others --exclude-standard<CR>' , 'Find git files'},
+        f = {':Telescope find_files<CR>', 'Find files'},
+        l = {':Telescope live_grep<CR>' , 'Find lines'},
+        g = {':Telescope git_files<CR>' , 'Find git files'},
+        s = {':Telescope grep_string<CR>' , 'Find string'},
+        o = {':Telescope oldfiles<CR>' , 'Find recently opened files'},
+        h = {':Telescope command_history<CR>' , 'Search command history'},
+        c = {':Telescope colorscheme<CR>' , 'List colorschemes'},
+        p = {':Telescope builtin<CR>' , 'List all pickers'},
+        P = {':Telescope planets<CR>' , 'Show planets'},
     },
 
     -- Vimwiki
@@ -225,30 +209,6 @@ wk.register({
             y = {'<plug>VimwikiMakeYesterdayDiaryNote' , 'Yesterdays diary'},
         },
     },
-
-    -- Coc
-    --a = {
-        --name = '+Coc',
-        --a = {'<plug>(coc-codeaction)' , 'Line action'},
-        --d = {'<plug>(coc-definition)' , 'Definition'},
-        --r = {'<plug>(coc-references)' , 'References'},
-        --t = {'<plug>(coc-type-definition)' , 'Type definition'},
-        --m = {'<plug>(coc-rename)' , 'Rename'},
-        --D = {'<plug>(coc-declaration)' , 'Declaration'},
-        --i = {'<plug>(coc-implementation)' , 'Implementation'},
-        --f = {'<plug>(coc-format)' , 'Format'},
-        --q = {'<plug>(coc-fix-current)' , 'Quickfix'},
-        --c = {'<plug>(coc-codelens-action)' , 'Code lens'},
-        --n = {'<plug>(coc-diagnostic-next)' , 'Next diagnostic'},
-        --N = {'<plug>(coc-diagnostic-next-error)' , 'Next error'},
-        --I = {':CocList diagnostics' , 'Diagnostics'},
-        --o = {':CocList outline' , 'Search outline'},
-        --s = {':CocList -l symbols' , 'References-'},
-        --C = {':CocConfig' , 'Open config lens'},
-        --u = {':CocUpdate' , 'Update Coc'},
-        --E = {':CocDisable' , 'Disable Coc'},
-        --e = {':CocEnable' , 'Enable Coc'},
-    --},
 
     -- Toggle settings
     t = {
