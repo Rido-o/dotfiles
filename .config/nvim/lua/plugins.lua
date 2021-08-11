@@ -1,40 +1,23 @@
+--------------------------
+-- Plugin Management
+--------------------------
 return require('packer').startup(function()
     -- Plugin Manager
     use 'wbthomason/packer.nvim'
 
-    -- Git plugins
+    ------------
+    -- Git
+    ------------
     use 'tpope/vim-fugitive'
     use 'mhinz/vim-signify'
     --use 'tpope/vim-git'
     --use 'tpope/vim-rhubarb'
 
-    -- Nerdtree
-    --use 'preservim/nerdtree'
-    --use 'Xuyuanp/nerdtree-git-plugin'
-    --use 'tiagofumo/vim-nerdtree-syntax-highlight'
-
-    -- Nvim-tree
-    use {
-        'kyazdani42/nvim-tree.lua',
-        requires = 'kyazdani42/nvim-web-devicons',
-    }
-    
-    -- nnn
-    use 'mcchrish/nnn.vim'
-
-    -- Airline
-    --use 'vim-airline/vim-airline'
-    --use 'vim-airline/vim-airline-themes'
-
-    -- Lualine
-    use {
-        'hoob3rt/lualine.nvim',
-        requires = {'kyazdani42/nvim-web-devicons'}
-    }
-
+    ---------------------
     -- Colorschemes
-    use {'Rido-o/wal.vim', as = 'colors-wal'}
+    ---------------------
     --use {'lifepillar/vim-colortemplate', as = 'colors-colortemplate'}
+    use {'Rido-o/wal.vim', as = 'colors-wal'}
     use {'morhetz/gruvbox', as = 'colors-gruvbox'}
     use {'joshdick/onedark.vim', as = 'colors-onedark'}
     use {'reedes/vim-colors-pencil', as = 'colors-pencil'}
@@ -43,65 +26,97 @@ return require('packer').startup(function()
     use {'franbach/miramare', as = 'colors-miramare'}
     use {'ntk148v/vim-horizon', as = 'colors-horizon'}
 
-    --use 'sheerun/vim-polyglot' -- Better syntax highlighting
-    --use 'jiangmiao/auto-pairs' -- Auto Brackets
-    use 'windwp/nvim-autopairs'
-    --use 'Yggdroot/indentLine'
-    use 'lukas-reineke/indent-blankline.nvim'
-    use 'preservim/nerdcommenter'
-    --use 'ryanoasis/vim-devicons'
-    use 'mbbill/undotree'
-    use 'mhinz/vim-startify'
-    --use 'liuchengxu/vim-which-key'
-    use 'folke/which-key.nvim'
-    use 'vimwiki/vimwiki'
-    use 'junegunn/fzf'
-    use 'junegunn/fzf.vim'
+    -----------
+    -- UI
+    -----------
+    use 'norcalli/nvim-colorizer.lua'
+    use 'unblevable/quick-scope'
+    -- Lualine
+    use {
+        'hoob3rt/lualine.nvim',
+        requires = {'kyazdani42/nvim-web-devicons'},
+        config = function()
+            require('plugin-settings.lualine')
+        end
+    }
+    use {
+        'lukas-reineke/indent-blankline.nvim',
+        config = [[ require('plugin-settings.indent-blankline') ]]
+    }
+    use {
+        'folke/which-key.nvim',
+        config = [[ require('plugin-settings.which-key.lua') ]]
+    }
+
+    -----------------
+    -- Filetype
+    -----------------
     use 'lervag/vimtex' -- Requres latexmk, pdfviewer(mupdf)
 
-    use 'tpope/vim-surround'
-    use 'tpope/vim-repeat'
-    use 'norcalli/nvim-colorizer.lua'
-    use 'moll/vim-bbye'
-    --use 'voldikss/vim-floaterm'
+    -------------------------
+    -- File Exploration
+    -------------------------
+    -- Nvim-tree
+    use {
+        'kyazdani42/nvim-tree.lua',
+        config = [[ require('plugin-settings.nvim-tree') ]],
+        requires = 'kyazdani42/nvim-web-devicons'
+    }
+    -- nnn
+    use 'mcchrish/nnn.vim'
 
-    -- Snippets
-    --use 'SirVer/ultisnips' -- If not using coc
-    --use 'honza/vim-snippets'
-
-    -- Movement
-    use 'unblevable/quick-scope'
-    --use 'justinmk/vim-sneak'
-
+    ------------------
+    -- Utilities
+    ------------------
+    use 'mbbill/undotree'
+    use 'mhinz/vim-startify'
+    use 'vimwiki/vimwiki'
     -- Run programs
     --use 'thinca/vim-quickrun'
     use 'skywind3000/asyncrun.vim'
+    --use 'voldikss/vim-floaterm'
+    use 'junegunn/fzf'
+    use 'junegunn/fzf.vim'
+    use 'airblade/vim-rooter'
+    use 'sbdchd/neoformat'
+    -- pip install black
+    -- Debugging
+    --use 'puremourning/vimspector'
 
-    -- New toys
-    use 'neovim/nvim-lspconfig'
+    ------------
+    -- lSP
+    ------------
+    use {
+        'neovim/nvim-lspconfig',
+        config = [[ require('plugin-settings.nvim-lspconfig') ]]
+    }
     use {
         'hrsh7th/nvim-compe',
+        config = [[ require('plugin-settings.nvim-compe') ]],
         requires = {
             'hrsh7th/vim-vsnip',
             'rafamadriz/friendly-snippets',
         }
     }
-
-    --use 'hrsh7th/vim-vsnip'
-    --use 'hrsh7th/vim-vsnip-integ'
-    --use 'rafamadriz/friendly-snippets'
-
     -- treesitter
     use {
         'nvim-treesitter/nvim-treesitter',
+        config = [[ require('plugin-settings.treesitter') ]],
         branch = '0.5-compat',
-        run = ':TSUpdate',
+        run = ':TSUpdate'
     }
 
-    use 'airblade/vim-rooter'
-    use 'sbdchd/neoformat'
-    -- pip install black
-
-    -- Debugging
-    --use 'puremourning/vimspector'
+    ---------------
+    -- Editor
+    ---------------
+    use 'preservim/nerdcommenter'
+    use {
+        'windwp/nvim-autopairs',
+        config = [[ require('plugin-settings.nvim-autopairs') ]]
+    }
+    use 'tpope/vim-surround'
+    use 'tpope/vim-repeat'
+    use 'moll/vim-bbye'
+    -- Movement
+    --use 'justinmk/vim-sneak'
 end)
