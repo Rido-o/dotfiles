@@ -29,7 +29,7 @@ return require('packer').startup(function()
     -- Lualine
     use {
         'hoob3rt/lualine.nvim',
-        requires = {'kyazdani42/nvim-web-devicons', opt = true}
+        requires = {'kyazdani42/nvim-web-devicons'}
     }
 
     -- Colorschemes
@@ -79,11 +79,17 @@ return require('packer').startup(function()
 
     -- New toys
     use 'neovim/nvim-lspconfig'
-    use 'hrsh7th/nvim-compe'
+    use {
+        'hrsh7th/nvim-compe',
+        requires = {
+            'hrsh7th/vim-vsnip',
+            'rafamadriz/friendly-snippets',
+        }
+    }
 
-    use 'hrsh7th/vim-vsnip'
-    use 'hrsh7th/vim-vsnip-integ'
-    use 'rafamadriz/friendly-snippets'
+    --use 'hrsh7th/vim-vsnip'
+    --use 'hrsh7th/vim-vsnip-integ'
+    --use 'rafamadriz/friendly-snippets'
 
     -- treesitter
     use {
