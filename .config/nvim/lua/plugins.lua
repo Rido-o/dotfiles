@@ -71,7 +71,7 @@ return require('packer').startup(function()
 
     -- Movement
     use 'unblevable/quick-scope'
-    use 'justinmk/vim-sneak'
+    --use 'justinmk/vim-sneak'
 
     -- Run programs
     --use 'thinca/vim-quickrun'
