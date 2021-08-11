@@ -61,7 +61,7 @@ return require('packer').startup(function()
     use {
         'kyazdani42/nvim-tree.lua',
         config = [[ require('plugin-settings.nvim-tree') ]],
-        requires = 'kyazdani42/nvim-web-devicons'
+        requires = {'kyazdani42/nvim-web-devicons'}
     }
     -- nnn
     use 'mcchrish/nnn.vim'
@@ -76,13 +76,21 @@ return require('packer').startup(function()
     --use 'thinca/vim-quickrun'
     use 'skywind3000/asyncrun.vim'
     --use 'voldikss/vim-floaterm'
-    use 'junegunn/fzf'
-    use 'junegunn/fzf.vim'
     use 'airblade/vim-rooter'
     use 'sbdchd/neoformat'
     -- pip install black
     -- Debugging
     --use 'puremourning/vimspector'
+    --use 'junegunn/fzf'
+    --use 'junegunn/fzf.vim'
+    use {
+        'nvim-telescope/telescope.nvim',
+        config = [[ require('plugin-settings.telescope') ]],
+        requires = {
+            {'nvim-lua/popup.nvim'},
+            {'nvim-lua/plenary.nvim'}
+        }
+    }
 
     ------------
     -- lSP
@@ -95,8 +103,8 @@ return require('packer').startup(function()
         'hrsh7th/nvim-compe',
         config = [[ require('plugin-settings.nvim-compe') ]],
         requires = {
-            'hrsh7th/vim-vsnip',
-            'rafamadriz/friendly-snippets',
+            {'hrsh7th/vim-vsnip'},
+            {'rafamadriz/friendly-snippets'},
         }
     }
     -- treesitter
