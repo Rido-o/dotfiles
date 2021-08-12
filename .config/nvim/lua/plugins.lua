@@ -9,7 +9,12 @@ return require('packer').startup(function()
     -- Git
     ------------
     use 'tpope/vim-fugitive'
-    use 'mhinz/vim-signify'
+    --use 'mhinz/vim-signify'
+    use {
+        'lewis6991/gitsigns.nvim',
+        requires = {'nvim-lua/plenary.nvim'},
+        config = [[ require('plugin-settings.gitsigns') ]]
+    }
     --use 'tpope/vim-git'
     --use 'tpope/vim-rhubarb'
 
