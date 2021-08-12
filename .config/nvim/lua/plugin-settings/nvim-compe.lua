@@ -68,7 +68,18 @@ _G.s_tab_complete = function()
     end
 end
 
-vim.api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
-vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
-vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
-vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
+local map = vim.api.nvim_set_keymap
+local opts = { silent = true, noremap = true, expr = true }
+
+-- Tab to cycle between options
+map ("i", "<Tab>", "v:lua.tab_complete()", opts)
+map ("s", "<Tab>", "v:lua.tab_complete()", opts)
+map ("i", "<S-Tab>", "v:lua.s_tab_complete()", opts)
+map ("s", "<S-Tab>", "v:lua.s_tab_complete()", opts)
+-- Basic mappings
+map ('i', '<C-Space>', 'compe#complete()', opts)
+map ('i', '<CR>', 'compe#confirm("<CR>")', opts)
+--map ('i', '<CR>', 'compe#confirm(luaeval("require \'nvim-autopairs\'.autopairs_cr()"))', opts)
+map ('i', '<C-e>', 'compe#close("<C-e>")', opts)
+map ('i', '<C-f>', 'compe#scroll({ "delta": +4 })', opts)
+map ('i', '<C-d>', 'compe#scroll({ "delta": -4 })', opts)
