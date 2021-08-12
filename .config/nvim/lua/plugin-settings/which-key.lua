@@ -220,14 +220,15 @@ wk.register({
 vim.g.maplocalleader = ','
 
 local wkl = require('which-key')
+local bufNo = vim.api.nvim_buf_get_number("%")
 
-vim.cmd('autocmd FileType python lua WhichKeyPython()')
-function WhichKeyPython()
+vim.cmd('autocmd FileType python lua WhichKeyPython(' .. bufNo .. ')')
+function WhichKeyPython(bufNumber)
     wkl.register({
         ['r'] = {':1TermExec cmd=\'python "%"\' go_back=0<CR>', 'Run code'},
         ['b'] = {':1TermExec cmd=\'hyperfine --warmup 10 "python %"\' go_back=0<CR>', 'Benchmark code'},
         ['i'] = {':2TermExec cmd="python" go_back=0<CR>', 'Open repl'},
-    }, { prefix = '<localleader>' })
+    }, { prefix = '<localleader>', buffer = bufNumber })
 end
 
 vim.cmd('autocmd FileType sh lua WhichKeySh()')
