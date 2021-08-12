@@ -13,7 +13,7 @@ return require('packer').startup(function()
     use {
         'lewis6991/gitsigns.nvim',
         requires = {'nvim-lua/plenary.nvim'},
-        config = [[ require('plugin-settings.gitsigns') ]]
+        config = require('plugin-settings.gitsigns')
     }
     --use 'tpope/vim-git'
     --use 'tpope/vim-rhubarb'
@@ -40,20 +40,20 @@ return require('packer').startup(function()
     use {
         'hoob3rt/lualine.nvim',
         requires = {'kyazdani42/nvim-web-devicons'},
-        config = [[ require('plugin-settings.lualine') ]]
+        config = require('plugin-settings.lualine')
     }
     use {
         'lukas-reineke/indent-blankline.nvim',
-        config = [[ require('plugin-settings.indent-blankline') ]]
+        config = require('plugin-settings.indent-blankline')
     }
     use {
         'folke/which-key.nvim',
-        config = [[ require('plugin-settings.which-key') ]]
+        config = require('plugin-settings.which-key')
     }
     use {
         'romgrk/barbar.nvim',
-        config = [[ require('plugin-settings.barbar')]],
-        requires = {'kyazdani42/nvim-web-devicons'}
+        requires = {'kyazdani42/nvim-web-devicons'},
+        config = require('plugin-settings.barbar')
     }
 
     -----------------
@@ -70,8 +70,8 @@ return require('packer').startup(function()
     -- Nvim-tree
     use {
         'kyazdani42/nvim-tree.lua',
-        config = [[ require('plugin-settings.nvim-tree') ]],
-        requires = {'kyazdani42/nvim-web-devicons'}
+        requires = {'kyazdani42/nvim-web-devicons'},
+        config = require('plugin-settings.nvim-tree')
     }
     -- nnn
     use 'mcchrish/nnn.vim'
@@ -87,7 +87,7 @@ return require('packer').startup(function()
     --use 'skywind3000/asyncrun.vim'
     use {
         'akinsho/nvim-toggleterm.lua',
-        config = [[ require('plugin-settings.toggleterm') ]],
+        config = require('plugin-settings.toggleterm')
     }
     --use 'voldikss/vim-floaterm'
     use 'airblade/vim-rooter'
@@ -99,11 +99,11 @@ return require('packer').startup(function()
     --use 'junegunn/fzf.vim'
     use {
         'nvim-telescope/telescope.nvim',
-        config = [[ require('plugin-settings.telescope') ]],
         requires = {
             {'nvim-lua/popup.nvim'},
             {'nvim-lua/plenary.nvim'}
-        }
+        },
+        config = require('plugin-settings.telescope')
     }
 
     ------------
@@ -111,22 +111,22 @@ return require('packer').startup(function()
     ------------
     use {
         'neovim/nvim-lspconfig',
-        config = [[ require('plugin-settings.nvim-lspconfig') ]]
+        config = require('plugin-settings.nvim-lspconfig')
     }
     use {
         'hrsh7th/nvim-compe',
-        config = [[ require('plugin-settings.nvim-compe') ]],
         requires = {
             {'hrsh7th/vim-vsnip'},
             {'rafamadriz/friendly-snippets'},
-        }
+        },
+        config = require('plugin-settings.nvim-compe')
     }
     -- treesitter
     use {
         'nvim-treesitter/nvim-treesitter',
-        config = [[ require('plugin-settings.treesitter') ]],
         branch = '0.5-compat',
-        run = ':TSUpdate'
+        run = ':TSUpdate',
+        config = require('plugin-settings.treesitter')
     }
 
     ---------------
@@ -135,7 +135,7 @@ return require('packer').startup(function()
     use 'preservim/nerdcommenter'
     use {
         'windwp/nvim-autopairs',
-        config = [[ require('plugin-settings.nvim-autopairs') ]]
+        config = require('plugin-settings.nvim-autopairs')
     }
     use 'tpope/vim-surround'
     use 'tpope/vim-repeat'
