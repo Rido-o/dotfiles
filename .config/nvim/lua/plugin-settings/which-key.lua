@@ -224,8 +224,8 @@ local wkl = require('which-key')
 vim.cmd('autocmd FileType python lua WhichKeyPython()')
 function WhichKeyPython()
     wkl.register({
-        ['w'] = {':w<CR>', 'test write'},
-        ['q'] = {':q<CR>', 'test quit'},
+        ['r'] = {':1TermExec cmd="python %" go_back=0<CR>', 'Run code'},
+        ['i'] = {':2TermExec cmd="python" go_back=0<CR>', 'Open repl'},
     }, { prefix = '<localleader>' })
 end
 

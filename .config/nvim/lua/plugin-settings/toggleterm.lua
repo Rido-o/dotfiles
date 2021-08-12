@@ -1,6 +1,9 @@
+----------------
+-- Options
+----------------
 require("toggleterm").setup{
     -- size can be a number or function which is passed the current terminal
-    size = 20,
+    size = 15,
     --size = function(term)
         --if term.direction == "horizontal" then
             --return 15
@@ -17,7 +20,7 @@ require("toggleterm").setup{
     insert_mappings = true, -- whether or not the open mapping applies in insert mode
     persist_size = true,
     direction = 'horizontal', -- 'vertical' | 'horizontal' | 'window' | 'float',
-    close_on_exit = true, -- close the terminal window when the process exits
+    close_on_exit = false, -- close the terminal window when the process exits
     shell = vim.o.shell, -- change the default shell
     -- This field is only relevant if direction is set to 'float'
     float_opts = {
@@ -35,3 +38,20 @@ require("toggleterm").setup{
         }
     }
 }
+
+--------------------------
+-- Terminal Mappings
+--------------------------
+function _G.set_terminal_keymaps()
+    local opts = {noremap = true}
+    local map = vim.api.nvim_set_keymap
+    map('t', '<esc>', [[<C-\><C-n>]], opts)
+    --map('t', 'jk', [[<C-\><C-n>]], opts)
+    --map('t', '<C-h>', [[<C-\><C-n><C-W>h]], opts)
+    --map('t', '<C-j>', [[<C-\><C-n><C-W>j]], opts)
+    --map('t', '<C-k>', [[<C-\><C-n><C-W>k]], opts)
+    --map('t', '<C-l>', [[<C-\><C-n><C-W>l]], opts)
+end
+
+-- if you only want these mappings for toggle term use term://*toggleterm#* instead
+vim.cmd('autocmd! TermOpen term://*toggleterm#* lua set_terminal_keymaps()')

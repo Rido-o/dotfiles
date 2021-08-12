@@ -79,7 +79,7 @@ return require('packer').startup(function()
     use 'vimwiki/vimwiki'
     -- Run programs
     --use 'thinca/vim-quickrun'
-    use 'skywind3000/asyncrun.vim'
+    --use 'skywind3000/asyncrun.vim'
     use {
         'akinsho/nvim-toggleterm.lua',
         config = [[ require('plugin-settings.toggleterm') ]],
