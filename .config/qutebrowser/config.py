@@ -26,16 +26,16 @@
 
 # Tokyonight color scheme#232433
 colorscheme = {
-    'color1': '#2A2426', # background
-    'color2': '#2A2426', # background-dif
-    'color3': '#444444', # background-alt
-    'color4': '#e6d6ac', # foreground
-    'color5': '#e68183', # red
-    'color6': '#87af87', # green
-    'color7': '#d9bb80', # yellow
-    'color8': '#89beba', # blue
-    'color9': '#d3a0bc', # purple
-    'color10': '#87c095', # cyan
+    'color1': '#1a1b26', # background
+    'color2': '#1a1b26', # background-dif
+    'color3': '#4e5173', # background-alt
+    'color4': '#a9b1d6', # foreground
+    'color5': '#F7768E', # red
+    'color6': '#9ECE6A', # green
+    'color7': '#E0AF68', # yellow
+    'color8': '#7AA2F7', # blue
+    'color9': '#ad8ee6', # purple
+    'color10': '#4abaaf', # cyan
 }
 
 # Background color of the completion widget category headers. Headings in the o menu

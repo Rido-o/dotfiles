@@ -10,36 +10,36 @@ set statusbar-basename "true"
 set sandbox none
 
 # Colors
-set notification-bg "#2A2426"
-set notification-fg "#e6d6ac"
-set notification-error-bg "#e68183"
-set notification-error-fg "#e6d6ac"
-set notification-warning-bg "#e68183"
-set notification-warning-fg "#e6d6ac"
+set notification-bg "#1a1b26"
+set notification-fg "#a9b1d6"
+set notification-error-bg "#F7768E"
+set notification-error-fg "#a9b1d6"
+set notification-warning-bg "#F7768E"
+set notification-warning-fg "#a9b1d6"
 
-set completion-bg "#2A2426"
-set completion-fg "#e6d6ac"
-set completion-group-bg "#2A2426"
-set completion-group-fg "#87af87"
-set completion-highlight-bg "#e6d6ac"
-set completion-highlight-fg "#2A2426"
+set completion-bg "#1a1b26"
+set completion-fg "#a9b1d6"
+set completion-group-bg "#1a1b26"
+set completion-group-fg "#9ECE6A"
+set completion-highlight-bg "#a9b1d6"
+set completion-highlight-fg "#1a1b26"
 
-set index-bg "#2A2426"
-set index-fg "#e6d6ac"
-set index-active-bg "#e6d6ac"
-set index-active-fg "#2A2426"
+set index-bg "#1a1b26"
+set index-fg "#a9b1d6"
+set index-active-bg "#a9b1d6"
+set index-active-fg "#1a1b26"
 
-set inputbar-bg "#2A2426"
-set inputbar-fg "#e6d6ac"
+set inputbar-bg "#1a1b26"
+set inputbar-fg "#a9b1d6"
 
-set statusbar-bg "#2A2426"
-set statusbar-fg "#e6d6ac"
+set statusbar-bg "#1a1b26"
+set statusbar-fg "#a9b1d6"
 
-set highlight-color "#87af87"
-set highlight-active-color "#2A2426"
+set highlight-color "#9ECE6A"
+set highlight-active-color "#1a1b26"
 
-set default-bg "#2A2426"
-set default-fg "#e6d6ac"
+set default-bg "#1a1b26"
+set default-fg "#a9b1d6"
 
 #set render-loading true
 #set render-loading-bg "#1a1b26"
@@ -47,5 +47,5 @@ set default-fg "#e6d6ac"
 
 # Recolor book
 set recolor true
-set recolor-lightcolor "#2A2426"
-set recolor-darkcolor "#e6d6ac"
+set recolor-lightcolor "#1a1b26"
+set recolor-darkcolor "#a9b1d6"

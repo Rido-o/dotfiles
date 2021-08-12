@@ -24,7 +24,7 @@ Read settings/styles
 DestroyFunc ImportSettings
 AddToFunc ImportSettings
 + I Read settings/functions
-+ I Read themes/miramare
++ I Read themes/tokyonight
 + I Read settings/menus
 + I Read settings/keybinds
 + I Read settings/mousebinds
