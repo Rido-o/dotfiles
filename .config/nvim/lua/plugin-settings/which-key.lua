@@ -221,42 +221,18 @@ vim.g.maplocalleader = ','
 
 local wkl = require('which-key')
 
---local buf = vim.api.nvim_get_current_buf()
---local ft = vim.api.nvim_buf_get_option(buf, 'filetype')
---if ft == 'python' then
-    --wkl.register({
-        --['['] = {':w<CR>', 'test write'},
-        --[']'] = {':q<CR>', 'test quit'},
-        --['w'] = {':' .. filetype, 'test quit'},
-    --}, { prefix = '<localleader>' })
---end
+vim.cmd('autocmd FileType python lua WhichKeyPython()')
+function WhichKeyPython()
+    wkl.register({
+        ['w'] = {':w<CR>', 'test write'},
+        ['q'] = {':q<CR>', 'test quit'},
+    }, { prefix = '<localleader>' })
+end
 
---wkl.register({
-    --w = {
-        --function()
-            --local buf = vim.api.nvim_get_current_buf()
-            --local ft = vim.api.nvim_buf_get_option(buf, 'filetype')
-            --if ft == 'python' then
-                --vim.cmd(':w<CR>')
-            --end
-        --end,
-        --'test'
-    --}
---}, { prefix = '<localleader>' })
-
-wkl.register({
-    [','] = {
-        function()
-            local buf = vim.api.nvim_get_current_buf()
-            local ft = vim.api.nvim_buf_get_option(buf, 'filetype')
-            if ft == 'python' then
-                w = {':w<CR>', 'test quit'}
-            end
-        end
-    }
-})
-
---wkl.register({
-    --['['] = {':w<CR>', 'test write'},
-    --[']'] = {':q<CR>', 'test quit'},
---}, { prefix = '<localleader>' })
+vim.cmd('autocmd FileType sh lua WhichKeySh()')
+function WhichKeySh()
+    wkl.register({
+        ['W'] = {':w<CR>', 'test write'},
+        ['Q'] = {':q<CR>', 'test quit'},
+    }, { prefix = '<localleader>' })
+end
