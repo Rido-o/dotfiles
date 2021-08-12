@@ -47,7 +47,8 @@ return require('packer').startup(function()
     }
     use {
         'romgrk/barbar.nvim',
-        config = [[ require('plugin-settings.barbar')]]
+        config = [[ require('plugin-settings.barbar')]],
+        requires = {'kyazdani42/nvim-web-devicons'}
     }
 
     -----------------
@@ -79,6 +80,10 @@ return require('packer').startup(function()
     -- Run programs
     --use 'thinca/vim-quickrun'
     use 'skywind3000/asyncrun.vim'
+    use {
+        'akinsho/nvim-toggleterm.lua',
+        config = [[ require('plugin-settings.toggleterm') ]],
+    }
     --use 'voldikss/vim-floaterm'
     use 'airblade/vim-rooter'
     use 'sbdchd/neoformat'
