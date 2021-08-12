@@ -43,8 +43,8 @@ require("toggleterm").setup{
 -- Terminal Mappings
 --------------------------
 function _G.set_terminal_keymaps()
-    local opts = {noremap = true}
     local map = vim.api.nvim_set_keymap
+    local opts = { noremap = true }
     map('t', '<esc>', [[<C-\><C-n>]], opts)
     --map('t', 'jk', [[<C-\><C-n>]], opts)
     --map('t', '<C-h>', [[<C-\><C-n><C-W>h]], opts)
