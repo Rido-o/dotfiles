@@ -218,23 +218,24 @@ wk.register({
 }, { prefix = '<leader>' })
 
 vim.g.maplocalleader = ','
-
 local wkl = require('which-key')
-local bufNo = vim.api.nvim_buf_get_number("%")
 
-vim.cmd('autocmd FileType python lua WhichKeyPython(' .. bufNo .. ')')
-function WhichKeyPython(bufNumber)
-    wkl.register({
-        ['r'] = {':1TermExec cmd=\'python "%"\' go_back=0<CR>', 'Run code'},
-        ['b'] = {':1TermExec cmd=\'hyperfine --warmup 10 "python %"\' go_back=0<CR>', 'Benchmark code'},
-        ['i'] = {':2TermExec cmd="python" go_back=0<CR>', 'Open repl'},
-    }, { prefix = '<localleader>', buffer = bufNumber })
-end
+vim.cmd('autocmd FileType * lua setKeybinds()')
+function setKeybinds()
+    local bufNo = vim.api.nvim_buf_get_number("%")
+    local FileTy = vim.api.nvim_buf_get_option(bufNo, "filetype")
+    local opts = { prefix = '<localleader>', buffer = bufNo }
 
-vim.cmd('autocmd FileType sh lua WhichKeySh()')
-function WhichKeySh()
-    wkl.register({
-        ['W'] = {':w<CR>', 'test write'},
-        ['Q'] = {':q<CR>', 'test quit'},
-    }, { prefix = '<localleader>' })
+    if FileTy == 'python' then
+        wkl.register({
+            ['r'] = {':1TermExec cmd=\'python "%"\' go_back=0<CR>', 'Run code'},
+            ['b'] = {':1TermExec cmd=\'hyperfine --warmup 10 "python %"\' go_back=0<CR>', 'Benchmark code'},
+            ['i'] = {':2TermExec cmd="python" go_back=0<CR>', 'Open repl'},
+        }, opts)
+    elseif FileTy == 'sh' then
+        wkl.register({
+            ['W'] = {':w<CR>', 'test write'},
+            ['Q'] = {':q<CR>', 'test quit'},
+        }, opts)
+    end
 end
