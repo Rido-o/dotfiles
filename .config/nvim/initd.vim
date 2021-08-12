@@ -1,18 +1,18 @@
 " Get OS
-if !exists("g:os")
-    if has("win64") || has("win32") || has("win16")
-        let g:os = "Windows"
-    else
-        let g:os = substitute(system('uname'), '\n', '', '')
-    endif
-endif
+"if !exists("g:os")
+    "if has("win64") || has("win32") || has("win16")
+        "let g:os = "Windows"
+    "else
+        "let g:os = substitute(system('uname'), '\n', '', '')
+    "endif
+"endif
 
 " Source Files
-if g:os == "Windows"
-    let s:osPath = "~/AppData/Local/nvim/config"
-elseif g:os == "Linux"
-    let s:osPath = "$HOME/.config/nvim/config"
-endif
+"if g:os == "Windows"
+    "let s:osPath = "~/AppData/Local/nvim/config"
+"elseif g:os == "Linux"
+    "let s:osPath = "$HOME/.config/nvim/config"
+"endif
 
 function SourceFile(file)
     exec "source " . s:osPath . a:file
