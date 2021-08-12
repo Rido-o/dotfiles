@@ -43,7 +43,11 @@ return require('packer').startup(function()
     }
     use {
         'folke/which-key.nvim',
-        config = [[ require('plugin-settings.which-key.lua') ]]
+        config = [[ require('plugin-settings.which-key') ]]
+    }
+    use {
+        'romgrk/barbar.nvim'
+        config = [[ require('plugin-settings.barbar')]]
     }
 
     -----------------
@@ -125,7 +129,7 @@ return require('packer').startup(function()
     }
     use 'tpope/vim-surround'
     use 'tpope/vim-repeat'
-    use 'moll/vim-bbye'
+    --use 'moll/vim-bbye'
     -- Movement
     --use 'justinmk/vim-sneak'
 end)
