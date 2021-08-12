@@ -22,8 +22,8 @@ endfunction
 "call SourceFile("/settings.vim")				"Has ignorable file setting
 
 "call SourceFile("/colorschemes.vim")
-call SourceFile("/plugin-settings.vim")
-call SourceFile("/remaps-basics.vim")
+"call SourceFile("/plugin-settings.vim")
+"call SourceFile("/remaps-basics.vim")
 "call SourceFile("/which-key.vim")
 "call SourceFile("/which-key-local-leader.vim")
 call SourceFile("/start-page.vim")				"Has file setting
@@ -33,6 +33,7 @@ lua require('plugin-loader')
 lua require('plugins')
 lua require('settings')
 lua require('colorschemes')
+lua require('keymaps')
 
 " Plugins
 lua require('plugin-settings.nvim-autopairs')
