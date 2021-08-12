@@ -49,11 +49,13 @@ vim.o.listchars = 'trail:-,tab:  '
 vim.cmd('autocmd BufWinEnter * setlocal formatoptions-=c formatoptions-=r formatoptions-=o')
 
 -- Set shell to Windows PowerShell if on windows. Relies on function in init.vim
---if g:os == 'Windows' then
-    --set shell=powershell shellquote= shellpipe=\| shellxquote=
-    --set shellcmdflag=-NoLogo\ -NoProfile\ -ExecutionPolicy\ RemoteSigned\ -Command
-    --set shellredir=\|\ Out-File\ -Encoding\ UTF8
---end
+vim.cmd([[
+if g:os == 'Windows'
+    set shell=powershell shellquote= shellpipe=\| shellxquote=
+    set shellcmdflag=-NoLogo\ -NoProfile\ -ExecutionPolicy\ RemoteSigned\ -Command
+    set shellredir=\|\ Out-File\ -Encoding\ UTF8
+end
+]])
 
 --autocmd User Fugitive command! -buffer -bar Gmylog exe 'terminal' FugitivePrepare(['log', '--oneline', '--decorate', '--graph', '--all'])
 --let color.ui=always
