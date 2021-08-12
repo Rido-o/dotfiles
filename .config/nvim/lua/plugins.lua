@@ -46,7 +46,7 @@ return require('packer').startup(function()
         config = [[ require('plugin-settings.which-key') ]]
     }
     use {
-        'romgrk/barbar.nvim'
+        'romgrk/barbar.nvim',
         config = [[ require('plugin-settings.barbar')]]
     }
 
