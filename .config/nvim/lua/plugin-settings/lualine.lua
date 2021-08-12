@@ -1,17 +1,43 @@
 require('lualine').setup {
-
     options = {
+        icons_enabled = true,
         theme = 'tokyonight',
-        section_separators = {'', ''},
-        component_separators = {'|', '|'},
+        component_separators = {'|', '|'}, -- {'', ''},
+        section_separators = {'', ''}, -- {'', ''},
+        disabled_filetypes = {}
     },
-
+    sections = {
+        lualine_a = {'mode'},
+        lualine_b = {
+            'branch',
+            {
+                'diff',
+                color_added = nil,
+                color_modified = nil,
+                color_removed = nil,
+                symbols = {added = '+', modified = '~', removed = '-'}
+            }
+        },
+        lualine_d = {'filename'},
+        lualine_x = {'encoding', 'fileformat', 'filetype'},
+        lualine_y = {'progress'},
+        lualine_z = {'location'}
+    },
+    inactive_sections = {
+        lualine_a = {},
+        lualine_b = {},
+        lualine_c = {'filename'},
+        lualine_x = {'location'},
+        lualine_y = {},
+        lualine_z = {}
+    },
+    tabline = {},
     extensions = {
         --'chadtree',
         'fugitive',
-        'fzf',
+        --'fzf',
         'nerdtree',
-        --'nvim-tree',
+        'nvim-tree',
         --'quickfix',
-    },
+    }
 }
