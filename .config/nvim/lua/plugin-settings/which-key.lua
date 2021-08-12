@@ -223,16 +223,16 @@ local wkl = require('which-key')
 vim.cmd('autocmd FileType * lua setKeybinds()')
 function setKeybinds()
     local bufNo = vim.api.nvim_buf_get_number("%")
-    local FileTy = vim.api.nvim_buf_get_option(bufNo, "filetype")
+    local fileTy = vim.api.nvim_buf_get_option(bufNo, "filetype")
     local opts = { prefix = '<localleader>', buffer = bufNo }
 
-    if FileTy == 'python' then
+    if fileTy == 'python' then
         wkl.register({
             ['r'] = {':1TermExec cmd=\'python "%"\' go_back=0<CR>', 'Run code'},
             ['b'] = {':1TermExec cmd=\'hyperfine --warmup 10 "python %"\' go_back=0<CR>', 'Benchmark code'},
             ['i'] = {':2TermExec cmd="python" go_back=0<CR>', 'Open repl'},
         }, opts)
-    elseif FileTy == 'sh' then
+    elseif fileTy == 'sh' then
         wkl.register({
             ['W'] = {':w<CR>', 'test write'},
             ['Q'] = {':q<CR>', 'test quit'},
