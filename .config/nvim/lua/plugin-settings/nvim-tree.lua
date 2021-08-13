@@ -34,7 +34,7 @@ vim.g.nvim_tree_window_picker_exclude = {
 -- selectable.
 
 -- List of filenames that gets highlighted with NvimTreeSpecialFile
-vim.g.nvim_tree_special_files = { 
+vim.g.nvim_tree_special_files = {
     ['README.md'] = 1,
     ['Makefile'] = 1,
     ['MAKEFILE'] = 1,

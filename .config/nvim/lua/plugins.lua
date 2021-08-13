@@ -61,7 +61,8 @@ return require('packer').startup(function()
     -----------------
     use {
         'lervag/vimtex', -- Requres latexmk, pdfviewer(mupdf)
-        ft = 'tex'
+        ft = 'tex',
+        config = require('plugin-settings.vimtex'),
     }
 
     -------------------------
