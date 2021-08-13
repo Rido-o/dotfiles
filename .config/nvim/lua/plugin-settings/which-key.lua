@@ -67,41 +67,11 @@ vim.cmd("hi! def link WhichKeyDesc Identifier")
 vim.cmd("hi! def link WhichKeyFloat NormalFloat")
 vim.cmd("hi! def link WhichKeyValue Comment")
 
+------------------------
+-- Global Mappings
+------------------------
 -- Set leader
 vim.g.mapleader = ' '
-
----- Toggle NERDTree based on the current buffer
---function NERDTreeToggleInCurDir()
---    -- If NERDTree is open in the current buffer
---    if (exists("t:NERDTreeBufName") and bufwinnr(t:NERDTreeBufName) ~= -1) then
---        exe ":NERDTreeClose"
---    -- If in git directory open root directory
---    elseif fugitive#head() ~= '' then
---        exe ":NERDTreeToggleVCS %"
---    -- If current buffer is empty open NERDTree in CWD
---    elseif line('$') == 1 && getline(1) == '' then
---        exe ":NERDTreeCWD"
---    -- Else open nerdtree in directory of current file
---    else
---        exe ":NERDTree %"
---    end
---end
-
--- Set ff based on weather in a git directory
-vim.api.nvim_set_keymap('n', '<leader>ff', ':Files<CR>', {})
-function Mapff()
-    -- If in git directory search for repository files
-    if vim.fn['fugitive#head']() ~= '' then
-       --vim.cmd('noremap <leader>ff :GFiles --cached --others --exclude-standard<CR>')
-       vim.api.nvim_set_keymap('n', '<leader>ff', ':GFiles --cached --others --exclude-standard<CR>')
-    -- Else search for current directory files
-    else
-       --vim.cmd('noremap <leader>ff :Files<CR>')
-       vim.api.nvim_set_keymap('n', '<leader>ff', ':Files<CR>')
-    end
-end
-
---autocmd VimEnter * call Mapff()
 
 -- Toggle color column
 function ColorColumn()
@@ -217,6 +187,9 @@ wk.register({
     }
 }, { prefix = '<leader>' })
 
+-----------------------
+-- Local Mappings
+-----------------------
 vim.g.maplocalleader = ','
 local wkl = require('which-key')
 
