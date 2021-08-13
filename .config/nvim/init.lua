@@ -28,7 +28,7 @@ end
 --SourceFile('/remaps-basics.vim')
 --SourceFile('/which-key.vim')
 --SourceFile('/which-key-local-leader.vim')
-SourceFile('/start-page.vim')                 -- Has file setting
+--SourceFile('/start-page.vim')                 -- Has file setting
 
 -- Main files
 require('plugin-loader')

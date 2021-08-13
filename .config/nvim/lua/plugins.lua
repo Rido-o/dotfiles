@@ -80,7 +80,7 @@ return require('packer').startup(function()
     -- Utilities
     ------------------
     use 'mbbill/undotree'
-    use 'mhinz/vim-startify'
+    -- use 'mhinz/vim-startify'
     use 'vimwiki/vimwiki'
     -- Run programs
     --use 'thinca/vim-quickrun'
