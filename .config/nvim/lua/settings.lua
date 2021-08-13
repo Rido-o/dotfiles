@@ -46,7 +46,7 @@ vim.o.listchars = 'trail:-,tab:  '
 --vim.o.listchars = vim.o.listchars .. 'eol:¬'
 
 -- Disable auto-commenting
-vim.cmd('autocmd BufWinEnter * setlocal formatoptions-=c formatoptions-=r formatoptions-=o')
+vim.cmd('autocmd BufRead * setlocal formatoptions-=c formatoptions-=r formatoptions-=o')
 
 -- Set shell to Windows PowerShell if on windows. Relies on function in init.vim
 vim.cmd([[
