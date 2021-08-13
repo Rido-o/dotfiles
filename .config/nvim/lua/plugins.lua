@@ -75,14 +75,20 @@ return require('packer').startup(function()
         config = require('plugin-settings.nvim-tree')
     }
     -- nnn
-    use 'mcchrish/nnn.vim'
+    use {
+	'mcchrish/nnn.vim',
+	config = require('plugin-settings.nnn')
+    }
 
     ------------------
     -- Utilities
     ------------------
     use 'mbbill/undotree'
     -- use 'mhinz/vim-startify'
-    use 'vimwiki/vimwiki'
+    use {
+        'vimwiki/vimwiki',
+        config = require('plugin-settings.vimwiki')
+    }
     -- Run programs
     --use 'thinca/vim-quickrun'
     --use 'skywind3000/asyncrun.vim'
@@ -92,7 +98,10 @@ return require('packer').startup(function()
     }
     --use 'voldikss/vim-floaterm'
     use 'airblade/vim-rooter'
-    use 'sbdchd/neoformat'
+    use {
+	'sbdchd/neoformat',
+	config = require('plugin-settings.neoformat')
+    }
     -- pip install black
     -- Debugging
     --use 'puremourning/vimspector'
