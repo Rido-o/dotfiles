@@ -1,4 +1,6 @@
--- Basics
+-----------------
+-- Settings
+-----------------
 vim.cmd('syntax enable')						-- Enables syntax highlighting
 --vim.o.syntax = 'enable'               -- Enables syntax highlighting
 --filetype plugin on                  -- Enables filetypes to be used
@@ -34,7 +36,9 @@ vim.o.autoread = true               -- Enables auto reading of files for open bu
 vim.o.signcolumn = 'yes:1'          -- Add permanant column for signs
 vim.o.undodir = vim.fn.stdpath 'cache' .. '/undo'-- Undo directory
 
+----------------------
 -- List settings
+----------------------
 vim.o.list = true
 vim.o.listchars = 'trail:-,tab:  '
 --vim.o.listchars = ''
@@ -48,7 +52,7 @@ vim.o.listchars = 'trail:-,tab:  '
 -- Disable auto-commenting
 vim.cmd('autocmd BufRead * setlocal formatoptions-=c formatoptions-=r formatoptions-=o')
 
--- Set shell to Windows PowerShell if on windows. Relies on function in init.vim
+-- Set shell to Windows PowerShell if on windows. Relies on function in init.lua
 vim.cmd([[
 if g:os == 'Windows'
     set shell=powershell shellquote= shellpipe=\| shellxquote=
