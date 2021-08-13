@@ -222,9 +222,8 @@ local wkl = require('which-key')
 
 vim.cmd('autocmd FileType * lua setKeybinds()')
 function setKeybinds()
-    local bufNo = vim.api.nvim_buf_get_number("%")
-    local fileTy = vim.api.nvim_buf_get_option(bufNo, "filetype")
-    local opts = { prefix = '<localleader>', buffer = bufNo }
+    local fileTy = vim.api.nvim_buf_get_option(0, "filetype")
+    local opts = { prefix = '<localleader>', buffer = 0 }
 
     if fileTy == 'python' then
         wkl.register({
