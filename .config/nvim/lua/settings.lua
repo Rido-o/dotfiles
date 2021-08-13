@@ -56,6 +56,3 @@ if g:os == 'Windows'
     set shellredir=\|\ Out-File\ -Encoding\ UTF8
 end
 ]])
-
---autocmd User Fugitive command! -buffer -bar Gmylog exe 'terminal' FugitivePrepare(['log', '--oneline', '--decorate', '--graph', '--all'])
---let color.ui=always
