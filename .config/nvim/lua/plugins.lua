@@ -2,14 +2,15 @@
 -- Plugin Management
 --------------------------
 return require('packer').startup(function()
-    -- Plugin Manager
+    -----------------------
+    -- Packer
+    -----------------------
     use 'wbthomason/packer.nvim'
 
     ------------
     -- Git
     ------------
     use 'tpope/vim-fugitive'
-    --use 'mhinz/vim-signify'
     use {
         'lewis6991/gitsigns.nvim',
         requires = {'nvim-lua/plenary.nvim'},
@@ -90,13 +91,10 @@ return require('packer').startup(function()
         config = require('plugin-settings.vimwiki')
     }
     -- Run programs
-    --use 'thinca/vim-quickrun'
-    --use 'skywind3000/asyncrun.vim'
     use {
         'akinsho/nvim-toggleterm.lua',
         config = require('plugin-settings.toggleterm')
     }
-    --use 'voldikss/vim-floaterm'
     use 'airblade/vim-rooter'
     use {
 	'sbdchd/neoformat',
@@ -105,8 +103,6 @@ return require('packer').startup(function()
     -- pip install black
     -- Debugging
     --use 'puremourning/vimspector'
-    --use 'junegunn/fzf'
-    --use 'junegunn/fzf.vim'
     use {
         'nvim-telescope/telescope.nvim',
         requires = {
@@ -149,7 +145,9 @@ return require('packer').startup(function()
     }
     use 'tpope/vim-surround'
     use 'tpope/vim-repeat'
-    --use 'moll/vim-bbye'
-    -- Movement
+
+   -----------------
+   -- Movement
+   -----------------
     --use 'justinmk/vim-sneak'
 end)
