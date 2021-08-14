@@ -23,11 +23,11 @@ return require('packer').startup(function()
     -- Colorschemes
     ---------------------
     --use {'lifepillar/vim-colortemplate', as = 'colors-colortemplate'}
-    use {'Rido-o/wal.vim', as = 'colors-wal'}
+    --use {'Rido-o/wal.vim', as = 'colors-wal'}
+    use {'sprockmonty/wal.vim', as = 'colors-wal'}
     use {'morhetz/gruvbox', as = 'colors-gruvbox'}
     use {'joshdick/onedark.vim', as = 'colors-onedark'}
     use {'reedes/vim-colors-pencil', as = 'colors-pencil'}
-    --use {'Rido-o/tokyonight-vim', as = 'colors-tokyonight'}
     use {'folke/tokyonight.nvim', as = 'colors-tokyonight'}
     use {'franbach/miramare', as = 'colors-miramare'}
     use {'ntk148v/vim-horizon', as = 'colors-horizon'}
