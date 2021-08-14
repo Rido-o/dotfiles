@@ -100,11 +100,22 @@ wk.register({
     S = {':Startify<CR>' , 'Open start screen'},              -- Open startify
 
     -- Buffers
-    u = {':bn<CR>' , 'Next buffer'},
-    y = {':bp<CR>' , 'Previous Buffer'},
+    y = {':BufferPrevious<CR>' , 'Previous Buffer'},
+    u = {':BufferNext<CR>' , 'Next buffer'},
+    ['1'] = {':BufferGoto 1<CR>' , 'Buffer 1'},
+    ['2'] = {':BufferGoto 1<CR>' , 'Buffer 2'},
+    ['3'] = {':BufferGoto 1<CR>' , 'Buffer 3'},
+    ['4'] = {':BufferGoto 1<CR>' , 'Buffer 4'},
+    ['5'] = {':BufferGoto 1<CR>' , 'Buffer 5'},
+    ['6'] = {':BufferGoto 1<CR>' , 'Buffer 6'},
+    ['7'] = {':BufferGoto 1<CR>' , 'Buffer 7'},
+    ['8'] = {':BufferGoto 1<CR>' , 'Buffer 8'},
+    ['9'] = {':BufferGoto 1<CR>' , 'Buffer 9'},
+    ['0'] = {':BufferLast<CR>' , 'Buffer Last'},
     b = {
         name = 'Buffers',
-        q = {':Bdelete<CR>' , 'Close buffer'},
+        q = {':BufferClose<CR>' , 'Close buffer'},
+        p = {':BufferPick<CR>' , 'Pick buffer'},
         d = {':cd %:p:h|call Mapff()<CR>', 'Change CWD to file directory'},
         f = {'gf' , 'Open file'},
         s = {':wincmd f<CR>', 'Open file in split'},
