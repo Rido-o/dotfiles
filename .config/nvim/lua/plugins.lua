@@ -123,6 +123,10 @@ return require('packer').startup(function()
         config = require('plugin-settings.nvim-lspconfig')
     }
     use {
+        'kabouzeid/nvim-lspinstall',
+        config = require('plugin-settings.nvim-lspinstall')
+    }
+    use {
         'hrsh7th/nvim-compe',
         requires = {
             {'hrsh7th/vim-vsnip'},
