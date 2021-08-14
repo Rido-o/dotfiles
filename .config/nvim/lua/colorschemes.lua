@@ -1,5 +1,8 @@
 vim.o.background = 'dark'
 
+-- Wal
+--vim.cmd('colorscheme wal')
+
 -- Gruvbox
 --vim.cmd('colorscheme gruvbox')
 --vim.g.airline_theme = 'gruvbox'
