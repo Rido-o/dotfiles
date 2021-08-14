@@ -115,13 +115,8 @@ wk.register({
     b = {
         name = 'Buffers',
         q = {':BufferClose<CR>' , 'Close buffer'},
-        p = {':BufferPick<CR>' , 'Pick buffer'},
-        d = {':cd %:p:h|call Mapff()<CR>', 'Change CWD to file directory'},
-        f = {'gf' , 'Open file'},
-        s = {':wincmd f<CR>', 'Open file in split'},
-        v = {':vertical wincmd f<CR>', 'Open file in vert split'},
-        t = {':wincmd gf<CR>', 'Open file in tab'},
         Q = {':w|%bd|e#|bd#<CR>', 'Close all except current'},
+        p = {':BufferPick<CR>' , 'Pick buffer'},
     },
 
     -- NerdCommenter
