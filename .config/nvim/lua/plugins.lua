@@ -35,7 +35,10 @@ return require('packer').startup(function()
     -----------
     -- UI
     -----------
-    use 'norcalli/nvim-colorizer.lua'
+    use {
+        'norcalli/nvim-colorizer.lua',
+        config = require('colorizer').setup()
+    }
     --use 'unblevable/quick-scope'
     -- Lualine
     use {

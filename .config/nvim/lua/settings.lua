@@ -34,6 +34,7 @@ vim.o.updatetime = 100              -- For vim signify
 vim.o.hidden = true                 -- Enables hidden buffers
 vim.o.autoread = true               -- Enables auto reading of files for open buffers
 vim.o.signcolumn = 'yes:1'          -- Add permanant column for signs
+vim.o.termguicolors = true          -- Required for some color schemes and colorizer
 vim.o.undodir = vim.fn.stdpath 'cache' .. '/undo'-- Undo directory
 
 ----------------------

@@ -1,11 +1,5 @@
 vim.o.background = 'dark'
 
-vim.o.termguicolors = true
-
--- Colorizer
--- Attach to all file types
-require 'colorizer'.setup()
-
 -- Gruvbox
 --vim.cmd('colorscheme gruvbox')
 --vim.g.airline_theme = 'gruvbox'
