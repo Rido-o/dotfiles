@@ -1,3 +1,4 @@
+require('lspinstall').setup()
 local lspinstall = require('lspinstall')
 
 local servers = {

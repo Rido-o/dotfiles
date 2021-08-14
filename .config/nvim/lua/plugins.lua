@@ -119,12 +119,12 @@ return require('packer').startup(function()
     -- lSP
     ------------
     use {
-        'neovim/nvim-lspconfig',
-        config = require('plugin-settings.nvim-lspconfig')
-    }
-    use {
         'kabouzeid/nvim-lspinstall',
         config = require('plugin-settings.nvim-lspinstall')
+    }
+    use {
+        'neovim/nvim-lspconfig',
+        config = require('plugin-settings.nvim-lspconfig')
     }
     use {
         'hrsh7th/nvim-compe',
