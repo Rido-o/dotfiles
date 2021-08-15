@@ -22,8 +22,6 @@ return require('packer').startup(function(use)
     ---------------------
     -- Colorschemes
     ---------------------
-    --use {'lifepillar/vim-colortemplate', as = 'colors-colortemplate'}
-    --use {'Rido-o/wal.vim', as = 'colors-wal'}
     use {'sprockmonty/wal.vim', as = 'colors-wal'}
     use {'morhetz/gruvbox', as = 'colors-gruvbox'}
     use {'joshdick/onedark.vim', as = 'colors-onedark'}
@@ -39,8 +37,6 @@ return require('packer').startup(function(use)
         'norcalli/nvim-colorizer.lua',
         config = require('colorizer').setup()
     }
-    --use 'unblevable/quick-scope'
-    -- Lualine
     use {
         'hoob3rt/lualine.nvim',
         requires = {'kyazdani42/nvim-web-devicons'},
@@ -72,23 +68,20 @@ return require('packer').startup(function(use)
     -------------------------
     -- File Exploration
     -------------------------
-    -- Nvim-tree
     use {
         'kyazdani42/nvim-tree.lua',
         requires = {'kyazdani42/nvim-web-devicons'},
         config = require('plugin-settings.nvim-tree')
     }
-    -- nnn
     use {
-	'mcchrish/nnn.vim',
-	config = require('plugin-settings.nnn')
+        'mcchrish/nnn.vim',
+        config = require('plugin-settings.nnn')
     }
 
     ------------------
     -- Utilities
     ------------------
     use 'mbbill/undotree'
-    -- use 'mhinz/vim-startify'
     use {
         'vimwiki/vimwiki',
         config = require('plugin-settings.vimwiki')
@@ -100,12 +93,9 @@ return require('packer').startup(function(use)
     }
     use 'airblade/vim-rooter'
     use {
-	'sbdchd/neoformat',
-	config = require('plugin-settings.neoformat')
+        'sbdchd/neoformat', -- Uses black
+        config = require('plugin-settings.neoformat')
     }
-    -- pip install black
-    -- Debugging
-    --use 'puremourning/vimspector'
     use {
         'nvim-telescope/telescope.nvim',
         requires = {
@@ -134,7 +124,6 @@ return require('packer').startup(function(use)
         },
         config = require('plugin-settings.nvim-compe')
     }
-    -- treesitter
     use {
         'nvim-treesitter/nvim-treesitter',
         branch = '0.5-compat',
@@ -156,8 +145,8 @@ return require('packer').startup(function(use)
     use 'tpope/vim-surround'
     use 'tpope/vim-repeat'
 
-   -----------------
-   -- Movement
-   -----------------
+    -----------------
+    -- Movement
+    -----------------
     --use 'justinmk/vim-sneak'
 end)
