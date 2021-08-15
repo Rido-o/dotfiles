@@ -1,7 +1,7 @@
 -----------------
 -- Settings
 -----------------
-require('nnn').setup({
+require('nnn').setup{
     command = "nnn -D",
     set_default_mappings = 0,
     layout = {
@@ -16,4 +16,4 @@ require('nnn').setup({
         ['l'] = 'e',
         ['e'] = 'e'
     }
-})
+}

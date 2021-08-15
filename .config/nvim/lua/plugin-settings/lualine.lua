@@ -1,4 +1,4 @@
-require('lualine').setup {
+require('lualine').setup{
     options = {
         -- Lualine colorschemes
         theme = 'tokyonight',

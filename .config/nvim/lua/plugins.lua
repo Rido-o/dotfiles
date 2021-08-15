@@ -35,7 +35,7 @@ return require('packer').startup(function(use)
     -----------
     use {
         'norcalli/nvim-colorizer.lua',
-        config = require('colorizer').setup()
+        config = require('colorizer').setup{}
     }
     use {
         'hoob3rt/lualine.nvim',

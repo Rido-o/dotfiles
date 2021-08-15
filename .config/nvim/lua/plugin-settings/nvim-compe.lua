@@ -1,5 +1,5 @@
 -- Nvim-compe settings
-require'compe'.setup {
+require'compe'.setup{
     enabled = true;
     autocomplete = true;
     debug = false;

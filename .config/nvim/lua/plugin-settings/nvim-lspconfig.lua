@@ -37,7 +37,7 @@ end
 local servers = require('lspinstall').installed_servers()
 
 for _, lsp in pairs(servers) do
-    nvim_lsp[lsp].setup {
+    nvim_lsp[lsp].setup{
         on_attach = on_attach,
         flags = {
             debounce_text_changes = 150,
