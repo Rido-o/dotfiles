@@ -86,7 +86,6 @@ return require('packer').startup(function(use)
         'vimwiki/vimwiki',
         config = require('plugin-settings.vimwiki')
     }
-    -- Run programs
     use {
         'akinsho/nvim-toggleterm.lua',
         config = require('plugin-settings.toggleterm')
