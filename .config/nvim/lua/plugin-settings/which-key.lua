@@ -83,6 +83,7 @@ function ColorColumn()
 end
 
 local wk = require('which-key')
+
 --------------------
 -- Normal Mode
 --------------------
