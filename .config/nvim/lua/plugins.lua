@@ -1,7 +1,7 @@
 --------------------------
 -- Plugin Management
 --------------------------
-return require('packer').startup(function()
+return require('packer').startup(function(use)
     -----------------------
     -- Packer
     -----------------------
@@ -145,7 +145,10 @@ return require('packer').startup(function()
     ---------------
     -- Editor
     ---------------
-    use 'preservim/nerdcommenter'
+    use {
+        'terrortylor/nvim-comment',
+        config = require('plugin-settings.nvim-comment')
+    }
     use {
         'windwp/nvim-autopairs',
         config = require('plugin-settings.nvim-autopairs')

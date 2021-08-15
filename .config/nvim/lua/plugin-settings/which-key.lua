@@ -83,6 +83,9 @@ function ColorColumn()
 end
 
 local wk = require('which-key')
+--------------------
+-- Normal Mode
+--------------------
 wk.register({
     -- Single Mappings
     s = {':wincmd s<CR>' , 'Horizontal split'},
@@ -97,7 +100,7 @@ wk.register({
     n = {':NvimTreeToggle<CR>' , 'Toggle file explorer'},
     U = {':UndotreeToggle<CR>' , 'Open undo tree'},           -- Undo tree toggle
     d = {':NnnPicker<CR>' , 'Open nnn'},
-    S = {':Startify<CR>' , 'Open start screen'},              -- Open startify
+    c = {':CommentToggle<CR>' , 'Toggle comment'},
 
     -- Buffers
     y = {':BufferPrevious<CR>' , 'Previous Buffer'},
@@ -117,24 +120,6 @@ wk.register({
         q = {':BufferClose<CR>' , 'Close buffer'},
         Q = {':w|%bd|e#|bd#<CR>', 'Close all except current'},
         p = {':BufferPick<CR>' , 'Pick buffer'},
-    },
-
-    -- NerdCommenter
-    c = {
-        name = 'Comment',
-        c = {'<plug>NERDCommenterComment' , 'Comment'},
-        n = {'<plug>NERDCommenterNested' , 'Nested comment'},
-        ['<space>'] = {'<plug>NERDCommenterToggle' , 'Toggle comment'},
-        m = {'<plug>NERDCommenterMinimal' , 'Minimal comment'},
-        i = {'<plug>NERDCommenterInvert' , 'Invert comment'},
-        s = {'<plug>NERDCommenterSexy' , 'Sexy comment'},
-        y = {'<plug>NERDCommenterYank' , 'Yank and comment'},
-        ['$'] = {'<plug>NERDCommenterToEOL' , 'Replace to end of line'},
-        A = {'<plug>NERDCommenterAppend' , 'Append comment'},
-        a = {'<plug>NERDCommenterAltDelims' , 'Comment and insert'},
-        l = {'<plug>NERDCommenterAlignLeft' , 'Comment aligned left'},
-        b = {'<plug>NERDCommenterAlignBoth' , 'Comment aligned both'},
-        u = {'<plug>NERDCommenterUncomment' , 'Uncomment'},
     },
 
     -- Fugitive
@@ -192,6 +177,13 @@ wk.register({
         c = {':lua ColorColumn()<CR>' , 'Toggle color column'},
     }
 }, { prefix = '<leader>' })
+
+--------------------
+-- Visual Mode
+--------------------
+wk.register({
+    c = {':CommentToggle<CR>' , 'Toggle comment'},
+}, { mode = 'v', prefix = '<leader>' })
 
 -----------------------
 -- Local Mappings
