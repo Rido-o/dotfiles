@@ -124,6 +124,10 @@ return require('packer').startup(function(use)
         config = require('plugin-settings.nvim-compe')
     }
     use {
+        'kosayoda/nvim-lightbulb',
+        config = require('plugin-settings.nvim-lightbulb')
+    }
+    use {
         'nvim-treesitter/nvim-treesitter',
         branch = '0.5-compat',
         run = ':TSUpdate',
