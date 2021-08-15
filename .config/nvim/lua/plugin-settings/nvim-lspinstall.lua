@@ -3,7 +3,7 @@ local lspinstall = require('lspinstall')
 
 local servers = {
     'python',
-    'lua'
+    'lua' -- Needs unzip to be installed
 }
 
 local installed_servers = {}
