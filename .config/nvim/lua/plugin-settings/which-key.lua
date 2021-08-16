@@ -123,6 +123,13 @@ wk.register({
         p = {':BufferPick<CR>' , 'Pick buffer'},
     },
 
+    -- Lsp
+    a = {
+        name = 'Lsp',
+        a = {':Lspsaga code_action<CR>' , 'Code action'},
+        r = {':Lspsaga rename<CR>' , 'Rename'}
+    },
+
     -- Fugitive
     g = {
         name = 'Git',
