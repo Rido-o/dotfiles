@@ -124,8 +124,8 @@ return require('packer').startup(function(use)
         config = require('plugin-settings.nvim-compe')
     }
     use {
-        'kosayoda/nvim-lightbulb',
-        config = require('plugin-settings.nvim-lightbulb')
+        'glepnir/lspsaga.nvim',
+        config = require('plugin-settings.lspsaga')
     }
     use {
         'nvim-treesitter/nvim-treesitter',
