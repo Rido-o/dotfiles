@@ -1,6 +1,6 @@
 # Image locations
 ImagePath ${HOME}/.fvwm/images/icons:+
-ImagePath ${HOME}/.fvwm/images/titlebar:+
+ImagePath ${HOME}/.fvwm/images/titlebar/beginning:+
 ImagePath ${HOME}/.fvwm/images/pixmaps:+
 
 # Set terminal
