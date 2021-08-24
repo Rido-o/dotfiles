@@ -5,25 +5,34 @@
 ###########
 DestroyDecor FvwmDecor
 AddToDecor   FvwmDecor
-+ TitleStyle Centered Height 23
-+ TitleStyle ActiveUp (-- raised) ActiveDown (-- sunk)
++ TitleStyle Centered Height 21
++ TitleStyle Active MultiPixmap \
+    Main TiledPixmap main.png, \
+    LeftButtons AdjustedPixmap left_side.png, \
+    RightButtons AdjustedPixmap right_side.png
++ TitleStyle Inactive MultiPixmap \
+    Main TiledPixmap main.png, \
+    LeftButtons AdjustedPixmap left_side.png, \
+    RightButtons AdjustedPixmap right_side.png
+# + TitleStyle ActiveUp (-- raised) ActiveDown (-- sunk)
++ TitleStyle ActiveUp (-- flat) ActiveDown (-- flat)
 #+ TitleStyle TiledPixmap dot.png
-+ ButtonStyle All - Clear
-+ ButtonStyle All Active ( Colorset 101 )
-+ ButtonStyle All InActive ( Colorset 100 )
++ ButtonStyle Reset
++ ButtonStyle All Active ( Colorset 101 -- flat)
++ ButtonStyle All InActive ( Colorset 100 -- flat)
 + AddButtonStyle 2\
-	ActiveUp (Pixmap close.png -- Flat) \
-	ActiveDown (Pixmap close.png -- Flat) \
-	Inactive (Pixmap close.png -- Flat)
+	ActiveUp (Pixmap close_raised.png) \
+	ActiveDown (Pixmap close_sunk.png) \
+	Inactive (Pixmap close.png)
 + AddButtonStyle 4\
-	ActiveUp (Pixmap maximize.png -- Flat) \
-	ActiveDown (Pixmap maximize.png -- Flat) \
-	Inactive (Pixmap maximize.png -- Flat)
+	ActiveUp (Pixmap maximise_raised.png) \
+	ActiveDown (Pixmap maximise_sunk.png) \
+	Inactive (Pixmap maximise.png)
 + AddButtonStyle 6\
-	ActiveUp (Pixmap iconify.png -- Flat) \
-	ActiveDown (Pixmap iconify.png -- Flat) \
-	Inactive (Pixmap iconify.png -- Flat)
+	ActiveUp (Pixmap iconify_raised.png) \
+	ActiveDown (Pixmap iconify_sunk.png) \
+	Inactive (Pixmap iconify.png)
 + AddButtonStyle 1\
-	ActiveUp (Pixmap options.png -- Flat) \
-	ActiveDown (Pixmap options.png -- Flat) \
-	Inactive (Pixmap options.png -- Flat)
+	ActiveUp (Pixmap options_raised.png) \
+	ActiveDown (Pixmap options_sunk.png) \
+	Inactive (Pixmap options.png)

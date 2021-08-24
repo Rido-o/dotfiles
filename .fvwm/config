@@ -1,6 +1,7 @@
 # Image locations
 ImagePath ${HOME}/.fvwm/images/icons:+
-ImagePath ${HOME}/.fvwm/images/titlebar/beginning:+
+# ImagePath ${HOME}/.fvwm/images/titlebar/Beginning:+
+ImagePath ${HOME}/.fvwm/images/titlebar/Renmei:+
 ImagePath ${HOME}/.fvwm/images/pixmaps:+
 
 # Set terminal
