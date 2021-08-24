@@ -84,6 +84,7 @@ return require('packer').startup(function(use)
     use 'mbbill/undotree'
     use {
         'vimwiki/vimwiki',
+        branch = 'dev',
         config = require('plugin-settings.vimwiki')
     }
     use {
