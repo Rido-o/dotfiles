@@ -128,10 +128,6 @@ return require('packer').startup(function(use)
         config = require('plugin-settings.lspsaga')
     }
     use {
-        'ray-x/lsp_signature.nvim',
-        config = require('plugin-settings.lsp-signature')
-    }
-    use {
         'nvim-treesitter/nvim-treesitter',
         branch = '0.5-compat',
         run = ':TSUpdate',
