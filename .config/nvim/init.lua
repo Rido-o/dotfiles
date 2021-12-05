@@ -21,7 +21,7 @@ function SourceFile(file)
 end
 
 -- Main files
-require('plugin-loader')
+-- require('plugin-loader')
 require('colorschemes')
 require('settings')
 require('plugins')
