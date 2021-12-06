@@ -8,9 +8,6 @@ To begin make sure that you have a completely fresh arch install ready with an i
 
 This will install and setup the vast majority of the system with just a few remaining manual things to take care of.
 ## Manual Requirements
-### Install private repository
-* run `$HOME/.cfg/install/install-private`
-* enter github credentials
 ### Setup SSH keys
 * ~ ssh-keygen -t ed25519 -C "Rido@airmail.cc"
 * hit enter
@@ -20,6 +17,9 @@ This will install and setup the vast majority of the system with just a few rema
 * with the key in the clipboard add it to your github account
 * ~ ssh -T git@github.com # test connection
 * switch repository origins with - ~/.cfg/install/extras/ssh-switch
+### Install private repository
+* requires ssh key to be correctly setup
+* run `$HOME/.cfg/install/install-private`
 ### Nvim final touches
 * open nvim to begin installation of coc-extensions
 * run the following command while in a c/c++ file ~ :CocCommand clangd.install
