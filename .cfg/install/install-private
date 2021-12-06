@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Private dot file install
-git clone --bare https://github.com/Rido-o/dotfiles-private.git $HOME/.cfg/dotfiles-private
+git clone --bare git@github.com:Rido-o/dotfiles-private.git $HOME/.cfg/dotfiles-private
 # enter github login details
 /usr/bin/git --git-dir=$HOME/.cfg/dotfiles-private --work-tree=$HOME $@ checkout # --force
 /usr/bin/git --git-dir=$HOME/.cfg/dotfiles-private --work-tree=$HOME $@ config status.showUntrackedFiles no
