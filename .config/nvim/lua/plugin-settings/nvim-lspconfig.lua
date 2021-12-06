@@ -35,7 +35,7 @@ end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = require('lspinstall').installed_servers()
+local servers = require'nvim-lsp-installer.servers'.get_installed_server_names()
 
 for _, lsp in pairs(servers) do
     nvim_lsp[lsp].setup{
