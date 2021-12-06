@@ -22,7 +22,7 @@ end
 
 -- Main files
 -- require('plugin-loader')
-require('colorschemes')
 require('settings')
+require('colorschemes')
 require('plugins')
 require('keymaps')

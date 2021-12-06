@@ -1,27 +1,55 @@
+function setColorscheme(scheme)
+    vim.cmd('silent! colorscheme ' .. scheme)
+end
+
 vim.o.background = 'dark'
 
+------------------------
+----- Colorschemes -----
+------------------------
+
 -- Wal
---vim.cmd('colorscheme wal')
+local function wal()
+    setColorscheme('wal')
+end
 
 -- Gruvbox
---vim.cmd('colorscheme gruvbox')
+local function gruvbox()
+    setColorscheme('gruvbox')
+end
 
 -- Onedark
---vim.cmd('colorscheme onedark')
+local function onedark()
+    setColorscheme('onedark')
+end
 
 -- Pencil
---vim.cmd('colorscheme pencil')
+local function pencil()
+    setColorscheme('pencil')
+end
 
 -- Tokyonight
-vim.g.tokyonight_style = 'night'
-vim.g.tokyonight_disable_italic_comment = '1'
-vim.g.tokyonight_lualine_bold = true
-vim.cmd('colorscheme tokyonight')
+local function tokyonight()
+    vim.g.tokyonight_style = 'night'
+    vim.g.tokyonight_disable_italic_comment = '1'
+    vim.g.tokyonight_lualine_bold = true
+    setColorscheme('tokyonight')
+end
 
 -- Miramare
---vim.g.miramare_enable_italic = '1'
---vim.g.miramare_disable_italic_comment = '1'
---vim.cmd('colorscheme miramare')
+local function miramare()
+    vim.g.miramare_enable_italic = '1'
+    vim.g.miramare_disable_italic_comment = '1'
+    setColorscheme('miramare')
+end
 
 -- Horizon
---vim.cmd('colorscheme horizon')
+local function horizon()
+    setColorscheme('horizon')
+end
+
+---------------------------
+----- Selected Scheme -----
+---------------------------
+
+tokyonight()
