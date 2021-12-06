@@ -1,19 +1,16 @@
-require('lspinstall').setup{}
-local lspinstall = require('lspinstall')
+local lsp_installer = require "nvim-lsp-installer"
 
 local servers = {
-    'python',
-    'lua' -- Needs unzip to be installed
+    "pyright",
+    "sumneko_lua",
 }
 
-local installed_servers = {}
-for _, server in pairs (lspinstall.installed_servers()) do
-    installed_servers[server] = true
-end
-
-for _, server in pairs(servers) do
-    if not installed_servers[server] then
-        print("Installing LSP Server for " .. server)
-        lspinstall.install_server(server)
+for _, name in pairs(servers) do
+    local server_is_found, server = lsp_installer.get_server(name)
+    if server_is_found then
+        if not server:is_installed() then
+            print("Installing " .. name)
+            server:install()
+        end
     end
 end
