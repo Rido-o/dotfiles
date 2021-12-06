@@ -1,34 +1,21 @@
 -----------------
 -- Settings
 -----------------
+
 local config = {
-	side = 'left',                  -- left by default
-	width = 30,                     -- 30 by default, can be width_in_columns or 'width_in_percent%'                                                                                                                               be width_in_columns or 'width_in_percent%'
-	ignore = { '.git' },            -- empty by default                                                                                                                                                                  default
-	gitignore = 1,                  -- 0 by default
-	auto_open = 0,                  -- 0 by default, opens the tree when typing `vim $DIR` or `vim`                                                                                                                            pens the tree when typing `vim $DIR` or `vim`
-	auto_close = 1,                 -- 0 by default, closes the tree when it's the last window
-	auto_ignore_ft = {},            -- empty by default, don't auto open tree on specific filetypes.
 	quit_on_open = 0,               -- 0 by default, closes the tree when you open a file
-	follow = 1,                     -- 0 by default, this option allows the cursor to be updated when entering a buffer
 	indent_markers = 1,             -- 0 by default, this option shows indent markers when folders are open
-	hide_dotfiles = 0,              -- 0 by default, this option hides files and folders starting with a dot `.`
 	git_hl = 1,                     -- 0 by default, will enable file highlight for git attributes (can be used without the icons).
     highlight_opened_files = 1,     -- 0 by default, will enable folder and file icon highlight for opened files/directories.
 	root_folder_modifier = ':~',    -- This is the default. See :help filename-modifiers for more options
-	tab_open = 0,                   -- 0 by default, will open the tree when entering a new tab and the tree was previously open
-    auto_resize = 1,                -- 1 by default, will resize the tree to its saved width when opening a file
-	disable_netrw = 1,              -- 1 by default, disables netrw
-	hijack_netrw = 1,               -- 1 by default, prevents netrw from automatically opening when opening directories (but lets you keep its other utilities)
     add_trailing = 0,               -- 0 by default, append a trailing slash to folder names
 	group_empty = 1,                -- 0 by default, compact folders that only contain a single folder into one node in the file tree
-	lsp_diagnostics = 1,            -- 0 by default, will show lsp diagnostics in the signcolumn. See :help nvim_tree_lsp_diagnostics
     disable_window_picker = 0,      -- 0 by default, will disable the window picker.
-    hijack_cursor = 1,              -- 1 by default, when moving cursor in the tree, will position the cursor at the start of the file on the current line
     icon_padding = ' ',             -- one space by default, used for rendering the space between the icon and the filename. Use with caution, it could break rendering if you set an empty string depending on your font.
     symlink_arrow = ' >> ',         -- defaults to ' ➛ '. used as a separator between symlinks' source and target.
-    update_cwd = 0,                 -- 0 by default, will update the tree cwd when changing nvim's directory (DirChanged event). Behaves strangely with autochdir set.
     respect_buf_cwd = 0,            -- 0 by default, will change cwd of nvim-tree to that of new buffer's when opening nvim-tree.
+    create_in_closed_folder = 1,    -- 1 by default, When creating files, sets the path of a file when cursor is on a closed folder to the parent folder when 0, and inside the folder when 1.
+    refresh_wait = 1000,            -- 1000 by default, control how often the tree can be refreshed, 1000 means the tree can be refresh once per 1000ms.
 
     -- Dictionary of buffer option names mapped to a list of option values that
     -- indicates to the window picker that the buffer's window should not be
@@ -81,12 +68,6 @@ local config = {
             symlink = "",
             symlink_open = "",
         },
-        lsp = {
-            hint = "",
-            info = "",
-            warning = "",
-            error = "",
-        },
 	},
 }
 
@@ -102,20 +83,18 @@ set_options(config)
 -- Keybindings
 --------------------
 
+-- NvimTreeOpen and NvimTreeClose are also available if you need them
 --nnoremap <C-n> :NvimTreeToggle<CR>
 --nnoremap <leader>r :NvimTreeRefresh<CR>
 --nnoremap <leader>n :NvimTreeFindFile<CR>
--- NvimTreeOpen and NvimTreeClose are also available if you need them
 
 --set termguicolors -- this variable must be enabled for colors to be applied properly
 
 -- a list of groups can be found at `:help nvim_tree_highlight`
 --highlight NvimTreeFolderIcon guibg=blue
 
-vim.g.nvim_tree_disable_default_keybindings = 1
-
 local tree_cb = require'nvim-tree.config'.nvim_tree_callback
-vim.g.nvim_tree_bindings = {
+local treeMappings = {
     { key = {"<CR>", "o", "<2-LeftMouse>"}, cb = tree_cb("edit") },
     { key = {"<2-RightMouse>", "<C-]>"},    cb = tree_cb("cd") },
     { key = "<C-v>",                        cb = tree_cb("vsplit") },
@@ -153,3 +132,64 @@ vim.g.nvim_tree_bindings = {
 -- Highlights
 vim.cmd('hi! def link NvimTreeNormal Normal')
 vim.cmd('hi! def link NvimTreeVertSplit SignColumn')
+
+-- following options are the default
+-- each of these are documented in `:help nvim-tree.OPTION_NAME`
+require'nvim-tree'.setup {
+    disable_netrw = true,
+    hijack_netrw = true,
+    open_on_setup = false,
+    ignore_ft_on_setup = {},
+    auto_close = true,
+    open_on_tab = false,
+    hijack_cursor = false,
+    update_cwd = false,
+    update_to_buf_dir  = {
+        enable = true,
+        auto_open = false,
+    },
+    diagnostics = {
+        enable = false,
+        icons = {
+            hint = "",
+            info = "",
+            warning = "",
+            error = "",
+        }
+    },
+    update_focused_file = {
+        enable = false,
+        update_cwd = false,
+        ignore_list = {}
+    },
+    system_open = {
+        cmd  = nil,
+        args = {}
+    },
+    filters = {
+        dotfiles = false,
+        custom = {}
+    },
+    git = {
+        enable = true,
+        ignore = true,
+        timeout = 500,
+    },
+    view = {
+        width = 30,
+        height = 30,
+        hide_root_folder = false,
+        side = 'left',
+        auto_resize = false,
+        mappings = {
+            custom_only = true,
+            list = treeMappings
+        },
+        number = false,
+        relativenumber = false
+    },
+    trash = {
+        cmd = "trash",
+        require_confirm = true
+    }
+}
