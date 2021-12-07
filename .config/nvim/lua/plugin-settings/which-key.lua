@@ -89,77 +89,77 @@ local wk = require('which-key')
 --------------------
 wk.register({
     -- Single Mappings
-    s = {':wincmd s<CR>' , 'Horizontal split'},
-    v = {':wincmd v<CR>' , 'Vertical split'},
-    h = {':wincmd h<CR>' , 'Move left'},
-    j = {':wincmd j<CR>' , 'Move down'},
-    k = {':wincmd k<CR>' , 'Move up'},
-    l = {':wincmd l<CR>' , 'Move right'},
-    w = {':w<CR>' , 'Write'},
-    q = {':q<CR>' , 'Quit'},
-    --n = {':call NERDTreeToggleInCurDir()' , 'Toggle file explorer'},
-    n = {':NvimTreeToggle<CR>' , 'Toggle file explorer'},
-    U = {':UndotreeToggle<CR>' , 'Open undo tree'},           -- Undo tree toggle
-    d = {':NnnPicker<CR>' , 'Open nnn'},
-    c = {':CommentToggle<CR>' , 'Toggle comment'},
+    s = {'<CMD>wincmd s<CR>' , 'Horizontal split'},
+    v = {'<CMD>wincmd v<CR>' , 'Vertical split'},
+    h = {'<CMD>wincmd h<CR>' , 'Move left'},
+    j = {'<CMD>wincmd j<CR>' , 'Move down'},
+    k = {'<CMD>wincmd k<CR>' , 'Move up'},
+    l = {'<CMD>wincmd l<CR>' , 'Move right'},
+    w = {'<CMD>w<CR>' , 'Write'},
+    q = {'<CMD>q<CR>' , 'Quit'},
+    --n = {'<CMD>call NERDTreeToggleInCurDir()' , 'Toggle file explorer'},
+    n = {'<CMD>NvimTreeToggle<CR>' , 'Toggle file explorer'},
+    U = {'<CMD>UndotreeToggle<CR>' , 'Open undo tree'},           -- Undo tree toggle
+    d = {'<CMD>NnnPicker<CR>' , 'Open nnn'},
+    c = {'<CMD>CommentToggle<CR>' , 'Toggle comment'},
 
     -- Buffers
-    y = {':BufferPrevious<CR>' , 'Previous Buffer'},
-    u = {':BufferNext<CR>' , 'Next buffer'},
-    ['1'] = {':BufferGoto 1<CR>' , 'Buffer 1'},
-    ['2'] = {':BufferGoto 2<CR>' , 'Buffer 2'},
-    ['3'] = {':BufferGoto 3<CR>' , 'Buffer 3'},
-    ['4'] = {':BufferGoto 4<CR>' , 'Buffer 4'},
-    ['5'] = {':BufferGoto 5<CR>' , 'Buffer 5'},
-    ['6'] = {':BufferGoto 6<CR>' , 'Buffer 6'},
-    ['7'] = {':BufferGoto 7<CR>' , 'Buffer 7'},
-    ['8'] = {':BufferGoto 8<CR>' , 'Buffer 8'},
-    ['9'] = {':BufferGoto 9<CR>' , 'Buffer 9'},
-    ['0'] = {':BufferLast<CR>' , 'Buffer Last'},
+    y = {'<CMD>BufferPrevious<CR>' , 'Previous Buffer'},
+    u = {'<CMD>BufferNext<CR>' , 'Next buffer'},
+    ['1'] = {'<CMD>BufferGoto 1<CR>' , 'Buffer 1'},
+    ['2'] = {'<CMD>BufferGoto 2<CR>' , 'Buffer 2'},
+    ['3'] = {'<CMD>BufferGoto 3<CR>' , 'Buffer 3'},
+    ['4'] = {'<CMD>BufferGoto 4<CR>' , 'Buffer 4'},
+    ['5'] = {'<CMD>BufferGoto 5<CR>' , 'Buffer 5'},
+    ['6'] = {'<CMD>BufferGoto 6<CR>' , 'Buffer 6'},
+    ['7'] = {'<CMD>BufferGoto 7<CR>' , 'Buffer 7'},
+    ['8'] = {'<CMD>BufferGoto 8<CR>' , 'Buffer 8'},
+    ['9'] = {'<CMD>BufferGoto 9<CR>' , 'Buffer 9'},
+    ['0'] = {'<CMD>BufferLast<CR>' , 'Buffer Last'},
     b = {
         name = 'Buffers',
-        q = {':BufferClose<CR>' , 'Close buffer'},
-        Q = {':w|%bd|e#|bd#<CR>', 'Close all except current'},
-        p = {':BufferPick<CR>' , 'Pick buffer'},
+        q = {'<CMD>BufferClose<CR>' , 'Close buffer'},
+        Q = {'<CMD>w|%bd|e#|bd#<CR>', 'Close all except current'},
+        p = {'<CMD>BufferPick<CR>' , 'Pick buffer'},
     },
 
     -- Lsp
     a = {
         name = 'Lsp',
-        a = {':Lspsaga code_action<CR>' , 'Code action'},
-        r = {':Lspsaga rename<CR>' , 'Rename'}
+        a = {'<CMD>Lspsaga code_action<CR>' , 'Code action'},
+        r = {'<CMD>Lspsaga rename<CR>' , 'Rename'}
     },
 
     -- Fugitive
     g = {
         name = 'Git',
-        i = {':Git init<CR>', 'Git init'},
-        a = {':Git add .<CR>', 'Git add all'},
-        c = {':Git commit<CR>', 'Git commit'},
-        A = {':Git commit --amend --no-edit -a<CR>', 'Git amend last commit'},
-        r = {':Git reset<CR>', 'Git unstage all'},
-        l = {':Git log --decorate --pretty=format:"%h - %an, %ar : %s"<CR>', 'Git pretty log'},
-        L = {':Git log<CR>', 'Git raw log'},
-        s = {':Git status<CR>', 'Git status'},
-        b = {':Git branch<CR>', 'Git branches'},
-        d = {':Git diff<CR>', 'Git diff'},
-        I = {':!touch .gitignore<CR>', 'Create git ignore'},
-        t = {':SignifyToggle<CR>', 'Toggle signs'},
-        T = {':SignifyToggleHighlight<CR>', 'Toggle highlights'},
+        i = {'<CMD>Git init<CR>', 'Git init'},
+        a = {'<CMD>Git add .<CR>', 'Git add all'},
+        c = {'<CMD>Git commit<CR>', 'Git commit'},
+        A = {'<CMD>Git commit --amend --no-edit -a<CR>', 'Git amend last commit'},
+        r = {'<CMD>Git reset<CR>', 'Git unstage all'},
+        l = {'<CMD>Git log --decorate --pretty=format:"%h - %an, %ar : %s"<CR>', 'Git pretty log'},
+        L = {'<CMD>Git log<CR>', 'Git raw log'},
+        s = {'<CMD>Git status<CR>', 'Git status'},
+        b = {'<CMD>Git branch<CR>', 'Git branches'},
+        d = {'<CMD>Git diff<CR>', 'Git diff'},
+        I = {'<CMD>!touch .gitignore<CR>', 'Create git ignore'},
+        t = {'<CMD>SignifyToggle<CR>', 'Toggle signs'},
+        T = {'<CMD>SignifyToggleHighlight<CR>', 'Toggle highlights'},
     },
 
     -- Telescope
     f = {
         name = 'Find',
-        f = {':Telescope find_files<CR>', 'Find files'},
-        l = {':Telescope live_grep<CR>' , 'Find lines'},
-        g = {':Telescope git_files<CR>' , 'Find git files'},
-        s = {':Telescope grep_string<CR>' , 'Find string'},
-        o = {':Telescope oldfiles<CR>' , 'Find recently opened files'},
-        h = {':Telescope command_history<CR>' , 'Search command history'},
-        c = {':Telescope colorscheme<CR>' , 'List colorschemes'},
-        p = {':Telescope builtin<CR>' , 'List all pickers'},
-        P = {':Telescope planets<CR>' , 'Show planets'},
+        f = {'<CMD>Telescope find_files<CR>', 'Find files'},
+        l = {'<CMD>Telescope live_grep<CR>' , 'Find lines'},
+        g = {'<CMD>Telescope git_files<CR>' , 'Find git files'},
+        s = {'<CMD>Telescope grep_string<CR>' , 'Find string'},
+        o = {'<CMD>Telescope oldfiles<CR>' , 'Find recently opened files'},
+        h = {'<CMD>Telescope command_history<CR>' , 'Search command history'},
+        c = {'<CMD>Telescope colorscheme<CR>' , 'List colorschemes'},
+        p = {'<CMD>Telescope builtin<CR>' , 'List all pickers'},
+        P = {'<CMD>Telescope planets<CR>' , 'Show planets'},
     },
 
     -- Vimwiki
@@ -182,18 +182,18 @@ wk.register({
     -- Hop
     o = {
         name = 'Hop',
-        ['1'] = {':HopChar1<CR>' , 'Hop to 1 char'},
-        ['2'] = {':HopChar2<CR>' , 'Hop to 2 char'},
-        w = {':HopWord<CR>' , 'Hop to word'},
-        p = {':HopPattern<CR>' , 'Hop to pattern'},
-        l = {':HopLine<CR>' , 'Hop to line'},
-        L = {':HopLineStart<CR>' , 'Hop to line start'},
+        ['1'] = {'<CMD>HopChar1<CR>' , 'Hop to 1 char'},
+        ['2'] = {'<CMD>HopChar2<CR>' , 'Hop to 2 char'},
+        w = {'<CMD>HopWord<CR>' , 'Hop to word'},
+        p = {'<CMD>HopPattern<CR>' , 'Hop to pattern'},
+        l = {'<CMD>HopLine<CR>' , 'Hop to line'},
+        L = {'<CMD>HopLineStart<CR>' , 'Hop to line start'},
     },
 
     -- Toggle settings
     t = {
         name = 'Toggle',
-        c = {':lua ColorColumn()<CR>' , 'Toggle color column'},
+        c = {'<CMD>lua ColorColumn()<CR>' , 'Toggle color column'},
     }
 }, { prefix = '<leader>' })
 
@@ -201,7 +201,7 @@ wk.register({
 -- Visual Mode
 --------------------
 wk.register({
-    c = {':CommentToggle<CR>' , 'Toggle comment'},
+    c = {'<CMD>CommentToggle<CR>' , 'Toggle comment'},
 }, { mode = 'v', prefix = '<leader>' })
 
 -----------------------
@@ -217,9 +217,9 @@ function setKeybinds()
 
     if fileTy == 'python' then
         wkl.register({
-            r = {':1TermExec cmd=\'python "%"\' go_back=0<CR>', 'Run code'},
-            b = {':1TermExec cmd=\'hyperfine --warmup 10 "python %"\' go_back=0<CR>', 'Benchmark code'},
-            i = {':2TermExec cmd="python" go_back=0<CR>', 'Open repl'},
+            r = {'<CMD>1TermExec cmd=\'python "%"\' go_back=0<CR>', 'Run code'},
+            b = {'<CMD>1TermExec cmd=\'hyperfine --warmup 10 "python %"\' go_back=0<CR>', 'Benchmark code'},
+            i = {'<CMD>2TermExec cmd="python" go_back=0<CR>', 'Open repl'},
         }, opts)
     elseif fileTy == 'plaintex' then
 		wkl.register({
