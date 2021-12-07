@@ -136,6 +136,12 @@ return require('packer').startup(function(use)
             require('plugin-settings.telescope')
         end
     }
+    use {
+        'phaazon/hop.nvim',
+        config = function()
+            require('plugin-settings.hop')
+        end
+    }
 
     ------------
     -- lSP

@@ -179,6 +179,17 @@ wk.register({
         },
     },
 
+    -- Hop
+    o = {
+        name = 'Hop',
+        ['1'] = {':HopChar1<CR>' , 'Hop to 1 char'},
+        ['2'] = {':HopChar2<CR>' , 'Hop to 2 char'},
+        w = {':HopWord<CR>' , 'Hop to word'},
+        p = {':HopPattern<CR>' , 'Hop to pattern'},
+        l = {':HopLine<CR>' , 'Hop to line'},
+        L = {':HopLineStart<CR>' , 'Hop to line start'},
+    },
+
     -- Toggle settings
     t = {
         name = 'Toggle',
