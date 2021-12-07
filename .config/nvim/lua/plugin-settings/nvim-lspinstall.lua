@@ -15,6 +15,9 @@ for _, name in pairs(servers) do
     end
 end
 
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+
 -- Register a handler that will be called for all installed servers.
 -- Alternatively, you may also register handlers on specific server instances instead (see example below).
 lsp_installer.on_server_ready(function(server)
@@ -28,6 +31,8 @@ lsp_installer.on_server_ready(function(server)
     -- This setup() function is exactly the same as lspconfig's setup function.
     -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
     server:setup(opts)
+
+    capabilities = capabilities
 
     -- Add keybinds
     local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end

@@ -140,12 +140,6 @@ return require('packer').startup(function(use)
     ------------
     -- lSP
     ------------
-    -- use {
-    --     'kabouzeid/nvim-lspinstall',
-    --     config = function()
-    --         require('plugin-settings.nvim-lspinstall')
-    --     end
-    -- }
     use {
         'williamboman/nvim-lsp-installer',
         config = function()
@@ -159,15 +153,31 @@ return require('packer').startup(function(use)
         end
     }
     use {
-        'hrsh7th/nvim-compe',
+        'hrsh7th/nvim-cmp',
         requires = {
+            {'hrsh7th/cmp-nvim-lsp'},
+            {'hrsh7th/cmp-buffer'},
+            {'hrsh7th/cmp-path'},
+            {'hrsh7th/cmp-cmdline'},
+            -- Snippets
+            {'hrsh7th/cmp-vsnip'},
             {'hrsh7th/vim-vsnip'},
             {'rafamadriz/friendly-snippets'},
         },
         config = function()
-            require('plugin-settings.nvim-compe')
+            require('plugin-settings.nvim-cmp')
         end
     }
+    -- use {
+    --     'hrsh7th/nvim-compe',
+    --     requires = {
+    --         {'hrsh7th/vim-vsnip'},
+    --         {'rafamadriz/friendly-snippets'},
+    --     },
+    --     config = function()
+    --         require('plugin-settings.nvim-compe')
+    --     end
+    -- }
     use {
         'glepnir/lspsaga.nvim',
         config = function()
