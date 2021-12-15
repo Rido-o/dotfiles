@@ -122,7 +122,7 @@ patch $HOME/.local/bin/umpv $HOME/.cfg/install/patches/umpv-socket-location.diff
 rm $HOME/.local/bin/umpv.orig
 chmod +x $HOME/.local/bin/umpv
 
-# Install rifle_sxiv script
+# Install nsxiv-rifle script
 wget -P $HOME/.local/bin https://raw.githubusercontent.com/nsxiv/nsxiv-extra/master/scripts/nsxiv-rifle/nsxiv-rifle
 sudo chmod +x $HOME/.local/bin/nsxiv-rifle # strange that this requires sudo
 
