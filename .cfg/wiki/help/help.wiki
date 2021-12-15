@@ -9,7 +9,7 @@
 * [[dwm|Dwm]]
 * [[st|St]]
 * [[ncmpcpp|Ncmpcpp]]
-* [[sxiv|Sxiv]]
+* [[nsxiv|Nsxiv]]
 * [[newsboat|Newsboat]]
 * [[nnn|Nnn]]
 * [[fvwm|Fvwm]]
