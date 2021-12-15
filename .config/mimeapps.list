@@ -1,7 +1,10 @@
 [Default Applications]
 x-scheme-handler/magnet=transmission.desktop;
 application/x-bittorrent=transmission.desktop;
-image/png=rifle_sxiv.desktop;
-image/jpeg=rifle_sxiv.desktop;
-image/jpg=rifle_sxiv.desktop;
-image/gif=rifle_sxiv.desktop;
+image/jpg=nsxiv-rifle.desktop;
+image/jpeg=nsxiv-rifle.desktop;
+image/png=nsxiv-rifle.desktop;
+image/gif=nsxiv-rifle.desktop;
+image/webp=nsxiv-rifle.desktop;
+image/tiff=nsxiv-rifle.desktop;
+image/bmp=nsxiv-rifle.desktop;

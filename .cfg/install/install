@@ -33,7 +33,7 @@ pacList=("zsh" "zsh-syntax-highlighting" "zsh-autosuggestions" # Install zsh and
 	 "curl" "ffmpeg" "dunst" "network-manager-applet" # Install dwm statusbar dependencies
 	 "fortune-mod" "cowsay" "xautolock" # Install slock autolock script dependencies
 	 "zathura" "zathura-pdf-mupdf" "xwallpaper" "newsboat" "picom" "mpv" "z" "youtube-dl" "sd" "fd" # Installing misc
-	 "exiv2" "imagemagick" # Install exiv2 and imagemagick for image dimensions in sxiv statusbar
+	 "exiv2" "imagemagick" # Install exiv2 and imagemagick for image dimensions in sxiv statusbar # Might not be needed anymore
 	 "fzf" # Used in nnn # Seperately installed for nvim via pluginstall?
 	 "cronie" # Install cronie
 	 "glib2" # Fixes libpango symbol lookup errors
@@ -123,9 +123,8 @@ rm $HOME/.local/bin/umpv.orig
 chmod +x $HOME/.local/bin/umpv
 
 # Install rifle_sxiv script
-wget -P $HOME/.local/bin https://raw.githubusercontent.com/ranger/ranger/master/examples/rifle_sxiv.sh
-mv $HOME/.local/bin/rifle_sxiv.sh $HOME/.local/bin/rifle_sxiv
-sudo chmod +x $HOME/.local/bin/rifle_sxiv # strange that this requires sudo
+wget -P $HOME/.local/bin https://raw.githubusercontent.com/nsxiv/nsxiv-extra/master/scripts/nsxiv-rifle/nsxiv-rifle
+sudo chmod +x $HOME/.local/bin/nsxiv-rifle # strange that this requires sudo
 
 # Install nnn plugins
 wget -O - https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh
