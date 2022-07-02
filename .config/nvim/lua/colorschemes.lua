@@ -57,4 +57,4 @@ end
 ----- Selected Scheme -----
 ---------------------------
 
-tokyonight()
+kanagawa()

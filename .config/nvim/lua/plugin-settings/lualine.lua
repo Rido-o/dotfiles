@@ -1,8 +1,8 @@
 require('lualine').setup{
     options = {
         -- Lualine colorschemes
-        theme = 'tokyonight',
-        --theme = 'auto',
+        -- theme = 'tokyonight',
+        theme = 'auto',
 
         icons_enabled = true,
         component_separators = {'|', '|'}, -- {'', ''},
@@ -39,7 +39,7 @@ require('lualine').setup{
         --'chadtree',
         'fugitive',
         --'fzf',
-        'nerdtree',
+        -- 'nerdtree',
         'nvim-tree',
         --'quickfix',
     }
