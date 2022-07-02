@@ -36,6 +36,11 @@ local function tokyonight()
     setColorscheme('tokyonight')
 end
 
+-- Kanagawa
+local function kanagawa()
+    setColorscheme('kanagawa')
+end
+
 -- Miramare
 local function miramare()
     vim.g.miramare_enable_italic = '1'

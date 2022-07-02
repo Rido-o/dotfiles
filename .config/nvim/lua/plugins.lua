@@ -39,6 +39,7 @@ return require('packer').startup(function(use)
     use {'folke/tokyonight.nvim', as = 'colors-tokyonight'}
     use {'franbach/miramare', as = 'colors-miramare'}
     use {'ntk148v/vim-horizon', as = 'colors-horizon'}
+    use {'rebelot/kanagawa.nvim', as = 'colors-kanagawa'}
 
     -----------
     -- UI
