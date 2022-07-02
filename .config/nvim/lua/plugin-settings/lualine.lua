@@ -42,5 +42,6 @@ require('lualine').setup{
         -- 'nerdtree',
         'nvim-tree',
         --'quickfix',
+        -- 'toggleterm', ?? not tested this one
     }
 }
