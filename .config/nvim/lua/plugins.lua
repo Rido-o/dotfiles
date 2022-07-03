@@ -149,6 +149,7 @@ return require('packer').startup(function(use)
     ------------
     -- lSP
     ------------
+    -- Check lsp-installer requirements
     use {
         'williamboman/nvim-lsp-installer',
         config = function()

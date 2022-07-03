@@ -1,66 +1,77 @@
-local lsp_installer = require("nvim-lsp-installer")
+require("nvim-lsp-installer").setup({
+    -- A list of servers to automatically install if they're not already installed. Example: { "rust_analyzer", "sumneko_lua" }
+    -- This setting has no relation with the `automatic_installation` setting.
+    ensure_installed = {},
 
-local servers = {
-    "pyright",
-    "sumneko_lua",
-}
+    -- Whether servers that are set up (via lspconfig) should be automatically installed if they're not already installed.
+    -- This setting has no relation with the `ensure_installed` setting.
+    -- Can either be:
+    --   - false: Servers are not automatically installed.
+    --   - true: All servers set up via lspconfig are automatically installed.
+    --   - { exclude: string[] }: All servers set up via lspconfig, except the ones provided in the list, are automatically installed.
+    --       Example: automatic_installation = { exclude = { "rust_analyzer", "solargraph" } }
+    automatic_installation = false,
 
-for _, name in pairs(servers) do
-    local server_is_found, server = lsp_installer.get_server(name)
-    if server_is_found then
-        if not server:is_installed() then
-            print("Installing " .. name)
-            server:install()
-        end
-    end
-end
+    ui = {
+        -- Whether to automatically check for outdated servers when opening the UI window.
+        check_outdated_servers_on_open = true,
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+        -- The border to use for the UI window. Accepts same border values as |nvim_open_win()|.
+        border = "none",
 
--- Register a handler that will be called for all installed servers.
--- Alternatively, you may also register handlers on specific server instances instead (see example below).
-lsp_installer.on_server_ready(function(server)
-    local opts = {}
+        icons = {
+            -- The list icon to use for installed servers.
+            server_installed = "◍",
+            -- The list icon to use for servers that are pending installation.
+            server_pending = "◍",
+            -- The list icon to use for servers that are not installed.
+            server_uninstalled = "◍",
+        },
+        keymaps = {
+            -- Keymap to expand a server in the UI
+            toggle_server_expand = "<CR>",
+            -- Keymap to install the server under the current cursor position
+            install_server = "i",
+            -- Keymap to reinstall/update the server under the current cursor position
+            update_server = "u",
+            -- Keymap to check for new version for the server under the current cursor position
+            check_server_version = "c",
+            -- Keymap to update all installed servers
+            update_all_servers = "U",
+            -- Keymap to check which installed servers are outdated
+            check_outdated_servers = "C",
+            -- Keymap to uninstall a server
+            uninstall_server = "X",
+        },
+    },
 
-    -- (optional) Customize the options passed to the server
-    -- if server.name == "tsserver" then
-    --     opts.root_dir = function() ... end
-    -- end
+    -- The directory in which to install all servers.
+    -- install_root_dir = path.concat { vim.fn.stdpath("data"), "lsp_servers" },
+    -- Might not work on windows
+    install_root_dir = vim.fn.stdpath("data") .. "/lsp_servers",
 
-    -- This setup() function is exactly the same as lspconfig's setup function.
-    -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
-    server:setup(opts)
+    pip = {
+        -- These args will be added to `pip install` calls. Note that setting extra args might impact intended behavior
+        -- and is not recommended.
+        --
+        -- Example: { "--proxy", "https://proxyserver" }
+        install_args = {},
+    },
 
-    capabilities = capabilities
+    -- Controls to which degree logs are written to the log file. It's useful to set this to vim.log.levels.DEBUG when
+    -- debugging issues with server installations.
+    log_level = vim.log.levels.INFO,
 
-    -- Add keybinds
-    local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-    local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
+    -- Limit for the maximum amount of servers to be installed at the same time. Once this limit is reached, any further
+    -- servers that are requested to be installed will be put in a queue.
+    max_concurrent_installers = 4,
 
-    --Enable completion triggered by <c-x><c-o>
-    buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
-
-    -- Mappings.
-    local opts = { noremap=true, silent=true }
-
-    -- See `:help vim.lsp.*` for documentation on any of the below functions
-    buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-    buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
-    buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-    buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-    buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
-    buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-    buf_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
-    buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
-
-    buf_set_keymap('n', '<space>aw', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
-    buf_set_keymap('n', '<space>aW', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
-    buf_set_keymap('n', '<space>al', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
-    buf_set_keymap('n', '<space>ad', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
-    -- buf_set_keymap('n', '<space>ar', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-    -- buf_set_keymap('n', '<space>aa', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
-    buf_set_keymap('n', '<space>ae', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
-    buf_set_keymap('n', '<space>aq', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
-    buf_set_keymap('n', '<space>af', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
-end)
+    github = {
+        -- The template URL to use when downloading assets from GitHub.
+        -- The placeholders are the following (in order):
+        -- 1. The repository (e.g. "rust-lang/rust-analyzer")
+        -- 2. The release version (e.g. "v0.3.0")
+        -- 3. The asset name (e.g. "rust-analyzer-v0.3.0-x86_64-unknown-linux-gnu.tar.gz")
+        download_url_template = "https://github.com/%s/releases/download/%s/%s",
+    },
+})
