@@ -20,7 +20,7 @@ return require('packer').startup(function(use)
     ------------
     use 'tpope/vim-fugitive'
     use {
-        'lewis6991/gitsigns.nvim',
+        'lewis6991/gitsigns.nvim', -- !! I don't think gitsigns requires plenary anymore
         requires = {'nvim-lua/plenary.nvim'},
         config = function()
             require('plugin-settings.gitsigns')
