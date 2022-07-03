@@ -101,7 +101,7 @@ wk.register({
     n = {'<CMD>NvimTreeToggle<CR>' , 'Toggle file explorer'},
     U = {'<CMD>UndotreeToggle<CR>' , 'Open undo tree'},           -- Undo tree toggle
     d = {'<CMD>NnnPicker<CR>' , 'Open nnn'},
-    c = {'<CMD>CommentToggle<CR>' , 'Toggle comment'},
+    c = {'<CMD>normal gcc<CR>' , 'Toggle comment'},
 
     -- Buffers
     y = {'<CMD>BufferPrevious<CR>' , 'Previous Buffer'},
@@ -201,7 +201,7 @@ wk.register({
 -- Visual Mode
 --------------------
 wk.register({
-    c = {'<CMD>CommentToggle<CR>' , 'Toggle comment'},
+    c = {'<CMD>normal gc<CR>' , 'Toggle comment'},
 }, { mode = 'v', prefix = '<leader>' })
 
 -----------------------
