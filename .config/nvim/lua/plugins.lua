@@ -30,7 +30,6 @@ return require('packer').startup({function(use)
     use 'tpope/vim-fugitive'
     use {
         'lewis6991/gitsigns.nvim', -- !! I don't think gitsigns requires plenary anymore
-        requires = {'nvim-lua/plenary.nvim'},
         config = function()
             require('plugin-settings.gitsigns')
         end
@@ -187,16 +186,6 @@ return require('packer').startup({function(use)
             require('plugin-settings.nvim-cmp')
         end
     }
-    -- use {
-    --     'hrsh7th/nvim-compe',
-    --     requires = {
-    --         {'hrsh7th/vim-vsnip'},
-    --         {'rafamadriz/friendly-snippets'},
-    --     },
-    --     config = function()
-    --         require('plugin-settings.nvim-compe')
-    --     end
-    -- }
     use {
         'glepnir/lspsaga.nvim',
         config = function()
