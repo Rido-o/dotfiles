@@ -36,6 +36,7 @@ vim.o.autoread = true               -- Enables auto reading of files for open bu
 vim.o.signcolumn = 'yes:1'          -- Add permanant column for signs
 vim.o.termguicolors = true          -- Required for some color schemes and colorizer
 vim.o.undodir = vim.fn.stdpath 'cache' .. '/undo'-- Undo directory
+vim.o.laststatus = 3                -- Enables global statusline
 
 ----------------------
 -- List settings
