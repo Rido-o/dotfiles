@@ -8,6 +8,7 @@ end
 
 -- Packer options
 require('packer').init({
+    -- Enable floating window for packer
     display = {
         open_fn = function()
             return require('packer.util').float({ border = 'single' })
