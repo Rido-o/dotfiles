@@ -35,7 +35,7 @@ vim.o.hidden = true                 -- Enables hidden buffers
 vim.o.autoread = true               -- Enables auto reading of files for open buffers
 vim.o.signcolumn = 'yes:1'          -- Add permanant column for signs
 vim.o.termguicolors = true          -- Required for some color schemes and colorizer
-vim.o.undodir = vim.fn.stdpath 'cache' .. '/undo'-- Undo directory
+vim.o.undodir = vim.fn.stdpath('cache') .. '/undo'-- Undo directory
 vim.o.laststatus = 3                -- Enables global statusline
 -- vim.o.cmdheight = 0                 -- Makes command line height 0 -- In preperation for when it is added to stable
 
@@ -43,17 +43,11 @@ vim.o.laststatus = 3                -- Enables global statusline
 -- List settings
 ----------------------
 vim.o.list = true
+-- 'trail:­,tab:  ,extends:»,precedes:«,nbsp:⣿,eol:¬'
 vim.o.listchars = 'trail:-,tab:  '
---vim.o.listchars = ''
---vim.o.listchars = vim.o.listchars .. 'trail:­,'
---vim.o.listchars = vim.o.listchars .. 'tab:  '
---vim.o.listchars = vim.o.listchars .. 'extends:»'
---vim.o.listchars = vim.o.listchars .. 'precedes:«'
---vim.o.listchars = vim.o.listchars .. 'nbsp:⣿'
---vim.o.listchars = vim.o.listchars .. 'eol:¬'
 
 -- Disable auto-commenting
-vim.cmd('autocmd BufRead * setlocal formatoptions-=c formatoptions-=r formatoptions-=o')
+vim.api.nvim_create_autocmd({"BufRead"}, {command = "setlocal formatoptions-=cro"})
 
 -- Set shell to Windows PowerShell if on windows. Relies on function in init.lua
 vim.cmd([[
