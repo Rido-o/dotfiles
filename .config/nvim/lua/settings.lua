@@ -1,7 +1,7 @@
 -----------------
 -- Settings
 -----------------
-vim.o.encoding = 'utf-8'            -- The encoding displayed
+vim.o.encoding = 'utf-8'            -- The encoding displayed is UTF-8 by default
 vim.o.fileencoding = 'utf-8'
 vim.o.fileencodings = 'utf-8'       -- Causes problems with fugitive
 vim.o.splitbelow = true             -- Split down instead of up
