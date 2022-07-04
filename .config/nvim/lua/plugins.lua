@@ -9,7 +9,7 @@ end
 --------------------------
 -- Plugin Management
 --------------------------
-return require('packer').startup(function(use)
+return require('packer').startup({function(use)
     -----------------------
     -- Packer
     -----------------------
@@ -226,8 +226,16 @@ return require('packer').startup(function(use)
     -----------------
     --use 'justinmk/vim-sneak'
           -- Automatically set up your configuration after cloning packer.nvim
-  -- Put this at the end after all plugins
-  if packer_bootstrap then
-    require('packer').sync()
-  end
-end)
+    -- Put this at the end after all plugins
+    if packer_bootstrap then
+        require('packer').sync()
+    end
+end,
+config = {
+    display = {
+        open_fn = function()
+            return require('packer.util').float({ border = 'single' })
+        end
+    }
+}
+})
