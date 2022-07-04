@@ -165,10 +165,9 @@ return require('packer').startup({function(use)
         config = plugin_config('plugin-settings.lspsaga')
     }
     use {
-        'nvim-treesitter/nvim-treesitter',
-        branch = '0.5-compat',
-        run = ':TSUpdate',
-        config = plugin_config('plugin-settings.treesitter')
+       'nvim-treesitter/nvim-treesitter',
+       run = ':TSUpdate',
+       -- config = plugin_config('plugin-settings.treesitter')
     }
 
     ---------------
