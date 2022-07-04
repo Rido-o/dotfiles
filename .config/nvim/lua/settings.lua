@@ -37,6 +37,7 @@ vim.o.signcolumn = 'yes:1'          -- Add permanant column for signs
 vim.o.termguicolors = true          -- Required for some color schemes and colorizer
 vim.o.undodir = vim.fn.stdpath 'cache' .. '/undo'-- Undo directory
 vim.o.laststatus = 3                -- Enables global statusline
+-- vim.o.cmdheight = 0                 -- Makes command line height 0 -- In preperation for when it is added to stable
 
 ----------------------
 -- List settings
