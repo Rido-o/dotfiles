@@ -55,6 +55,7 @@ return require('packer').startup({function(use)
     -----------
     -- UI
     -----------
+    -- I believe colorizer isn't working
     use {
         'norcalli/nvim-colorizer.lua',
         config = function()
