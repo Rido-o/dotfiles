@@ -6,6 +6,15 @@ if fn.empty(fn.glob(install_path)) > 0 then
   packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
 end
 
+-- Packer options
+require('packer').init({
+    display = {
+        open_fn = function()
+            return require('packer.util').float({ border = 'single' })
+        end
+    }
+})
+
 --------------------------
 -- Plugin Management
 --------------------------
@@ -230,12 +239,5 @@ return require('packer').startup({function(use)
     if packer_bootstrap then
         require('packer').sync()
     end
-end,
-config = {
-    display = {
-        open_fn = function()
-            return require('packer.util').float({ border = 'single' })
-        end
-    }
-}
+end
 })
