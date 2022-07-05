@@ -83,8 +83,8 @@ cmp.setup({
     sources = cmp.config.sources({
         { name = 'nvim_lsp' },
         { name = 'luasnip' }, -- For luasnip users.
-    }, {
         { name = 'buffer' },
+        { name = 'path' },
     }),
     formatting = {
         format = function(entry, vim_item)
