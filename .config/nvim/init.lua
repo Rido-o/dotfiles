@@ -2,7 +2,7 @@
 local raw_os = vim.loop.os_uname().sysname
 if string.find(raw_os, 'Windows') then
     vim.g.os = 'Windows'
-else
+elseif raw_os == 'Linux' then
     vim.g.os = 'Linux'
 end
 
