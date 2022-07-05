@@ -16,10 +16,6 @@ elseif vim.g.os == 'Linux' then
     osPath = '$HOME/.config/nvim/config'
 end
 
-function SourceFile(file)
-    vim.cmd("source " .. osPath .. file)
-end
-
 -- Main files
 require('settings')
 require('colorschemes')
