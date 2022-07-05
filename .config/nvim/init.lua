@@ -1,19 +1,9 @@
 -- Get OS
-vim.cmd([[
-if !exists('g:os')
-    if has('win64') || has('win32') || has('win16')
-        let g:os = 'Windows'
-    else
-        let g:os = substitute(system('uname'), '\n', '', '')
-    endif
-endif
-]])
-
--- Source files
-if vim.g.os == 'Windows' then
-    osPath = '~/AppData/Local/nvim/config'
-elseif vim.g.os == 'Linux' then
-    osPath = '$HOME/.config/nvim/config'
+local raw_os = vim.loop.os_uname().sysname
+if string.find(raw_os, 'Windows') then
+    vim.g.os = 'Windows'
+else
+    vim.g.os = 'Linux1'
 end
 
 -- Main files
