@@ -24,6 +24,7 @@ end
 -- Plugin Management
 --------------------------
 return require('packer').startup({function(use)
+    -- planned plugins {trouble.nvim, null-ls}
     -----------------------
     -- Packer
     -----------------------
@@ -34,11 +35,9 @@ return require('packer').startup({function(use)
     ------------
     use 'tpope/vim-fugitive'
     use {
-        'lewis6991/gitsigns.nvim', -- !! I don't think gitsigns requires plenary anymore
+        'lewis6991/gitsigns.nvim',
         config = plugin_config('plugin-settings.gitsigns')
     }
-    --use 'tpope/vim-git'
-    --use 'tpope/vim-rhubarb'
 
     ---------------------
     -- Colorschemes
@@ -53,9 +52,8 @@ return require('packer').startup({function(use)
     -- I believe colorizer isn't working in the test with :ColorizerAttachToBuffer and #FFF
     use {
         'norcalli/nvim-colorizer.lua',
-        config = function()
-            require('colorizer').setup{}
-        end
+        -- not optimal but require('colorizer').setup() wasn't working
+        config  = vim.api.nvim_create_autocmd({"BufRead", "BufEnter"}, {command = "ColorizerAttachToBuffer"})
     }
     use {
         'nvim-lualine/lualine.nvim',
@@ -179,11 +177,8 @@ return require('packer').startup({function(use)
     use 'tpope/vim-surround'
     use 'tpope/vim-repeat'
 
-    -----------------
-    -- Movement
-    -----------------
-    --use 'justinmk/vim-sneak'
-          -- Automatically set up your configuration after cloning packer.nvim
+    -- Run bootstrap if packer isnt' installed
+    -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if Packer_bootstrap then
         require('packer').sync()
