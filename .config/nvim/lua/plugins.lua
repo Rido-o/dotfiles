@@ -1,4 +1,5 @@
 -- Packer Bootstrap
+p
 local fn = vim.fn
 local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim' -- Packer Install path
 if fn.empty(fn.glob(install_path)) > 0 then
@@ -24,7 +25,7 @@ end
 -- Plugin Management
 --------------------------
 return require('packer').startup({function(use)
-    -- planned plugins {trouble.nvim, null-ls, lspkind}
+    -- planned plugins {trouble.nvim, null-ls}
     -----------------------
     -- Packer
     -----------------------
