@@ -150,7 +150,11 @@ return require('packer').startup({function(use)
             {'saadparwaiz1/cmp_luasnip'},
             {'rafamadriz/friendly-snippets'},
         },
-        config = plugin_config('plugin-settings.nvim-cmp')
+        config = {
+            plugin_config('plugin-settings.nvim-cmp'),
+            -- Enable friendly snippets
+            require('luasnip.loaders.from_vscode').lazy_load()
+        }
     }
     use {
         'glepnir/lspsaga.nvim',
