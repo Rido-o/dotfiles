@@ -24,7 +24,7 @@ end
 -- Plugin Management
 --------------------------
 return require('packer').startup({function(use)
-    -- planned plugins {trouble.nvim, null-ls}
+    -- planned plugins {trouble.nvim, null-ls, lspkind}
     -----------------------
     -- Packer
     -----------------------
