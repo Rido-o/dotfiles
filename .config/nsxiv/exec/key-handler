@@ -1,11 +1,11 @@
 #!/bin/sh
 
 case "$1" in
-    "w") cp "$file" "$HOME/.cache/wallpaper.png" && set-wallpaper ;;
+    "C-z") while read file; do cp "$file" "$HOME/.cache/wallpaper.png" && set-wallpaper; done;;
     "l") sudo cp "$file" "/usr/share/pixmaps/wallpaper.png" ;;
     "p") cp "$file" "$HOME/.cache/wallpaper.png" && set-wallpaper && color-dark-pywal ;;
     "P") cp "$file" "$HOME/.cache/wallpaper.png" && set-wallpaper && color-light-pywal ;;
     "r") qutebrowser "https://yandex.com/images/search?source=collections&rpt=imageview&url=$file" ;;
-    "z") qutebrowser ;;
-    "C-z") qutebrowser ;;
+    # "z") qutebrowser ;;
+    # "C-z") qutebrowser ;;
 esac
