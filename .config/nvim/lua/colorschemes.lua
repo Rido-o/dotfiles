@@ -9,23 +9,8 @@ vim.o.background = 'dark'
 ------------------------
 
 -- Wal
-local function wal()
-    setColorscheme('wal')
-end
-
--- Gruvbox
-local function gruvbox()
-    setColorscheme('gruvbox')
-end
-
--- Onedark
-local function onedark()
-    setColorscheme('onedark')
-end
-
--- Pencil
-local function pencil()
-    setColorscheme('pencil')
+local function pywal()
+    setColorscheme('pywal')
 end
 
 -- Tokyonight
@@ -39,18 +24,6 @@ end
 -- Kanagawa
 local function kanagawa()
     setColorscheme('kanagawa')
-end
-
--- Miramare
-local function miramare()
-    vim.g.miramare_enable_italic = '1'
-    vim.g.miramare_disable_italic_comment = '1'
-    setColorscheme('miramare')
-end
-
--- Horizon
-local function horizon()
-    setColorscheme('horizon')
 end
 
 ---------------------------

@@ -43,13 +43,8 @@ return require('packer').startup({function(use)
     ---------------------
     -- Colorschemes
     ---------------------
-    use {'sprockmonty/wal.vim', as = 'colors-wal'}
-    use {'morhetz/gruvbox', as = 'colors-gruvbox'}
-    use {'joshdick/onedark.vim', as = 'colors-onedark'}
-    use {'reedes/vim-colors-pencil', as = 'colors-pencil'}
+    use {'AlphaTechnolog/pywal.nvim', as = 'colors-pywal'}
     use {'folke/tokyonight.nvim', as = 'colors-tokyonight'}
-    use {'franbach/miramare', as = 'colors-miramare'}
-    use {'ntk148v/vim-horizon', as = 'colors-horizon'}
     use {'rebelot/kanagawa.nvim', as = 'colors-kanagawa'}
 
     -----------
