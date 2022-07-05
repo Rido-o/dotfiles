@@ -146,8 +146,8 @@ return require('packer').startup({function(use)
             {'hrsh7th/cmp-path'},
             {'hrsh7th/cmp-cmdline'},
             -- Snippets
-            {'hrsh7th/cmp-vsnip'},
-            {'hrsh7th/vim-vsnip'},
+            {'L3MON4D3/LuaSnip'},
+            {'saadparwaiz1/cmp_luasnip'},
             {'rafamadriz/friendly-snippets'},
         },
         config = plugin_config('plugin-settings.nvim-cmp')
