@@ -52,7 +52,7 @@ return require('packer').startup({function(use)
     use {
         'norcalli/nvim-colorizer.lua',
         -- not optimal but require('colorizer').setup() wasn't working check #FFF
-        config  = vim.api.nvim_create_autocmd({"BufRead", "BufEnter"}, {command = "ColorizerAttachToBuffer"})
+        config  = vim.api.nvim_create_autocmd({"BufEnter"}, {command = "ColorizerAttachToBuffer"})
     }
     use {
         'nvim-lualine/lualine.nvim',
