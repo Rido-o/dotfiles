@@ -49,10 +49,9 @@ return require('packer').startup({function(use)
     -----------
     -- UI
     -----------
-    -- I believe colorizer isn't working in the test with :ColorizerAttachToBuffer and #FFF
     use {
         'norcalli/nvim-colorizer.lua',
-        -- not optimal but require('colorizer').setup() wasn't working
+        -- not optimal but require('colorizer').setup() wasn't working check #FFF
         config  = vim.api.nvim_create_autocmd({"BufRead", "BufEnter"}, {command = "ColorizerAttachToBuffer"})
     }
     use {
