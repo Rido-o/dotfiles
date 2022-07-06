@@ -219,7 +219,7 @@ local setKeybinds = function()
             b = {'<CMD>1TermExec cmd=\'hyperfine --warmup 10 "python %"\' go_back=0<CR>', 'Benchmark code'},
             i = {'<CMD>2TermExec cmd="python" go_back=0<CR>', 'Open repl'},
         }, opts)
-    elseif fileTy == 'plaintex' then
+    elseif fileTy == 'plaintex' or fileTy == 'tex' then
 		wk.register({
 			i = {'<plug>(vimtex-info)' , 'Latex info'},
 			I = {'<plug>(vimtex-info-full)' , 'Latex full info'},
