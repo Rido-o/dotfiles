@@ -208,7 +208,6 @@ wk.register({
 -- Local Mappings
 -----------------------
 vim.g.maplocalleader = ','
-local wkl = require('which-key')
 
 vim.cmd('autocmd FileType * lua setKeybinds()')
 function setKeybinds()
@@ -216,13 +215,13 @@ function setKeybinds()
     local opts = { prefix = '<localleader>', buffer = 0 }
 
     if fileTy == 'python' then
-        wkl.register({
+        wk.register({
             r = {'<CMD>1TermExec cmd=\'python "%"\' go_back=0<CR>', 'Run code'},
             b = {'<CMD>1TermExec cmd=\'hyperfine --warmup 10 "python %"\' go_back=0<CR>', 'Benchmark code'},
             i = {'<CMD>2TermExec cmd="python" go_back=0<CR>', 'Open repl'},
         }, opts)
     elseif fileTy == 'plaintex' then
-		wkl.register({
+		wk.register({
 			i = {'<plug>(vimtex-info)' , 'Latex info'},
 			I = {'<plug>(vimtex-info-full)' , 'Latex full info'},
 			t = {'<plug>(vimtex-toc-open)' , 'Latex open toc'},
