@@ -3,7 +3,7 @@ require('lspsaga').init_lsp_saga({
     -- "single" | "double" | "rounded" | "bold" | "plus"
     border_style = "single",
     -- when cursor in saga window you config these to move
-    move_in_saga = { prev = '<C-p>',next = '<C-n>'},
+    move_in_saga = { prev = '<C-p>', next = '<C-n>'},
     -- Error, Warn, Info, Hint
     -- use emoji like
     -- { "🙀", "😿", "😾", "😺" }
@@ -28,7 +28,7 @@ require('lspsaga').init_lsp_saga({
         enable = true,
         sign = true,
         sign_priority = 20,
-        virtual_text = true, -- false
+        virtual_text = false,
     },
     -- separator in finder
     finder_separator = "  ",
