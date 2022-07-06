@@ -5,9 +5,9 @@ local opts = { noremap = true, silent = true }
 -- Basic
 --------------
 -- Reload Nvim
-map ('n', '<F2>', ':source $MYVIMRC<CR>', opts)
+map('n', '<F2>', ':source $MYVIMRC<CR>', opts)
 -- Enter to clear highlighting
-map ('n', '<CR>', ':noh<CR>', opts)
+map('n', '<CR>', ':noh<CR>', opts)
 -- Maps escape to normal mode for terminal
 -- May cause problems for terminal
 --tnoremap <esc> <esc><C-\><C-N>
@@ -16,15 +16,15 @@ map ('n', '<CR>', ':noh<CR>', opts)
 -- Replace
 ----------------
 -- Replace object with default register without yanking replaced text
-map ('n', 'r', '\'"_c\' . (nr2char(getchar())) . (nr2char(getchar())) . "<C-r>+<esc>"', { expr = true })
+map('n', 'r', '\'"_c\' . (nr2char(getchar())) . (nr2char(getchar())) . "<C-r>+<esc>"', { expr = true })
 -- Two character replace motions
 -- * these are questionable
 --nnoremap <silent> rr "_cc<esc>Vp
 --nnoremap <silent> rr "_ddP
-map ('n', 'rr', '"_cc<C-r>+<BS><esc>', opts)
-map ('n', 'r0', '"_c0<C-r>+<BS><esc>', opts)
-map ('n', 'r$', '"_c$<C-r>+<BS><esc>', opts)
-map ('n', 'r^', '"_c^<C-r>+<BS><esc>', opts)
+map('n', 'rr', '"_cc<C-r>+<BS><esc>', opts)
+map('n', 'r0', '"_c0<C-r>+<BS><esc>', opts)
+map('n', 'r$', '"_c$<C-r>+<BS><esc>', opts)
+map('n', 'r^', '"_c^<C-r>+<BS><esc>', opts)
 
 --------------
 -- Latex
