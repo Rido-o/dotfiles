@@ -67,3 +67,15 @@ vim.g.bufferline = {
     -- where X is the buffer number. But only a static string is accepted here.
     no_name_title = nil,
 }
+
+-- Offset bufferline when nvim-tree is opened
+local nvim_tree_events = require('nvim-tree.events')
+local bufferline_state = require('bufferline.state')
+
+nvim_tree_events.on_tree_open(function ()
+    bufferline_state.set_offset(31, "File Tree")
+end)
+
+nvim_tree_events.on_tree_close(function ()
+    bufferline_state.set_offset(0)
+end)
