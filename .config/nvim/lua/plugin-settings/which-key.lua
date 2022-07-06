@@ -246,5 +246,5 @@ local setKeybinds = function()
     end
 end
 
--- Autocmd to enable local keybinds
+-- Autocmd to enable local keybinds -- Doesn't work with :file?
 vim.api.nvim_create_autocmd({'FileType'}, {callback = setKeybinds})
