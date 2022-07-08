@@ -27,6 +27,7 @@ end
 return require('packer').startup({
     function(use)
         -- potential plugins {trouble.nvim, nvim-navic, aerial.nvim, neogit, kylechui/nvim-surround, impatient.nvim}
+        -- potential move movement plugins {leap, hop, lightspeed, quickscope}
         -----------------------
         -- Packer
         -----------------------
