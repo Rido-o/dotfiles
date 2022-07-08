@@ -127,7 +127,8 @@ wk.register({
     a = {
         name = 'Lsp',
         a = {'<CMD>Lspsaga code_action<CR>' , 'Code action'},
-        r = {'<CMD>Lspsaga rename<CR>' , 'Rename'}
+        r = {'<CMD>Lspsaga rename<CR>' , 'Rename'},
+        f = {'<CMD>lua vim.lsp.buf.formatting()<CR>' , 'Format'}
     },
 
     -- Fugitive
