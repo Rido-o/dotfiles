@@ -37,6 +37,7 @@ local function backwards()
     local node = lib.get_node_at_cursor()
 
     -- Bug 1# - using h on a closed directory in an open directory will go dir_up
+    -- maybe get cwd and directory/directory of file and compare the two
     if node.nodes ~= nil and node.open == true then
         require('nvim-tree.actions.movements').parent_node(true)(node)
     elseif node.nodes ~= nil and node.open == false then
