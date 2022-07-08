@@ -26,7 +26,7 @@ end
 --------------------------
 return require('packer').startup({
     function(use)
-        -- potential plugins {trouble.nvim, nvim-navic, aerial.nvim}
+        -- potential plugins {trouble.nvim, nvim-navic, aerial.nvim, neogit, kylechui/nvim-surround, impatient.nvim}
         -----------------------
         -- Packer
         -----------------------
