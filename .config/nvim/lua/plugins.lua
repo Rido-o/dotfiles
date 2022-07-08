@@ -135,11 +135,11 @@ return require('packer').startup({
         -- Check lsp-installer requirements
         use({
             'williamboman/nvim-lsp-installer',
-            config = plugin_config('plugin-settings.nvim-lspinstall'),
+            config = plugin_config('plugin-settings.lsp-installer'),
         })
         use({
             'neovim/nvim-lspconfig',
-            config = plugin_config('plugin-settings.nvim-lspconfig'),
+            config = plugin_config('plugin-settings.lspconfig'),
         })
         use({
             'hrsh7th/nvim-cmp',
@@ -154,7 +154,7 @@ return require('packer').startup({
                 { 'rafamadriz/friendly-snippets' },
             },
             config = {
-                plugin_config('plugin-settings.nvim-cmp'),
+                plugin_config('plugin-settings.cmp'),
                 -- Enable friendly snippets
                 require('luasnip.loaders.from_vscode').lazy_load(),
             },
@@ -178,7 +178,7 @@ return require('packer').startup({
         })
         use({
             'windwp/nvim-autopairs',
-            config = plugin_config('plugin-settings.nvim-autopairs'),
+            config = plugin_config('plugin-settings.autopairs'),
         })
         use('tpope/vim-surround')
         use('tpope/vim-repeat')
