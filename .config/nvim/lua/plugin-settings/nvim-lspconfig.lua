@@ -28,20 +28,18 @@ local on_attach = function(client, bufnr)
         print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
     end, bufopts)
     vim.keymap.set('n', '<space>aD', vim.lsp.buf.type_definition, bufopts)
-    vim.keymap.set('n', '<space>ar', vim.lsp.buf.rename, bufopts)
-    vim.keymap.set('n', '<space>aa', vim.lsp.buf.code_action, bufopts)
-    vim.keymap.set('n', '<space>af', vim.lsp.buf.formatting, bufopts)
+    -- vim.keymap.set('n', '<space>ar', vim.lsp.buf.rename, bufopts)
+    -- vim.keymap.set('n', '<space>aa', vim.lsp.buf.code_action, bufopts)
+    -- vim.keymap.set('n', '<space>af', vim.lsp.buf.formatting, bufopts)
 end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
--- map buffer local keybindings when the language server attaches
-local servers = require'nvim-lsp-installer.servers'.get_installed_server_names()
+local servers = {'pyright', 'sumneko_lua'}
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 for _, lsp in ipairs(servers) do
     nvim_lsp[lsp].setup{
         on_attach = on_attach,
-        flags = {
-            debounce_text_changes = 150,
-        }
+        capabilities = capabilities
     }
 end
