@@ -34,6 +34,12 @@ local function open_cwd()
 end
 
 require('nvim-tree').setup({
+    hijack_cursor = true,
+    create_in_closed_folder = true,
+    diagnostics = {
+        enable = true,
+        show_on_dirs = true,
+    },
     view = {
         mappings = {
             list = {
@@ -45,6 +51,7 @@ require('nvim-tree').setup({
                 { key = 'v', action = 'vsplit' },
                 { key = 's', action = 'split' },
                 { key = 'n', action = 'create' },
+                { key = '/', action = 'live_filter' },
             },
         },
     },
@@ -58,6 +65,10 @@ require('nvim-tree').setup({
                 none = '  ',
             },
         },
+    },
+    live_filter = {
+        prefix = '[SEARCH]: ',
+        always_show_folders = false,
     },
 })
 
