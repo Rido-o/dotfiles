@@ -42,9 +42,10 @@ require('nvim-tree').setup({
     },
     view = {
         mappings = {
+            custom_only = false,
             list = {
                 -- Key mappings
-                { key = { 'l', 'o', 'e', '<2-LeftMouse>' }, action = 'edit', action_cb = edit_light },
+                { key = { 'l', 'e' }, action = 'edit', action_cb = edit_light },
                 { key = '<CR>', action = 'cd', action_cb = open_cwd },
                 { key = 'h', action = 'close_node' },
                 { key = { 'H', '<BS>' }, action = 'dir_up' },
@@ -52,6 +53,10 @@ require('nvim-tree').setup({
                 { key = 's', action = 'split' },
                 { key = 'n', action = 'create' },
                 { key = '/', action = 'live_filter' },
+                { key = '.', action = 'toggle_dotfiles' },
+                { key = ';', action = 'run_file_command' },
+                { key = '<C-y>', action = 'copy_absolute_path' },
+                { key = '?', action = 'toggle_help' },
             },
         },
     },
