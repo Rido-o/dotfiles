@@ -98,6 +98,7 @@ wk.register({
     w = {'<CMD>w<CR>' , 'Write'},
     q = {'<CMD>q<CR>' , 'Quit'},
     --n = {'<CMD>call NERDTreeToggleInCurDir()' , 'Toggle file explorer'},
+    -- Want it to function such that L-n opens, L-n closes if in tree, else L-n moves focus to tree
     n = {'<CMD>NvimTreeToggle<CR>' , 'Toggle file explorer'},
     U = {'<CMD>UndotreeToggle<CR>' , 'Open undo tree'},           -- Undo tree toggle
     d = {'<CMD>NnnPicker<CR>' , 'Open nnn'},
