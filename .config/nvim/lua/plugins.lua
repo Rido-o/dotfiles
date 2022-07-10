@@ -71,9 +71,10 @@ return require('packer').startup({
             config = plugin_config('plugin-settings.which-key'),
         })
         use({
-            'romgrk/barbar.nvim',
+            'akinsho/bufferline.nvim',
+            tag = 'v2.*',
             requires = { 'kyazdani42/nvim-web-devicons' },
-            config = plugin_config('plugin-settings.barbar'),
+            config = plugin_config('plugin-settings.bufferline'),
         })
 
         -----------------
@@ -160,8 +161,8 @@ return require('packer').startup({
             },
         })
         use({
-            'glepnir/lspsaga.nvim',
-            config = plugin_config('plugin-settings.lspsaga'),
+           'glepnir/lspsaga.nvim',
+           config = plugin_config('plugin-settings.lspsaga'),
         })
         use({
             'nvim-treesitter/nvim-treesitter',
