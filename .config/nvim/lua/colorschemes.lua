@@ -23,6 +23,9 @@ end
 
 -- Kanagawa
 local function kanagawa()
+    require('kanagawa').setup({
+        globalStatus = true,
+    })
     setColorscheme('kanagawa')
 end
 
