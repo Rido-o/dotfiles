@@ -12,26 +12,55 @@ require('bufferline').setup({
         offsets = { { filetype = 'NvimTree', text = 'File Explorer', text_align = 'center' } },
     },
     highlights = {
+        -- Bar Color
         fill = {
             guibg = {
                 attribute = 'bg',
                 highlight = 'TabLineFill',
             },
         },
-        separator = {
+        -- Tab Seperator color
+        separator_selected = {
             guifg = {
                 attribute = 'fg',
                 highlight = 'Special',
             },
         },
+        -- Selected buffer indicator color
         indicator_selected = {
             guifg = {
                 attribute = 'fg',
                 highlight = 'Special',
             },
         },
+        -- Selected buffer
         buffer_selected = {
             gui = 'NONE',
+        },
+        -- Modified icon color for inactive buffers
+        modified = {
+            guifg = {
+                attribute = 'fg',
+                highlight = 'Special',
+            },
+        },
+        -- Modified icon color for active buffers
+        modified_selected = {
+            guifg = {
+                attribute = 'fg',
+                highlight = 'Special',
+            },
+        },
+        -- Inactive buffer colors
+        background = {
+            guifg = {
+                attribute = 'fg',
+                highlight = 'Comment',
+            },
+            guibg = {
+                attribute = 'bg',
+                highlight = 'TabLine',
+            },
         },
     },
 })
