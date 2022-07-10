@@ -10,11 +10,11 @@ local function edit_light()
     local node = lib.get_node_at_cursor()
 
     if node.link_to and not node.nodes then
-        require('nvim-tree.actions.open-file').fn(action, node.link_to)
+        require('nvim-tree.actions.node.open-file').fn(action, node.link_to)
     elseif node.nodes ~= nil then
         lib.expand_or_collapse(node)
     elseif node.name ~= '..' then
-        require('nvim-tree.actions.open-file').fn(action, node.absolute_path)
+        require('nvim-tree.actions.node.open-file').fn(action, node.absolute_path)
     end
 end
 
@@ -24,12 +24,12 @@ local function open_cwd()
     local node = lib.get_node_at_cursor()
 
     if node.link_to and not node.nodes then
-        require('nvim-tree.actions.open-file').fn(action, node.link_to)
+        require('nvim-tree.actions.node.open-file').fn(action, node.link_to)
     elseif node.nodes ~= nil then
-        require('nvim-tree.actions.change-dir').fn(node.absolute_path)
+        require('nvim-tree.actions.root.change-dir').fn(node.absolute_path)
         print(node.absolute_path)
     elseif node.name ~= '..' then
-        require('nvim-tree.actions.open-file').fn(action, node.absolute_path)
+        require('nvim-tree.actions.node.open-file').fn(action, node.absolute_path)
     end
 end
 
