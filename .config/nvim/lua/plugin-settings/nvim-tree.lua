@@ -49,6 +49,7 @@ require('nvim-tree').setup({
                 { key = '<CR>', action = 'cd', action_cb = open_cwd },
                 { key = 'h', action = 'close_node' },
                 { key = { 'H', '<BS>' }, action = 'dir_up' },
+                { key = 'L', action = 'expand_all' },
                 { key = 'v', action = 'vsplit' },
                 { key = 's', action = 'split' },
                 { key = 'n', action = 'create' },
