@@ -1,9 +1,9 @@
 -- use custom config
 require('lspsaga').init_lsp_saga({
     -- "single" | "double" | "rounded" | "bold" | "plus"
-    border_style = "single",
+    border_style = 'single',
     -- when cursor in saga window you config these to move
-    move_in_saga = { prev = '<C-p>', next = '<C-n>'},
+    move_in_saga = { prev = '<C-p>', next = '<C-n>' },
     -- Error, Warn, Info, Hint
     -- use emoji like
     -- { "🙀", "😿", "😾", "😺" }
@@ -14,13 +14,13 @@ require('lspsaga').init_lsp_saga({
     -- is function type it will have a param `entry`
     -- entry is a table type has these filed
     -- { bufnr, code, col, end_col, end_lnum, lnum, message, severity, source }
-    diagnostic_header = { " ", " ", " ", "ﴞ " },
+    diagnostic_header = { ' ', ' ', ' ', 'ﴞ ' },
     -- show diagnostic source
     show_diagnostic_source = true,
     -- add bracket or something with diagnostic source, just have 2 elements
     diagnostic_source_bracket = {},
     -- use emoji lightbulb in default
-    code_action_icon = "", -- "💡"
+    code_action_icon = '', -- "💡"
     -- if true can press number to execute the codeaction in codeaction window
     code_action_num_shortcut = true,
     -- same as nvim-lightbulb but async
@@ -31,28 +31,32 @@ require('lspsaga').init_lsp_saga({
         virtual_text = false,
     },
     -- separator in finder
-    finder_separator = "  ",
+    finder_separator = '  ',
     -- preview lines of lsp_finder and definition preview
     max_preview_lines = 10,
     finder_action_keys = {
-        open = "o",
-        vsplit = "s",
-        split = "i",
-        tabe = "t",
-        quit = "q",
-        scroll_down = "<C-f>",
-        scroll_up = "<C-b>", -- quit can be a table
+        open = 'o',
+        vsplit = 's',
+        split = 'i',
+        tabe = 't',
+        quit = 'q',
+        scroll_down = '<C-f>',
+        scroll_up = '<C-b>', -- quit can be a table
     },
     code_action_keys = {
-        quit = {"q", "<ESC>"}, -- <ESC>
-        exec = "<CR>",
+        quit = { 'q', '<ESC>' }, -- <ESC>
+        exec = '<CR>',
     },
-    rename_action_quit = "<C-c>",
-    definition_preview_icon = "  ",
+    rename_action_quit = '<C-c>',
+    definition_preview_icon = '  ',
     -- show symbols in winbar must nightly
-    symbol_in_winbar = false,
-    winbar_separator = '>',
-    winbar_show_file = true,
+    symbol_in_winbar = {
+        in_custom = false,
+        enable = false,
+        separator = ' ',
+        show_file = true,
+        click_support = false,
+    },
     -- function type  return file string,
     -- by default saga use expand('%:t')
     -- you can custom file name include path or something
