@@ -1,7 +1,7 @@
-local nvim_lsp = require('lspconfig')
+local lspconfig = require('lspconfig')
 
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
-local opts = { noremap=true, silent=true }
+local opts = { noremap = true, silent = true }
 vim.keymap.set('n', '<space>ae', vim.diagnostic.open_float, opts)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
@@ -15,7 +15,7 @@ local on_attach = function(client, bufnr)
 
     -- Mappings.
     -- See `:help vim.lsp.*` for documentation on any of the below functions
-    local bufopts = { noremap=true, silent=true, buffer=bufnr }
+    local bufopts = { noremap = true, silent = true, buffer = bufnr }
     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
@@ -33,13 +33,15 @@ local on_attach = function(client, bufnr)
     -- vim.keymap.set('n', '<space>af', vim.lsp.buf.formatting, bufopts)
 end
 
--- Use a loop to conveniently call 'setup' on multiple servers and
-local servers = {'pyright', 'sumneko_lua'}
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+-- Add additional capabilities supported by nvim-cmp
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
+-- Enable some language servers with the additional completion capabilities offered by nvim-cmp
+local servers = { 'pyright', 'sumneko_lua' }
 for _, lsp in ipairs(servers) do
-    nvim_lsp[lsp].setup{
+    lspconfig[lsp].setup({
         on_attach = on_attach,
-        capabilities = capabilities
-    }
+        capabilities = capabilities,
+    })
 end
