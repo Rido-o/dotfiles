@@ -104,8 +104,8 @@ wk.register({
     c = {'<CMD>lua require("Comment.api").toggle_current_linewise()<CR>' , 'Toggle comment'},
 
     -- Buffers
-    y = {'<CMD>BufferLineCycleNext<CR>' , 'Previous Buffer'},
-    u = {'<CMD>BufferLineCyclePrev<CR>' , 'Next buffer'},
+    y = {'<CMD>BufferLineCyclePrev<CR>' , 'Previous Buffer'},
+    u = {'<CMD>BufferLineCycleNext<CR>' , 'Next buffer'},
     ['1'] = {'<CMD>BufferLineGoToBuffer 1<CR>' , 'Buffer 1'},
     ['2'] = {'<CMD>BufferLineGoToBuffer 2<CR>' , 'Buffer 2'},
     ['3'] = {'<CMD>BufferLineGoToBuffer 3<CR>' , 'Buffer 3'},
