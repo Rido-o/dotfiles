@@ -87,4 +87,4 @@ vim.cmd('hi! def link NvimTreeNormal Normal')
 -- Window Picker color
 vim.cmd('hi! def link NvimTreeWindowPicker StatusLine')
 -- Seperator color
-vim.cmd('hi! def link NvimTreeWinSeparator SignColumn')
+vim.cmd('hi! def link NvimTreeWinSeparator WinSeparator')
