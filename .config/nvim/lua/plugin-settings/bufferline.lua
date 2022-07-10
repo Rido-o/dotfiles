@@ -11,6 +11,7 @@ require('bufferline').setup({
         show_close_icon = false,
         offsets = { { filetype = 'NvimTree', text = 'File Explorer', text_align = 'center' } },
     },
+    -- Visible might be in the window but not selected
     highlights = {
         -- Bar Color
         fill = {
