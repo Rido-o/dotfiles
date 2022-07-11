@@ -4,9 +4,8 @@ require('bufferline').setup({
         numbers = function(opts)
             return string.format('%s', opts.raise(opts.ordinal))
         end,
-        separator_style = { '▎', '▎' }, -- ▎,▐
-        -- separator_style = 'thin',
-        indicator_icon = '▎',
+        -- separator_style = { '▎', '▎' }, -- ┃, ▎,▐
+        indicator_icon = '┃',
         show_buffer_close_icons = false,
         show_buffer_default_icon = true,
         show_close_icon = false,
@@ -17,13 +16,6 @@ require('bufferline').setup({
     },
     -- Visible might be in the window but not selected
     highlights = {
-        -- Bar Color
-        -- fill = {
-        --     guibg = {
-        --         attribute = 'bg',
-        --         highlight = 'TabLineFill',
-        --     },
-        -- },
         -- Selected buffer colors
         buffer_selected = {
             gui = 'NONE',
@@ -54,7 +46,7 @@ require('bufferline').setup({
         separator = {
             guifg = {
                 attribute = 'bg',
-                highlight = 'Normal',
+                highlight = 'Tabline',
             },
             guibg = {
                 attribute = 'bg',
@@ -66,6 +58,10 @@ require('bufferline').setup({
             guifg = {
                 attribute = 'fg',
                 highlight = 'Special',
+            },
+            guibg = {
+                attribute = 'bg',
+                highlight = 'Normal',
             },
         },
         -- Visible buffer indicator color
