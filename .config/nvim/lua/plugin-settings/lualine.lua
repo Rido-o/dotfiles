@@ -14,35 +14,43 @@ local function lsp_name()
     return msg
 end
 
-require('lualine').setup{
+require('lualine').setup({
     options = {
         icons_enabled = true,
         theme = 'auto',
-        component_separators = {'|', '|'}, -- {'', ''},
-        section_separators = {'', ''}, -- {'', ''},
+        component_separators = { '|', '|' }, -- {'', ''},
+        section_separators = { '', '' }, -- {'', ''},
         disabled_filetypes = {},
         always_divide_middle = true,
-        globalstatus = true
+        globalstatus = true,
     },
     sections = {
-        lualine_a = {'mode'},
-        lualine_b = {'branch', 'diff', 'diagnostics'},
-        lualine_c = {'filename'},
+        lualine_a = { 'mode' },
+        lualine_b = {
+            'branch',
+            'diff',
+            {
+                'diagnostics',
+                symbols = { error = ' ', warn = ' ', info = ' ', hint = ' '}, -- {} {❎⚠🌳}
+            },
+        },
+        lualine_c = { 'filename' },
         lualine_x = {
-            {lsp_name, icon = '⎈ LSP:', separator = '|'}, -- 
+            { lsp_name, icon = '⎈ LSP:', separator = '|' }, -- 
             'encoding',
             'fileformat',
-            'filetype'},
-        lualine_y = {'progress'},
-        lualine_z = {'location'}
+            'filetype',
+        },
+        lualine_y = { 'progress' },
+        lualine_z = { 'location' },
     },
     inactive_sections = {
         lualine_a = {},
         lualine_b = {},
-        lualine_c = {'filename'},
-        lualine_x = {'location'},
+        lualine_c = { 'filename' },
+        lualine_x = { 'location' },
         lualine_y = {},
-        lualine_z = {}
+        lualine_z = {},
     },
     tabline = {},
     extensions = {
@@ -50,5 +58,5 @@ require('lualine').setup{
         'nvim-tree',
         --'quickfix',
         'toggleterm',
-    }
-}
+    },
+})
