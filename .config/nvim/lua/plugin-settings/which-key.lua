@@ -218,7 +218,7 @@ wk.register({
 -----------------------
 vim.g.maplocalleader = ','
 
-local setKeybinds = function()
+local setLocalKeybinds = function()
     local fileTy = vim.api.nvim_buf_get_option(0, "filetype")
     local opts = { prefix = '<localleader>', buffer = 0 }
 
@@ -256,4 +256,4 @@ local setKeybinds = function()
 end
 
 -- Autocmd to enable local keybinds -- Doesn't work with :file?
-vim.api.nvim_create_autocmd({'FileType'}, {callback = setKeybinds})
+vim.api.nvim_create_autocmd({'FileType'}, {callback = setLocalKeybinds})
