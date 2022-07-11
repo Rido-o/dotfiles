@@ -4,7 +4,6 @@ require('bufferline').setup({
         numbers = function(opts)
             return string.format('%s', opts.raise(opts.ordinal))
         end,
-        -- separator_style = { '▎', '▎' }, -- ┃, ▎,▐
         indicator_icon = '┃',
         show_buffer_close_icons = false,
         show_buffer_default_icon = true,
@@ -14,13 +13,12 @@ require('bufferline').setup({
             { filetype = 'undotree', text = 'Undo Tree', text_align = 'center' },
         },
     },
-    -- Visible might be in the window but not selected
     highlights = {
         -- Selected buffer colors
         buffer_selected = {
             gui = 'NONE',
         },
-        -- Inactive visible buffer colors
+        -- Visible buffer colors
         buffer_visible = {
             guifg = {
                 attribute = 'fg',
@@ -42,7 +40,7 @@ require('bufferline').setup({
                 highlight = 'TabLine',
             },
         },
-        -- Tab Seperator color
+        -- Seperator color
         separator = {
             guifg = {
                 attribute = 'bg',
@@ -71,14 +69,14 @@ require('bufferline').setup({
                 highlight = 'TabLine',
             },
         },
-        -- Modified icon color for active buffers
+        -- Selected buffer modified icon color
         modified_selected = {
             guifg = {
                 attribute = 'fg',
                 highlight = 'WarningMsg',
             },
         },
-        -- Modified icon color for visible buffers
+        -- Visible buffer modified icon color
         modified_visible = {
             guifg = {
                 attribute = 'fg',
@@ -89,7 +87,7 @@ require('bufferline').setup({
                 highlight = 'TabLine',
             },
         },
-        -- Modified icon color for inactive buffers
+        -- Inactive buffer modified icon color
         modified = {
             guifg = {
                 attribute = 'fg',
@@ -100,11 +98,11 @@ require('bufferline').setup({
                 highlight = 'TabLine',
             },
         },
-        -- Color of selected buffer number
+        -- Selected buffer number color
         numbers_selected = {
             gui = 'NONE',
         },
-        -- Color of visible buffer number
+        -- Visible buffer number color
         numbers_visible = {
             guibg = {
                 attribute = 'bg',
