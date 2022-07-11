@@ -85,9 +85,9 @@ end
 -- Toggle or goto nvim-tree
 function ToggleNvimTree()
     if vim.bo.filetype == 'NvimTree' then
-        vim.cmd('NvimTreeToggle')
+        require('nvim-tree').toggle()
     else
-        vim.cmd('NvimTreeFocus')
+        require('nvim-tree').focus()
     end
 end
 
