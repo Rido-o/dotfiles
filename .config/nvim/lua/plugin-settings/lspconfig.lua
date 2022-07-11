@@ -1,5 +1,11 @@
 local lspconfig = require('lspconfig')
 
+local signs = { Error = ' ', Warn = '⚠ ', Hint = ' ', Info = ' ' } -- 
+for type, icon in pairs(signs) do
+    local hl = 'DiagnosticSign' .. type
+    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+end
+
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap = true, silent = true }
 vim.keymap.set('n', '<space>ae', vim.diagnostic.open_float, opts)
