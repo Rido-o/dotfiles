@@ -29,7 +29,7 @@ require('lualine').setup{
         lualine_b = {'branch', 'diff', 'diagnostics'},
         lualine_c = {'filename'},
         lualine_x = {
-            {lsp_name, icon = 'LSP:', separator = '|'},
+            {lsp_name, icon = '⎈ LSP:', separator = '|'}, -- 
             'encoding',
             'fileformat',
             'filetype'},
