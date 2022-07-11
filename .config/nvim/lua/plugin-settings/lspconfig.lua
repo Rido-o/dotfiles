@@ -1,5 +1,6 @@
 local lspconfig = require('lspconfig')
 
+-- Set lsp sign column signs
 local signs = { Error = ' ', Warn = '⚠ ', Hint = ' ', Info = ' ' } -- 
 for type, icon in pairs(signs) do
     local hl = 'DiagnosticSign' .. type
