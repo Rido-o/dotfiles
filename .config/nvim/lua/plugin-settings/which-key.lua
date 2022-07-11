@@ -108,7 +108,7 @@ wk.register({
     q = {'<CMD>q<CR>' , 'Quit'},
     n = {'<CMD>lua ToggleNvimTree()<CR>' , 'Focus on file explorer'},
     N = {'<CMD>NvimTreeToggle<CR>' , 'Toggle file explorer'},
-    U = {'<CMD>UndotreeToggle<CR>' , 'Open undo tree'},           -- Undo tree toggle
+    U = {'<CMD>UndotreeToggle<CR>' , 'Open undo tree'},
     d = {'<CMD>NnnPicker<CR>' , 'Open nnn'},
     c = {'<CMD>lua require("Comment.api").toggle_current_linewise()<CR>' , 'Toggle comment'},
 
