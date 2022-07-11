@@ -36,10 +36,6 @@ end
 require('nvim-tree').setup({
     hijack_cursor = true,
     create_in_closed_folder = true,
-    diagnostics = {
-        enable = true,
-        show_on_dirs = true,
-    },
     view = {
         mappings = {
             custom_only = false,
@@ -71,6 +67,24 @@ require('nvim-tree').setup({
                 none = '  ',
             },
         },
+        icons = {
+            glyphs = {
+                folder = {
+                    arrow_closed = '‣',
+                    arrow_open = '⏷',
+                }
+            }
+        }
+    },
+    diagnostics = {
+        enable = true,
+        show_on_dirs = true,
+        icons = {
+            error = '',
+            warning = '⚠',
+            info = '',
+            hint = '',
+        }
     },
     live_filter = {
         prefix = '[SEARCH]: ',
