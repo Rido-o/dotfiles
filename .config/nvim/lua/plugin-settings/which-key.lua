@@ -82,6 +82,15 @@ function ColorColumn()
     end
 end
 
+-- Toggle or goto nvim-tree
+function ToggleNvimTree()
+    if vim.bo.filetype == 'NvimTree' then
+        vim.cmd('NvimTreeToggle')
+    else
+        vim.cmd('NvimTreeFocus')
+    end
+end
+
 local wk = require('which-key')
 
 --------------------
@@ -97,9 +106,8 @@ wk.register({
     l = {'<CMD>wincmd l<CR>' , 'Move right'},
     w = {'<CMD>w<CR>' , 'Write'},
     q = {'<CMD>q<CR>' , 'Quit'},
-    --n = {'<CMD>call NERDTreeToggleInCurDir()' , 'Toggle file explorer'},
-    -- Want it to function such that L-n opens, L-n closes if in tree, else L-n moves focus to tree
-    n = {'<CMD>NvimTreeToggle<CR>' , 'Toggle file explorer'},
+    n = {'<CMD>lua ToggleNvimTree()<CR>' , 'Focus on file explorer'},
+    N = {'<CMD>NvimTreeToggle<CR>' , 'Toggle file explorer'},
     U = {'<CMD>UndotreeToggle<CR>' , 'Open undo tree'},           -- Undo tree toggle
     d = {'<CMD>NnnPicker<CR>' , 'Open nnn'},
     c = {'<CMD>lua require("Comment.api").toggle_current_linewise()<CR>' , 'Toggle comment'},
