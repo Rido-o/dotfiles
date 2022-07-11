@@ -28,10 +28,13 @@ require('lualine').setup({
         lualine_a = { 'mode' },
         lualine_b = {
             'branch',
-            'diff',
+            {
+                'diff',
+                symbols = { added = ' ', modified = ' ', removed = ' ' },
+            },
             {
                 'diagnostics',
-                symbols = { error = ' ', warn = '⚠ ', info = ' ', hint = ' '}, -- {} {❎⚠🌳}
+                symbols = { error = ' ', warn = '⚠ ', info = ' ', hint = ' ' }, -- {} {❎⚠🌳}
             },
         },
         lualine_c = { 'filename' },
