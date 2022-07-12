@@ -124,6 +124,10 @@ return require('packer').startup({
             },
             config = plugin_config('telescope'),
         })
+        use({
+            'notjedi/nvim-rooter.lua',
+            config = require('nvim-rooter').setup()
+        })
 
         ------------
         -- lSP
