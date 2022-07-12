@@ -7,7 +7,7 @@ elseif raw_os == 'Linux' then
 end
 
 -- Main files
-require('user.core.settings')
-require('user.core.colorschemes')
-require('user.core.plugins')
-require('user.core.keymaps')
+require('core.settings')
+require('core.colorschemes')
+require('core.plugins')
+require('core.keymaps')

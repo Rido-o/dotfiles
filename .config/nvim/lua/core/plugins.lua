@@ -18,7 +18,7 @@ require('packer').init({
 
 -- Function for sourcing config files
 local function plugin_config(file)
-    require('user.plugins.' .. file)
+    require('plugins.' .. file)
 end
 
 --------------------------
