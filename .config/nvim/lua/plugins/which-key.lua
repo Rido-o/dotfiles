@@ -107,7 +107,6 @@ wk.register({
     n = {'<CMD>lua ToggleNvimTree()<CR>' , 'Focus on file explorer'},
     N = {'<CMD>NvimTreeToggle<CR>' , 'Toggle file explorer'},
     U = {'<CMD>UndotreeToggle<CR>' , 'Open undo tree'},
-    d = {'<CMD>NnnPicker<CR>' , 'Open nnn'},
     c = {'<CMD>lua require("Comment.api").toggle_current_linewise()<CR>' , 'Toggle comment'},
 
     -- Buffers
@@ -185,17 +184,6 @@ wk.register({
             w = {'<plug>VimwikiMakeDiaryNote' , 'Todays diary'},
             y = {'<plug>VimwikiMakeYesterdayDiaryNote' , 'Yesterdays diary'},
         },
-    },
-
-    -- Hop
-    o = {
-        name = 'Hop',
-        ['1'] = {'<CMD>HopChar1<CR>' , 'Hop to 1 char'},
-        ['2'] = {'<CMD>HopChar2<CR>' , 'Hop to 2 char'},
-        w = {'<CMD>HopWord<CR>' , 'Hop to word'},
-        p = {'<CMD>HopPattern<CR>' , 'Hop to pattern'},
-        l = {'<CMD>HopLine<CR>' , 'Hop to line'},
-        L = {'<CMD>HopLineStart<CR>' , 'Hop to line start'},
     },
 
     -- Toggle settings

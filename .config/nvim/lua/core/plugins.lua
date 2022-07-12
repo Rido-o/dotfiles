@@ -45,17 +45,16 @@ return require('packer').startup({
         ---------------------
         -- Colorschemes
         ---------------------
-        use({ 'AlphaTechnolog/pywal.nvim', as = 'colors-pywal' })
-        use({ 'folke/tokyonight.nvim', as = 'colors-tokyonight' })
-        use({ 'rebelot/kanagawa.nvim', as = 'colors-kanagawa' })
+        use({ 'AlphaTechnolog/pywal.nvim'})
+        use({ 'folke/tokyonight.nvim'})
+        use({ 'rebelot/kanagawa.nvim'})
 
         -----------
         -- UI
         -----------
         use({
             'norcalli/nvim-colorizer.lua',
-            -- not optimal but require('colorizer').setup() wasn't working check #FFF
-            config = vim.api.nvim_create_autocmd({ 'BufEnter' }, { command = 'ColorizerAttachToBuffer' }),
+            config = require('colorizer').setup()
         })
         use({
             'nvim-lualine/lualine.nvim',
@@ -64,7 +63,9 @@ return require('packer').startup({
         })
         use({
             'lukas-reineke/indent-blankline.nvim',
-            config = plugin_config('indent-blankline'),
+            config = require("indent_blankline").setup{
+                char = '┊',
+            }
         })
         use({
             'folke/which-key.nvim',
@@ -97,10 +98,6 @@ return require('packer').startup({
             requires = { 'kyazdani42/nvim-web-devicons' },
             config = plugin_config('nvim-tree'),
         })
-        use({
-            'mcchrish/nnn.vim',
-            config = plugin_config('nnn'),
-        })
 
         ------------------
         -- Utilities
@@ -115,7 +112,6 @@ return require('packer').startup({
             'akinsho/nvim-toggleterm.lua',
             config = plugin_config('toggleterm'),
         })
-        use('airblade/vim-rooter')
         use({
             'jose-elias-alvarez/null-ls.nvim',
             config = plugin_config('null-ls'),
@@ -127,10 +123,6 @@ return require('packer').startup({
                 { 'nvim-lua/plenary.nvim' },
             },
             config = plugin_config('telescope'),
-        })
-        use({
-            'phaazon/hop.nvim',
-            config = plugin_config('hop'),
         })
 
         ------------
@@ -178,7 +170,7 @@ return require('packer').startup({
         ---------------
         use({
             'numToStr/Comment.nvim',
-            config = plugin_config('comment-nvim'),
+            config = require('Comment').setup()
         })
         use({
             'windwp/nvim-autopairs',
