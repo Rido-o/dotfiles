@@ -17,8 +17,8 @@ require('packer').init({
 })
 
 -- Function for sourcing config files
-local function plugin_config(config)
-    require(config)
+local function plugin_config(file)
+    require('user.plugins.' .. file)
 end
 
 --------------------------
@@ -39,7 +39,7 @@ return require('packer').startup({
         use('tpope/vim-fugitive')
         use({
             'lewis6991/gitsigns.nvim',
-            config = plugin_config('plugin-settings.gitsigns'),
+            config = plugin_config('gitsigns'),
         })
 
         ---------------------
@@ -60,15 +60,15 @@ return require('packer').startup({
         use({
             'nvim-lualine/lualine.nvim',
             requires = { 'kyazdani42/nvim-web-devicons' },
-            config = plugin_config('plugin-settings.lualine'),
+            config = plugin_config('lualine'),
         })
         use({
             'lukas-reineke/indent-blankline.nvim',
-            config = plugin_config('plugin-settings.indent-blankline'),
+            config = plugin_config('indent-blankline'),
         })
         use({
             'folke/which-key.nvim',
-            config = plugin_config('plugin-settings.which-key'),
+            config = plugin_config('which-key'),
         })
         use({
             'akinsho/bufferline.nvim',
@@ -77,7 +77,7 @@ return require('packer').startup({
                 'kyazdani42/nvim-web-devicons',
                 'famiu/bufdelete.nvim'
             },
-            config = plugin_config('plugin-settings.bufferline'),
+            config = plugin_config('bufferline'),
         })
 
         -----------------
@@ -86,7 +86,7 @@ return require('packer').startup({
         use({
             'lervag/vimtex', -- Requres latexmk, pdfviewer(mupdf)
             ft = 'tex',
-            config = plugin_config('plugin-settings.vimtex'),
+            config = plugin_config('vimtex'),
         })
 
         -------------------------
@@ -95,11 +95,11 @@ return require('packer').startup({
         use({
             'kyazdani42/nvim-tree.lua',
             requires = { 'kyazdani42/nvim-web-devicons' },
-            config = plugin_config('plugin-settings.nvim-tree'),
+            config = plugin_config('nvim-tree'),
         })
         use({
             'mcchrish/nnn.vim',
-            config = plugin_config('plugin-settings.nnn'),
+            config = plugin_config('nnn'),
         })
 
         ------------------
@@ -109,16 +109,16 @@ return require('packer').startup({
         use({
             'vimwiki/vimwiki',
             branch = 'dev',
-            config = plugin_config('plugin-settings.vimwiki'),
+            config = plugin_config('vimwiki'),
         })
         use({
             'akinsho/nvim-toggleterm.lua',
-            config = plugin_config('plugin-settings.toggleterm'),
+            config = plugin_config('toggleterm'),
         })
         use('airblade/vim-rooter')
         use({
             'jose-elias-alvarez/null-ls.nvim',
-            config = plugin_config('plugin-settings.null-ls'),
+            config = plugin_config('null-ls'),
         })
         use({
             'nvim-telescope/telescope.nvim',
@@ -126,11 +126,11 @@ return require('packer').startup({
                 { 'nvim-lua/popup.nvim' },
                 { 'nvim-lua/plenary.nvim' },
             },
-            config = plugin_config('plugin-settings.telescope'),
+            config = plugin_config('telescope'),
         })
         use({
             'phaazon/hop.nvim',
-            config = plugin_config('plugin-settings.hop'),
+            config = plugin_config('hop'),
         })
 
         ------------
@@ -139,11 +139,11 @@ return require('packer').startup({
         -- Check lsp-installer requirements
         use({
             'williamboman/nvim-lsp-installer',
-            config = plugin_config('plugin-settings.lsp-installer'),
+            config = plugin_config('lsp-installer'),
         })
         use({
             'neovim/nvim-lspconfig',
-            config = plugin_config('plugin-settings.lspconfig'),
+            config = plugin_config('lspconfig'),
         })
         use({
             'hrsh7th/nvim-cmp',
@@ -158,19 +158,19 @@ return require('packer').startup({
                 { 'rafamadriz/friendly-snippets' },
             },
             config = {
-                plugin_config('plugin-settings.cmp'),
+                plugin_config('cmp'),
                 -- Enable friendly snippets
                 require('luasnip.loaders.from_vscode').lazy_load(),
             },
         })
         use({
            'glepnir/lspsaga.nvim',
-           config = plugin_config('plugin-settings.lspsaga'),
+           config = plugin_config('lspsaga'),
         })
         use({
             'nvim-treesitter/nvim-treesitter',
             run = ':TSUpdate',
-            config = plugin_config('plugin-settings.treesitter'),
+            config = plugin_config('treesitter'),
         })
 
         ---------------
@@ -178,11 +178,11 @@ return require('packer').startup({
         ---------------
         use({
             'numToStr/Comment.nvim',
-            config = plugin_config('plugin-settings.comment-nvim'),
+            config = plugin_config('comment-nvim'),
         })
         use({
             'windwp/nvim-autopairs',
-            config = plugin_config('plugin-settings.autopairs'),
+            config = plugin_config('autopairs'),
         })
         use('tpope/vim-surround')
         use('tpope/vim-repeat')
