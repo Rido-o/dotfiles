@@ -16,10 +16,10 @@ local on_attach = function(client, bufnr)
         return { noremap = true, silent = true, buffer = bufnr, desc = map_desc }
     end
     -- See `:help vim.diagnostic.*` for documentation on any of the below functions
-    vim.keymap.set('n', '<space>ae', vim.diagnostic.open_float, bufopts('Popup diagnostic'))
+    vim.keymap.set('n', '<leader>ae', vim.diagnostic.open_float, bufopts('Popup diagnostic'))
     vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, bufopts('Previous diagnostic'))
     vim.keymap.set('n', ']d', vim.diagnostic.goto_next, bufopts('Next diagnostic'))
-    vim.keymap.set('n', '<space>aq', vim.diagnostic.setloclist, bufopts('Show diagnostic location list'))
+    vim.keymap.set('n', '<leader>aq', vim.diagnostic.setloclist, bufopts('Show diagnostic location list'))
     -- See `:help vim.lsp.*` for documentation on any of the below functions
     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts('Goto declaration'))
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts('Goto definition'))
@@ -27,15 +27,15 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts('Goto implementation'))
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts('Popup documentation'))
     vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts('Popup help'))
-    vim.keymap.set('n', '<space>aw', vim.lsp.buf.add_workspace_folder, bufopts('Add workspace folder'))
-    vim.keymap.set('n', '<space>aW', vim.lsp.buf.remove_workspace_folder, bufopts('Remove workspace folder'))
-    vim.keymap.set('n', '<space>al', function()
+    vim.keymap.set('n', '<leader>aw', vim.lsp.buf.add_workspace_folder, bufopts('Add workspace folder'))
+    vim.keymap.set('n', '<leader>aW', vim.lsp.buf.remove_workspace_folder, bufopts('Remove workspace folder'))
+    vim.keymap.set('n', '<leader>al', function()
         print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
     end, bufopts('List workspace folders'))
-    vim.keymap.set('n', '<space>aD', vim.lsp.buf.type_definition, bufopts('Goto type defintion'))
-    -- vim.keymap.set('n', '<space>ar', vim.lsp.buf.rename, bufopts)
-    -- vim.keymap.set('n', '<space>aa', vim.lsp.buf.code_action, bufopts)
-    -- vim.keymap.set('n', '<space>af', vim.lsp.buf.formatting, bufopts)
+    vim.keymap.set('n', '<leader>aD', vim.lsp.buf.type_definition, bufopts('Goto type defintion'))
+    -- vim.keymap.set('n', '<leader>ar', vim.lsp.buf.rename, bufopts)
+    -- vim.keymap.set('n', '<leader>aa', vim.lsp.buf.code_action, bufopts)
+    -- vim.keymap.set('n', '<leader>af', vim.lsp.buf.formatting, bufopts)
 end
 
 -- Add additional capabilities supported by nvim-cmp
