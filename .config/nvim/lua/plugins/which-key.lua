@@ -159,6 +159,7 @@ wk.register({
     f = {
         name = 'Find',
         f = {'<CMD>Telescope find_files<CR>', 'Find files'},
+        b = {'<CMD>Telescope buffers<CR>', 'Find buffer'},
         l = {'<CMD>Telescope live_grep<CR>' , 'Find lines'},
         g = {'<CMD>Telescope git_files<CR>' , 'Find git files'},
         s = {'<CMD>Telescope grep_string<CR>' , 'Find string'},
