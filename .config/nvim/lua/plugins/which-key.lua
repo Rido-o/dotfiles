@@ -70,8 +70,6 @@ vim.cmd("hi! def link WhichKeyValue Comment")
 ------------------------
 -- Global Mappings
 ------------------------
--- Set leader
-vim.g.mapleader = ' '
 
 -- Toggle color column
 function ColorColumn()
@@ -216,7 +214,6 @@ wk.register({
 -----------------------
 -- Local Mappings
 -----------------------
-vim.g.maplocalleader = ','
 
 local setLocalKeybinds = function()
     local fileTy = vim.api.nvim_buf_get_option(0, "filetype")

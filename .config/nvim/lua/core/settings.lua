@@ -36,6 +36,10 @@ local default_options = {
     -- cmdheight = 0,                  -- Makes command line height 0 -- In preperation for when it is added to stable
 }
 
+vim.g.mapleader = ' '               -- Map leader key
+vim.g.maplocalleader = ','          -- Map local leader key
+
+-- Set leader
 for k, v in pairs(default_options) do
     vim.o[k] = v
 end
