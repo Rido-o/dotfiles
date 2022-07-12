@@ -42,11 +42,23 @@ end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
+-- Individual server settings
+local settings = {
+    sumneko_lua = {
+        Lua = {
+            diagnostics = {
+                globals = { 'vim' }
+            }
+        }
+    }
+}
+
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
 local servers = { 'pyright', 'sumneko_lua' }
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup({
         on_attach = on_attach,
         capabilities = capabilities,
+        settings = settings[lsp]
     })
 end
