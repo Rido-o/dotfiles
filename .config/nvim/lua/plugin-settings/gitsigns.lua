@@ -54,17 +54,17 @@ require('gitsigns').setup {
         end
 
         -- Navigation
-        map('n', ']c', function()
+        map('n', ']h', function()
             if vim.wo.diff then return ']c' end
             vim.schedule(function() gs.next_hunk() end)
             return '<Ignore>'
-        end, {expr=true})
+        end, {expr=true, desc='Next hunk'})
 
-        map('n', '[c', function()
+        map('n', '[h', function()
             if vim.wo.diff then return '[c' end
             vim.schedule(function() gs.prev_hunk() end)
             return '<Ignore>'
-        end, {expr=true})
+        end, {expr=true, desc='Previous hunk'})
 
         -- Actions
         map({'n', 'v'}, '<leader>hs', ':Gitsigns stage_hunk<CR>')
@@ -80,6 +80,6 @@ require('gitsigns').setup {
         map('n', '<leader>td', gs.toggle_deleted)
 
         -- Text object
-        map({'o', 'x'}, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
+        map({'o', 'x'}, 'ih', ':<C-U>Gitsigns select_hunk<CR>', {desc = 'inner hunk'})
     end
 }
