@@ -73,7 +73,10 @@ return require('packer').startup({
         use({
             'akinsho/bufferline.nvim',
             tag = 'v2.*',
-            requires = { 'kyazdani42/nvim-web-devicons' },
+            requires = {
+                'kyazdani42/nvim-web-devicons',
+                'famiu/bufdelete.nvim'
+            },
             config = plugin_config('plugin-settings.bufferline'),
         })
 

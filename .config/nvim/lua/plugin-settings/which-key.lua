@@ -126,9 +126,9 @@ wk.register({
     ['9'] = {'<CMD>BufferLineGoToBuffer 9<CR>' , 'Buffer 9'},
     b = {
         name = 'Buffers',
-        q = {'<CMD>BufferClose<CR>' , 'Close buffer'},
+        q = {'<CMD>Bdelete<CR>' , 'Close buffer'},
         Q = {'<CMD>w|%bd|e#|bd#<CR>', 'Close all except current'},
-        p = {'<CMD>BufferPick<CR>' , 'Pick buffer'},
+        p = {'<CMD>BufferLinePick<CR>' , 'Pick buffer'},
     },
 
     -- Lsp
