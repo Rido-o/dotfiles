@@ -45,16 +45,16 @@ return require('packer').startup({
         ---------------------
         -- Colorschemes
         ---------------------
-        use({ 'AlphaTechnolog/pywal.nvim'})
-        use({ 'folke/tokyonight.nvim'})
-        use({ 'rebelot/kanagawa.nvim'})
+        use({ 'AlphaTechnolog/pywal.nvim' })
+        use({ 'folke/tokyonight.nvim' })
+        use({ 'rebelot/kanagawa.nvim' })
 
         -----------
         -- UI
         -----------
         use({
             'norcalli/nvim-colorizer.lua',
-            config = require('colorizer').setup()
+            config = require('colorizer').setup(),
         })
         use({
             'nvim-lualine/lualine.nvim',
@@ -63,9 +63,9 @@ return require('packer').startup({
         })
         use({
             'lukas-reineke/indent-blankline.nvim',
-            config = require("indent_blankline").setup{
+            config = require('indent_blankline').setup({
                 char = '┊',
-            }
+            }),
         })
         use({
             'folke/which-key.nvim',
@@ -76,7 +76,7 @@ return require('packer').startup({
             tag = 'v2.*',
             requires = {
                 'kyazdani42/nvim-web-devicons',
-                'famiu/bufdelete.nvim'
+                'famiu/bufdelete.nvim',
             },
             config = plugin_config('bufferline'),
         })
@@ -125,8 +125,9 @@ return require('packer').startup({
             config = plugin_config('telescope'),
         })
         use({
-            'notjedi/nvim-rooter.lua',
-            config = require('nvim-rooter').setup()
+            'ahmedkhalf/project.nvim',
+            config = plugin_config('project'),
+            requires = 'nvim-telescope/telescope.nvim',
         })
 
         ------------
@@ -160,8 +161,8 @@ return require('packer').startup({
             },
         })
         use({
-           'glepnir/lspsaga.nvim',
-           config = plugin_config('lspsaga'),
+            'glepnir/lspsaga.nvim',
+            config = plugin_config('lspsaga'),
         })
         use({
             'nvim-treesitter/nvim-treesitter',
@@ -174,7 +175,7 @@ return require('packer').startup({
         ---------------
         use({
             'numToStr/Comment.nvim',
-            config = require('Comment').setup()
+            config = require('Comment').setup(),
         })
         use({
             'windwp/nvim-autopairs',

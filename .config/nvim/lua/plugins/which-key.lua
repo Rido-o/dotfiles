@@ -165,8 +165,7 @@ wk.register({
         o = {'<CMD>Telescope oldfiles<CR>' , 'Find recently opened files'},
         h = {'<CMD>Telescope command_history<CR>' , 'Search command history'},
         c = {'<CMD>Telescope colorscheme<CR>' , 'List colorschemes'},
-        p = {'<CMD>Telescope builtin<CR>' , 'List all pickers'},
-        P = {'<CMD>Telescope planets<CR>' , 'Show planets'},
+        P = {'<CMD>Telescope builtin<CR>' , 'List all pickers'},
     },
 
     -- Vimwiki
