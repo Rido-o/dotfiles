@@ -61,10 +61,10 @@ require('nvim-tree').setup({
         indent_markers = {
             enable = true,
             icons = {
-                corner = '└ ',
-                edge = '│ ',
-                item = '│ ',
-                none = '  ',
+                corner = '└',
+                edge = '│',
+                item = '│',
+                none = ' ',
             },
         },
         icons = {
@@ -97,7 +97,9 @@ require('nvim-tree').setup({
 -------------------
 -- a list of groups can be found at `:help nvim-tree-highlight`
 -- Main window bg and text color
-vim.cmd('hi! def link NvimTreeNormal Normal')
+vim.cmd('hi! def link NvimTreeNormal normal')
+-- Main window bg when nvim-tree is not the focused window
+vim.cmd('hi! def link NvimTreeNormalNC normal')
 -- Window Picker color
 vim.cmd('hi! def link NvimTreeWindowPicker StatusLine')
 -- Seperator color
