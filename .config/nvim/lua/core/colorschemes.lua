@@ -1,4 +1,4 @@
-function setColorscheme(scheme)
+local function setColorscheme(scheme)
     vim.cmd('silent! colorscheme ' .. scheme)
 end
 
