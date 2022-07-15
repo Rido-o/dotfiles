@@ -181,7 +181,11 @@ return require('packer').startup({
             'windwp/nvim-autopairs',
             config = plugin_config('autopairs'),
         })
-        use('tpope/vim-surround')
+        use({
+            'kylechui/nvim-surround',
+            config = plugin_config('surround'),
+        })
+        -- use('tpope/vim-surround')
         use('tpope/vim-repeat')
 
         -- Run bootstrap if packer isnt' installed
