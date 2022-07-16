@@ -90,11 +90,10 @@ require('cokeline').setup({
                 text = function()
                     local text, width = 'File Explorer', 30
                     local left_padding = math.floor((width - string.len(text)) / 2)
-                    return string.rep(' ', left_padding)
+                    return string.rep(' ', left_padding) .. text
                 end,
-            },
-            {
-                text = 'File Explorer',
+                fg = get_hex('Noraml', 'fg'),
+                bg = get_hex('Noraml', 'bg'),
             },
         },
     },
