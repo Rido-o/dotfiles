@@ -72,13 +72,12 @@ return require('packer').startup({
             config = plugin_config('which-key'),
         })
         use({
-            'akinsho/bufferline.nvim',
-            tag = 'v2.*',
+            'noib3/nvim-cokeline',
             requires = {
                 'kyazdani42/nvim-web-devicons',
                 'famiu/bufdelete.nvim',
             },
-            config = plugin_config('bufferline'),
+            config = plugin_config('cokeline')
         })
 
         -----------------

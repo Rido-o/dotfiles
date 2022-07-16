@@ -110,22 +110,10 @@ wk.register({
     c = {'<CMD>lua require("Comment.api").toggle_current_linewise()<CR>' , 'Toggle comment'},
 
     -- Buffers
-    y = {'<CMD>BufferLineCyclePrev<CR>' , 'Previous Buffer'},
-    u = {'<CMD>BufferLineCycleNext<CR>' , 'Next buffer'},
-    ['1'] = {'<CMD>BufferLineGoToBuffer 1<CR>' , 'Buffer 1'},
-    ['2'] = {'<CMD>BufferLineGoToBuffer 2<CR>' , 'Buffer 2'},
-    ['3'] = {'<CMD>BufferLineGoToBuffer 3<CR>' , 'Buffer 3'},
-    ['4'] = {'<CMD>BufferLineGoToBuffer 4<CR>' , 'Buffer 4'},
-    ['5'] = {'<CMD>BufferLineGoToBuffer 5<CR>' , 'Buffer 5'},
-    ['6'] = {'<CMD>BufferLineGoToBuffer 6<CR>' , 'Buffer 6'},
-    ['7'] = {'<CMD>BufferLineGoToBuffer 7<CR>' , 'Buffer 7'},
-    ['8'] = {'<CMD>BufferLineGoToBuffer 8<CR>' , 'Buffer 8'},
-    ['9'] = {'<CMD>BufferLineGoToBuffer 9<CR>' , 'Buffer 9'},
     b = {
         name = 'Buffers',
         q = {'<CMD>Bdelete<CR>' , 'Close buffer'},
         Q = {'<CMD>w|%bd|e#|bd#<CR>', 'Close all except current'},
-        p = {'<CMD>BufferLinePick<CR>' , 'Pick buffer'},
     },
 
     -- Lsp
