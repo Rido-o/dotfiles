@@ -79,12 +79,20 @@ require('cokeline').setup({
         components.space,
         components.devicon,
         components.filename,
+        components.space,
         components.modified,
         components.two_space,
     },
     sidebar = {
         filetype = 'NvimTree',
         components = {
+            {
+                text = function()
+                    local text, width = 'File Explorer', 30
+                    local left_padding = math.floor((width - string.len(text)) / 2)
+                    return string.rep(' ', left_padding)
+                end,
+            },
             {
                 text = 'File Explorer',
             },
