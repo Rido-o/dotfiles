@@ -36,8 +36,7 @@ local components = {
     },
     index = {
         text = function(buffer)
-            -- will run into errors when there are more than 9 buffers open
-            return superscript_numbers[tostring(buffer.index)]
+            return tostring(buffer.index):gsub('.', function(c) return superscript_numbers[c] or '' end)
         end,
     },
     filename = {
