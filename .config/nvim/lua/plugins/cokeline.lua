@@ -36,7 +36,9 @@ local components = {
     },
     index = {
         text = function(buffer)
-            return tostring(buffer.index):gsub('.', function(c) return superscript_numbers[c] or '' end)
+            return tostring(buffer.index):gsub('.', function(c)
+                return superscript_numbers[c] or ''
+            end)
         end,
     },
     filename = {
