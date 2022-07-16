@@ -29,19 +29,28 @@ local default_options = {
     updatetime = 100,               -- For vim signify
     signcolumn = 'yes:1',           -- Add permanant column for signs on the left
     termguicolors = true,           -- Required for some color schemes and colorizer
-    undodir = vim.fn.stdpath('cache') .. '/undo',-- Undo directory
+    undodir = vim.fn.stdpath('cache') .. '/undo',   -- Undo directory
     list = true,
-    listchars = 'trail:-,tab:  ',   -- 'trail:­,tab:  ,extends:»,precedes:«,nbsp:⣿,eol:¬'
+    listchars = { trail = '-', tab = '  ' },        -- 'trail:­,tab:  ,extends:»,precedes:«,nbsp:⣿,eol:¬'
     laststatus = 3,                 -- Enables global statusline
     -- cmdheight = 0,                  -- Makes command line height 0 -- In preperation for when it is added to stable
 }
 
+-- Set options
+for k, v in pairs(default_options) do
+    vim.opt[k] = v
+end
+
+-- Set leader keys
 vim.g.mapleader = ' '               -- Map leader key
 vim.g.maplocalleader = ','          -- Map local leader key
 
--- Set leader
-for k, v in pairs(default_options) do
-    vim.o[k] = v
+-- Get OS
+local raw_os = vim.loop.os_uname().sysname
+if string.find(raw_os, 'Windows') then
+    vim.g.os = 'Windows'
+elseif raw_os == 'Linux' then
+    vim.g.os = 'Linux'
 end
 
 -- Disable auto-commenting
@@ -55,3 +64,6 @@ if g:os == 'Windows'
     set shellredir=\|\ Out-File\ -Encoding\ UTF8
 end
 ]])
+
+-- Gui fonts
+-- vim.opt.guifont = {'Hack Nerd Font', ':h11'}
