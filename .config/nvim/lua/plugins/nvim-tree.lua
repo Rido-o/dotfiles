@@ -68,13 +68,16 @@ require('nvim-tree').setup({
             },
         },
         icons = {
+            show = {
+                folder_arrow = false,
+            },
             glyphs = {
                 folder = {
                     arrow_closed = '‣',
                     arrow_open = '⏷',
-                }
-            }
-        }
+                },
+            },
+        },
     },
     diagnostics = {
         enable = true,
@@ -84,7 +87,7 @@ require('nvim-tree').setup({
             warning = '⚠',
             info = '',
             hint = '',
-        }
+        },
     },
     live_filter = {
         prefix = '[SEARCH]: ',
