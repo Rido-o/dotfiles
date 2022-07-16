@@ -31,7 +31,7 @@ require('lspsaga').init_lsp_saga({
         virtual_text = false,
     },
     -- separator in finder
-    finder_separator = '  ',
+    -- finder_separator = '  ',
     -- preview lines of lsp_finder and definition preview
     max_preview_lines = 10,
     finder_action_keys = {
