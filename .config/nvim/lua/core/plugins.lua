@@ -26,8 +26,8 @@ end
 --------------------------
 return require('packer').startup({
     function(use)
-        -- potential plugins {trouble.nvim, nvim-navic, aerial.nvim, neogit, kylechui/nvim-surround, impatient.nvim, vim-rooter}
-        -- potential move movement plugins {leap, hop, lightspeed, quickscope}
+        -- potential plugins {trouble.nvim, nvim-navic, aerial.nvim, neogit, impatient.nvim, alpha-nvim, fidget.nvim, neotree, feline, org-mode-clones}
+        -- potential move movement plugins {leap, hop, lightspeed}
         -----------------------
         -- Packer
         -----------------------
@@ -120,6 +120,11 @@ return require('packer').startup({
             requires = {
                 { 'nvim-lua/popup.nvim' },
                 { 'nvim-lua/plenary.nvim' },
+                {
+                    'nvim-telescope/telescope-fzf-native.nvim',
+                    -- Won't work with windows
+                    run = 'make'
+                }
             },
             config = plugin_config('telescope'),
         })

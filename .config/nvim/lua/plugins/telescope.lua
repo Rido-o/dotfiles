@@ -49,5 +49,15 @@ require('telescope').setup{
 
         -- Developer configurations: Not meant for general override
         buffer_previewer_maker = require'telescope.previewers'.buffer_previewer_maker
+    },
+    extensions = {
+        fzf = {
+            fuzzy = true,
+            override_generic_sorter = true,
+            override_file_sorter = true,
+            case_mode = 'smart_case'
+        }
     }
 }
+
+require('telescope').load_extension('fzf')
