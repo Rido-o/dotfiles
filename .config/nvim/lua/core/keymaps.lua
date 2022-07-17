@@ -1,5 +1,11 @@
 local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
+local function join(base, add)
+    for key, value in pairs(add) do
+        base[key] = value
+    end
+    return base
+end
 
 --------------
 -- Basic
@@ -8,11 +14,12 @@ local opts = { noremap = true, silent = true }
 map('n', '<CR>', ':noh<CR>', opts)
 
 -- Do action without yanking into "+ register
-map('n', 'd', '"_d', opts)
+map('n', 'd', '"_d', join(opts, {desc = 'delete'}))
 map('v', 'd', '"_d', opts)
 map('n', 'c', '"_c', opts)
 map('v', 'c', '"_c', opts)
 map('n', 'x', '"_x', opts)
+map('v', 'x', '"_x', opts)
 map('v', 'p', '"_c<C-r>+<esc>', opts)
 
 ----------------
