@@ -4,13 +4,16 @@ local opts = { noremap = true, silent = true }
 --------------
 -- Basic
 --------------
--- Reload Nvim
-map('n', '<F2>', ':source $MYVIMRC<CR>', opts)
 -- Enter to clear highlighting
 map('n', '<CR>', ':noh<CR>', opts)
--- Maps escape to normal mode for terminal
--- May cause problems for terminal
---tnoremap <esc> <esc><C-\><C-N>
+
+-- Do action without yanking into "+ register
+map('n', 'd', '"_d', opts)
+map('v', 'd', '"_d', opts)
+map('n', 'c', '"_c', opts)
+map('v', 'c', '"_c', opts)
+map('n', 'x', '"_x', opts)
+map('v', 'p', '"_c<C-r>+<esc>', opts)
 
 ----------------
 -- Replace
@@ -25,6 +28,8 @@ map('n', 'rr', '"_cc<C-r>+<BS><esc>', opts)
 map('n', 'r0', '"_c0<C-r>+<BS><esc>', opts)
 map('n', 'r$', '"_c$<C-r>+<BS><esc>', opts)
 map('n', 'r^', '"_c^<C-r>+<BS><esc>', opts)
+map('n', 'rw', '"_cw<C-r>+<esc>', opts)
+map('n', 'rW', '"_cW<C-r>+<esc>', opts)
 
 --------------
 -- Latex
