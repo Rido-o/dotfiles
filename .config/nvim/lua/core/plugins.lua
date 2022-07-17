@@ -116,6 +116,7 @@ return require('packer').startup({
             config = plugin_config('null-ls'),
         })
         use({
+            -- Requires ripgrep for livegrep picker
             'nvim-telescope/telescope.nvim',
             requires = {
                 { 'nvim-lua/popup.nvim' },
