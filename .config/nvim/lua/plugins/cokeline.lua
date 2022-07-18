@@ -54,6 +54,23 @@ local components = {
     },
 }
 
+local sidebar = {
+    nvim_tree = {
+        filetype = 'NvimTree',
+        components = {
+            {
+                text = function()
+                    local text, width = 'File Explorer', 30
+                    local left_padding = math.floor((width - string.len(text)) / 2)
+                    return string.rep(' ', left_padding) .. text
+                end,
+                fg = get_hex('NvimTreeNormal', 'fg'),
+                bg = get_hex('NvimTreeNormal', 'bg'),
+            },
+        },
+    },
+}
+
 require('cokeline').setup({
     buffers = {
         filter_valid = function(buffer)
@@ -82,20 +99,7 @@ require('cokeline').setup({
         components.modified,
         components.two_space,
     },
-    sidebar = {
-        filetype = 'NvimTree',
-        components = {
-            {
-                text = function()
-                    local text, width = 'File Explorer', 30
-                    local left_padding = math.floor((width - string.len(text)) / 2)
-                    return string.rep(' ', left_padding) .. text
-                end,
-                fg = get_hex('Noraml', 'fg'),
-                bg = get_hex('Noraml', 'bg'),
-            },
-        },
-    },
+    sidebar = sidebar.nvim_tree,
 })
 
 for i = 1, 9 do
@@ -110,3 +114,5 @@ end
 vim.keymap.set('n', '<leader>y', '<Plug>(cokeline-focus-prev)', { desc = 'Previous Buffer' })
 vim.keymap.set('n', '<leader>u', '<Plug>(cokeline-focus-next)', { desc = 'Next buffer' })
 vim.keymap.set('n', '<leader>bp', '<Plug>(cokeline-pick-focus)', { desc = 'Pick buffer' })
+
+vim.api.nvim_set_hl(0, 'TabLineFill', { link = 'Tabline' })
