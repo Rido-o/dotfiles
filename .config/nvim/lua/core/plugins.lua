@@ -49,6 +49,15 @@ return require('packer').startup({
         use({ 'folke/tokyonight.nvim' })
         use({ 'rebelot/kanagawa.nvim' })
 
+        -------------------------
+        -- File Exploration
+        -------------------------
+        use({
+            'kyazdani42/nvim-tree.lua',
+            requires = { 'kyazdani42/nvim-web-devicons' },
+            config = plugin_config('nvim-tree'),
+        })
+
         -----------
         -- UI
         -----------
@@ -87,15 +96,6 @@ return require('packer').startup({
             'lervag/vimtex', -- Requres latexmk, pdfviewer(mupdf)
             ft = 'tex',
             config = plugin_config('vimtex'),
-        })
-
-        -------------------------
-        -- File Exploration
-        -------------------------
-        use({
-            'kyazdani42/nvim-tree.lua',
-            requires = { 'kyazdani42/nvim-web-devicons' },
-            config = plugin_config('nvim-tree'),
         })
 
         ------------------
