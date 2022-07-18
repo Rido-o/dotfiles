@@ -6,8 +6,13 @@ if fn.empty(fn.glob(install_path)) > 0 then
         fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
 end
 
+local status_ok, packer = pcall(require, 'packer')
+if not status_ok then
+    return
+end
+
 -- Packer options
-require('packer').init({
+packer.init({
     -- Enable floating window for packer
     display = {
         open_fn = function()
@@ -24,7 +29,7 @@ end
 --------------------------
 -- Plugin Management
 --------------------------
-return require('packer').startup({
+return packer.startup({
     function(use)
         -- potential plugins {trouble.nvim, nvim-navic, aerial.nvim, neogit, impatient.nvim, alpha-nvim, fidget.nvim, neotree, feline, org-mode-clones}
         -- potential move movement plugins {leap, hop, lightspeed}
@@ -86,7 +91,7 @@ return require('packer').startup({
                 'kyazdani42/nvim-web-devicons',
                 'famiu/bufdelete.nvim',
             },
-            config = plugin_config('cokeline')
+            config = plugin_config('cokeline'),
         })
 
         -----------------
@@ -124,8 +129,9 @@ return require('packer').startup({
                 {
                     'nvim-telescope/telescope-fzf-native.nvim',
                     -- Won't work with windows
-                    run = 'make'
-                }
+                    run = 'make',
+                    cond = vim.fn.executable 'make' == 1
+                },
             },
             config = plugin_config('telescope'),
         })
