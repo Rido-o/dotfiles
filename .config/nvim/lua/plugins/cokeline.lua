@@ -45,6 +45,9 @@ local components = {
         text = function(buffer)
             return buffer.filename
         end,
+        fg = function(buffer)
+            return buffer.is_modified and get_hex('WarningMsg', 'fg')
+        end
     },
     modified = {
         text = function(buffer)
