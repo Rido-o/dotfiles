@@ -64,8 +64,12 @@ local sidebar = {
                     local left_padding = math.floor((width - string.len(text)) / 2)
                     return string.rep(' ', left_padding) .. text
                 end,
-                fg = get_hex('NvimTreeNormal', 'fg'),
-                bg = get_hex('NvimTreeNormal', 'bg'),
+                fg = function(buffer)
+                    return buffer.is_focused and get_hex('NvimTreeNormal', 'fg') or get_hex('NvimTreeNormalNC', 'fg')
+                end,
+                bg = function(buffer)
+                    return buffer.is_focused and get_hex('NvimTreeNormal', 'bg') or get_hex('NvimTreeNormalNC', 'bg')
+                end,
             },
         },
     },
