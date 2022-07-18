@@ -1,6 +1,3 @@
--- Set completeopt to have a better completion experience
-vim.o.completeopt = 'menu,menuone,noselect'
-
 -- Functions used for tab mapping
 local has_words_before = function()
     local line, col = unpack(vim.api.nvim_win_get_cursor(0))
