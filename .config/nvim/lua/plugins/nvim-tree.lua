@@ -100,10 +100,10 @@ require('nvim-tree').setup({
 -------------------
 -- a list of groups can be found at `:help nvim-tree-highlight`
 -- Main window bg and text color
-vim.cmd('hi! def link NvimTreeNormal normal')
+vim.api.nvim_set_hl(0, 'NvimTreeNormal', {link = 'StatusLine'})
 -- Main window bg when nvim-tree is not the focused window
-vim.cmd('hi! def link NvimTreeNormalNC normal')
+vim.api.nvim_set_hl(0, 'NvimTreeNormalNC', {link = 'StatusLine'})
 -- Window Picker color
-vim.cmd('hi! def link NvimTreeWindowPicker StatusLine')
+vim.api.nvim_set_hl(0, 'NvimTreeWindowPicker', {link = 'StatusLine'})
 -- Seperator color
-vim.cmd('hi! def link NvimTreeWinSeparator WinSeparator')
+vim.api.nvim_set_hl(0, 'NvimTreeWinSeparator', {link = 'WinSeparator'})
