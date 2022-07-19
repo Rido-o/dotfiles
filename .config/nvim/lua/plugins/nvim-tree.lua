@@ -95,6 +95,18 @@ require('nvim-tree').setup({
     },
 })
 
+-- Toggle or goto nvim-tree
+local toggle_nvim_tree = function()
+    if vim.bo.filetype == 'NvimTree' then
+        require('nvim-tree').toggle()
+    else
+        require('nvim-tree').focus()
+    end
+end
+
+vim.keymap.set('n', '<leader>n', toggle_nvim_tree, { noremap = true, silent = true, desc = 'Focus on file explorer' })
+vim.keymap.set('n', '<leader>N', '<CMD>NvimTreeToggle<CR>', { noremap = true, silent = true, desc = 'Toggle file explorer' })
+
 -------------------
 -- Highlights
 -------------------
