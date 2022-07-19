@@ -23,8 +23,25 @@ require('neo-tree').setup({
         },
         modified = {
             symbol = '●',
-            highlight = 'WarningMsg'
-        }
+            highlight = 'WarningMsg',
+        },
+    },
+    renderers = {
+        -- Default settings except without error icon
+        directory = {
+            { 'indent' },
+            { 'icon' },
+            { 'current_filter' },
+            {
+                'container',
+                width = '100%',
+                right_padding = 0,
+                content = {
+                    { 'name', zindex = 10 },
+                    { 'clipboard', zindex = 10 },
+                },
+            },
+        },
     },
     window = {
         width = 30,
@@ -57,8 +74,8 @@ require('neo-tree').setup({
                 ['H'] = 'navigate_up',
                 ['<BS>'] = 'navigate_up',
                 ['.'] = 'toggle_hidden',
-            }
-        }
+            },
+        },
     },
 })
 
