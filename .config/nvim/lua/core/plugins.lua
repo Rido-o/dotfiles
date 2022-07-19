@@ -21,6 +21,14 @@ packer.init({
     },
 })
 
+-- Source plugins config after saving
+local packer_group = vim.api.nvim_create_augroup('Packer', { clear = true })
+vim.api.nvim_create_autocmd('BufWritePost', {
+    command = 'source <afile>',
+    group = packer_group,
+    pattern = 'plugins.lua'
+})
+
 -- Function for sourcing config files
 local function plugin_config(file)
     require('plugins.' .. file)
