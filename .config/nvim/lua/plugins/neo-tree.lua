@@ -21,6 +21,10 @@ require('neo-tree').setup({
             expander_collapsed = '‣',
             expander_expanded = '⏷',
         },
+        modified = {
+            symbol = '●',
+            highlight = 'WarningMsg'
+        }
     },
     window = {
         width = 30,
