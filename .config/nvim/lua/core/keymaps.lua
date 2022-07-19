@@ -1,11 +1,14 @@
-local function nmap(keys, func, opts)
+local function map(mode, keys, func, opts)
     opts = vim.tbl_extend('force', opts, { noremap = true, silent = true })
-    vim.keymap.set('n', keys, func, opts)
+    vim.keymap.set(mode, keys, func, opts)
+end
+
+local function nmap(keys, func, opts)
+    map('n', keys, func, opts)
 end
 
 local function vmap(keys, func, opts)
-    opts = vim.tbl_extend('force', opts, { noremap = true, silent = true })
-    vim.keymap.set('v', keys, func, opts)
+    map('v', keys, func, opts)
 end
 
 --------------
