@@ -14,8 +14,6 @@ end
 map('n', '<CR>', ':noh<CR>', opts)
 
 -- Do action without yanking into "+ register
-map('n', 'd', '"_d', join(opts, {desc = 'delete'}))
-map('v', 'd', '"_d', opts)
 map('n', 'c', '"_c', opts)
 map('v', 'c', '"_c', opts)
 map('n', 'x', '"_x', opts)
