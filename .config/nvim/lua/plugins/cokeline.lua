@@ -47,7 +47,7 @@ local components = {
         end,
         fg = function(buffer)
             return buffer.is_modified and get_hex('WarningMsg', 'fg')
-        end
+        end,
     },
     modified = {
         text = function(buffer)
@@ -58,8 +58,8 @@ local components = {
 }
 
 local sidebar = {
-    nvim_tree = {
-        filetype = 'NvimTree',
+    file_explorer = {
+        filetype = 'neo-tree',
         components = {
             {
                 text = function()
@@ -67,12 +67,8 @@ local sidebar = {
                     local left_padding = math.floor((width - string.len(text)) / 2)
                     return string.rep(' ', left_padding) .. text
                 end,
-                fg = function(buffer)
-                    return buffer.is_focused and get_hex('NvimTreeNormal', 'fg') or get_hex('NvimTreeNormalNC', 'fg')
-                end,
-                bg = function(buffer)
-                    return buffer.is_focused and get_hex('NvimTreeNormal', 'bg') or get_hex('NvimTreeNormalNC', 'bg')
-                end,
+                fg = get_hex('Normal', 'fg'),
+                bg = get_hex('Normal', 'bg'),
             },
         },
     },
@@ -106,7 +102,7 @@ require('cokeline').setup({
         components.modified,
         components.two_space,
     },
-    sidebar = sidebar.nvim_tree,
+    sidebar = sidebar.file_explorer,
 })
 
 for i = 1, 9 do

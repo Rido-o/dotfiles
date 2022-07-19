@@ -58,9 +58,14 @@ return packer.startup({
         -- File Exploration
         -------------------------
         use({
-            'kyazdani42/nvim-tree.lua',
-            requires = { 'kyazdani42/nvim-web-devicons' },
-            config = plugin_config('nvim-tree'),
+            'nvim-neo-tree/neo-tree.nvim',
+            branch = 'v2.x',
+            requires = {
+                'nvim-lua/plenary.nvim',
+                'kyazdani42/nvim-web-devicons',
+                'MunifTanjim/nui.nvim',
+            },
+            config = plugin_config('neo-tree'),
         })
 
         -----------
