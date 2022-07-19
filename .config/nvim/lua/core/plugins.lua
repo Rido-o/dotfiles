@@ -153,6 +153,10 @@ return packer.startup({
             config = plugin_config('project'),
             requires = 'nvim-telescope/telescope.nvim',
         })
+        use({
+            'ggandor/leap.nvim',
+            config = require('leap').set_default_keymaps()
+        })
 
         ------------
         -- lSP
