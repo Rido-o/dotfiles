@@ -98,11 +98,19 @@ local components = {
     file = {
         info = {
             provider = 'file_info',
-            hl = {
-                fg = 'fg',
-                bg = 'black',
-                -- style = 'bold',
-            },
+            hl = function()
+                if vim.bo.modified then
+                    return {
+                        fg = 'orange',
+                        bg = 'black',
+                    }
+                else
+                    return {
+                        fg = 'fg',
+                        bg = 'black',
+                    }
+                end
+            end,
             left_sep = space_sep('black'),
             right_sep = {
                 {
