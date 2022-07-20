@@ -2,7 +2,7 @@ require('nvim-surround').setup({
     keymaps = { -- vim-surround style keymaps
         insert = 'ys',
         insert_line = 'yss',
-        visual = 'ys',
+        visual = 'S',
     },
     delimiters = {
         pairs = {
