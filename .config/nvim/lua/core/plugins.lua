@@ -39,8 +39,7 @@ end
 --------------------------
 return packer.startup({
     function(use)
-        -- potential plugins {trouble.nvim, nvim-navic, aerial.nvim, neogit, impatient.nvim, alpha-nvim, fidget.nvim, neotree, feline, org-mode-clones}
-        -- potential move movement plugins {leap, hop, lightspeed}
+        -- potential plugins {trouble.nvim, nvim-navic, aerial.nvim, neogit, impatient.nvim, alpha-nvim, fidget.nvim, feline, org-mode-clones}
         -----------------------
         -- Packer
         -----------------------
@@ -83,10 +82,18 @@ return packer.startup({
             'norcalli/nvim-colorizer.lua',
             config = require('colorizer').setup(),
         })
+        -- use({
+        --     'nvim-lualine/lualine.nvim',
+        --     requires = { 'kyazdani42/nvim-web-devicons' },
+        --     config = plugin_config('lualine'),
+        -- })
         use({
-            'nvim-lualine/lualine.nvim',
-            requires = { 'kyazdani42/nvim-web-devicons' },
-            config = plugin_config('lualine'),
+            'feline-nvim/feline.nvim',
+            requires = {
+                'kyazdani42/nvim-web-devicons',
+                'lewis6991/gitsigns.nvim',
+            },
+            config = plugin_config('feline')
         })
         use({
             'lukas-reineke/indent-blankline.nvim',
