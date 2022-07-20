@@ -7,6 +7,8 @@ local colors = {
     bg = '#16161D',
     black = '#1F1F28',
     darkgray = '#2A2A37',
+    gray = '#363646',
+    lightgray = '#54546D',
     skyblue = '#7FB4CA',
     cyan = '#7AA89F',
     green = '#76946A',
@@ -29,6 +31,29 @@ local vi_mode_colors = {
     ['V-REPLACE'] = 'red',
     COMMAND = 'yellow',
 }
+
+local function space_sep(color)
+    local sep = {
+        str = ' ',
+        hl = {
+            bg = color,
+        },
+    }
+    return sep
+end
+
+local function file_osinfo()
+    local os = vim.bo.fileformat:upper()
+    local icon
+    if os == 'UNIX' then
+        icon = ''
+    elseif os == 'MAC' then
+        icon = ''
+    else
+        icon = ''
+    end
+    return icon
+end
 
 local components = {
     vi = {
@@ -78,57 +103,64 @@ local components = {
                 bg = 'black',
                 -- style = 'bold',
             },
-            left_sep = {
-                str = ' ',
-                hl = {
-                    bg = 'black',
-                }
-            },
+            left_sep = space_sep('black'),
             right_sep = {
                 {
                     str = ' ',
                     hl = {
                         bg = 'black',
-                    }
+                    },
                 },
                 {
                     str = '',
-                }
+                },
             },
+        },
+        os = {
+            provider = file_osinfo,
+            hl = {
+                bg = 'gray',
+            },
+            left_sep = space_sep('gray'),
         },
         encoding = {
             provider = 'file_encoding',
-            left_sep = ' ',
-            right_sep = ' ',
+            hl = {
+                bg = 'gray',
+            },
+            left_sep = space_sep('gray'),
+            right_sep = space_sep('gray'),
         },
     },
     git = {
         branch = {
             provider = 'git_branch',
             hl = {
+                bg = 'darkgray',
                 style = 'bold',
             },
-            right_sep = {
-                str = ' ',
-            },
+            left_sep = space_sep('darkgray'),
+            right_sep = space_sep('darkgray'),
         },
     },
     cursor = {
         line_percentage = {
             provider = 'line_percentage',
             hl = {
+                bg = 'lightgray',
                 style = 'bold',
             },
-            left_sep = '',
-            right_sep = ' ',
+            left_sep = space_sep('lightgray'),
+            right_sep = space_sep('lightgray'),
         },
         scroll_bar = {
             provider = 'scroll_bar',
             hl = {
                 fg = 'skyblue',
+                bg = 'lightgray',
                 style = 'bold',
             },
-            right_sep = ' ',
+            right_sep = space_sep('lightgray'),
         },
     },
 }
@@ -143,8 +175,9 @@ table.insert(statusline.active[1], components.vi.mode)
 table.insert(statusline.active[1], components.file.info)
 -- Middle
 -- Right
-table.insert(statusline.active[3], components.file.encoding)
 table.insert(statusline.active[3], components.git.branch)
+table.insert(statusline.active[3], components.file.os)
+table.insert(statusline.active[3], components.file.encoding)
 table.insert(statusline.active[3], components.cursor.line_percentage)
 table.insert(statusline.active[3], components.cursor.scroll_bar)
 table.insert(statusline.active[3], components.vi.right_indicator)
