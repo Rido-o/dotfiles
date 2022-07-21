@@ -29,8 +29,8 @@ local default_options = {
     updatetime = 250,               -- For vim signify
     signcolumn = 'yes:1',           -- Add permanant column for signs on the left
     termguicolors = true,           -- Required for some color schemes and colorizer
-    completeopt = 'menuone,noselect',               -- Set completeopt to have a better completion experience
     undodir = vim.fn.stdpath('cache') .. '/undo',   -- Undo directory
+    completeopt = { "menuone", "noselect" },        -- Set completeopt to have a better completion experience
     list = true,
     listchars = { trail = '-', tab = '  ' },        -- 'trail:­,tab:  ,extends:»,precedes:«,nbsp:⣿,eol:¬'
     laststatus = 3,                 -- Enables global statusline
