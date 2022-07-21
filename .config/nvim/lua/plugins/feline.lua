@@ -32,6 +32,20 @@ local vi_mode_colors = {
     COMMAND = 'yellow',
 }
 
+local icons = {
+    linux = '',
+    mac = '',
+    windows = '',
+    diagnostic_errors = '  ',
+    diagnostic_warnings = ' ⚠ ',
+    diagnostic_hints = '  ',
+    diagnostic_info = '  ',
+    git_added = '  ',
+    git_changed = '  ',
+    git_removed = '  ',
+    lsp = '⎈ ',
+}
+
 local function space_sep(color)
     local sep = {
         str = ' ',
@@ -46,11 +60,11 @@ local function file_osinfo()
     local os = vim.bo.fileformat:upper()
     local icon
     if os == 'UNIX' then
-        icon = ''
+        icon = icons.linux
     elseif os == 'MAC' then
-        icon = ''
+        icon = icons.mac
     else
-        icon = ''
+        icon = icons.windows
     end
     return icon
 end
@@ -139,6 +153,9 @@ local components = {
             left_sep = space_sep('gray'),
             right_sep = space_sep('gray'),
         },
+        type = {
+            provider = 'file_type',
+        },
     },
     git = {
         branch = {
@@ -149,6 +166,18 @@ local components = {
             },
             left_sep = space_sep('darkgray'),
             right_sep = space_sep('darkgray'),
+        },
+        diff_added = {
+            provider = 'git_diff_added',
+            icon = icons.git_added,
+        },
+        diff_changed = {
+            provider = 'git_diff_changed',
+            icon = icons.git_changed,
+        },
+        diff_removed = {
+            provider = 'git_diff_removed',
+            icon = icons.git_removed,
         },
     },
     cursor = {
@@ -163,32 +192,68 @@ local components = {
         },
         scroll_bar = {
             provider = 'scroll_bar',
-            hl = {
-                fg = 'skyblue',
-                bg = 'lightgray',
-                style = 'bold',
-            },
+            hl = function()
+                return {
+                    fg = require('feline.providers.vi_mode').get_mode_color(),
+                    bg = 'lightgray',
+                    style = 'bold',
+                }
+            end,
             right_sep = space_sep('lightgray'),
+        },
+        position = {
+            provider = 'position',
+        },
+    },
+    diagnostic = {
+        errors = {
+            provider = 'diagnostic_errors',
+            icon = icons.diagnostic_errors,
+        },
+        warnings = {
+            provider = 'diagnostic_warnings',
+            icon = icons.diagnostic_warnings,
+        },
+        hints = {
+            provider = 'diagnostic_hints',
+            icon = icons.diagnostic_hints,
+        },
+        info = {
+            provider = 'diagnostic_info',
+            icon = icons.diagnostic_info,
+        },
+    },
+    lsp = {
+        names = {
+            provider = 'lsp_client_names',
+            icon = icons.lsp,
         },
     },
 }
 
 local statusline = {
-    active = { {}, {}, {} },
+    active = { {}, {} },
     -- inactive = {},
 }
 
 -- Left
 table.insert(statusline.active[1], components.vi.mode)
 table.insert(statusline.active[1], components.file.info)
--- Middle
+table.insert(statusline.active[1], components.diagnostic.errors)
+table.insert(statusline.active[1], components.diagnostic.warnings)
+table.insert(statusline.active[1], components.diagnostic.hints)
+table.insert(statusline.active[1], components.diagnostic.info)
 -- Right
-table.insert(statusline.active[3], components.git.branch)
-table.insert(statusline.active[3], components.file.os)
-table.insert(statusline.active[3], components.file.encoding)
-table.insert(statusline.active[3], components.cursor.line_percentage)
-table.insert(statusline.active[3], components.cursor.scroll_bar)
-table.insert(statusline.active[3], components.vi.right_indicator)
+table.insert(statusline.active[2], components.git.branch)
+table.insert(statusline.active[2], components.git.diff_added)
+table.insert(statusline.active[2], components.git.diff_changed)
+table.insert(statusline.active[2], components.git.diff_removed)
+table.insert(statusline.active[2], components.lsp.names)
+table.insert(statusline.active[2], components.file.os)
+table.insert(statusline.active[2], components.file.encoding)
+table.insert(statusline.active[2], components.cursor.line_percentage)
+table.insert(statusline.active[2], components.cursor.scroll_bar)
+table.insert(statusline.active[2], components.vi.right_indicator)
 
 require('feline').setup({
     theme = colors,
