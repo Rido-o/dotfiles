@@ -140,7 +140,9 @@ local components = {
             left_sep = space_sep('gray'),
         },
         encoding = {
-            provider = 'file_encoding',
+            provider = function()
+                return vim.bo.fileencoding
+            end,
             hl = {
                 bg = 'gray',
             },
