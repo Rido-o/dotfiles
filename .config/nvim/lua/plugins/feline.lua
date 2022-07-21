@@ -209,11 +209,11 @@ local components = {
             provider = 'line_percentage',
             hl = {
                 bg = 'darkgray',
-                -- style = 'bold',
+                style = 'bold',
             },
             icon = {
                 str = icons.cursor_line_percentage,
-                hl = { fg = 'cyan' },
+                hl = { fg = 'cyan', style = 'NONE' },
             },
             left_sep = space_sep('darkgray'),
             right_sep = space_sep('darkgray'),
@@ -233,11 +233,11 @@ local components = {
             provider = 'position',
             hl = {
                 bg = 'darkgray',
-                -- style = 'bold',
+                style = 'bold',
             },
             icon = {
                 str = icons.cursor_position,
-                hl = { fg = 'cyan' },
+                hl = { fg = 'cyan', style = 'NONE' },
             },
             left_sep = space_sep('darkgray'),
         },
