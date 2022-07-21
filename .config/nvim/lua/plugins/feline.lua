@@ -102,7 +102,6 @@ local components = {
                     }
                 end,
             },
-            -- Uncomment the next line to disable file icons
             icon = '',
         },
         right_indicator = {
@@ -275,8 +274,6 @@ local components = {
                 bg = 'darkgray',
             },
             icon = icons.lsp,
-            -- left_sep = ' ',
-            -- right_sep = ' ',
             left_sep = space_sep('darkgray'),
             right_sep = space_sep('darkgray'),
         },
@@ -316,8 +313,8 @@ table.insert(statusline.active[2], components.vi.right_indicator)
 
 require('feline').setup({
     theme = colors,
-    -- default_bg = bg,
-    -- default_fg = fg,
+    default_bg = 'bg',
+    default_fg = 'fg',
     vi_mode_colors = vi_mode_colors,
     components = statusline,
 })
