@@ -33,9 +33,9 @@ local vi_mode_colors = {
 }
 
 local icons = {
-    linux = '',
-    mac = '',
-    windows = '',
+    os_linux = '',
+    os_mac = '',
+    os_windows = '',
     diagnostic_errors = '  ',
     diagnostic_warnings = ' ⚠ ',
     diagnostic_hints = '  ',
@@ -60,11 +60,11 @@ local function file_osinfo()
     local os = vim.bo.fileformat:upper()
     local icon
     if os == 'UNIX' then
-        icon = icons.linux
+        icon = icons.os_linux
     elseif os == 'MAC' then
-        icon = icons.mac
+        icon = icons.os_mac
     else
-        icon = icons.windows
+        icon = icons.os_windows
     end
     return icon
 end
