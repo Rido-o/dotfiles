@@ -49,6 +49,8 @@ local icons = {
     git_changed = '~', -- 
     git_removed = '-', -- 
     lsp = '⎈ ',
+    cursor_line_percentage = '☰ ',
+    cursor_position = ' ',
 }
 
 local function space_sep(color)
@@ -207,7 +209,11 @@ local components = {
             provider = 'line_percentage',
             hl = {
                 bg = 'darkgray',
-                style = 'bold',
+                -- style = 'bold',
+            },
+            icon = {
+                str = icons.cursor_line_percentage,
+                hl = { fg = 'cyan' },
             },
             left_sep = space_sep('darkgray'),
             right_sep = space_sep('darkgray'),
@@ -225,6 +231,15 @@ local components = {
         },
         position = {
             provider = 'position',
+            hl = {
+                bg = 'darkgray',
+                -- style = 'bold',
+            },
+            icon = {
+                str = icons.cursor_position,
+                hl = { fg = 'cyan' },
+            },
+            left_sep = space_sep('darkgray'),
         },
     },
     diagnostic = {
@@ -275,7 +290,10 @@ local components = {
             hl = {
                 bg = 'darkgray',
             },
-            icon = icons.lsp,
+            icon = {
+                str = icons.lsp,
+                hl = { fg = 'orange' },
+            },
             left_sep = space_sep('darkgray'),
             right_sep = space_sep('darkgray'),
         },
@@ -309,8 +327,9 @@ table.insert(statusline.active[2], components.lsp.names)
 table.insert(statusline.active[2], components.file.os)
 table.insert(statusline.active[2], components.file.encoding)
 table.insert(statusline.active[2], components.file.type)
+table.insert(statusline.active[2], components.cursor.position)
 table.insert(statusline.active[2], components.cursor.line_percentage)
-table.insert(statusline.active[2], components.cursor.scroll_bar)
+-- table.insert(statusline.active[2], components.cursor.scroll_bar)
 table.insert(statusline.active[2], components.vi.right_indicator)
 
 require('feline').setup({
