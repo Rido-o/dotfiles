@@ -50,8 +50,8 @@ local components = {
         end,
         truncation = {
             priority = 99,
-            direction = 'right'
-        }
+            direction = 'right',
+        },
     },
     modified = {
         text = function(buffer)
