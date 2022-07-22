@@ -129,6 +129,13 @@ local components = {
                     type = 'relative',
                 },
             },
+            short_provider = {
+                name = 'file_info',
+                opts = {
+                    file_modified_icon = '',
+                    type = 'base-only',
+                },
+            },
             hl = { fg = 'fg', bg = 'black' },
             left_sep = space_sep('black'),
             right_sep = space_sep('black'),
@@ -319,6 +326,7 @@ local components = {
             },
             left_sep = space_sep('darkgray'),
             right_sep = space_sep('darkgray'),
+            truncate_hide = true,
         },
     },
     sep = {
