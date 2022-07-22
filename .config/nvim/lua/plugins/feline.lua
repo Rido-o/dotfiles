@@ -80,190 +80,178 @@ end
 local vi_mode_utils = require('feline.providers.vi_mode')
 
 local components = {
-    vi = {
-        mode = {
-            provider = 'vi_mode',
+    vi_mode = {
+        provider = 'vi_mode',
+        hl = function()
+            return {
+                name = vi_mode_utils.get_mode_highlight_name(),
+                fg = 'bg',
+                bg = vi_mode_utils.get_mode_color(),
+                style = 'bold',
+            }
+        end,
+        left_sep = {
+            str = ' ',
             hl = function()
-                return {
-                    name = vi_mode_utils.get_mode_highlight_name(),
-                    fg = 'bg',
-                    bg = vi_mode_utils.get_mode_color(),
-                    style = 'bold',
-                }
+                return { bg = vi_mode_utils.get_mode_color() }
             end,
-            left_sep = {
-                str = ' ',
-                hl = function()
-                    return { bg = vi_mode_utils.get_mode_color() }
-                end,
-            },
-            right_sep = {
-                str = ' ',
-                hl = function()
-                    return { bg = vi_mode_utils.get_mode_color() }
-                end,
-            },
-            icon = '',
         },
-        right_indicator = {
-            provider = '█',
+        right_sep = {
+            str = ' ',
             hl = function()
-                return { fg = vi_mode_utils.get_mode_color() }
+                return { bg = vi_mode_utils.get_mode_color() }
             end,
         },
+        icon = '',
     },
-    file = {
-        info = {
-            provider = {
-                name = 'file_info',
-                opts = {
-                    file_modified_icon = '',
-                    type = 'relative',
-                },
-            },
-            short_provider = {
-                name = 'file_info',
-                opts = {
-                    file_modified_icon = '',
-                    type = 'base-only',
-                },
-            },
-            hl = { fg = 'fg', bg = 'black' },
-            left_sep = space_sep('black'),
-            right_sep = space_sep('black'),
-        },
-        modified = {
-            provider = function()
-                return vim.bo.modified and icons.file_modified or ''
-            end,
-            hl = { fg = 'warnings', bg = 'black' },
-            right_sep = space_sep('black'),
-        },
-        os = {
-            provider = file_osinfo,
-            hl = { bg = 'gray' },
-            left_sep = space_sep('gray'),
-        },
-        encoding = {
-            provider = function()
-                return vim.bo.fileencoding
-            end,
-            hl = { bg = 'gray' },
-            left_sep = space_sep('gray'),
-            right_sep = space_sep('gray'),
-        },
-        type = {
-            provider = 'file_type',
-            hl = { bg = 'skyblue', fg = 'bg', style = 'bold' },
-            left_sep = space_sep('skyblue'),
-            right_sep = space_sep('skyblue'),
-        },
+    vi_right_indicator = {
+        provider = '█',
+        hl = function()
+            return { fg = vi_mode_utils.get_mode_color() }
+        end,
     },
-    git = {
-        branch = {
-            provider = 'git_branch',
-            hl = { bg = 'darkgray', style = 'bold' },
-            left_sep = space_sep('darkgray'),
-            right_sep = space_sep('darkgray'),
-            icon = {
-                str = icons.git_branch,
-                hl = { fg = 'orange', style = 'NONE' },
+    file_info = {
+        provider = {
+            name = 'file_info',
+            opts = {
+                file_modified_icon = '',
+                type = 'relative',
             },
         },
-        diff_added = {
-            provider = 'git_diff_added',
-            hl = { fg = 'green', bg = 'darkgray', style = 'bold' },
-            right_sep = space_sep('darkgray'),
-            icon = icons.git_added,
+        short_provider = {
+            name = 'file_info',
+            opts = {
+                file_modified_icon = '',
+                type = 'base-only',
+            },
         },
-        diff_changed = {
-            provider = 'git_diff_changed',
-            hl = { fg = 'yellow', bg = 'darkgray', style = 'bold' },
-            right_sep = space_sep('darkgray'),
-            icon = icons.git_changed,
-        },
-        diff_removed = {
-            provider = 'git_diff_removed',
-            hl = { fg = 'red', bg = 'darkgray', style = 'bold' },
-            right_sep = space_sep('darkgray'),
-            icon = icons.git_removed,
+        hl = { fg = 'fg', bg = 'black' },
+        left_sep = space_sep('black'),
+        right_sep = space_sep('black'),
+    },
+    file_modified = {
+        provider = function()
+            return vim.bo.modified and icons.file_modified or ''
+        end,
+        hl = { fg = 'warnings', bg = 'black' },
+        right_sep = space_sep('black'),
+    },
+    file_os = {
+        provider = file_osinfo,
+        hl = { bg = 'gray' },
+        left_sep = space_sep('gray'),
+    },
+    file_encoding = {
+        provider = function()
+            return vim.bo.fileencoding
+        end,
+        hl = { bg = 'gray' },
+        left_sep = space_sep('gray'),
+        right_sep = space_sep('gray'),
+    },
+    file_type = {
+        provider = 'file_type',
+        hl = { bg = 'skyblue', fg = 'bg', style = 'bold' },
+        left_sep = space_sep('skyblue'),
+        right_sep = space_sep('skyblue'),
+    },
+    git_branch = {
+        provider = 'git_branch',
+        hl = { bg = 'darkgray', style = 'bold' },
+        left_sep = space_sep('darkgray'),
+        right_sep = space_sep('darkgray'),
+        icon = {
+            str = icons.git_branch,
+            hl = { fg = 'orange', style = 'NONE' },
         },
     },
-    cursor = {
-        line_percentage = {
-            provider = 'line_percentage',
-            hl = { bg = 'darkgray', style = 'bold' },
-            left_sep = space_sep('darkgray'),
-            right_sep = space_sep('darkgray'),
-            icon = {
-                str = icons.cursor_line_percentage,
-                hl = { fg = 'cyan', style = 'NONE' },
-            },
-        },
-        position = {
-            provider = 'position',
-            hl = { bg = 'darkgray', style = 'bold' },
-            left_sep = space_sep('darkgray'),
-            icon = {
-                str = icons.cursor_position,
-                hl = { fg = 'cyan', style = 'NONE' },
-            },
+    git_diff_added = {
+        provider = 'git_diff_added',
+        hl = { fg = 'green', bg = 'darkgray', style = 'bold' },
+        right_sep = space_sep('darkgray'),
+        icon = icons.git_added,
+    },
+    git_diff_changed = {
+        provider = 'git_diff_changed',
+        hl = { fg = 'yellow', bg = 'darkgray', style = 'bold' },
+        right_sep = space_sep('darkgray'),
+        icon = icons.git_changed,
+    },
+    git_diff_removed = {
+        provider = 'git_diff_removed',
+        hl = { fg = 'red', bg = 'darkgray', style = 'bold' },
+        right_sep = space_sep('darkgray'),
+        icon = icons.git_removed,
+    },
+    cursor_line_percentage = {
+        provider = 'line_percentage',
+        hl = { bg = 'darkgray', style = 'bold' },
+        left_sep = space_sep('darkgray'),
+        right_sep = space_sep('darkgray'),
+        icon = {
+            str = icons.cursor_line_percentage,
+            hl = { fg = 'cyan', style = 'NONE' },
         },
     },
-    diagnostic = {
-        errors = {
-            provider = 'diagnostic_errors',
-            hl = { bg = 'errors', fg = 'bg', style = 'bold' },
-            left_sep = space_sep('errors'),
-            right_sep = space_sep('errors'),
-            icon = {
-                str = icons.diagnostic_errors,
-                hl = { style = 'NONE' },
-            },
-        },
-        warnings = {
-            provider = 'diagnostic_warnings',
-            hl = { bg = 'warnings', fg = 'bg', style = 'bold' },
-            left_sep = space_sep('warnings'),
-            right_sep = space_sep('warnings'),
-            icon = {
-                str = icons.diagnostic_warnings,
-                hl = { style = 'NONE' },
-            },
-        },
-        hints = {
-            provider = 'diagnostic_hints',
-            hl = { bg = 'hints', fg = 'bg', style = 'bold' },
-            left_sep = space_sep('hints'),
-            right_sep = space_sep('hints'),
-            icon = {
-                str = icons.diagnostic_hints,
-                hl = { style = 'NONE' },
-            },
-        },
-        info = {
-            provider = 'diagnostic_info',
-            hl = { bg = 'info', fg = 'bg', style = 'bold' },
-            left_sep = space_sep('info'),
-            right_sep = space_sep('info'),
-            icon = {
-                str = icons.diagnostic_info,
-                hl = { style = 'NONE' },
-            },
+    cursor_position = {
+        provider = 'position',
+        hl = { bg = 'darkgray', style = 'bold' },
+        left_sep = space_sep('darkgray'),
+        icon = {
+            str = icons.cursor_position,
+            hl = { fg = 'cyan', style = 'NONE' },
         },
     },
-    lsp = {
-        names = {
-            provider = 'lsp_client_names',
-            hl = { bg = 'darkgray' },
-            icon = {
-                str = icons.lsp,
-                hl = { fg = 'yellow' },
-            },
-            left_sep = space_sep('darkgray'),
-            right_sep = space_sep('darkgray'),
-            truncate_hide = true,
+    diagnostic_errors = {
+        provider = 'diagnostic_errors',
+        hl = { bg = 'errors', fg = 'bg', style = 'bold' },
+        left_sep = space_sep('errors'),
+        right_sep = space_sep('errors'),
+        icon = {
+            str = icons.diagnostic_errors,
+            hl = { style = 'NONE' },
         },
+    },
+    diagnostic_warnings = {
+        provider = 'diagnostic_warnings',
+        hl = { bg = 'warnings', fg = 'bg', style = 'bold' },
+        left_sep = space_sep('warnings'),
+        right_sep = space_sep('warnings'),
+        icon = {
+            str = icons.diagnostic_warnings,
+            hl = { style = 'NONE' },
+        },
+    },
+    diagnostic_hints = {
+        provider = 'diagnostic_hints',
+        hl = { bg = 'hints', fg = 'bg', style = 'bold' },
+        left_sep = space_sep('hints'),
+        right_sep = space_sep('hints'),
+        icon = {
+            str = icons.diagnostic_hints,
+            hl = { style = 'NONE' },
+        },
+    },
+    diagnostic_info = {
+        provider = 'diagnostic_info',
+        hl = { bg = 'info', fg = 'bg', style = 'bold' },
+        left_sep = space_sep('info'),
+        right_sep = space_sep('info'),
+        icon = {
+            str = icons.diagnostic_info,
+            hl = { style = 'NONE' },
+        },
+    },
+    lsp_names = {
+        provider = 'lsp_client_names',
+        hl = { bg = 'darkgray' },
+        icon = {
+            str = icons.lsp,
+            hl = { fg = 'yellow' },
+        },
+        left_sep = space_sep('darkgray'),
+        right_sep = space_sep('darkgray'),
+        truncate_hide = true,
     },
     default = {
         provider = '',
@@ -273,39 +261,39 @@ local components = {
 local statusline = {
     active = {
         { -- Left
-            components.vi.mode,
-            components.git.branch,
-            components.git.diff_added,
-            components.git.diff_changed,
-            components.git.diff_removed,
-            components.file.info,
-            components.file.modified,
-            components.diagnostic.errors,
-            components.diagnostic.warnings,
-            components.diagnostic.hints,
-            components.diagnostic.info,
+            components.vi_mode,
+            components.git_branch,
+            components.git_diff_added,
+            components.git_diff_changed,
+            components.git_diff_removed,
+            components.file_info,
+            components.file_modified,
+            components.diagnostic_errors,
+            components.diagnostic_warnings,
+            components.diagnostic_hints,
+            components.diagnostic_info,
             components.default,
         },
         { -- Right
-            components.lsp.names,
-            components.file.os,
-            components.file.encoding,
-            components.file.type,
-            components.cursor.position,
-            components.cursor.line_percentage,
-            components.vi.right_indicator,
+            components.lsp_names,
+            components.file_os,
+            components.file_encoding,
+            components.file_type,
+            components.cursor_position,
+            components.cursor_line_percentage,
+            components.vi_right_indicator,
         },
     },
     inactive = {
         { -- left
-            components.vi.mode,
-            components.file.info,
+            components.vi_mode,
+            components.file_info,
             components.default,
         },
         { -- right
-            components.cursor.position,
-            components.cursor.line_percentage,
-            components.vi.right_indicator,
+            components.cursor_position,
+            components.cursor_line_percentage,
+            components.vi_right_indicator,
         },
     },
 }
