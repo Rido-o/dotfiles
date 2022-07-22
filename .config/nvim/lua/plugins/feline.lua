@@ -129,7 +129,7 @@ local components = {
                     type = 'relative',
                 },
             },
-            hl = { fg = 'fg', bg = 'black'},
+            hl = { fg = 'fg', bg = 'black' },
             left_sep = space_sep('black'),
             right_sep = space_sep('black'),
         },
@@ -354,6 +354,34 @@ local statusline = {
             components.vi.right_indicator,
         },
     },
+    inactive = {
+        { -- left
+            components.vi.mode,
+            components.file.info,
+            components.sep.empty,
+        },
+        { -- right
+            components.cursor.position,
+            components.cursor.line_percentage,
+            components.vi.right_indicator,
+        }
+    }
+}
+
+local force_inactive = {
+    filetypes = {
+        '^TelescopePrompt$',
+        '^packer$',
+        '^fugitive$',
+        '^fugitiveblame$',
+        '^qf$',
+        '^help$',
+        '^neo-tree$',
+    },
+    buftypes = {
+        '^terminal$',
+    },
+    bufnames = {},
 }
 
 require('feline').setup({
@@ -362,4 +390,5 @@ require('feline').setup({
     default_fg = 'fg',
     vi_mode_colors = vi_mode_colors,
     components = statusline,
+    force_inactive = force_inactive,
 })
