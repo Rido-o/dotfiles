@@ -48,6 +48,10 @@ local components = {
         fg = function(buffer)
             return buffer.is_modified and get_hex('WarningMsg', 'fg')
         end,
+        truncation = {
+            priority = 99,
+            direction = 'right'
+        }
     },
     modified = {
         text = function(buffer)
