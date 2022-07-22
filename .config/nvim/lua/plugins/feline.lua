@@ -23,7 +23,6 @@ local colors = {
     warnings = '#FF9E3B',
     info = '#6A9589',
     hints = '#658594',
-    comment = '#727169'
 }
 
 local vi_mode_colors = {
@@ -174,7 +173,7 @@ local components = {
             right_sep = space_sep('darkgray'),
             icon = {
                 str = icons.git_branch,
-                hl = {style = 'NONE'},
+                hl = { fg = 'orange', style = 'NONE' },
             },
         },
         diff_added = {
@@ -252,11 +251,11 @@ local components = {
             hl = {
                 bg = 'errors',
                 fg = 'bg',
-                style = 'bold'
+                style = 'bold',
             },
             icon = {
                 str = icons.diagnostic_errors,
-                hl = {style = 'NONE'}
+                hl = { style = 'NONE' },
             },
             left_sep = space_sep('errors'),
             right_sep = space_sep('errors'),
@@ -266,11 +265,11 @@ local components = {
             hl = {
                 bg = 'warnings',
                 fg = 'bg',
-                style = 'bold'
+                style = 'bold',
             },
             icon = {
                 str = icons.diagnostic_warnings,
-                hl = {style = 'NONE'}
+                hl = { style = 'NONE' },
             },
             left_sep = space_sep('warnings'),
             right_sep = space_sep('warnings'),
@@ -280,11 +279,11 @@ local components = {
             hl = {
                 bg = 'hints',
                 fg = 'bg',
-                style = 'bold'
+                style = 'bold',
             },
             icon = {
                 str = icons.diagnostic_hints,
-                hl = {style = 'NONE'}
+                hl = { style = 'NONE' },
             },
             left_sep = space_sep('hints'),
             right_sep = space_sep('hints'),
@@ -294,11 +293,11 @@ local components = {
             hl = {
                 bg = 'info',
                 fg = 'bg',
-                style = 'bold'
+                style = 'bold',
             },
             icon = {
                 str = icons.diagnostic_info,
-                hl = {style = 'NONE'}
+                hl = { style = 'NONE' },
             },
             left_sep = space_sep('info'),
             right_sep = space_sep('info'),
@@ -312,7 +311,7 @@ local components = {
             },
             icon = {
                 str = icons.lsp,
-                hl = { fg = 'orange' },
+                hl = { fg = 'yellow' },
             },
             left_sep = space_sep('darkgray'),
             right_sep = space_sep('darkgray'),
@@ -348,8 +347,8 @@ local statusline = {
             components.cursor.position,
             components.cursor.line_percentage,
             components.vi.right_indicator,
-        }
-    }
+        },
+    },
 }
 
 require('feline').setup({
