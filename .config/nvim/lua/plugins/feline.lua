@@ -23,6 +23,7 @@ local colors = {
     warnings = '#FF9E3B',
     info = '#6A9589',
     hints = '#658594',
+    comment = '#727169'
 }
 
 local vi_mode_colors = {
@@ -44,7 +45,7 @@ local icons = {
     diagnostic_warnings = '⚠ ',
     diagnostic_hints = ' ',
     diagnostic_info = ' ',
-    git_branch = ' ', -- 
+    git_branch = ' ', -- 
     git_added = '+', -- 
     git_changed = '~', -- 
     git_removed = '-', -- 
@@ -166,42 +167,45 @@ local components = {
         branch = {
             provider = 'git_branch',
             hl = {
-                bg = 'black',
+                bg = 'darkgray',
                 style = 'bold',
             },
-            left_sep = space_sep('black'),
-            right_sep = space_sep('black'),
-            icon = icons.git_branch,
+            left_sep = space_sep('darkgray'),
+            right_sep = space_sep('darkgray'),
+            icon = {
+                str = icons.git_branch,
+                hl = {style = 'NONE'},
+            },
         },
         diff_added = {
             provider = 'git_diff_added',
             hl = {
                 fg = 'green',
-                bg = 'black',
+                bg = 'darkgray',
                 style = 'bold',
             },
             icon = icons.git_added,
-            right_sep = space_sep('black'),
+            right_sep = space_sep('darkgray'),
         },
         diff_changed = {
             provider = 'git_diff_changed',
             hl = {
                 fg = 'yellow',
-                bg = 'black',
+                bg = 'darkgray',
                 style = 'bold',
             },
             icon = icons.git_changed,
-            right_sep = space_sep('black'),
+            right_sep = space_sep('darkgray'),
         },
         diff_removed = {
             provider = 'git_diff_removed',
             hl = {
                 fg = 'red',
-                bg = 'black',
+                bg = 'darkgray',
                 style = 'bold',
             },
             icon = icons.git_removed,
-            right_sep = space_sep('black'),
+            right_sep = space_sep('darkgray'),
         },
     },
     cursor = {
@@ -248,8 +252,12 @@ local components = {
             hl = {
                 bg = 'errors',
                 fg = 'bg',
+                style = 'bold'
             },
-            icon = icons.diagnostic_errors,
+            icon = {
+                str = icons.diagnostic_errors,
+                hl = {style = 'NONE'}
+            },
             left_sep = space_sep('errors'),
             right_sep = space_sep('errors'),
         },
@@ -258,8 +266,12 @@ local components = {
             hl = {
                 bg = 'warnings',
                 fg = 'bg',
+                style = 'bold'
             },
-            icon = icons.diagnostic_warnings,
+            icon = {
+                str = icons.diagnostic_warnings,
+                hl = {style = 'NONE'}
+            },
             left_sep = space_sep('warnings'),
             right_sep = space_sep('warnings'),
         },
@@ -268,8 +280,12 @@ local components = {
             hl = {
                 bg = 'hints',
                 fg = 'bg',
+                style = 'bold'
             },
-            icon = icons.diagnostic_hints,
+            icon = {
+                str = icons.diagnostic_hints,
+                hl = {style = 'NONE'}
+            },
             left_sep = space_sep('hints'),
             right_sep = space_sep('hints'),
         },
@@ -278,8 +294,12 @@ local components = {
             hl = {
                 bg = 'info',
                 fg = 'bg',
+                style = 'bold'
             },
-            icon = icons.diagnostic_info,
+            icon = {
+                str = icons.diagnostic_info,
+                hl = {style = 'NONE'}
+            },
             left_sep = space_sep('info'),
             right_sep = space_sep('info'),
         },
@@ -309,6 +329,10 @@ local statusline = {
     active = {
         { -- Left
             components.vi.mode,
+            components.git.branch,
+            components.git.diff_added,
+            components.git.diff_changed,
+            components.git.diff_removed,
             components.file.info,
             components.diagnostic.errors,
             components.diagnostic.warnings,
@@ -317,10 +341,6 @@ local statusline = {
             components.sep.empty,
         },
         { -- Right
-            components.git.branch,
-            components.git.diff_added,
-            components.git.diff_changed,
-            components.git.diff_removed,
             components.lsp.names,
             components.file.os,
             components.file.encoding,
