@@ -37,6 +37,7 @@ local vi_mode_colors = {
 }
 
 local icons = {
+    vi_right_indicator = '█',
     os_linux = '',
     os_mac = '',
     os_windows = '',
@@ -105,7 +106,7 @@ local components = {
         icon = '',
     },
     vi_right_indicator = {
-        provider = '█',
+        provider = icons.vi_right_indicator,
         hl = function()
             return { fg = vi_mode_utils.get_mode_color() }
         end,
