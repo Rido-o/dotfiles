@@ -56,13 +56,10 @@ local icons = {
 }
 
 local function space_sep(color)
-    local sep = {
+    return {
         str = ' ',
-        hl = {
-            bg = color,
-        },
+        hl = { bg = color },
     }
-    return sep
 end
 
 local function file_osinfo()
