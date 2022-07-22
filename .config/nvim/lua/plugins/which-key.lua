@@ -143,6 +143,7 @@ wk.register({
         h = {'<CMD>Telescope command_history<CR>' , 'Search command history'},
         c = {'<CMD>Telescope colorscheme<CR>' , 'List colorschemes'},
         P = {'<CMD>Telescope builtin<CR>' , 'List all pickers'},
+        d = {'<CMD>Telescope diagnostics<CR>' , 'Show diagnostics'},
     },
 
     -- Vimwiki
