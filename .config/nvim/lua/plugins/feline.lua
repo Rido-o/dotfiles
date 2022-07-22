@@ -51,6 +51,7 @@ local icons = {
     lsp = '⎈ ',
     cursor_line_percentage = '☰ ',
     cursor_position = ' ',
+    file_modified = '●',
 }
 
 local function space_sep(color)
@@ -77,7 +78,7 @@ local function file_osinfo()
 end
 
 local function file_modified()
-    return vim.bo.modified and '●' or ''
+    return vim.bo.modified and icons.file_modified or ''
 end
 
 local components = {
