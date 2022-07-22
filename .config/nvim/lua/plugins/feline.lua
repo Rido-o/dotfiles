@@ -77,9 +77,7 @@ local function file_osinfo()
     return icon
 end
 
-local function file_modified()
-    return vim.bo.modified and icons.file_modified or ''
-end
+local vi_mode_utils = require('feline.providers.vi_mode')
 
 local components = {
     vi = {
@@ -87,26 +85,22 @@ local components = {
             provider = 'vi_mode',
             hl = function()
                 return {
-                    name = require('feline.providers.vi_mode').get_mode_highlight_name(),
+                    name = vi_mode_utils.get_mode_highlight_name(),
                     fg = 'bg',
-                    bg = require('feline.providers.vi_mode').get_mode_color(),
+                    bg = vi_mode_utils.get_mode_color(),
                     style = 'bold',
                 }
             end,
             left_sep = {
                 str = ' ',
                 hl = function()
-                    return {
-                        bg = require('feline.providers.vi_mode').get_mode_color(),
-                    }
+                    return { bg = vi_mode_utils.get_mode_color() }
                 end,
             },
             right_sep = {
                 str = ' ',
                 hl = function()
-                    return {
-                        bg = require('feline.providers.vi_mode').get_mode_color(),
-                    }
+                    return { bg = vi_mode_utils.get_mode_color() }
                 end,
             },
             icon = '',
@@ -114,9 +108,7 @@ local components = {
         right_indicator = {
             provider = '█',
             hl = function()
-                return {
-                    fg = require('feline.providers.vi_mode').get_mode_color(),
-                }
+                return { fg = vi_mode_utils.get_mode_color() }
             end,
         },
     },
@@ -141,34 +133,28 @@ local components = {
             right_sep = space_sep('black'),
         },
         modified = {
-            provider = file_modified,
+            provider = function()
+                return vim.bo.modified and icons.file_modified or ''
+            end,
             hl = { fg = 'warnings', bg = 'black' },
             right_sep = space_sep('black'),
         },
         os = {
             provider = file_osinfo,
-            hl = {
-                bg = 'gray',
-            },
+            hl = { bg = 'gray' },
             left_sep = space_sep('gray'),
         },
         encoding = {
             provider = function()
                 return vim.bo.fileencoding
             end,
-            hl = {
-                bg = 'gray',
-            },
+            hl = { bg = 'gray' },
             left_sep = space_sep('gray'),
             right_sep = space_sep('gray'),
         },
         type = {
             provider = 'file_type',
-            hl = {
-                bg = 'skyblue',
-                fg = 'bg',
-                style = 'bold',
-            },
+            hl = { bg = 'skyblue', fg = 'bg', style = 'bold' },
             left_sep = space_sep('skyblue'),
             right_sep = space_sep('skyblue'),
         },
@@ -176,10 +162,7 @@ local components = {
     git = {
         branch = {
             provider = 'git_branch',
-            hl = {
-                bg = 'darkgray',
-                style = 'bold',
-            },
+            hl = { bg = 'darkgray', style = 'bold' },
             left_sep = space_sep('darkgray'),
             right_sep = space_sep('darkgray'),
             icon = {
@@ -189,137 +172,90 @@ local components = {
         },
         diff_added = {
             provider = 'git_diff_added',
-            hl = {
-                fg = 'green',
-                bg = 'darkgray',
-                style = 'bold',
-            },
-            icon = icons.git_added,
+            hl = { fg = 'green', bg = 'darkgray', style = 'bold' },
             right_sep = space_sep('darkgray'),
+            icon = icons.git_added,
         },
         diff_changed = {
             provider = 'git_diff_changed',
-            hl = {
-                fg = 'yellow',
-                bg = 'darkgray',
-                style = 'bold',
-            },
-            icon = icons.git_changed,
+            hl = { fg = 'yellow', bg = 'darkgray', style = 'bold' },
             right_sep = space_sep('darkgray'),
+            icon = icons.git_changed,
         },
         diff_removed = {
             provider = 'git_diff_removed',
-            hl = {
-                fg = 'red',
-                bg = 'darkgray',
-                style = 'bold',
-            },
-            icon = icons.git_removed,
+            hl = { fg = 'red', bg = 'darkgray', style = 'bold' },
             right_sep = space_sep('darkgray'),
+            icon = icons.git_removed,
         },
     },
     cursor = {
         line_percentage = {
             provider = 'line_percentage',
-            hl = {
-                bg = 'darkgray',
-                style = 'bold',
-            },
+            hl = { bg = 'darkgray', style = 'bold' },
+            left_sep = space_sep('darkgray'),
+            right_sep = space_sep('darkgray'),
             icon = {
                 str = icons.cursor_line_percentage,
                 hl = { fg = 'cyan', style = 'NONE' },
             },
-            left_sep = space_sep('darkgray'),
-            right_sep = space_sep('darkgray'),
-        },
-        scroll_bar = {
-            provider = 'scroll_bar',
-            hl = function()
-                return {
-                    fg = require('feline.providers.vi_mode').get_mode_color(),
-                    bg = 'darkgray',
-                    style = 'bold',
-                }
-            end,
-            right_sep = space_sep('darkgray'),
         },
         position = {
             provider = 'position',
-            hl = {
-                bg = 'darkgray',
-                style = 'bold',
-            },
+            hl = { bg = 'darkgray', style = 'bold' },
+            left_sep = space_sep('darkgray'),
             icon = {
                 str = icons.cursor_position,
                 hl = { fg = 'cyan', style = 'NONE' },
             },
-            left_sep = space_sep('darkgray'),
         },
     },
     diagnostic = {
         errors = {
             provider = 'diagnostic_errors',
-            hl = {
-                bg = 'errors',
-                fg = 'bg',
-                style = 'bold',
-            },
+            hl = { bg = 'errors', fg = 'bg', style = 'bold' },
+            left_sep = space_sep('errors'),
+            right_sep = space_sep('errors'),
             icon = {
                 str = icons.diagnostic_errors,
                 hl = { style = 'NONE' },
             },
-            left_sep = space_sep('errors'),
-            right_sep = space_sep('errors'),
         },
         warnings = {
             provider = 'diagnostic_warnings',
-            hl = {
-                bg = 'warnings',
-                fg = 'bg',
-                style = 'bold',
-            },
+            hl = { bg = 'warnings', fg = 'bg', style = 'bold' },
+            left_sep = space_sep('warnings'),
+            right_sep = space_sep('warnings'),
             icon = {
                 str = icons.diagnostic_warnings,
                 hl = { style = 'NONE' },
             },
-            left_sep = space_sep('warnings'),
-            right_sep = space_sep('warnings'),
         },
         hints = {
             provider = 'diagnostic_hints',
-            hl = {
-                bg = 'hints',
-                fg = 'bg',
-                style = 'bold',
-            },
+            hl = { bg = 'hints', fg = 'bg', style = 'bold' },
+            left_sep = space_sep('hints'),
+            right_sep = space_sep('hints'),
             icon = {
                 str = icons.diagnostic_hints,
                 hl = { style = 'NONE' },
             },
-            left_sep = space_sep('hints'),
-            right_sep = space_sep('hints'),
         },
         info = {
             provider = 'diagnostic_info',
-            hl = {
-                bg = 'info',
-                fg = 'bg',
-                style = 'bold',
-            },
+            hl = { bg = 'info', fg = 'bg', style = 'bold' },
+            left_sep = space_sep('info'),
+            right_sep = space_sep('info'),
             icon = {
                 str = icons.diagnostic_info,
                 hl = { style = 'NONE' },
             },
-            left_sep = space_sep('info'),
-            right_sep = space_sep('info'),
         },
     },
     lsp = {
         names = {
             provider = 'lsp_client_names',
-            hl = {
-                bg = 'darkgray',
-            },
+            hl = { bg = 'darkgray' },
             icon = {
                 str = icons.lsp,
                 hl = { fg = 'yellow' },
@@ -329,10 +265,8 @@ local components = {
             truncate_hide = true,
         },
     },
-    sep = {
-        empty = {
-            provider = '',
-        },
+    default = {
+        provider = '',
     },
 }
 
@@ -350,7 +284,7 @@ local statusline = {
             components.diagnostic.warnings,
             components.diagnostic.hints,
             components.diagnostic.info,
-            components.sep.empty,
+            components.default,
         },
         { -- Right
             components.lsp.names,
@@ -366,14 +300,14 @@ local statusline = {
         { -- left
             components.vi.mode,
             components.file.info,
-            components.sep.empty,
+            components.default,
         },
         { -- right
             components.cursor.position,
             components.cursor.line_percentage,
             components.vi.right_indicator,
-        }
-    }
+        },
+    },
 }
 
 local force_inactive = {
