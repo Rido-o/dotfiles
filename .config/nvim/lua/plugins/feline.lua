@@ -243,12 +243,12 @@ local components = {
     lsp_names = {
         provider = 'lsp_client_names',
         hl = { bg = 'darkgray' },
+        left_sep = space_sep('darkgray'),
+        right_sep = space_sep('darkgray'),
         icon = {
             str = icons.lsp,
             hl = { fg = 'yellow' },
         },
-        left_sep = space_sep('darkgray'),
-        right_sep = space_sep('darkgray'),
         truncate_hide = true,
     },
     default = {
