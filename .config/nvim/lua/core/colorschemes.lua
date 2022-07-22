@@ -17,7 +17,6 @@ end
 local function tokyonight()
     vim.g.tokyonight_style = 'night'
     vim.g.tokyonight_disable_italic_comment = '1'
-    vim.g.tokyonight_lualine_bold = true
     setColorscheme('tokyonight')
 end
 

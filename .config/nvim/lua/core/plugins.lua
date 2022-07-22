@@ -82,11 +82,6 @@ return packer.startup({
             'norcalli/nvim-colorizer.lua',
             config = require('colorizer').setup(),
         })
-        -- use({
-        --     'nvim-lualine/lualine.nvim',
-        --     requires = { 'kyazdani42/nvim-web-devicons' },
-        --     config = plugin_config('lualine'),
-        -- })
         use({
             'feline-nvim/feline.nvim',
             requires = {
