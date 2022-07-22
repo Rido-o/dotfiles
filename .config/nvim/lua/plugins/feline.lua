@@ -306,31 +306,31 @@ local components = {
 }
 
 local statusline = {
-    active = { {}, {} },
-    -- inactive = {},
+    active = {
+        { -- Left
+            components.vi.mode,
+            components.file.info,
+            components.diagnostic.errors,
+            components.diagnostic.warnings,
+            components.diagnostic.hints,
+            components.diagnostic.info,
+            components.sep.empty,
+        },
+        { -- Right
+            components.git.branch,
+            components.git.diff_added,
+            components.git.diff_changed,
+            components.git.diff_removed,
+            components.lsp.names,
+            components.file.os,
+            components.file.encoding,
+            components.file.type,
+            components.cursor.position,
+            components.cursor.line_percentage,
+            components.vi.right_indicator,
+        }
+    }
 }
-
--- Left
-table.insert(statusline.active[1], components.vi.mode)
-table.insert(statusline.active[1], components.file.info)
-table.insert(statusline.active[1], components.diagnostic.errors)
-table.insert(statusline.active[1], components.diagnostic.warnings)
-table.insert(statusline.active[1], components.diagnostic.hints)
-table.insert(statusline.active[1], components.diagnostic.info)
-table.insert(statusline.active[1], components.sep.empty)
--- Right
-table.insert(statusline.active[2], components.git.branch)
-table.insert(statusline.active[2], components.git.diff_added)
-table.insert(statusline.active[2], components.git.diff_changed)
-table.insert(statusline.active[2], components.git.diff_removed)
-table.insert(statusline.active[2], components.lsp.names)
-table.insert(statusline.active[2], components.file.os)
-table.insert(statusline.active[2], components.file.encoding)
-table.insert(statusline.active[2], components.file.type)
-table.insert(statusline.active[2], components.cursor.position)
-table.insert(statusline.active[2], components.cursor.line_percentage)
--- table.insert(statusline.active[2], components.cursor.scroll_bar)
-table.insert(statusline.active[2], components.vi.right_indicator)
 
 require('feline').setup({
     theme = colors,
