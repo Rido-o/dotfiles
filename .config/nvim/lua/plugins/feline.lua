@@ -76,6 +76,10 @@ local function file_osinfo()
     return icon
 end
 
+local function file_modified()
+    return vim.bo.modified and '●' or ''
+end
+
 local components = {
     vi = {
         mode = {
@@ -117,21 +121,20 @@ local components = {
     },
     file = {
         info = {
-            provider = 'file_info',
-            hl = function()
-                if vim.bo.modified then
-                    return {
-                        fg = 'warnings',
-                        bg = 'black',
-                    }
-                else
-                    return {
-                        fg = 'fg',
-                        bg = 'black',
-                    }
-                end
-            end,
+            provider = {
+                name = 'file_info',
+                opts = {
+                    file_modified_icon = '',
+                    type = 'relative',
+                },
+            },
+            hl = { fg = 'fg', bg = 'black'},
             left_sep = space_sep('black'),
+            right_sep = space_sep('black'),
+        },
+        modified = {
+            provider = file_modified,
+            hl = { fg = 'warnings', bg = 'black' },
             right_sep = space_sep('black'),
         },
         os = {
@@ -333,6 +336,7 @@ local statusline = {
             components.git.diff_changed,
             components.git.diff_removed,
             components.file.info,
+            components.file.modified,
             components.diagnostic.errors,
             components.diagnostic.warnings,
             components.diagnostic.hints,
