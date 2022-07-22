@@ -74,6 +74,18 @@ local sidebar = {
     },
 }
 
+local bufferline = {
+    components.separator,
+    components.two_space,
+    components.index,
+    components.space,
+    components.devicon,
+    components.filename,
+    components.space,
+    components.modified,
+    components.two_space,
+}
+
 require('cokeline').setup({
     buffers = {
         filter_valid = function(buffer)
@@ -91,17 +103,7 @@ require('cokeline').setup({
             return buffer.is_focused and get_hex('Normal', 'bg') or get_hex('Tabline', 'bg')
         end,
     },
-    components = {
-        components.separator,
-        components.two_space,
-        components.index,
-        components.space,
-        components.devicon,
-        components.filename,
-        components.space,
-        components.modified,
-        components.two_space,
-    },
+    components = bufferline,
     sidebar = sidebar.file_explorer,
 })
 
