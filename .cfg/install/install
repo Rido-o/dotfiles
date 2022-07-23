@@ -10,6 +10,7 @@
 # Update package list
 sudo pacman -Sy
 sudo pacman -S --noconfirm git
+sudo pacman -S archlinux-keyring
 
 # Dot file install
 git clone --bare https://github.com/Rido-o/dotfiles.git $HOME/.cfg/dotfiles
