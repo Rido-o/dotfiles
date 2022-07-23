@@ -26,6 +26,7 @@ vmap('x', '"_x', { desc = 'Delete char' })
 ----------------
 -- Replace
 ----------------
+-- add dot repeat support and rr support
 function Replace_operator()
     local mode = vim.api.nvim_get_mode().mode
     local old_func = vim.go.operatorfunc
