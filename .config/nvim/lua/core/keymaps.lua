@@ -18,8 +18,8 @@ end
 nmap('<CR>', ':noh<CR>', { desc = 'Clear highlighting' })
 
 -- Do action without yanking into "+ register
-nmap('c', '"_c', { desc = 'Copy' })
-vmap('c', '"_c', { desc = 'Copy' })
+nmap('c', '"_c', { desc = 'Change' })
+vmap('c', '"_c', { desc = 'Change' })
 nmap('x', '"_x', { desc = 'Delete char' })
 vmap('x', '"_x', { desc = 'Delete char' })
 
