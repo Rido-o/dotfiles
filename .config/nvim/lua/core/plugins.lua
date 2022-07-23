@@ -215,7 +215,6 @@ return packer.startup({
             'kylechui/nvim-surround',
             config = plugin_config('surround'),
         })
-        -- use('tpope/vim-surround')
         use('tpope/vim-repeat')
 
         -- Run bootstrap if packer isnt' installed
