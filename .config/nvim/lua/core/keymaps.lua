@@ -39,9 +39,12 @@ function _G.Replace_operator(motion)
         vim.api.nvim_buf_set_text(0, start[1] - 1, start[2], finish[1] - 1, finish[2] + 1, replacement)
     elseif motion == 'line' then
         vim.api.nvim_buf_set_lines(0, start[1] - 1, finish[1], true, replacement)
+    elseif motion == 'r' then
+        local row = vim.api.nvim_win_get_cursor(0)[1]
+        vim.api.nvim_buf_set_lines(0, row - 1, row, true, replacement)
     end
 end
 
 nmap('r', _G.Replace_operator, { desc = 'Replace', expr = true })
 vmap('r', _G.Replace_operator, { desc = 'Replace', expr = true })
--- nmap('rr', '"_cc<C-r>+<BS><esc>', { desc = 'Replace line' })
+nmap('rr', '<ESC><CMD>lua _G.Replace_operator("r")<CR>', { desc = 'Replace line' })
