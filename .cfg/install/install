@@ -52,7 +52,7 @@ pacList=("zsh" "zsh-syntax-highlighting" "zsh-autosuggestions" # Install zsh and
 	)
 
 yayList=("dashbinsh" # Used to make sure dash remains as /bin/sh # might need to link dash as /bin/sh first
-	 "cozette-otb" "nerd-fonts-hack" "ttf-kochi-substitute" # Install fonts, ttf-kochi-substitute fixes missing icons for cozette
+	 "cozette-otb" "nerd-fonts-hack" "ttf-kochi-substitute" # Install fonts, ttf-kochi-substitute fixes missing icons for cozette but fucks up fonts everywhere else
 	 "gotop-bin" "networkmanager-dmenu-git" # Install dwm statusbar dependencies
 	 "stig" # or transmission-remote-cli-git # Tui transmission client
 	 "fvwm" # A window manager
