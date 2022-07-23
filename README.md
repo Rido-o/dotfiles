@@ -2,7 +2,7 @@
 ## Overview
 The purpose of this repository is to provide all of the necessary scripts and documentation to create a complete install of my system.
 ## Installation process
-To begin make sure that you have a completely fresh arch install ready with an internet connection and wget installed. The instructions to achieve such an install are included in REDACTED. Run the following command.
+To begin make sure that you have a completely fresh arch install ready with an internet connection and wget installed. The instructions to achieve such an install are included in REDACTED. Run the following command. Make sure to run it as a user and not root.
 
 `sh <(wget -qO- https://raw.githubusercontent.com/Rido-o/dotfiles/master/.cfg/install/install)`
 
