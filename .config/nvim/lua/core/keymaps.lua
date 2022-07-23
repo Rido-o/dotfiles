@@ -26,7 +26,7 @@ vmap('x', '"_x', { desc = 'Delete char' })
 ----------------
 -- Replace
 ----------------
--- add rr support
+-- add number support for rr
 function _G.Replace_operator(motion)
     if motion == nil then
         vim.o.operatorfunc = 'v:lua.Replace_operator'
