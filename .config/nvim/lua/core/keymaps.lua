@@ -26,12 +26,25 @@ vmap('x', '"_x', { desc = 'Delete char' })
 ----------------
 -- Replace
 ----------------
--- Replace object with default register without yanking replaced text
-nmap('r', '\'"_c\' . (nr2char(getchar())) . (nr2char(getchar())) . "<C-r>+<esc>"', { expr = true })
--- Two character replace motions
-nmap('rr', '"_cc<C-r>+<BS><esc>', { desc = 'Replace line' })
-nmap('r0', '"_c0<C-r>+<BS><esc>', { desc = 'Replace to start of line' })
-nmap('r$', '"_c$<C-r>+<BS><esc>', { desc = 'Replace to end of line' })
-nmap('r^', '"_c^<C-r>+<BS><esc>', { desc = 'Replace to start of line not including char' })
-nmap('rw', '"_cw<C-r>+<esc>', { desc = 'Replace word' })
-nmap('rW', '"_cW<C-r>+<esc>', { desc = 'Replace Word' })
+function Replace_operator()
+    local mode = vim.api.nvim_get_mode().mode
+    local old_func = vim.go.operatorfunc
+    _G.op_func_replace = function()
+        local start = vim.api.nvim_buf_get_mark(0, '[')
+        local finish = vim.api.nvim_buf_get_mark(0, ']')
+        local replacement = vim.split(vim.fn.getreg('+'):gsub('%\n$', ''), '\n', false)
+        if mode == 'V' then
+            vim.api.nvim_buf_set_lines(0, start[1] - 1, finish[1], true, replacement)
+        else
+            vim.api.nvim_buf_set_text(0, start[1] - 1, start[2], finish[1] - 1, finish[2] + 1, replacement)
+        end
+        vim.go.operatorfunc = old_func
+        _G.op_func_replace = nil
+    end
+    vim.go.operatorfunc = 'v:lua.op_func_replace'
+    vim.api.nvim_feedkeys('g@', 'v', false)
+end
+
+nmap('r', '<cmd>lua Replace_operator()<CR>', { desc = 'Replace' })
+vmap('r', '<cmd>lua Replace_operator()<CR>', { desc = 'Replace' })
+-- nmap('rr', '"_cc<C-r>+<BS><esc>', { desc = 'Replace line' })
