@@ -35,7 +35,7 @@ pacList=("zsh" "zsh-syntax-highlighting" "zsh-autosuggestions" # Install zsh and
 	 "fortune-mod" "cowsay" "xautolock" # Install slock autolock script dependencies
 	 "zathura" "zathura-pdf-mupdf" "xwallpaper" "newsboat" "picom" "mpv" "z" "youtube-dl" "sd" "fd" # Installing misc
 	 "exiv2" "imagemagick" # Install exiv2 and imagemagick for image dimensions in sxiv statusbar # Might not be needed anymore
-	 "fzf" # Used in nnn # Seperately installed for nvim via pluginstall?
+	 "fzf" # Used in nnn # Used in nvim with telescope
 	 "cronie" # Install cronie
 	 "glib2" # Fixes libpango symbol lookup errors
 	 "reflector" # Used for updating mirrorlist
