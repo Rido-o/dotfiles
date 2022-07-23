@@ -39,6 +39,10 @@ function _G.Replace_operator(motion)
         vim.api.nvim_buf_set_text(0, start[1] - 1, start[2], finish[1] - 1, finish[2] + 1, replacement)
     elseif motion == 'line' then
         vim.api.nvim_buf_set_lines(0, start[1] - 1, finish[1], true, replacement)
+    elseif motion == 'block' then
+        for i=start[1] - 1, finish[1] - 1 do
+            vim.api.nvim_buf_set_text(0, i, start[2], i, finish[2] + 1, replacement)
+        end
     elseif motion == 'r' then
         local row = vim.api.nvim_win_get_cursor(0)[1]
         vim.api.nvim_buf_set_lines(0, row - 1, row, true, replacement)
