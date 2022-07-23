@@ -1,3 +1,8 @@
+local status_ok = pcall(require, 'gitsigns')
+if not status_ok then
+    return
+end
+
 -----------------
 -- Settings
 -----------------

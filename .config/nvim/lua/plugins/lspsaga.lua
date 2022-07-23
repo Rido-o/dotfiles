@@ -1,3 +1,8 @@
+local status_ok = pcall(require, 'lspsaga')
+if not status_ok then
+    return
+end
+
 -- use custom config
 require('lspsaga').init_lsp_saga({
     -- "single" | "double" | "rounded" | "bold" | "plus"

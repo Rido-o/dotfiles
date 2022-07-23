@@ -1,3 +1,8 @@
+local status_ok = pcall(require, 'neo-tree')
+if not status_ok then
+    return
+end
+
 -- remove legacy commands
 vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1]])
 

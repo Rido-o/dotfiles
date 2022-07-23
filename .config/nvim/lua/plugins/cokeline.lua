@@ -1,3 +1,8 @@
+local status_ok = pcall(require, 'cokeline')
+if not status_ok then
+    return
+end
+
 local get_hex = require('cokeline/utils').get_hex
 
 local superscript_numbers = {

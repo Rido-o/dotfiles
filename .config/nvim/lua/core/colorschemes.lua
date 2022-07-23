@@ -32,4 +32,4 @@ end
 ----- Selected Scheme -----
 ---------------------------
 
-kanagawa()
+pcall(kanagawa)

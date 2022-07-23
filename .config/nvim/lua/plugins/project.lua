@@ -1,3 +1,8 @@
+local status_ok = pcall(require, 'project_nvim')
+if not status_ok then
+    return
+end
+
 require('project_nvim').setup({
     -- Methods of detecting the root directory.
     detection_methods = { 'pattern', 'lsp' },

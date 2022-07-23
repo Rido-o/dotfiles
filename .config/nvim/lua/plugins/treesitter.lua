@@ -1,3 +1,8 @@
+local status_ok = pcall(require, 'nvim-treesitter')
+if not status_ok then
+    return
+end
+
 require('nvim-treesitter.configs').setup{
     ensure_installed = {"lua", "python"}, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
     --ignore_install = { "javascript" }, -- List of parsers to ignore installing

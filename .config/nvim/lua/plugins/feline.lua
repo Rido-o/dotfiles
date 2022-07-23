@@ -1,3 +1,8 @@
+local status_ok = pcall(require, 'feline')
+if not status_ok then
+    return
+end
+
 local function get_col(group, id)
     return vim.fn.synIDattr(vim.fn.hlID(group), id)
 end

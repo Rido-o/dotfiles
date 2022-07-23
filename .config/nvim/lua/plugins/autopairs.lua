@@ -1,3 +1,8 @@
+local status_ok = pcall(require, 'nvim-autopairs')
+if not status_ok then
+    return
+end
+
 require('nvim-autopairs').setup({
     disable_filetype = { 'TelescopePrompt' },
     disable_in_macro = false, -- disable when recording or executing a macro
