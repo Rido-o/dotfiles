@@ -108,6 +108,8 @@ which_key.register({
         Q = {'<CMD>w|%bd|e#|bd#<CR>', 'Close all except current'},
     },
 
+    f = { name = 'Find'},
+
     -- Lsp
     a = {
         name = 'Lsp',
