@@ -27,7 +27,7 @@ pacList=("zsh" "zsh-syntax-highlighting" "zsh-autosuggestions" # Install zsh and
 	 "dash" # Install dash
 	 "man-db" "man-pages" "texinfo" "most" # Install support for man pages
 	 "xorg-xinit" "xorg" "xclip" "xdg-user-dirs" # Install Xorg and other utilties
-	 "neovim" "python" "python-pip" "nodejs" "npm" "hyperfine" "unzip" # Install Nvim and related utilities
+	 "neovim" "python" "python-pip" "nodejs" "npm" "hyperfine" "unzip" "stylua"# Install Nvim and related utilities
 	 "pulseaudio" "pamixer" "pulsemixer" # Install audio
 	 "mpd" "mpc" "ncmpcpp" # Install music player
 	 "imlib2" # Install slock dependency
