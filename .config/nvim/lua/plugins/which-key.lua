@@ -65,12 +65,12 @@ which_key.setup{
 }
 
 -- Highlights
-vim.cmd("hi! def link WhichKey Function")
-vim.cmd("hi! def link WhichKeyGroup Keyword")
-vim.cmd("hi! def link WhichKeySeparator DiffAdded")
-vim.cmd("hi! def link WhichKeyDesc Identifier")
-vim.cmd("hi! def link WhichKeyFloat NormalFloat")
-vim.cmd("hi! def link WhichKeyValue Comment")
+vim.api.nvim_set_hl(0, 'WhichKey', { link = 'Function' })
+vim.api.nvim_set_hl(0, 'WhichKeyGroup', { link = 'Keyword' })
+vim.api.nvim_set_hl(0, 'WhichKeySeparator', { link = 'DiffAdded' })
+vim.api.nvim_set_hl(0, 'WhichKeyDesc', { link = 'Identifier' })
+vim.api.nvim_set_hl(0, 'WhichKeyFloat', { link = 'NormalFloat' })
+vim.api.nvim_set_hl(0, 'WhichKeyValue', { link = 'Comment' })
 
 ------------------------
 -- Global Mappings
