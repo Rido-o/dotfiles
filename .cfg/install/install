@@ -49,10 +49,11 @@ pacList=("zsh" "zsh-syntax-highlighting" "zsh-autosuggestions" # Install zsh and
 	 "pyright" # Python LSP for use with nvim
      "lazygit" # Git interface
 	 "bitwarden" "bitwarden-cli" # Installing bitwarden
+     "noto-fonts" # noto-fonts-emoji noto-fonts-cjk noto-fonts-extra # Fixes fonts being incorrect with kochi
 	)
 
 yayList=("dashbinsh" # Used to make sure dash remains as /bin/sh # might need to link dash as /bin/sh first
-	 "cozette-otb" "nerd-fonts-hack" "ttf-kochi-substitute" # Install fonts, ttf-kochi-substitute fixes missing icons for cozette but fucks up fonts everywhere else
+	 "cozette-otb" "nerd-fonts-hack" "ttf-kochi-substitute" # ttf-google-fonts-git # Install fonts, ttf-kochi-substitute fixes missing icons for cozette but fucks up fonts everywhere else
 	 "gotop-bin" "networkmanager-dmenu-git" # Install dwm statusbar dependencies
 	 "stig" # or transmission-remote-cli-git # Tui transmission client
 	 "fvwm" # A window manager
