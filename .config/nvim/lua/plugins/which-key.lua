@@ -134,21 +134,6 @@ which_key.register({
         T = {'<CMD>SignifyToggleHighlight<CR>', 'Toggle highlights'},
     },
 
-    -- Telescope
-    f = {
-        name = 'Find',
-        f = {'<CMD>Telescope find_files<CR>', 'Find files'},
-        b = {'<CMD>Telescope buffers<CR>', 'Find buffer'},
-        l = {'<CMD>Telescope live_grep<CR>' , 'Find lines'},
-        g = {'<CMD>Telescope git_files<CR>' , 'Find git files'},
-        s = {'<CMD>Telescope grep_string<CR>' , 'Find string'},
-        o = {'<CMD>Telescope oldfiles<CR>' , 'Find recently opened files'},
-        h = {'<CMD>Telescope command_history<CR>' , 'Search command history'},
-        c = {'<CMD>Telescope colorscheme<CR>' , 'List colorschemes'},
-        P = {'<CMD>Telescope builtin<CR>' , 'List all pickers'},
-        d = {'<CMD>Telescope diagnostics<CR>' , 'Show diagnostics'},
-    },
-
     -- Vimwiki
     W = {
         name = 'Vimwiki',
