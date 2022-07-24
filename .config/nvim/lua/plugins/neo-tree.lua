@@ -1,4 +1,4 @@
-local status_ok = pcall(require, 'neo-tree')
+local status_ok, neo_tree = pcall(require, 'neo-tree')
 if not status_ok then
     return
 end
@@ -17,7 +17,7 @@ local open_cwd = function(state)
     end
 end
 
-require('neo-tree').setup({
+neo_tree.setup({
     close_if_last_window = true,
     default_component_configs = {
         indent = {

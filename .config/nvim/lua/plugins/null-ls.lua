@@ -1,9 +1,9 @@
-local status_ok = pcall(require, 'null-ls')
+local status_ok, null_ls = pcall(require, 'null-ls')
 if not status_ok then
     return
 end
 
-require("null-ls").setup({
+null_ls.setup({
     sources = {
         require("null-ls").builtins.formatting.stylua,
         require("null-ls").builtins.formatting.black,

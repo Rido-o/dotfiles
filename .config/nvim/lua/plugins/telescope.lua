@@ -1,9 +1,9 @@
-local status_ok = pcall(require, 'telescope')
+local status_ok, telescope = pcall(require, 'telescope')
 if not status_ok then
     return
 end
 
-require('telescope').setup({
+telescope.setup({
     defaults = {
         mappings = {
             i = {
@@ -22,4 +22,4 @@ require('telescope').setup({
     },
 })
 
-pcall(require('telescope').load_extension, 'fzf')
+pcall(telescope.load_extension, 'fzf')

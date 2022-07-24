@@ -1,9 +1,7 @@
-local status_ok = pcall(require, 'lspconfig')
+local status_ok, lspconfig = pcall(require, 'lspconfig')
 if not status_ok then
     return
 end
-
-local lspconfig = require('lspconfig')
 
 -- Set lsp sign column signs
 local signs = { Error = ' ', Warn = '⚠ ', Hint = ' ', Info = ' ' } -- 

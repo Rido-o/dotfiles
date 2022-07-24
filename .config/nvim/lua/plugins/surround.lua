@@ -1,9 +1,9 @@
-local status_ok = pcall(require, 'nvim-surround')
+local status_ok, surround = pcall(require, 'nvim-surround')
 if not status_ok then
     return
 end
 
-require('nvim-surround').setup({
+surround.setup({
     delimiters = {
         pairs = {
             ['('] = { '(', ')' },

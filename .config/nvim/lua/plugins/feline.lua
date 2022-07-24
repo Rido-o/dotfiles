@@ -1,4 +1,4 @@
-local status_ok = pcall(require, 'feline')
+local status_ok, feline = pcall(require, 'feline')
 if not status_ok then
     return
 end
@@ -317,7 +317,7 @@ local force_inactive = {
     bufnames = {},
 }
 
-require('feline').setup({
+feline.setup({
     theme = colors,
     default_bg = 'bg',
     default_fg = 'fg',

@@ -1,4 +1,4 @@
-local status_ok = pcall(require, 'cokeline')
+local status_ok, cokeline = pcall(require, 'cokeline')
 if not status_ok then
     return
 end
@@ -95,7 +95,7 @@ local bufferline = {
     components.two_space,
 }
 
-require('cokeline').setup({
+cokeline.setup({
     buffers = {
         filter_valid = function(buffer)
             return buffer.filetype ~= 'vimwiki'

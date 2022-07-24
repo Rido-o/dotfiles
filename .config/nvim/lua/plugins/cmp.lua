@@ -1,4 +1,4 @@
-local status_ok = pcall(require, 'cmp')
+local status_ok, cmp = pcall(require, 'cmp')
 if not status_ok then
     return
 end
@@ -39,9 +39,6 @@ local kind_icons = {
     Operator = '',
     TypeParameter = '',
 }
-
--- Setup nvim-cmp.
-local cmp = require('cmp')
 
 cmp.setup({
     snippet = {

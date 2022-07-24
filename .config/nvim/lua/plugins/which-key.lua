@@ -1,9 +1,9 @@
-local status_ok = pcall(require, 'which-key')
+local status_ok, which_key = pcall(require, 'which-key')
 if not status_ok then
     return
 end
 
-require("which-key").setup{
+which_key.setup{
     plugins = {
         marks = true, -- shows a list of your marks on ' and `
         registers = true, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
@@ -85,12 +85,10 @@ function ColorColumn()
     end
 end
 
-local wk = require('which-key')
-
 --------------------
 -- Normal Mode
 --------------------
-wk.register({
+which_key.register({
     -- Single Mappings
     s = {'<CMD>wincmd s<CR>' , 'Horizontal split'},
     v = {'<CMD>wincmd v<CR>' , 'Vertical split'},
@@ -178,7 +176,7 @@ wk.register({
 --------------------
 -- Visual Mode
 --------------------
-wk.register({
+which_key.register({
     c = {'<CMD>normal gc<CR>' , 'Toggle comment'},
 }, { mode = 'v', prefix = '<leader>' })
 
@@ -191,13 +189,13 @@ local setLocalKeybinds = function()
     local opts = { prefix = '<localleader>', buffer = 0 }
 
     if fileTy == 'python' then
-        wk.register({
+        which_key.register({
             r = {'<CMD>1TermExec cmd=\'python "%"\' go_back=0<CR>', 'Run code'},
             b = {'<CMD>1TermExec cmd=\'hyperfine --warmup 10 "python %"\' go_back=0<CR>', 'Benchmark code'},
             i = {'<CMD>2TermExec cmd="python" go_back=0<CR>', 'Open repl'},
         }, opts)
     elseif fileTy == 'plaintex' or fileTy == 'tex' then
-		wk.register({
+		which_key.register({
 			i = {'<plug>(vimtex-info)' , 'Latex info'},
 			I = {'<plug>(vimtex-info-full)' , 'Latex full info'},
 			t = {'<plug>(vimtex-toc-open)' , 'Latex open toc'},

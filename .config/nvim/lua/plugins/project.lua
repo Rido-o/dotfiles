@@ -1,9 +1,9 @@
-local status_ok = pcall(require, 'project_nvim')
+local status_ok, project = pcall(require, 'project_nvim')
 if not status_ok then
     return
 end
 
-require('project_nvim').setup({
+project.setup({
     -- Methods of detecting the root directory.
     detection_methods = { 'pattern', 'lsp' },
     -- All the patterns used to detect root dir, when **"pattern"** is in detection_methods
@@ -20,6 +20,5 @@ require('project_nvim').setup({
     datapath = vim.fn.stdpath('data'),
 })
 
-require('telescope').load_extension('projects')
-
+pcall(require('telescope').load_extension, 'projects')
 vim.keymap.set('n', '<leader>fp', '<CMD>Telescope projects<CR>', { desc = 'Find recent project'})
