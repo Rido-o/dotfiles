@@ -164,7 +164,7 @@ which_key.register({
 -- Visual Mode
 --------------------
 which_key.register({
-    c = {'<CMD>normal gc<CR>' , 'Toggle comment'},
+    c = {'<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>' , 'Toggle comment'},
 }, { mode = 'v', prefix = '<leader>' })
 
 -----------------------
