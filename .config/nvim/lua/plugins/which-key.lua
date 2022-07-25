@@ -105,7 +105,6 @@ which_key.register({
     -- Buffers
     b = {
         name = 'Buffers',
-        q = { '<CMD>Bdelete<CR>', 'Close buffer' },
         Q = { '<CMD>w|%bd|e#|bd#<CR>', 'Close all except current' },
     },
 
