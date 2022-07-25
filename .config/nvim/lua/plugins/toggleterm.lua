@@ -39,9 +39,7 @@ require('toggleterm').setup({
     },
 })
 
---------------------------
 -- Terminal Mappings
---------------------------
 function _G.set_terminal_keymaps()
     local map = vim.keymap.set
     local opts = { noremap = true, buffer = 0 }
