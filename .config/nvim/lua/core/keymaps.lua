@@ -45,51 +45,51 @@ map('n', 'rr', '<ESC><CMD>lua _G.Replace_operator("r")<CR>', { desc = 'Replace l
 -- Unsorted whichkey
 
 -- Single key leader mappings
-map('n', '<leader>s', '<CMD>wincmd s<CR>', {desc = 'Horizontal split'})
-map('n', '<leader>v', '<CMD>wincmd v<CR>', {desc = 'Vertical split'})
-map('n', '<leader>h', '<CMD>wincmd h<CR>', {desc = 'Move left'})
-map('n', '<leader>j', '<CMD>wincmd j<CR>', {desc = 'Move down'})
-map('n', '<leader>k', '<CMD>wincmd k<CR>', {desc = 'Move up'})
-map('n', '<leader>l', '<CMD>wincmd l<CR>', {desc = 'Move right'})
-map('n', '<leader>w', '<CMD>w<CR>', {desc = 'Write'})
-map('n', '<leader>q', '<CMD>q<CR>', {desc = 'Quit'})
-map('n', '<leader>U', '<CMD>UndotreeToggle<CR>', {desc = 'Open undo tree'})
-map('n', '<leader>c', '<CMD>lua require("Comment.api").toggle_current_linewise()<CR>', {desc = 'Toggle comment'})
+map('n', '<leader>s', '<CMD>wincmd s<CR>', { desc = 'Horizontal split' })
+map('n', '<leader>v', '<CMD>wincmd v<CR>', { desc = 'Vertical split' })
+map('n', '<leader>h', '<CMD>wincmd h<CR>', { desc = 'Move left' })
+map('n', '<leader>j', '<CMD>wincmd j<CR>', { desc = 'Move down' })
+map('n', '<leader>k', '<CMD>wincmd k<CR>', { desc = 'Move up' })
+map('n', '<leader>l', '<CMD>wincmd l<CR>', { desc = 'Move right' })
+map('n', '<leader>w', '<CMD>w<CR>', { desc = 'Write' })
+map('n', '<leader>q', '<CMD>q<CR>', { desc = 'Quit' })
+map('n', '<leader>U', '<CMD>UndotreeToggle<CR>', { desc = 'Open undo tree' })
+map('n', '<leader>c', '<CMD>lua require("Comment.api").toggle_current_linewise()<CR>', { desc = 'Toggle comment' })
 
 -- Buffer management mappings
-map('n', '<leader>bQ', '<CMD>w|%bd|e#|bd#<CR>', {desc = 'Close all except current'})
+map('n', '<leader>bQ', '<CMD>w|%bd|e#|bd#<CR>', { desc = 'Close all except current' })
 
 -- Lsp mappings
-map('n', '<leader>aa', '<CMD>Lspsaga code_action<CR>', {desc = 'Code action'})
-map('n', '<leader>ar', '<CMD>Lspsaga rename<CR>', {desc = 'Rename'})
-map('n', '<leader>af', '<CMD>lua vim.lsp.buf.formatting()<CR>', {desc = 'Format'})
+map('n', '<leader>aa', '<CMD>Lspsaga code_action<CR>', { desc = 'Code action' })
+map('n', '<leader>ar', '<CMD>Lspsaga rename<CR>', { desc = 'Rename' })
+map('n', '<leader>af', '<CMD>lua vim.lsp.buf.formatting()<CR>', { desc = 'Format' })
 
 -- Git mappings
-map('n', '<leader>gi', '<CMD>Git init<CR>', {desc = 'Git init'})
-map('n', '<leader>ga', '<CMD>Git add .<CR>', {desc = 'Git add all'})
-map('n', '<leader>gc', '<CMD>Git commit<CR>', {desc = 'Git commit'})
-map('n', '<leader>gA', '<CMD>Git commit --amend --no-edit -a<CR>', {desc = 'Git amend last commit'})
-map('n', '<leader>gr', '<CMD>Git reset<CR>', {desc = 'Git unstage all'})
-map('n', '<leader>gl', '<CMD>Git log --decorate --pretty=format:"%h - %an, %ar : %s"<CR>', {desc = 'Git pretty log'})
-map('n', '<leader>gL', '<CMD>Git log<CR>', {desc = 'Git raw log'})
-map('n', '<leader>gs', '<CMD>Git status<CR>', {desc = 'Git status'})
-map('n', '<leader>gb', '<CMD>Git branch<CR>', {desc = 'Git branches'})
-map('n', '<leader>gd', '<CMD>Git diff<CR>', {desc = 'Git diff'})
-map('n', '<leader>gI', '<CMD>!touch .gitignore<CR>', {desc = 'Create git ignore'})
-map('n', '<leader>gt', '<CMD>SignifyToggle<CR>', {desc = 'Toggle signs'})
-map('n', '<leader>gT', '<CMD>SignifyToggleHighlight<CR>', {desc = 'Toggle highlights'})
+map('n', '<leader>gi', '<CMD>Git init<CR>', { desc = 'Git init' })
+map('n', '<leader>ga', '<CMD>Git add .<CR>', { desc = 'Git add all' })
+map('n', '<leader>gc', '<CMD>Git commit<CR>', { desc = 'Git commit' })
+map('n', '<leader>gA', '<CMD>Git commit --amend --no-edit -a<CR>', { desc = 'Git amend last commit' })
+map('n', '<leader>gr', '<CMD>Git reset<CR>', { desc = 'Git unstage all' })
+map('n', '<leader>gl', '<CMD>Git log --decorate --pretty=format:"%h - %an, %ar : %s"<CR>', { desc = 'Git pretty log' })
+map('n', '<leader>gL', '<CMD>Git log<CR>', { desc = 'Git raw log' })
+map('n', '<leader>gs', '<CMD>Git status<CR>', { desc = 'Git status' })
+map('n', '<leader>gb', '<CMD>Git branch<CR>', { desc = 'Git branches' })
+map('n', '<leader>gd', '<CMD>Git diff<CR>', { desc = 'Git diff' })
+map('n', '<leader>gI', '<CMD>!touch .gitignore<CR>', { desc = 'Create git ignore' })
+map('n', '<leader>gt', '<CMD>SignifyToggle<CR>', { desc = 'Toggle signs' })
+map('n', '<leader>gT', '<CMD>SignifyToggleHighlight<CR>', { desc = 'Toggle highlights' })
 
 -- Vimwiki mappings
-map('n', '<leader>Wi', '<plug>VimwikiDiaryIndex', {desc = 'Open Vimwiki diary'})
-map('n', '<leader>Ws', '<plug>VimwikiUISelect', {desc = 'Select Vimwiki'})
-map('n', '<leader>Wt', '<plug>VimwikiTabIndex', {desc = 'Tab Index'})
-map('n', '<leader>Ww', '<plug>VimwikiIndex', {desc = 'Open Vimwiki'})
+map('n', '<leader>Wi', '<plug>VimwikiDiaryIndex', { desc = 'Open Vimwiki diary' })
+map('n', '<leader>Ws', '<plug>VimwikiUISelect', { desc = 'Select Vimwiki' })
+map('n', '<leader>Wt', '<plug>VimwikiTabIndex', { desc = 'Tab Index' })
+map('n', '<leader>Ww', '<plug>VimwikiIndex', { desc = 'Open Vimwiki' })
 -- Vimwiki diary mappings
-map('n', '<leader>W<space>i', '<plug>VimwikiDiaryGenerateLinks', {desc = 'Generate links'})
-map('n', '<leader>W<space>m', '<plug>VimwikiMakeTomorrowDiaryNote', {desc = 'Tomorrows diary'})
-map('n', '<leader>W<space>t', '<plug>VimwikiTabMakeDiaryNote', {desc = 'Tab todays diary'})
-map('n', '<leader>W<space>w', '<plug>VimwikiMakeDiaryNote', {desc = 'Todays diary'})
-map('n', '<leader>W<space>y', '<plug>VimwikiMakeYesterdayDiaryNote', {desc = 'Yesterdays diary'})
+map('n', '<leader>W<space>i', '<plug>VimwikiDiaryGenerateLinks', { desc = 'Generate links' })
+map('n', '<leader>W<space>m', '<plug>VimwikiMakeTomorrowDiaryNote', { desc = 'Tomorrows diary' })
+map('n', '<leader>W<space>t', '<plug>VimwikiTabMakeDiaryNote', { desc = 'Tab todays diary' })
+map('n', '<leader>W<space>w', '<plug>VimwikiMakeDiaryNote', { desc = 'Todays diary' })
+map('n', '<leader>W<space>y', '<plug>VimwikiMakeYesterdayDiaryNote', { desc = 'Yesterdays diary' })
 
 local function toggle_color_column()
     if vim.o.colorcolumn == '0' then
@@ -100,7 +100,12 @@ local function toggle_color_column()
 end
 
 -- Toggle settings mappings
-map('n', '<leader>tc', toggle_color_column, {desc = 'Toggle color column'})
+map('n', '<leader>tc', toggle_color_column, { desc = 'Toggle color column' })
 
 -- Visual mode single key leader mappings
-map('v', '<leader>c', '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>', {desc = 'Toggle comment'})
+map(
+    'v',
+    '<leader>c',
+    '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>',
+    { desc = 'Toggle comment' }
+)
