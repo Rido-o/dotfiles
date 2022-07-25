@@ -88,6 +88,9 @@ end
 --------------------
 -- Normal Mode
 --------------------
+which_key.register({
+    [','] = { name = 'test' }
+})
 
 which_key.register({
     -- Single Mappings
