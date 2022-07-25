@@ -72,101 +72,19 @@ vim.api.nvim_set_hl(0, 'WhichKeyDesc', { link = 'Identifier' })
 vim.api.nvim_set_hl(0, 'WhichKeyFloat', { link = 'NormalFloat' })
 vim.api.nvim_set_hl(0, 'WhichKeyValue', { link = 'Comment' })
 
-------------------------
--- Global Mappings
-------------------------
-
--- Toggle color column
-function ColorColumn()
-    if vim.o.colorcolumn == '0' then
-        vim.o.colorcolumn = '80'
-    else
-        vim.o.colorcolumn = '0'
-    end
-end
-
---------------------
--- Normal Mode
---------------------
--- Needed so that filetype bindings trigger whichkey
+-- Give names to prefix keys
 which_key.register({
+    -- Needed so that filetype bindings trigger whichkey
     ['<localleader>'] = { name = 'Filetype bindings' },
-})
-
-which_key.register({
-    -- Single Mappings
-    s = { '<CMD>wincmd s<CR>', 'Horizontal split' },
-    v = { '<CMD>wincmd v<CR>', 'Vertical split' },
-    h = { '<CMD>wincmd h<CR>', 'Move left' },
-    j = { '<CMD>wincmd j<CR>', 'Move down' },
-    k = { '<CMD>wincmd k<CR>', 'Move up' },
-    l = { '<CMD>wincmd l<CR>', 'Move right' },
-    w = { '<CMD>w<CR>', 'Write' },
-    q = { '<CMD>q<CR>', 'Quit' },
-    U = { '<CMD>UndotreeToggle<CR>', 'Open undo tree' },
-    c = { '<CMD>lua require("Comment.api").toggle_current_linewise()<CR>', 'Toggle comment' },
-
-    -- Buffers
-    b = {
-        name = 'Buffers',
-        Q = { '<CMD>w|%bd|e#|bd#<CR>', 'Close all except current' },
-    },
-
-    f = { name = 'Find' },
-
-    -- Lsp
-    a = {
-        name = 'Lsp',
-        a = { '<CMD>Lspsaga code_action<CR>', 'Code action' },
-        r = { '<CMD>Lspsaga rename<CR>', 'Rename' },
-        f = { '<CMD>lua vim.lsp.buf.formatting()<CR>', 'Format' },
-    },
-
-    -- Fugitive
-    g = {
-        name = 'Git',
-        i = { '<CMD>Git init<CR>', 'Git init' },
-        a = { '<CMD>Git add .<CR>', 'Git add all' },
-        c = { '<CMD>Git commit<CR>', 'Git commit' },
-        A = { '<CMD>Git commit --amend --no-edit -a<CR>', 'Git amend last commit' },
-        r = { '<CMD>Git reset<CR>', 'Git unstage all' },
-        l = { '<CMD>Git log --decorate --pretty=format:"%h - %an, %ar : %s"<CR>', 'Git pretty log' },
-        L = { '<CMD>Git log<CR>', 'Git raw log' },
-        s = { '<CMD>Git status<CR>', 'Git status' },
-        b = { '<CMD>Git branch<CR>', 'Git branches' },
-        d = { '<CMD>Git diff<CR>', 'Git diff' },
-        I = { '<CMD>!touch .gitignore<CR>', 'Create git ignore' },
-        t = { '<CMD>SignifyToggle<CR>', 'Toggle signs' },
-        T = { '<CMD>SignifyToggleHighlight<CR>', 'Toggle highlights' },
-    },
-
-    -- Vimwiki
-    W = {
-        name = 'Vimwiki',
-        i = { '<plug>VimwikiDiaryIndex', 'Open Vimwiki diary' },
-        s = { '<plug>VimwikiUISelect', 'Select Vimwiki' },
-        t = { '<plug>VimwikiTabIndex', 'Tab Index' },
-        w = { '<plug>VimwikiIndex', 'Open Vimwiki' },
-        ['<space>'] = {
-            name = 'Vimwiki Diary',
-            i = { '<plug>VimwikiDiaryGenerateLinks', 'Generate links' },
-            m = { '<plug>VimwikiMakeTomorrowDiaryNote', 'Tomorrows diary' },
-            t = { '<plug>VimwikiTabMakeDiaryNote', 'Tab todays diary' },
-            w = { '<plug>VimwikiMakeDiaryNote', 'Todays diary' },
-            y = { '<plug>VimwikiMakeYesterdayDiaryNote', 'Yesterdays diary' },
+    ['<leader>'] = {
+        b = { name = 'Buffers' },
+        f = { name = 'Find' },
+        a = { name = 'Lsp' },
+        g = { name = 'Git' },
+        W = {
+            name = 'Vimwiki',
+            ['<space>'] = { name = 'Vimwiki Diary' },
         },
-    },
-
-    -- Toggle settings
-    t = {
-        name = 'Toggle',
-        c = { '<CMD>lua ColorColumn()<CR>', 'Toggle color column' },
-    },
-}, { prefix = '<leader>' })
-
---------------------
--- Visual Mode
---------------------
-which_key.register({
-    c = { '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>', 'Toggle comment' },
-}, { mode = 'v', prefix = '<leader>' })
+        t = { name = 'Toggle' },
+    }
+})
