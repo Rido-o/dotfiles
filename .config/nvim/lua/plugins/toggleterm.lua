@@ -46,7 +46,7 @@ function _G.set_terminal_keymaps()
     map('t', '<esc>', [[<C-\><C-n>]], opts)
 end
 
--- if you only want these mappings for toggle term use term://*toggleterm#* instead
+-- Make mappings only apply to toggleterm
 vim.api.nvim_create_autocmd(
     { 'TermOpen' },
     { pattern = 'term://*toggleterm#*', command = 'lua set_terminal_keymaps()' }
