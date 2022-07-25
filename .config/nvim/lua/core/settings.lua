@@ -57,6 +57,8 @@ end
 
 -- Disable auto-commenting
 vim.api.nvim_create_autocmd({ 'BufEnter' }, { command = 'setlocal formatoptions-=cro' })
+-- Make help files open in a vertical split by default
+vim.api.nvim_create_autocmd({ 'FileType' }, { pattern = 'help', command = 'wincmd L' })
 
 -- Set shell to Windows PowerShell if on windows. Relies on function in init.lua
 vim.cmd([[
