@@ -16,9 +16,7 @@ local themes = {
         setColorscheme('tokyonight')
     end,
     kanagawa = function()
-        require('kanagawa').setup({
-            globalStatus = true,
-        })
+        require('kanagawa').setup({ globalStatus = true })
         setColorscheme('kanagawa')
     end,
 }
