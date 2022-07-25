@@ -90,7 +90,7 @@ end
 --------------------
 -- Needed so that filetype bindings trigger whichkey
 which_key.register({
-    ['<localleader>'] = { name = 'test' }
+    ['<localleader>'] = { name = 'Filetype bindings' },
 })
 
 which_key.register({
