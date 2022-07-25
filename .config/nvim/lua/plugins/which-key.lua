@@ -88,9 +88,6 @@ end
 --------------------
 -- Normal Mode
 --------------------
-which_key.register({
-    r = { name = 'Replace' },
-})
 
 which_key.register({
     -- Single Mappings
