@@ -1,22 +1,21 @@
-local function setColorscheme(scheme)
-    vim.cmd('silent! colorscheme ' .. scheme)
-end
-
 -- Themes
 local themes = {
     pywal = function()
-        setColorscheme('pywal')
+        return 'pywal'
     end,
     tokyonight = function()
         vim.g.tokyonight_style = 'night'
         vim.g.tokyonight_disable_italic_comment = '1'
-        setColorscheme('tokyonight')
+        return 'tokyonight'
     end,
     kanagawa = function()
         require('kanagawa').setup({ globalStatus = true })
-        setColorscheme('kanagawa')
+        return 'kanagawa'
     end,
 }
 
 -- Selected theme
-pcall(themes.kanagawa)
+pcall(function()
+    local theme = themes.kanagawa()
+    vim.cmd('silent! colorscheme ' .. theme)
+end)
