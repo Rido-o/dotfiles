@@ -88,8 +88,9 @@ end
 --------------------
 -- Normal Mode
 --------------------
+-- Needed so that filetype bindings trigger whichkey
 which_key.register({
-    [','] = { name = 'test' }
+    ['<localleader>'] = { name = 'test' }
 })
 
 which_key.register({
