@@ -2,8 +2,6 @@ local function setColorscheme(scheme)
     vim.cmd('silent! colorscheme ' .. scheme)
 end
 
-vim.o.background = 'dark'
-
 ------------------------
 ----- Colorschemes -----
 ------------------------

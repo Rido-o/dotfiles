@@ -2,6 +2,7 @@
 -- Settings
 -----------------
 local default_options = {
+    background = 'dark',
     encoding = 'utf-8',             -- The encoding displayed is UTF-8 by default
     fileencoding = 'utf-8',
     fileencodings = 'utf-8',        -- Causes problems with fugitive
