@@ -2,10 +2,7 @@ local function setColorscheme(scheme)
     vim.cmd('silent! colorscheme ' .. scheme)
 end
 
-------------------------
------ Colorschemes -----
-------------------------
-
+-- Themes
 local themes = {
     pywal = function()
         setColorscheme('pywal')
@@ -21,8 +18,5 @@ local themes = {
     end,
 }
 
----------------------------
------ Selected Scheme -----
----------------------------
-
+-- Selected theme
 pcall(themes.kanagawa)
