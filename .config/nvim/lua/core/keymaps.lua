@@ -1,27 +1,17 @@
-local function map(mode, keys, func, opts)
+local function map(mode, lhs, rhs, opts)
     opts = vim.tbl_extend('force', opts, { noremap = true, silent = true })
-    vim.keymap.set(mode, keys, func, opts)
-end
-
-local function nmap(keys, func, opts)
-    map('n', keys, func, opts)
-end
-
-local function vmap(keys, func, opts)
-    map('v', keys, func, opts)
+    vim.keymap.set(mode, lhs, rhs, opts)
 end
 
 --------------
 -- Basic
 --------------
 -- Enter to clear highlighting
-nmap('<CR>', ':noh<CR>', { desc = 'Clear highlighting' })
+map('n', '<CR>', ':noh<CR>', { desc = 'Clear highlighting' })
 
 -- Do action without yanking into "+ register
-nmap('c', '"_c', { desc = 'Change' })
-vmap('c', '"_c', { desc = 'Change' })
-nmap('x', '"_x', { desc = 'Delete char' })
-vmap('x', '"_x', { desc = 'Delete char' })
+map({ 'n', 'v' }, 'c', '"_c', { desc = 'Change' })
+map({ 'n', 'v' }, 'x', '"_x', { desc = 'Delete char' })
 
 ----------------
 -- Replace
@@ -40,7 +30,7 @@ function _G.Replace_operator(motion)
     elseif motion == 'line' then
         vim.api.nvim_buf_set_lines(0, start[1] - 1, finish[1], true, replacement)
     elseif motion == 'block' then
-        for i=start[1] - 1, finish[1] - 1 do
+        for i = start[1] - 1, finish[1] - 1 do
             vim.api.nvim_buf_set_text(0, i, start[2], i, finish[2] + 1, replacement)
         end
     elseif motion == 'r' then
@@ -49,6 +39,5 @@ function _G.Replace_operator(motion)
     end
 end
 
-nmap('r', _G.Replace_operator, { desc = 'Replace', expr = true })
-vmap('r', _G.Replace_operator, { desc = 'Replace', expr = true })
-nmap('rr', '<ESC><CMD>lua _G.Replace_operator("r")<CR>', { desc = 'Replace line' })
+map({ 'n', 'v' }, 'r', _G.Replace_operator, { desc = 'Replace', expr = true })
+map('n', 'rr', '<ESC><CMD>lua _G.Replace_operator("r")<CR>', { desc = 'Replace line' })
