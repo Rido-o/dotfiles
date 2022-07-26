@@ -4,7 +4,7 @@ if not status_ok then
 end
 
 -- remove legacy commands
-vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1]])
+vim.g.neo_tree_remove_legacy_commands = true
 
 -- cd if directory else open file
 local open_cwd = function(state)

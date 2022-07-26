@@ -26,7 +26,7 @@ local packer_group = vim.api.nvim_create_augroup('Packer', { clear = true })
 vim.api.nvim_create_autocmd('BufWritePost', {
     command = 'source <afile>',
     group = packer_group,
-    pattern = 'plugins.lua'
+    pattern = 'plugins.lua',
 })
 
 -- Function for sourcing config files
@@ -88,7 +88,7 @@ return packer.startup({
                 'kyazdani42/nvim-web-devicons',
                 'lewis6991/gitsigns.nvim',
             },
-            config = plugin_config('feline')
+            config = plugin_config('feline'),
         })
         use({
             'lukas-reineke/indent-blankline.nvim',
@@ -129,6 +129,7 @@ return packer.startup({
         })
         use({
             'akinsho/nvim-toggleterm.lua',
+            tag = 'v2.*',
             config = plugin_config('toggleterm'),
         })
         use({
@@ -145,7 +146,7 @@ return packer.startup({
                     'nvim-telescope/telescope-fzf-native.nvim',
                     -- Won't work with windows
                     run = 'make',
-                    cond = vim.fn.executable 'make' == 1
+                    cond = vim.fn.executable('make') == 1,
                 },
             },
             config = plugin_config('telescope'),
@@ -157,7 +158,7 @@ return packer.startup({
         })
         use({
             'ggandor/leap.nvim',
-            config = require('leap').set_default_keymaps()
+            config = require('leap').set_default_keymaps(),
         })
 
         ------------
