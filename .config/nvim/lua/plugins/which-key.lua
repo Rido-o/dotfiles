@@ -31,5 +31,5 @@ which_key.register({
             ['<space>'] = { name = 'Vimwiki Diary' },
         },
         t = { name = 'Toggle' },
-    }
+    },
 })

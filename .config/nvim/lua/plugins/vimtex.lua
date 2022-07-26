@@ -8,20 +8,20 @@ vim.g.vimtex_compiler_latexmk = {
     ['callback'] = 1,
     ['continuous'] = 1,
     ['executable'] = 'latexmk',
-    ['hooks'] = {''},
+    ['hooks'] = { '' },
     ['options'] = {
         '-pdf',
         '-xelatex',
         '-verbose',
         '-file-line-error',
         '-synctex=1',
-        '-interaction=nonstopmode'
-    }
+        '-interaction=nonstopmode',
+    },
 }
 
 -- Set pdf viewer
-if vim.g.os == "Windows" then
+if vim.g.os == 'Windows' then
     vim.g.vimtex_view_general_viewer = 'SumatraPDF'
-elseif vim.g.os == "Linux" then
+elseif vim.g.os == 'Linux' then
     vim.g.vimtex_view_general_viewer = 'MuPDF'
 end

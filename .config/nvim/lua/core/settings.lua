@@ -31,12 +31,12 @@ local default_options = {
     signcolumn = 'yes:1',           -- Add permanant column for signs on the left
     termguicolors = true,           -- Required for some color schemes and colorizer
     undodir = vim.fn.stdpath('cache') .. '/undo',   -- Undo directory
-    completeopt = { "menuone", "noselect" },        -- Set completeopt to have a better completion experience
+    completeopt = { 'menuone', 'noselect' },        -- Set completeopt to have a better completion experience
     list = true,
     listchars = { trail = '-', tab = '  ' },        -- 'trail:­,tab:  ,extends:»,precedes:«,nbsp:⣿,eol:¬'
     laststatus = 3,                 -- Enables global statusline
     -- cmdheight = 0,                  -- Makes command line height 0 -- In preperation for when it is added to stable
-    guifont = {'Hack Nerd Font', ':h11'}            -- Font for gui nvim
+    guifont = { 'Hack Nerd Font', ':h11' },         -- Font for gui nvim
 }
 
 -- Set options

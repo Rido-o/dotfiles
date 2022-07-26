@@ -2,13 +2,13 @@
 -- Settings
 -----------------
 -- Set vimwiki location
-if vim.g.os == "Windows" then
+if vim.g.os == 'Windows' then
     vim.g.vimwiki_list = {
-        {['path'] = '~/Documents/Wiki/'}
+        { ['path'] = '~/Documents/Wiki/' },
     }
-elseif vim.g.os == "Linux" then
+elseif vim.g.os == 'Linux' then
     vim.g.vimwiki_list = {
-        {['path'] = '$HOME/.cfg/wiki/'}
+        { ['path'] = '$HOME/.cfg/wiki/' },
     }
 end
 -- Set which keybindings are enabled
