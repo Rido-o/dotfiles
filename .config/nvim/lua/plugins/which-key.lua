@@ -15,7 +15,7 @@ local presets = require('which-key.plugins.presets')
 presets.operators['v'] = nil
 
 -- Highlights
-vim.api.nvim_set_hl(0, 'WhichKeySeparator', { link = 'DiffAdded' }) -- Only one that does anything
+vim.api.nvim_set_hl(0, 'WhichKeySeparator', { link = 'DiffAdded' })
 
 -- Give names to prefix keys
 which_key.register({
