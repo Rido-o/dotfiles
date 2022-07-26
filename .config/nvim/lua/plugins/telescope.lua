@@ -36,3 +36,4 @@ map('n', '<leader>fh', picker.command_history, { desc = 'Search command history'
 map('n', '<leader>fc', picker.colorscheme, { desc = 'List colorschemes'})
 map('n', '<leader>fP', picker.builtin, { desc = 'List all pickers'})
 map('n', '<leader>fd', picker.diagnostics, { desc = 'Show diagnostics'})
+map('n', '<leader>fm', picker.man_pages, { desc = 'Find man page'})
