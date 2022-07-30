@@ -19,7 +19,8 @@ function _G.set_terminal_keymaps()
 end
 
 -- Make mappings only apply to toggleterm
-vim.api.nvim_create_autocmd(
-    { 'TermOpen' },
-    { pattern = 'term://*toggleterm#*', command = 'lua set_terminal_keymaps()' }
-)
+vim.api.nvim_create_autocmd( 'TermOpen', {
+    group = vim.api.nvim_create_augroup('SetTermBinds', { clear = true }),
+    pattern = 'term://*toggleterm#*',
+    command = 'lua set_terminal_keymaps()'
+})

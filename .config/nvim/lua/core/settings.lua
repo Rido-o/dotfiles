@@ -57,7 +57,10 @@ elseif raw_os == 'Linux' then
 end
 
 -- Disable auto-commenting
-vim.api.nvim_create_autocmd({ 'BufEnter' }, { command = 'setlocal formatoptions-=cro' })
+vim.api.nvim_create_autocmd('BufEnter', {
+    group = vim.api.nvim_create_augroup('DiableAutoComment', { clear = true }),
+    command = 'setlocal formatoptions-=cro'
+})
 
 -- Set shell to Windows PowerShell if on windows. Relies on function in init.lua
 vim.cmd([[
