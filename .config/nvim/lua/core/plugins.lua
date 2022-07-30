@@ -163,10 +163,14 @@ return packer.startup({
         ------------
         -- lSP
         ------------
-        -- Check lsp-installer requirements
+        -- Check mason requirements
         use({
-            'williamboman/nvim-lsp-installer',
-            config = plugin_config('lsp-installer'),
+            'williamboman/mason.nvim',
+            requires = {
+                { 'williamboman/mason-lspconfig.nvim' },
+                { 'WhoIsSethDaniel/mason-tool-installer.nvim' },
+            },
+            config = plugin_config('mason'),
         })
         use({
             'neovim/nvim-lspconfig',
