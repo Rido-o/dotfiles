@@ -38,7 +38,7 @@ end
 --------------------------
 return packer.startup({
     function(use)
-        -- potential plugins {trouble.nvim, nvim-navic, aerial.nvim, neogit, impatient.nvim, alpha-nvim, fidget.nvim, org-mode-clones}
+        -- potential plugins {trouble.nvim, nvim-navic, aerial.nvim, neogit, impatient.nvim, alpha-nvim, fidget.nvim, org-mode-clones, clever-f}
         -----------------------
         -- Packer
         -----------------------
