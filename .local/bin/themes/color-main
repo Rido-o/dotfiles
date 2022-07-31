@@ -194,4 +194,7 @@ restart() {
 	kill -HUP $(pidof dwm) &
 	[ ! -z $(pidof dunst) ] && killall dunst && setsid dunst &
 	[ ! -z $(pidof dwmblocks) ] && killall dwmblocks && setsid dwmblocks &
+
+    # Restart st, depends on xresources with reload signal patch
+    pidof st | xargs kill -s USR1
 }
