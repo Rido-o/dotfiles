@@ -50,6 +50,7 @@ pacList=("zsh" "zsh-syntax-highlighting" "zsh-autosuggestions" # Install zsh and
      "lazygit" # Git interface
 	 "bitwarden" "bitwarden-cli" # Installing bitwarden
      "noto-fonts" # noto-fonts-emoji noto-fonts-cjk noto-fonts-extra # Fixes fonts being incorrect with kochi
+     "libexif" # nsxiv dependency
 	)
 
 yayList=("dashbinsh" # Used to make sure dash remains as /bin/sh # might need to link dash as /bin/sh first
