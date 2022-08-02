@@ -75,7 +75,7 @@ pip install "${pipList[@]}"
 git clone https://github.com/alnj/ncmpcpp-ueberzug.git $HOME/.config/ncmpcpp/ncmpcpp-ueberzug
 git clone https://github.com/Rido-o/st.git $HOME/.local/src/st
 git clone https://github.com/Rido-o/dmenu.git $HOME/.local/src/dmenu
-git clone https://github.com/Rido-o/dwmblocks.git $HOME/.local/src/dwmblocks
+git clone https://github.com/Rido-o/dwmblocks-async.git $HOME/.local/src/dwmblocks-async
 git clone https://github.com/Rido-o/dwm-flexipatch.git $HOME/.local/src/dwm-flexipatch
 git clone https://github.com/dylanaraps/pfetch.git $HOME/.local/src/pfetch
 git clone https://github.com/Rido-o/xmenu.git $HOME/.local/src/xmenu
@@ -86,7 +86,7 @@ git clone https://github.com/EliverLara/Nordic.git $HOME/.themes/Nordic # Instal
 # Make install
 sudo make clean install -C $HOME/.local/src/st
 sudo make clean install -C $HOME/.local/src/dmenu
-sudo make clean install -C $HOME/.local/src/dwmblocks
+sudo make clean install -C $HOME/.local/src/dwmblocks-async
 sudo make clean install -C $HOME/.local/src/dwm-flexipatch
 sudo make install-all -C $HOME/.local/src/nsxiv
 sudo make install -C $HOME/.local/src/pfetch

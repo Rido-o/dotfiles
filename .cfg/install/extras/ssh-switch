@@ -5,6 +5,6 @@
 git -C $HOME/.local/src/st remote set-url origin git@github.com:Rido-o/st.git
 git -C $HOME/.local/src/dmenu remote set-url origin git@github.com:Rido-o/dmenu.git
 git -C $HOME/.local/src/xmenu remote set-url origin git@github.com:Rido-o/xmenu.git
-git -C $HOME/.local/src/dwmblocks remote set-url origin git@github.com:Rido-o/dwmblocks.git
+git -C $HOME/.local/src/dwmblocks-async remote set-url origin git@github.com:Rido-o/dwmblocks.git
 git -C $HOME/.local/src/dwm-flexipatch remote set-url origin git@github.com:Rido-o/dwm-flexipatch.git
 git -C $HOME/.local/src/nsxiv remote set-url origin git@github.com:Rido-o/nsxiv.git
