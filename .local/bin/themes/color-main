@@ -150,21 +150,21 @@ quteconfig "color10" $CYAN
 
 # Change dwmblocks colors
 
-dwmblocks () {
-	sudo sd "(\^c).+?(\^)" "\${1}$1\${2}" $2
-}
+# dwmblocks () {
+# 	sudo sd "(\^c).+?(\^)" "\${1}$1\${2}" $2
+# }
+#
+# STATUSPATH="$HOME/.local/bin/statusbar"
+# dwmblocks $MAGENTA $STATUSPATH/status-torrent
+# dwmblocks $GREEN $STATUSPATH/status-music
+# dwmblocks $BLUE $STATUSPATH/status-rss
+# dwmblocks $YELLOW $STATUSPATH/status-weather
+# dwmblocks $RED $STATUSPATH/status-memory
+# dwmblocks $GREEN $STATUSPATH/status-datetime
+# dwmblocks $MAGENTA $STATUSPATH/status-internet
+# dwmblocks $MAGENTA $STATUSPATH/status-volume
 
-STATUSPATH="$HOME/.local/bin/statusbar"
-dwmblocks $MAGENTA $STATUSPATH/status-torrent
-dwmblocks $GREEN $STATUSPATH/status-music
-dwmblocks $BLUE $STATUSPATH/status-rss
-dwmblocks $YELLOW $STATUSPATH/status-weather
-dwmblocks $RED $STATUSPATH/status-memory
-dwmblocks $GREEN $STATUSPATH/status-datetime
-dwmblocks $MAGENTA $STATUSPATH/status-internet
-dwmblocks $MAGENTA $STATUSPATH/status-volume
-
-sudo sd "(delim.+?)(#.{6})" "\${1}$FOREGROUND" $HOME/.local/src/dwmblocks/config.h
+# sudo sd "(delim.+?)(#.{6})" "\${1}$FOREGROUND" $HOME/.local/src/dwmblocks/config.h
 
 # Change xmenu colors
 
@@ -184,7 +184,7 @@ restart() {
 	[ ! -z $(pidof fvwm) ] && killall -SIGUSR1 fvwm
 
 	# Rebuild dwmblocks
-	sudo make clean install -C $HOME/.local/src/dwmblocks
+	# sudo make clean install -C $HOME/.local/src/dwmblocks
 
 	# Rebuild xmenu
 	sudo make install -C $HOME/.local/src/xmenu
