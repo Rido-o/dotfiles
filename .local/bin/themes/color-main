@@ -2,22 +2,10 @@
 
 # Change Nvim theme
 nvim () {
-    sd "(?P<start>.+?local theme = themes\.)(?P<theme>.+?)(?P<end>\(\)^)" "$start$1$end" $HOME/.config/nvim/lua/core/colorschemes.lua
+    sd "(?P<start>^.+?local theme = themes\.)(?P<theme>.+?)(?P<end>\(\))$" "\${start}$NAME\${end}" $HOME/.config/nvim/lua/core/colorschemes.lua
 }
 
 nvim $NAME
-
-# sd "(^\s+?)([^\"\s])" '$1\"$2' $HOME/.config/nvim/config/colorschemes.vim
-# sd "(.+?)\"(.+?$NAME)" '$1$2' $HOME/.config/nvim/config/colorschemes.vim
-#
-# if [ $NAME = "wal" ];
-# 	then
-# 		sd "^set termguicolors" "\"set termguicolors" $HOME/.config/nvim/config/colorschemes.vim
-# 		sd "^lua" "\"lua" $HOME/.config/nvim/config/colorschemes.vim
-# 	else
-# 		sd "^\"set termguicolors" "set termguicolors" $HOME/.config/nvim/config/colorschemes.vim
-# 		sd "^\"lua" "lua" $HOME/.config/nvim/config/colorschemes.vim
-# fi
 
 # Change Fvwm theme
 
