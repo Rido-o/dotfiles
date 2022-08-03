@@ -6,4 +6,4 @@ esac
 
 pidof newsboat 2>/dev/null >/dev/null || newsboat -x print-unread 2>/dev/null | sd '(^[0-9]*).*' '$1' > $HOME/.cache/rss-unread
 CURRENT=$(cat $HOME/.cache/rss-unread)
-[ ! -z "$CURRENT" ] && echo "^c#7AA2F7^ $CURRENT"
+[ ! -z "$CURRENT" ] && echo "^C4^ $CURRENT"

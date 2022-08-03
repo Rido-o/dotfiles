@@ -4,4 +4,4 @@ case $BLOCK_BUTTON in
 	1) networkmanager_dmenu;;
 esac
 
-echo "^c#ad8ee6^"
+echo "^C5^"

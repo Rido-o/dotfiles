@@ -9,4 +9,4 @@ case $BLOCK_BUTTON in
 esac
 
 CURRENT=$(mpc current)
-[ ! -z "$CURRENT" ] && echo "^c#9ECE6A^ $CURRENT"
+[ ! -z "$CURRENT" ] && echo "^C2^ $CURRENT"

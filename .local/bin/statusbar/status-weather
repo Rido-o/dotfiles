@@ -11,6 +11,6 @@ TEMP=$(sed '4q;d' $HOME/.cache/weathertext | sd "\)|\(" " " | rg -o "\d+\s+°C" 
 
 [ ! -z "$TEMP" ] &&
 case $runhost in
-	dwm) echo "^c#E0AF68^ $TEMP" ;;
+	dwm) echo "^C3^ $TEMP" ;;
 	fvwm) echo "$TEMP" ;;
 esac

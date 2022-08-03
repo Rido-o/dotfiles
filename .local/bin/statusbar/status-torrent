@@ -24,6 +24,6 @@ down=$(speed 1)
 runhost=$1
 
 case $runhost in
-	dwm) echo "^c#ad8ee6^↑$up ↓$down" ;;
+	dwm) echo "^C5^↑$up ↓$down" ;;
 	fvwm) echo "↑$up ↓$down" ;;
 esac

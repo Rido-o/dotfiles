@@ -25,6 +25,6 @@ fi
 runhost=$1
 
 case $runhost in
-	dwm) echo "^c#ad8ee6^$icon $vol" ;;
+	dwm) echo "^C5^$icon $vol" ;;
 	fvwm) echo "$vol" ;;
 esac
