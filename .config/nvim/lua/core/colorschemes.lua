@@ -12,6 +12,9 @@ local themes = {
         require('kanagawa').setup({ globalStatus = true })
         return 'kanagawa'
     end,
+    miramare = function()
+        return 'miramare'
+    end,
 }
 
 -- Selected theme

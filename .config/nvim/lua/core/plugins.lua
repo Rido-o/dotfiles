@@ -59,6 +59,7 @@ return packer.startup({
         use({ 'AlphaTechnolog/pywal.nvim' })
         use({ 'folke/tokyonight.nvim' })
         use({ 'rebelot/kanagawa.nvim' })
+        use({ 'franbach/miramare' })
 
         -------------------------
         -- File Exploration
