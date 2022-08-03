@@ -1,0 +1,52 @@
+#!/bin/sh
+
+# Tokyo Nights
+
+NAME="kanagawa"
+FVWMNAME="kanagawa"
+FOREGROUND="#DCD7BA"
+BACKGROUND="#1F1F28"
+CURSORCOLOR="#DCD7BA"
+
+BORDERCOLOR="#1a1b26"
+
+# black
+BLACK="#1F1F28"
+DARKGREY="#363646"
+
+# red
+RED="#C34043"
+DARKRED="#C34043"
+
+# green
+GREEN="#76946A"
+DARKGREEN="#76946A"
+
+# yellow
+YELLOW="#DCA561"
+DARKYELLOW="#DCA561"
+
+# blue
+BLUE="#7E9CD8"
+DARKBLUE="#7E9CD8"
+
+# magenta
+MAGENTA="#957FB8"
+DARKMAGENTA="#957FB8"
+
+# cyan
+CYAN="#7FB4CA"
+DARKCYAN="#7FB4CA"
+
+# white
+WHITE="#C8C093"
+LIGHTGREY="#C8C093"
+
+# orange
+ORANGE="#FFA066"
+DARKORANGE="#FFA066"
+
+# run default scheme
+. color-main
+
+restart
