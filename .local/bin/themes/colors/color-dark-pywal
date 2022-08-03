@@ -8,7 +8,7 @@ wal -i $HOME/.cache/wallpaper.png -n &&
 # Copy fvwm theme
 cp $HOME/.cache/wal/colors-dark-fvwm $HOME/.fvwm/themes/dark-wal
 
-NAME="wal"
+NAME="pywal"
 FVWMNAME="dark-wal"
 
 # run default scheme

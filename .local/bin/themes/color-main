@@ -1,18 +1,23 @@
 #!/bin/sh
 
 # Change Nvim theme
+nvim () {
+    sd "(?P<start>.+?local theme = themes\.)(?P<theme>.+?)(?P<end>\(\)^)" "$start$1$end" $HOME/.config/nvim/lua/core/colorschemes.lua
+}
 
-sd "(^\s+?)([^\"\s])" '$1\"$2' $HOME/.config/nvim/config/colorschemes.vim
-sd "(.+?)\"(.+?$NAME)" '$1$2' $HOME/.config/nvim/config/colorschemes.vim
+nvim $NAME
 
-if [ $NAME = "wal" ];
-	then
-		sd "^set termguicolors" "\"set termguicolors" $HOME/.config/nvim/config/colorschemes.vim
-		sd "^lua" "\"lua" $HOME/.config/nvim/config/colorschemes.vim
-	else
-		sd "^\"set termguicolors" "set termguicolors" $HOME/.config/nvim/config/colorschemes.vim
-		sd "^\"lua" "lua" $HOME/.config/nvim/config/colorschemes.vim
-fi
+# sd "(^\s+?)([^\"\s])" '$1\"$2' $HOME/.config/nvim/config/colorschemes.vim
+# sd "(.+?)\"(.+?$NAME)" '$1$2' $HOME/.config/nvim/config/colorschemes.vim
+#
+# if [ $NAME = "wal" ];
+# 	then
+# 		sd "^set termguicolors" "\"set termguicolors" $HOME/.config/nvim/config/colorschemes.vim
+# 		sd "^lua" "\"lua" $HOME/.config/nvim/config/colorschemes.vim
+# 	else
+# 		sd "^\"set termguicolors" "set termguicolors" $HOME/.config/nvim/config/colorschemes.vim
+# 		sd "^\"lua" "lua" $HOME/.config/nvim/config/colorschemes.vim
+# fi
 
 # Change Fvwm theme
 
@@ -148,24 +153,6 @@ quteconfig "color8" $BLUE
 quteconfig "color9" $MAGENTA
 quteconfig "color10" $CYAN
 
-# Change dwmblocks colors
-
-# dwmblocks () {
-# 	sudo sd "(\^c).+?(\^)" "\${1}$1\${2}" $2
-# }
-#
-# STATUSPATH="$HOME/.local/bin/statusbar"
-# dwmblocks $MAGENTA $STATUSPATH/status-torrent
-# dwmblocks $GREEN $STATUSPATH/status-music
-# dwmblocks $BLUE $STATUSPATH/status-rss
-# dwmblocks $YELLOW $STATUSPATH/status-weather
-# dwmblocks $RED $STATUSPATH/status-memory
-# dwmblocks $GREEN $STATUSPATH/status-datetime
-# dwmblocks $MAGENTA $STATUSPATH/status-internet
-# dwmblocks $MAGENTA $STATUSPATH/status-volume
-
-# sudo sd "(delim.+?)(#.{6})" "\${1}$FOREGROUND" $HOME/.local/src/dwmblocks/config.h
-
 # Change xmenu colors
 
 xmenu () {
@@ -192,8 +179,8 @@ restart() {
 	# Restart Programs
 	xrdb $HOME/.config/x11/xresources
 	kill -HUP $(pidof dwm) &
+	# [ ! -z $(pidof dwmblocks) ] && killall dwmblocks && setsid dwmblocks &
 	[ ! -z $(pidof dunst) ] && killall dunst && setsid dunst &
-	[ ! -z $(pidof dwmblocks) ] && killall dwmblocks && setsid dwmblocks &
 
     # Restart st, depends on xresources with reload signal patch
     pidof st | xargs kill -s USR1
