@@ -118,7 +118,7 @@ local components = {
             name = 'file_info',
             opts = {
                 file_modified_icon = '',
-                type = 'relative',
+                type = 'unique',
             },
         },
         short_provider = {
