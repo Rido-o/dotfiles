@@ -1,12 +1,13 @@
 #!/bin/sh
 
-while getopts d:l: OPTION; do
+while getopts id:l: OPTION; do
     case "$OPTION" in
+        i)
+            xwallpaper --zoom "$HOME/.cache/wallpaper.png"
+            ;;
         d)
-            rm -f "$HOME/.cache/wallpaper"*
-            EXT="${OPTARG##*.}"
-            cp "$OPTARG" "$HOME/.cache/wallpaper.${EXT}"
-            xwallpaper --zoom "$HOME/.cache/wallpaper.${EXT}"
+            cp "$OPTARG" "$HOME/.cache/wallpaper.png"
+            xwallpaper --zoom "$HOME/.cache/wallpaper.png"
             ;;
         l)
             sudo cp "$OPTARG" "/usr/share/pixmaps/wallpaper.png"
