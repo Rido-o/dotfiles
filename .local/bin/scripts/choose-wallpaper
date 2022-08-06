@@ -1,4 +1,3 @@
 #!/bin/sh
 
-WALLPAPERS=$(fd --type f . "$HOME/Images/Wallpapers/Desktop-Wallpapers" 2>/dev/null)
-[ ! -z "$WALLPAPERS" ] && nsxiv -t $WALLPAPERS || notify-send "No Wallpapers"
+nsxiv -tr "$HOME/Images/Wallpapers/Desktop-Wallpapers" || notify-send "No Wallpapers"
