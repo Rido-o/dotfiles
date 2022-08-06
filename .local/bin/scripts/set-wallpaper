@@ -1,3 +1,15 @@
 #!/bin/sh
 
-xwallpaper --zoom "$HOME/.cache/wallpaper.png"
+while getopts d:l: OPTION; do
+    case "$OPTION" in
+        d)
+            rm -f "$HOME/.cache/wallpaper"*
+            EXT="${OPTARG##*.}"
+            cp "$OPTARG" "$HOME/.cache/wallpaper.${EXT}"
+            xwallpaper --zoom "$HOME/.cache/wallpaper.${EXT}"
+            ;;
+        l)
+            sudo cp "$OPTARG" "/usr/share/pixmaps/wallpaper.png"
+            ;;
+    esac
+done
