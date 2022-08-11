@@ -219,6 +219,7 @@ return packer.startup({
         use({
             'kylechui/nvim-surround',
             config = plugin_config('surround'),
+            branch = 'v2.0.0',
         })
         use('tpope/vim-repeat')
 
