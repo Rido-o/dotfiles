@@ -80,7 +80,9 @@ return packer.startup({
         -----------
         use({
             'norcalli/nvim-colorizer.lua',
-            config = require('colorizer').setup(),
+            config = function()
+                require('colorizer').setup()
+            end,
         })
         use({
             'feline-nvim/feline.nvim',
@@ -92,9 +94,11 @@ return packer.startup({
         })
         use({
             'lukas-reineke/indent-blankline.nvim',
-            config = require('indent_blankline').setup({
-                char = '┊',
-            }),
+            config = function()
+                require('indent_blankline').setup({
+                    char = '┊',
+                })
+            end,
         })
         use({
             'folke/which-key.nvim',
@@ -158,7 +162,9 @@ return packer.startup({
         })
         use({
             'ggandor/leap.nvim',
-            config = require('leap').set_default_keymaps(),
+            config = function()
+                require('leap').set_default_keymaps()
+            end,
         })
 
         ------------
@@ -210,7 +216,9 @@ return packer.startup({
         ---------------
         use({
             'numToStr/Comment.nvim',
-            config = require('Comment').setup(),
+            config = function()
+                require('Comment').setup()
+            end,
         })
         use({
             'windwp/nvim-autopairs',
