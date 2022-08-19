@@ -1,7 +1,7 @@
 ! xrdb ~/Xresources
 
 ! Fonts
-*font: cozette:pixelsize=11
+*font: cozette:pixelsize=11:style=medium
 
 ! Tokyonight
 ! general
