@@ -19,7 +19,6 @@
     user = "reid";
     system = "x86_64-linux";
     forAllSystems = nixpkgs.lib.genAttrs [system];
-    # pkgs = nixpkgs.legacyPackages.${system};
   in rec {
     overlays = { default = import ./overlay { inherit inputs; }; };
     legacyPackages = forAllSystems (system:
@@ -41,7 +40,6 @@
     # Home manager configurations
     homeConfigurations = {
       "${user}@${host}" = home-manager.lib.homeManagerConfiguration {
-        inherit system;
         pkgs = legacyPackages.${system};
         extraSpecialArgs = { inherit inputs user nixpkgs; };
         modules = [ ./home.nix ];
