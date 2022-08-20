@@ -114,8 +114,8 @@ n ()
 }
 
 # General aliases
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/dotfiles --work-tree=$HOME'
-alias configp='/usr/bin/git --git-dir=$HOME/.cfg/dotfiles-private --work-tree=$HOME'
+alias config='git --git-dir=$HOME/.cfg/dotfiles --work-tree=$HOME'
+alias configp='git --git-dir=$HOME/.cfg/dotfiles-private --work-tree=$HOME'
 alias ls='ls --color=auto --group-directories-first'
 alias n='n -e -D'
 alias gsudo='sudo git -c include.path=$HOME/.config/git/config'
@@ -150,7 +150,7 @@ alias gcc='config commit -m'
 alias gcp='config push origin'
 
 # Plugins
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 [[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
 
 # Keybinds
