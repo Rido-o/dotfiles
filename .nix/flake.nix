@@ -13,18 +13,27 @@
     };
   };
 
-  outputs = args@{ self, nixpkgs, home-manager, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, ... }:
   let
     host = "nixos";
     user = "reid";
     system = "x86_64-linux";
-    pkgs = nixpkgs.legacyPackages.${system};
-  in {
+    forAllSystems = nixpkgs.lib.genAttrs [system];
+    # pkgs = nixpkgs.legacyPackages.${system};
+  in rec {
+    overlays = { default = import ./overlay { inherit inputs; }; };
+    legacyPackages = forAllSystems (system:
+      import inputs.nixpkgs {
+        inherit system;
+        overlays = builtins.attrValues overlays;
+    });
+
     # NixOS configurations
     nixosConfigurations = {
       ${host} = nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = { inherit args host user; };
+        pkgs = legacyPackages.${system};
+        specialArgs = { inherit inputs host user; };
         modules = [ ./configuration.nix ];
       };
     };
@@ -32,8 +41,9 @@
     # Home manager configurations
     homeConfigurations = {
       "${user}@${host}" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        extraSpecialArgs = { inherit args user nixpkgs; };
+        inherit system;
+        pkgs = legacyPackages.${system};
+        extraSpecialArgs = { inherit inputs user nixpkgs; };
         modules = [ ./home.nix ];
       };
     };

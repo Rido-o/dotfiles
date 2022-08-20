@@ -116,42 +116,6 @@
   #   firefox
   ];
 
-  nixpkgs.overlays = [
-  (self: super: {
-    dwm = super.dwm.overrideAttrs (oldAttrs: rec {
-      #src = /home/reid/.local/src/dwm-flexipatch;
-      src = super.fetchFromGitHub {
-        owner = "Rido-o";
-        repo = "dwm-flexipatch";
-        rev = "9bfbbd6ada070b3b148600206b32485c2dbe2248"; # Find by running 'git rev-parse HEAD'
-        sha256 = "0FyuEzPTM3wU5P0SPopnaA/IcYFoVm5ZjAP6qOqJXv8="; # Find by using super.lib.fakeSha256
-      };
-      buildInputs = oldAttrs.buildInputs ++ [ super.xorg.libxcb ];
-    });
-    st = super.st.overrideAttrs (oldAttrs: rec {
-      patches = [
-        (super.fetchpatch {
-          url = "https://st.suckless.org/patches/anysize/st-anysize-20220718-baa9357.diff";
-          sha256 = "yx9VSwmPACx3EN3CAdQkxeoJKJxQ6ziC9tpBcoWuWHc=";
-        })
-        (super.fetchpatch {
-          url = "https://st.suckless.org/patches/xresources-with-reload-signal/st-xresources-signal-reloading-20220407-ef05519.diff";
-          sha256 = "og6cJaMfn7zHfQ0xt6NKhuDNY5VK2CjzqJDJYsT5lrk=";
-        })
-        (super.fetchpatch {
-          url = "https://st.suckless.org/patches/scrollback/st-scrollback-20210507-4536f46.diff";
-          sha256 = "9qzPHaT7Qd03lJfBeFBebvjmJcw8OzVP2nSqLlLr7Pk=";
-        })
-      ];
-      configFile = super.fetchurl {
-        url = "https://raw.githubusercontent.com/Rido-o/st/master/config.def.h";
-        sha256 = "ips9OcLEZHH6CI2i7juvsAda6BDOkxFQSx9CTBReqr0=";
-      };
-      postPatch = oldAttrs.postPatch + "cp ${configFile} config.def.h";
-    });
-  })
-  ];
-
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
