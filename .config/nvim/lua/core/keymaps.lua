@@ -54,7 +54,7 @@ map('n', '<leader>l', '<CMD>wincmd l<CR>', { desc = 'Move right' })
 map('n', '<leader>w', '<CMD>w<CR>', { desc = 'Write' })
 map('n', '<leader>q', '<CMD>q<CR>', { desc = 'Quit' })
 map('n', '<leader>U', '<CMD>UndotreeToggle<CR>', { desc = 'Open undo tree' })
-map('n', '<leader>c', '<CMD>lua require("Comment.api").toggle_current_linewise()<CR>', { desc = 'Toggle comment' })
+map('n', '<leader>c', require("Comment.api").toggle.linewise.current, { desc = 'Toggle comment' })
 
 -- Buffer management mappings
 map('n', '<leader>bQ', '<CMD>w|%bd|e#|bd#<CR>', { desc = 'Close all except current' })
@@ -102,8 +102,8 @@ map('n', '<leader>tc', toggle_color_column, { desc = 'Toggle color column' })
 
 -- Visual mode single key leader mappings
 map(
-    'v',
+    'x',
     '<leader>c',
-    '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>',
+    '<Plug>(comment_toggle_linewise_visual)',
     { desc = 'Toggle comment' }
 )
