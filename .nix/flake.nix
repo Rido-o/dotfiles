@@ -1,5 +1,5 @@
 {
-  description = "NixOS Configuration";
+  description = "NixOS configuration";
 
   inputs = {
     # Nixpkgs
@@ -13,7 +13,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@args:
+  outputs = args@{ self, nixpkgs, home-manager, ... }:
   let
     host = "nixos";
     user = "reid";

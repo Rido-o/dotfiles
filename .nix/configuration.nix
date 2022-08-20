@@ -125,9 +125,11 @@
     neovim
     qutebrowser
     xmenu
-    gcc
+    gcc # nvim treesitter
     lazygit
     home-manager
+    xclip # for putting ssh github key to clipboard
+    qutebrowser
   #   wget
   #   firefox
   ];

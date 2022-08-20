@@ -4,3 +4,4 @@ eg
 sudo nixos-rebuild switch --flake .#nixos
 or
 sudo nixos-rebuild switch --flake .
+home-manager switch --flake .#reid@nixos
