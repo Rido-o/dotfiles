@@ -1,0 +1,6 @@
+Load config with
+sudo nixos-rebuild switch --flake <path>#<host>
+eg
+sudo nixos-rebuild switch --flake .#nixos
+or
+sudo nixos-rebuild switch --flake .
