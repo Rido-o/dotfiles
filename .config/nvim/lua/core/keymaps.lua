@@ -101,9 +101,16 @@ end
 map('n', '<leader>tc', toggle_color_column, { desc = 'Toggle color column' })
 
 -- Visual mode single key leader mappings
+local esc = vim.api.nvim_replace_termcodes(
+    '<ESC>', true, false, true
+)
+
 map(
     'x',
     '<leader>c',
-    '<Plug>(comment_toggle_linewise_visual)',
+    function()
+        vim.api.nvim_feedkeys(esc, 'nx', false)
+        require("Comment.api").toggle.linewise(vim.fn.visualmode())
+    end,
     { desc = 'Toggle comment' }
 )
