@@ -143,10 +143,10 @@
           sha256 = "9qzPHaT7Qd03lJfBeFBebvjmJcw8OzVP2nSqLlLr7Pk=";
         })
       ];
-      configFile = super.writeText "config.def.h" (builtins.readFile "${super.fetchurl {
+      configFile = super.fetchurl {
         url = "https://raw.githubusercontent.com/Rido-o/st/master/config.def.h";
         sha256 = "ips9OcLEZHH6CI2i7juvsAda6BDOkxFQSx9CTBReqr0=";
-      }}");
+      };
       postPatch = oldAttrs.postPatch + "cp ${configFile} config.def.h";
     });
   })
