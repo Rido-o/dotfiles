@@ -5,10 +5,9 @@
 { config, pkgs, host, user, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
+  imports = [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-    ];
+  ];
 
   # Bootloader
   boot.loader.grub.enable = true;
@@ -71,7 +70,7 @@
       commands = [
         { command = "ALL";
 	  options = [ "NOPASSWD" ];
-	}
+    }
       ];
     }
   ];
@@ -102,17 +101,17 @@
     (st.overrideAttrs (oldAttrs: rec {
       patches = [
         (fetchpatch {
-	  url = "https://st.suckless.org/patches/anysize/st-anysize-20220718-baa9357.diff";
-	  sha256 = "yx9VSwmPACx3EN3CAdQkxeoJKJxQ6ziC9tpBcoWuWHc=";
-	})
+          url = "https://st.suckless.org/patches/anysize/st-anysize-20220718-baa9357.diff";
+          sha256 = "yx9VSwmPACx3EN3CAdQkxeoJKJxQ6ziC9tpBcoWuWHc=";
+        })
         (fetchpatch {
-	  url = "https://st.suckless.org/patches/xresources-with-reload-signal/st-xresources-signal-reloading-20220407-ef05519.diff";
-	  sha256 = "og6cJaMfn7zHfQ0xt6NKhuDNY5VK2CjzqJDJYsT5lrk=";
-	})
+          url = "https://st.suckless.org/patches/xresources-with-reload-signal/st-xresources-signal-reloading-20220407-ef05519.diff";
+          sha256 = "og6cJaMfn7zHfQ0xt6NKhuDNY5VK2CjzqJDJYsT5lrk=";
+        })
         (fetchpatch {
-	  url = "https://st.suckless.org/patches/scrollback/st-scrollback-20210507-4536f46.diff";
-	  sha256 = "9qzPHaT7Qd03lJfBeFBebvjmJcw8OzVP2nSqLlLr7Pk=";
-	})
+          url = "https://st.suckless.org/patches/scrollback/st-scrollback-20210507-4536f46.diff";
+          sha256 = "9qzPHaT7Qd03lJfBeFBebvjmJcw8OzVP2nSqLlLr7Pk=";
+        })
       ];
       # configFile = 
       # postPatch = oldAttrs.postPatch ++ ''cp ${configFile} config.def.h'';
@@ -139,12 +138,12 @@
     dwm = super.dwm.overrideAttrs (oldAttrs: rec {
       #src = /home/reid/.local/src/dwm-flexipatch;
       src = super.fetchFromGitHub {
-        owner = "Rido-o";
- 	repo = "dwm-flexipatch";
- 	# Find by running 'git rev-parse HEAD' inside the repo
- 	rev = "9bfbbd6ada070b3b148600206b32485c2dbe2248";
- 	# Find by using the error produced when set to super.lib.fakeSha256
- 	sha256 = "0FyuEzPTM3wU5P0SPopnaA/IcYFoVm5ZjAP6qOqJXv8=";
+      owner = "Rido-o";
+      repo = "dwm-flexipatch";
+      # Find by running 'git rev-parse HEAD' inside the repo
+      rev = "9bfbbd6ada070b3b148600206b32485c2dbe2248";
+      # Find by using the error produced when set to super.lib.fakeSha256
+      sha256 = "0FyuEzPTM3wU5P0SPopnaA/IcYFoVm5ZjAP6qOqJXv8=";
       };
       buildInputs = oldAttrs.buildInputs ++ [ super.xorg.libxcb ];
     });
@@ -177,5 +176,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "22.05"; # Did you read the comment?
-
 }

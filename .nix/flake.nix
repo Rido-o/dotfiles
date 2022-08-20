@@ -18,11 +18,12 @@
     host = "nixos";
     user = "reid";
     system = "x86_64-linux";
+    pkgs = nixpkgs.legacyPackages.${system};
   in {
     # NixOS configurations
     nixosConfigurations = {
-      ${host} = nixpkgs.lib.nixosSystem { # TODO set nixos to hostname
-        system = "${system}";
+      ${host} = nixpkgs.lib.nixosSystem {
+        inherit system;
         specialArgs = { inherit args host user; };
         modules = [ ./configuration.nix ];
       };
@@ -31,7 +32,7 @@
     # Home manager configurations
     homeConfigurations = {
       "${user}@${host}" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.${system};
+        inherit pkgs;
         extraSpecialArgs = { inherit args user nixpkgs; };
         modules = [ ./home.nix ];
       };
