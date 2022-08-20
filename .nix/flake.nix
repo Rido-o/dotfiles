@@ -41,7 +41,7 @@
     homeConfigurations = {
       "${user}@${host}" = home-manager.lib.homeManagerConfiguration {
         pkgs = legacyPackages.${system};
-        extraSpecialArgs = { inherit inputs user nixpkgs; };
+        extraSpecialArgs = { inherit inputs user; };
         modules = [ ./home.nix ];
       };
     };
