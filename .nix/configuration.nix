@@ -98,24 +98,7 @@
 
   # List packages installed in system profile. To search, run: $ nix search wget
   environment.systemPackages = with pkgs; [
-    (st.overrideAttrs (oldAttrs: rec {
-      patches = [
-        (fetchpatch {
-          url = "https://st.suckless.org/patches/anysize/st-anysize-20220718-baa9357.diff";
-          sha256 = "yx9VSwmPACx3EN3CAdQkxeoJKJxQ6ziC9tpBcoWuWHc=";
-        })
-        (fetchpatch {
-          url = "https://st.suckless.org/patches/xresources-with-reload-signal/st-xresources-signal-reloading-20220407-ef05519.diff";
-          sha256 = "og6cJaMfn7zHfQ0xt6NKhuDNY5VK2CjzqJDJYsT5lrk=";
-        })
-        (fetchpatch {
-          url = "https://st.suckless.org/patches/scrollback/st-scrollback-20210507-4536f46.diff";
-          sha256 = "9qzPHaT7Qd03lJfBeFBebvjmJcw8OzVP2nSqLlLr7Pk=";
-        })
-      ];
-      # configFile = 
-      # postPatch = oldAttrs.postPatch ++ ''cp ${configFile} config.def.h'';
-    }))
+    st
     zsh
     zsh-syntax-highlighting
     zsh-autosuggestions
@@ -146,6 +129,24 @@
       sha256 = "0FyuEzPTM3wU5P0SPopnaA/IcYFoVm5ZjAP6qOqJXv8=";
       };
       buildInputs = oldAttrs.buildInputs ++ [ super.xorg.libxcb ];
+    });
+    st = super.st.overrideAttrs (oldAttrs: rec {
+      patches = [
+        (super.fetchpatch {
+          url = "https://st.suckless.org/patches/anysize/st-anysize-20220718-baa9357.diff";
+          sha256 = "yx9VSwmPACx3EN3CAdQkxeoJKJxQ6ziC9tpBcoWuWHc=";
+        })
+        (super.fetchpatch {
+          url = "https://st.suckless.org/patches/xresources-with-reload-signal/st-xresources-signal-reloading-20220407-ef05519.diff";
+          sha256 = "og6cJaMfn7zHfQ0xt6NKhuDNY5VK2CjzqJDJYsT5lrk=";
+        })
+        (super.fetchpatch {
+          url = "https://st.suckless.org/patches/scrollback/st-scrollback-20210507-4536f46.diff";
+          sha256 = "9qzPHaT7Qd03lJfBeFBebvjmJcw8OzVP2nSqLlLr7Pk=";
+        })
+      ];
+      # configFile = 
+      # postPatch = oldAttrs.postPatch ++ ''cp ${configFile} config.def.h'';
     });
   })
   ];
