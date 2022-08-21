@@ -1,10 +1,11 @@
-{ inputs, lib, config, pkgs, user, ... }: {
+{ inputs, pkgs, user, ... }: {
   home = {
     username = "${user}";
     homeDirectory = "/home/${user}";
     # packages = with pkgs; [
     # ];
   };
+  # Let home-manager install and manage itself
   programs.home-manager.enable = true;
   programs.git = {
     enable = true;

@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, host, user, ... }:
+{ inputs, pkgs, host, user, ... }:
 
 {
   imports = [ # Include the results of the hardware scan.
@@ -108,7 +108,6 @@
     qutebrowser
     gcc # nvim treesitter
     lazygit
-    home-manager
     xclip # for putting ssh github key to clipboard
     qutebrowser
   #   wget
