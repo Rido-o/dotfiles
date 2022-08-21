@@ -33,16 +33,27 @@
         inherit system;
         pkgs = legacyPackages.${system};
         specialArgs = { inherit inputs host user; };
-        modules = [ ./configuration.nix ];
+        modules = [
+          ./configuration.nix
+          # Default home-manager user configuration
+          home-manager.nixosModules.home-manager {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              extraSpecialArgs = { inherit inputs user; };
+              users.${user} = import ./home-manager/home.nix;
+            };
+          }
+        ];
       };
     };
 
-    # Home manager configurations
+    # Standalone home-manager configurations
     homeConfigurations = {
       "${user}@${host}" = home-manager.lib.homeManagerConfiguration {
         pkgs = legacyPackages.${system};
         extraSpecialArgs = { inherit inputs user; };
-        modules = [ ./home.nix ];
+        modules = [ ./home-manager/home.nix ];
       };
     };
   };
