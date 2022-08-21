@@ -114,3 +114,7 @@ map(
     end,
     { desc = 'Toggle comment' }
 )
+
+-- Mouse keybinds
+map('n', '<ScrollWheelUp>', 'k', { desc = 'Scroll up' })
+map('n', '<ScrollWheelDown>', 'j', { desc = 'Scroll up' })
