@@ -4,4 +4,6 @@ eg
 sudo nixos-rebuild switch --flake .#nixos
 or
 sudo nixos-rebuild switch --flake .
+# not sure what upgrade does # keep-failed keeps a failed copy of derivation in /tmp
+sudo nixos-rebuild switch --upgrade --keep-failed --flake .
 home-manager switch --flake .#reid@nixos

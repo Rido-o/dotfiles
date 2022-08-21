@@ -100,14 +100,12 @@
   environment.systemPackages = with pkgs; [
     st
     nsxiv
-    zsh
-    zsh-syntax-highlighting
-    zsh-autosuggestions
+    xmenu
+    zsh zsh-syntax-highlighting zsh-autosuggestions
     most
     git
     neovim
     qutebrowser
-    xmenu
     gcc # nvim treesitter
     lazygit
     home-manager
