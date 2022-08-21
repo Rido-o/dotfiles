@@ -40,19 +40,7 @@ let
           url = "https://st.suckless.org/patches/scrollback/st-scrollback-mouse-altscreen-20220127-2c5edf2.diff";
           sha256 = "8oVLgbsYCfMhNEOGadb5DFajdDKPxwgf3P/4vOXfUFo=";
         })
-        # (super.fetchpatch {
-        #   url = "https://st.suckless.org/patches/boxdraw/st-boxdraw_v2-0.8.5.diff";
-        #   sha256 = "WN/R6dPuw1eviHOvVVBw2VBSMDtfi1LCkXyX36EJKi4=";
-        # })
-        # (super.fetchpatch {
-        #   url = "https://st.suckless.org/patches/clipboard/st-clipboard-20180309-c5ba9c0.diff";
-        #   sha256 = "IluavF4xQI7tTxYP4Lg4IEbWqTy1nHJmpvPqwrR6WL8=";
-        # })
       ];
-      # configFile = super.fetchurl {
-      #   url = "https://raw.githubusercontent.com/Rido-o/st/master/config.def.h";
-      #   sha256 = "ips9OcLEZHH6CI2i7juvsAda6BDOkxFQSx9CTBReqr0=";
-      # };
       configFile = ./st/config.def.h;
       postPatch = "cp ${configFile} config.def.h";
     });
