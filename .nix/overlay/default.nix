@@ -37,7 +37,7 @@ let
         url = "https://raw.githubusercontent.com/Rido-o/st/master/config.def.h";
         sha256 = "ips9OcLEZHH6CI2i7juvsAda6BDOkxFQSx9CTBReqr0=";
       };
-      postPatch = oldAttrs.postPatch + "cp ${configFile} config.def.h";
+      postPatch = "cp ${configFile} config.def.h";
     });
     nsxiv = super.nsxiv.overrideAttrs (oldAttrs: rec {
       src = super.fetchFromGitea {
