@@ -74,7 +74,6 @@ let
         sed -i \"s:/usr/local:$out:\" Makefile
         cp ${configFile} config.h
       ";
-      # postPatch = "cp ${configFile} config.h";
     });
   };
 in
