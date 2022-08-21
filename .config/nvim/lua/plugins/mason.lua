@@ -3,6 +3,10 @@ if not status_ok then
     return
 end
 
+if vim.g.distro == 'nixos' then
+    return
+end
+
 mason.setup()
 
 require('mason-lspconfig').setup({

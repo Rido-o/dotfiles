@@ -57,7 +57,7 @@ local settings = {
 }
 
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
-local servers = { 'pyright', 'sumneko_lua' }
+local servers = { 'pyright', 'sumneko_lua', 'rnix' }
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup({
         on_attach = on_attach,

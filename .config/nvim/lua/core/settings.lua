@@ -54,6 +54,9 @@ if string.find(raw_os, 'Windows') then
     vim.g.os = 'Windows'
 elseif raw_os == 'Linux' then
     vim.g.os = 'Linux'
+    -- Get Distro
+    local distro = vim.fn.system("sed -n 's/^DISTRIB_ID=//p' /etc/*-release | tr -d '\n'")
+    vim.g.distro = distro
 end
 
 -- Disable auto-commenting
