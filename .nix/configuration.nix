@@ -98,6 +98,8 @@
 
   # List packages installed in system profile. To search, run: $ nix search wget
   environment.systemPackages = with pkgs; [
+    killall
+    dwmblocks sd fd ripgrep pamixer mpd ncmpcpp mpc-cli pulsemixer
     st
     nsxiv
     xmenu
