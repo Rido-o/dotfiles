@@ -6,7 +6,7 @@ autoload -U colors && colors
 # History in cache directory:
 HISTSIZE=10000
 SAVEHIST=10000
-HISTFILE=~/.cache/zsh/history
+HISTFILE=$HOME/.cache/zsh_history
 #HISTDUP=erase
 setopt appendhistory
 setopt sharehistory
