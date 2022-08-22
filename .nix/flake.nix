@@ -11,9 +11,15 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Unstable Neovim
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+
+    # Dwm flake
+    dwm.url = "path:./overlays/dwm";
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, neovim-nightly-overlay, dwm, ... }:
   let
     host = "nixos";
     user = "reid";
@@ -22,7 +28,10 @@
     overlays = import ./overlays;
     pkgs = import nixpkgs {
         inherit system;
-        overlays = overlays.imports;
+        overlays = overlays.imports ++ [
+          neovim-nightly-overlay.overlay
+          dwm.overlay
+        ];
     };
 
     # NixOS configurations
