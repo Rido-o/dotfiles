@@ -18,20 +18,17 @@
     host = "nixos";
     user = "reid";
     system = "x86_64-linux";
-    forAllSystems = nixpkgs.lib.genAttrs [system];
   in rec {
-    overlays = { default = import ./overlay { inherit inputs; }; };
-    legacyPackages = forAllSystems (system:
-      import inputs.nixpkgs {
+    overlays = import ./overlays;
+    pkgs = import nixpkgs {
         inherit system;
-        overlays = builtins.attrValues overlays;
-    });
+        overlays = [ overlays ];
+    };
 
     # NixOS configurations
     nixosConfigurations = {
       ${host} = nixpkgs.lib.nixosSystem {
-        inherit system;
-        pkgs = legacyPackages.${system};
+        inherit system pkgs;
         specialArgs = { inherit inputs host user; };
         modules = [
           ./configuration.nix
@@ -51,7 +48,7 @@
     # Standalone home-manager configurations
     homeConfigurations = {
       "${user}@${host}" = home-manager.lib.homeManagerConfiguration {
-        pkgs = legacyPackages.${system};
+        inherit pkgs;
         extraSpecialArgs = { inherit inputs user; };
         modules = [ ./home-manager/home.nix ];
       };
