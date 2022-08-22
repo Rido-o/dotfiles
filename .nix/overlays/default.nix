@@ -4,6 +4,7 @@
 {
   imports = [
     (import ./dwm)
+    (import ./dwmblocks)
     (import ./nsxiv)
     (import ./st)
     (import ./xmenu)
