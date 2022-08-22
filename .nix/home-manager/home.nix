@@ -2,8 +2,9 @@
   home = {
     username = "${user}";
     homeDirectory = "/home/${user}";
-    # packages = with pkgs; [
-    # ];
+    packages = with pkgs; [
+      nnn
+    ];
   };
   # Let home-manager install and manage itself
   programs.home-manager.enable = true;
