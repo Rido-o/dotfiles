@@ -19,19 +19,20 @@
     dwm.url = "path:./overlays/dwm";
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, neovim-nightly-overlay, dwm, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, ... }:
   let
     host = "nixos";
     user = "reid";
     system = "x86_64-linux";
+    flakes = with inputs; [
+      neovim-nightly-overlay.overlay
+      dwm.overlay
+    ];
   in rec {
     overlays = import ./overlays;
     pkgs = import nixpkgs {
         inherit system;
-        overlays = overlays.imports ++ [
-          neovim-nightly-overlay.overlay
-          dwm.overlay
-        ];
+        overlays = overlays.imports ++ flakes;
     };
 
     # NixOS configurations
