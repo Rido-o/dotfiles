@@ -2,8 +2,10 @@
 
 # https://nixos.wiki/wiki/Overlays
 {
-  dwm = import ./dwm;
-  nsxiv = import ./nsxiv;
-  st = import ./st;
-  xmenu = import ./xmenu;
+  imports = [
+    (import ./dwm)
+    (import ./nsxiv)
+    (import ./st)
+    (import ./xmenu)
+  ];
 }

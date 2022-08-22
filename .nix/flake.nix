@@ -22,7 +22,7 @@
     overlays = import ./overlays;
     pkgs = import nixpkgs {
         inherit system;
-        overlays = builtins.attrValues overlays;
+        overlays = overlays.imports;
     };
 
     # NixOS configurations
