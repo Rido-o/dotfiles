@@ -24,13 +24,12 @@
     host = "nixos";
     user = "reid";
     system = "x86_64-linux";
-    flakes = with inputs; [
-      neovim-nightly-overlay.overlay
-    ];
     pkgs = import nixpkgs {
-        inherit system;
-        config.allowUnfree = true;
-        overlays = overlays.overlays ++ flakes;
+      inherit system;
+      config.allowUnfree = true;
+      overlays = with inputs; [
+        neovim-nightly-overlay.overlay
+      ] ++ overlays.overlays;
     };
   in {
     # NixOS configurations
