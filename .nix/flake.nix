@@ -29,7 +29,7 @@
     ];
   in rec {
     pkgs = import nixpkgs {
-        inherit system overlays;
+        inherit system;
         overlays = overlays.overlays ++ flakes;
     };
 
