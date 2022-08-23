@@ -5,9 +5,9 @@
     dwm.url = "path:./dwm";
   };
 
-  outputs = { self, dwm }:
+  outputs = inputs@{ self, ... }:
   let
-    flakes = [
+    flakes = with inputs; [
       dwm.overlay
     ];
   in {
