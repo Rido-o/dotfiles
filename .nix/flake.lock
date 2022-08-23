@@ -2,17 +2,16 @@
   "nodes": {
     "dwm": {
       "inputs": {
-        "dwm": "dwm_2",
-        "nixpkgs": "nixpkgs"
+        "dwm": "dwm_2"
       },
       "locked": {
         "lastModified": 1,
-        "narHash": "sha256-JoRyNo+n7o7fVPX4snni8mzut0zG0z2sCSBrzbvXiDc=",
-        "path": "./overlays/dwm",
+        "narHash": "sha256-C/jVhQ0lJTq1NC9JRpKZLpLgHr+bD9G3k8/px+/Z9Qo=",
+        "path": "./dwm",
         "type": "path"
       },
       "original": {
-        "path": "./overlays/dwm",
+        "path": "./dwm",
         "type": "path"
       }
     },
@@ -127,7 +126,7 @@
       "inputs": {
         "flake-compat": "flake-compat",
         "neovim-flake": "neovim-flake",
-        "nixpkgs": "nixpkgs_2"
+        "nixpkgs": "nixpkgs"
       },
       "locked": {
         "lastModified": 1661156221,
@@ -145,20 +144,6 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1661120702,
-        "narHash": "sha256-o2P8sp6FaCwPT8i67Un3w5DN0+nFnY8e9xk7Tj0hpmE=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "3ed15c29ce0fd1c3fcfbbeebcf1607057200d83c",
-        "type": "github"
-      },
-      "original": {
-        "id": "nixpkgs",
-        "type": "indirect"
-      }
-    },
-    "nixpkgs_2": {
-      "locked": {
         "lastModified": 1660998696,
         "narHash": "sha256-N5eDv9THZz5pFn7NR1swaFrAJYByfrA5gU5L7JONItA=",
         "owner": "nixos",
@@ -173,7 +158,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_3": {
+    "nixpkgs_2": {
       "locked": {
         "lastModified": 1661088761,
         "narHash": "sha256-5DGKX81wIPAAiLwUmUYECpA3vop94AHHR7WmGXSsQok=",
@@ -189,13 +174,28 @@
         "type": "github"
       }
     },
+    "overlays": {
+      "inputs": {
+        "dwm": "dwm"
+      },
+      "locked": {
+        "lastModified": 1,
+        "narHash": "sha256-kJ/8Bb/64sFwFP0BnpClKeD1sk9iS23kFTEZ9m/4dZQ=",
+        "path": "./overlays",
+        "type": "path"
+      },
+      "original": {
+        "path": "./overlays",
+        "type": "path"
+      }
+    },
     "root": {
       "inputs": {
-        "dwm": "dwm",
         "hardware": "hardware",
         "home-manager": "home-manager",
         "neovim-nightly-overlay": "neovim-nightly-overlay",
-        "nixpkgs": "nixpkgs_3"
+        "nixpkgs": "nixpkgs_2",
+        "overlays": "overlays"
       }
     },
     "utils": {

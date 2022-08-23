@@ -1,9 +1,8 @@
 {
-  description = "A very basic flake";
+  description = "Flake containing my build of dwm";
 
   inputs = {
     dwm.url = "github:Rido-o/dwm-flexipatch";
-    dwm.flake = false;
   };
 
   outputs = { self, dwm }: {
