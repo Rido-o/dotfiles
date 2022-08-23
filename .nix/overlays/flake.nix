@@ -2,12 +2,16 @@
   description = "Flake containing all of my overlays";
 
   inputs = {
-    dwm-overlay.url = "path:./dwm";
+    dwm.url = "path:./dwm";
   };
 
-  outputs = { self, dwm-overlay }: {
-    overlays = [
-      dwm-overlay.overlay
+  outputs = { self, dwm }:
+  let
+    flakes = [
+      dwm.overlay
+    ];
+  in {
+    overlays = flakes ++ [
       (import ./dwmblocks)
       (import ./nsxiv)
       (import ./st)

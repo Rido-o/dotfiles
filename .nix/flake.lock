@@ -1,6 +1,6 @@
 {
   "nodes": {
-    "dwm-overlay": {
+    "dwm": {
       "inputs": {
         "dwm-src": "dwm-src"
       },
@@ -176,11 +176,11 @@
     },
     "overlays": {
       "inputs": {
-        "dwm-overlay": "dwm-overlay"
+        "dwm": "dwm"
       },
       "locked": {
         "lastModified": 1,
-        "narHash": "sha256-FFyqkx6dGAEvVN64FehK6nWKBoHRx0hR06XtI9ix9B4=",
+        "narHash": "sha256-2dKpYuBaZnzFor3D+O39bxSIJnsqQkVoVJqfQNw/j2c=",
         "path": "./overlays",
         "type": "path"
       },
