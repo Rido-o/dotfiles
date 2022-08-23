@@ -7,12 +7,11 @@
   };
 
   outputs = { self, dwm-src }: {
-    overlay =
-      self: super: {
-        dwm = super.dwm.overrideAttrs (oldAttrs: rec {
-          src = dwm-src;
-          buildInputs = oldAttrs.buildInputs ++ [ super.xorg.libxcb ];
-        });
-      };
+    overlay = self: super: {
+      dwm = super.dwm.overrideAttrs (oldAttrs: rec {
+        src = dwm-src;
+        buildInputs = oldAttrs.buildInputs ++ [ super.xorg.libxcb ];
+      });
+    };
   };
 }
