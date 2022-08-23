@@ -73,15 +73,13 @@
   };
 
   # Disable certain wheel users from needing to enter a password on sudo commands
-  security.sudo.extraRules = [
-    { users = [ "${user}" ];
-      commands = [
-        { command = "ALL";
-	  options = [ "NOPASSWD" ];
-    }
-      ];
-    }
-  ];
+  security.sudo.extraRules = [{
+    users = [ "${user}" ];
+    commands = [{
+      command = "ALL";
+      options = [ "NOPASSWD" ];
+    }];
+  }];
 
   nix = {
       settings = {
