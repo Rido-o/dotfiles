@@ -10,10 +10,16 @@
   ];
 
   # Bootloader
-  boot.loader.grub.enable = true;
-  boot.loader.grub.version = 2;
-  boot.loader.grub.device = "/dev/sda"; # or "nodev" for efi only # Define on which hard drive you want to install Grub.
-  boot.loader.grub.useOSProber = true;
+  boot.loader = {
+    grub = {
+      enable = true;
+      version = 2;
+      device = "/dev/sda"; # or "nodev" for efi only # Define on which hard drive you want to install Grub.
+      # useOSProber = true; # For dual booting
+      configurationLimit = 5;
+    };
+    timeout = 5;
+  };
 
   networking.hostName = "${host}"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -31,18 +37,20 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_AU.UTF-8";
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
-  # Display Manager
-  services.xserver.displayManager.lightdm.enable = true;
-
-  # Desktop Manager
-  services.xserver.desktopManager.xfce.enable = true;
-
-  # Window Manager
-  # services.xserver.windowManager.awesome.enable = true;
-  services.xserver.windowManager.dwm.enable = true;
+  # X11 display settings
+  services.xserver = {
+    enable = true;
+    displayManager = {
+        lightdm.enable = true;
+        defaultSession = "xfce";
+    };
+    desktopManager = {
+      xfce.enable = true;
+    };
+    windowManager = {
+      dwm.enable = true;
+    };
+  };
 
   # Configure keymap in X11
   services.xserver = {
@@ -75,8 +83,14 @@
     }
   ];
 
-  # Enable flakes
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix = {
+      settings = {
+        # Enable flakes and new 'nix' command
+        experimental-features = ["nix-command" "flakes"];
+        # Deduplicate and optimizse nix store
+        auto-optimise-store = true;
+    };
+  };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;

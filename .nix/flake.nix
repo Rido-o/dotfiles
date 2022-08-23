@@ -39,7 +39,7 @@
         inherit system pkgs;
         specialArgs = { inherit inputs host user; };
         modules = [
-          ./configuration.nix
+          ./nixos/configuration.nix
           # Default home-manager user configuration
           home-manager.nixosModules.home-manager {
             home-manager = {
