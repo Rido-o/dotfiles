@@ -32,7 +32,7 @@
         config.allowUnfree = true;
         overlays = overlays.overlays ++ flakes;
     };
-  in rec {
+  in {
     # NixOS configurations
     nixosConfigurations = {
       ${host} = nixpkgs.lib.nixosSystem {
