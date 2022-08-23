@@ -3,6 +3,7 @@
 
   inputs = {
     dwm.url = "github:Rido-o/dwm-flexipatch";
+    dwm.flake = false;
   };
 
   outputs = { self, dwm }: {
