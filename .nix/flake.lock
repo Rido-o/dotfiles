@@ -37,7 +37,7 @@
       },
       "locked": {
         "lastModified": 1,
-        "narHash": "sha256-apwAJPUn8hwqO4LiDdMIZGLtOLHQllO9jqAoHdNl2JI=",
+        "narHash": "sha256-/9TXNviaIpuTYKark4j4+oDBrw+gypCE7hwM+/46U24=",
         "path": "./dwmblocks",
         "type": "path"
       },
@@ -211,7 +211,7 @@
       },
       "locked": {
         "lastModified": 1,
-        "narHash": "sha256-afRPI60vMn5wqHaywjbpPE4752FcxZQh3ykOPYB2UVk=",
+        "narHash": "sha256-HtxhXSRD9P6CO8KxMsx+g9Qj+HIyFK+uaG/AwH+XsCE=",
         "path": "./nsxiv",
         "type": "path"
       },
@@ -245,7 +245,7 @@
       },
       "locked": {
         "lastModified": 1,
-        "narHash": "sha256-WP5yHMb1Go5WKsMUuKrDTQLZiBTCZAJe5VzhIdhOR7I=",
+        "narHash": "sha256-69lbnnTSTXyB+48T8geRQ1bL7Db6GgrM91sjxmfvlWM=",
         "path": "./overlays",
         "type": "path"
       },
@@ -284,7 +284,7 @@
       },
       "locked": {
         "lastModified": 1,
-        "narHash": "sha256-FoJCsAZtris0uL0z5EtOdFvC3IGcwmYVd5CfVMPw3JY=",
+        "narHash": "sha256-WPoRkZegFVQmoXkJ3THFrXQIi7l6nGKJwCxxxH+cna4=",
         "path": "./xmenu",
         "type": "path"
       },

@@ -8,16 +8,15 @@
     xmenu.url = "path:./xmenu";
   };
 
-  outputs = inputs@{ self, ... }:
-  let
-    flakes = with inputs; [
+  outputs = inputs@{ self, ... }: {
+    overlays = with inputs; [
+      # Flakes
       dwm.overlay
       dwmblocks.overlay
       nsxiv.overlay
       xmenu.overlay
-    ];
-  in {
-    overlays = flakes ++ [
+    ] ++ [
+      # Normal overlays
       (import ./st)
     ];
   };
