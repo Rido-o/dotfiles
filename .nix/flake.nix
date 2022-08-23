@@ -27,12 +27,12 @@
     flakes = with inputs; [
       neovim-nightly-overlay.overlay
     ];
-  in rec {
     pkgs = import nixpkgs {
         inherit system;
+        config.allowUnfree = true;
         overlays = overlays.overlays ++ flakes;
     };
-
+  in rec {
     # NixOS configurations
     nixosConfigurations = {
       ${host} = nixpkgs.lib.nixosSystem {
