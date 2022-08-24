@@ -9,3 +9,5 @@ sudo nixos-rebuild switch --upgrade --keep-failed --flake .
 # update lockfile aka update system
 sudo nixos-rebuild switch --upgrade --flake . --recreate-lock-file
 home-manager switch --flake .#reid@nixos
+
+# How to update specific input?
