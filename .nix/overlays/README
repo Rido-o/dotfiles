@@ -13,7 +13,7 @@ git add filechanges
 git commit <patch description>
 # Create diff between last commit and current commit
 git format-patch --stdout HEAD^ > toolname-patchname-YYYYMMDD.diff
-# Or for multiple commits # since being the commit sha eg. 28fb3e2
+# Or for multiple commits # <since> being the commit sha eg. 28fb3e2
 git log --oneline
 git format-patch --stdout <since> > toolname-patchname-YYYYMMDD.diff
 # Diff name example
