@@ -68,11 +68,11 @@
     "dwm-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1660884314,
-        "narHash": "sha256-0FyuEzPTM3wU5P0SPopnaA/IcYFoVm5ZjAP6qOqJXv8=",
+        "lastModified": 1661342735,
+        "narHash": "sha256-d1/bEcBSuN9LO+3B3eQELAkaEO/FzFBn8oEPlc23iGM=",
         "owner": "Rido-o",
         "repo": "dwm-flexipatch",
-        "rev": "9bfbbd6ada070b3b148600206b32485c2dbe2248",
+        "rev": "45ce57f77e67fc4219f14b3d6c7f307c54ec4ae9",
         "type": "github"
       },
       "original": {
