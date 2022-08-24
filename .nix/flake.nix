@@ -69,9 +69,10 @@
   # Commands
   flake-utils.lib.eachDefaultSystem (system: {
     devShells.default = pkgs.devshell.mkShell {
-      devshell.motd = "
-        My home configs
-      ";
+      devshell.motd = ''
+        {bold}{14}~ NixOS command center ~{reset}
+        $(type -p menu &>/dev/null && menu)
+      '';
 
       commands = [
         {
