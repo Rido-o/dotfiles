@@ -16,5 +16,10 @@ sudo nixos-rebuild switch --flake .#nixos --update-input overlays
 # Perform garbage collection and delete all old generations
 sudo nix-collect-garbage -d
 
-# Enter shell with
+# Enter shell with whilst in directory
 nix develop
+# Or you can use the following if outside the directory
+nix develop $HOME/.nix
+
+# To bring up a list of the commands use
+menu
