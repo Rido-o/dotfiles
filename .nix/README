@@ -11,3 +11,7 @@ sudo nixos-rebuild switch --upgrade --flake . --recreate-lock-file
 home-manager switch --flake .#reid@nixos
 
 # How to update specific input?
+sudo nixos-rebuild switch --flake .#nixos --update-input overlays
+
+# Perform garbage collection and delete all old generations
+sudo nix-collect-garbage -d
