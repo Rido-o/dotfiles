@@ -12,6 +12,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Devshell
+    flake-utils.url = "github:numtide/flake-utils";
+    devshell.url = "github:numtide/devshell";
+
     # Neovim-nightly flake
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
 
@@ -19,7 +23,7 @@
     overlays.url = "path:./overlays";
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, overlays, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, flake-utils, devshell, overlays, ... }:
   let
     host = "nixos";
     user = "reid";
@@ -28,6 +32,7 @@
       inherit system;
       config.allowUnfree = true;
       overlays = with inputs; [
+        devshell.overlay
         neovim-nightly-overlay.overlay
       ] ++ overlays.overlays;
     };
@@ -60,5 +65,24 @@
         modules = [ ./home-manager/home.nix ];
       };
     };
-  };
+  } //
+  # Commands
+  flake-utils.lib.eachDefaultSystem (system: {
+    devShells.default = pkgs.devshell.mkShell {
+      devshell.motd = "
+        My home configs
+      ";
+
+      commands = [
+        {
+          name = "dev:install";
+          category = "Install";
+          help = "Will install";
+          command = "
+            sudo nixos-rebuild switch --flake .#nixos
+          ";
+        }
+      ];
+    };
+  });
 }
