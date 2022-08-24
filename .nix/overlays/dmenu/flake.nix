@@ -11,10 +11,8 @@
       dmenu = super.dmenu.overrideAttrs (oldAttrs: rec {
         src = dmenu-src;
         patches = [
-          (super.fetchpatch {
-            url = "https://tools.suckless.org/dmenu/patches/xresources/dmenu-xresources-4.9.diff";
-            sha256 = "Np9I8hhnwmGA3W5v4tSrBN9Or8Q2Ag9x8H3yf8L9jDI=";
-          })
+          # https://tools.suckless.org/dmenu/patches/xresources/dmenu-xresources-4.9.diff
+          ./patches/dmenu-xresources+modified-20220824.diff
           # https://tools.suckless.org/dmenu/patches/border/dmenu-border-20201112-1a13d04.diff
           # https://tools.suckless.org/dmenu/patches/mouse-support/dmenu-mousesupport-5.1.diff
           ./patches/dmenu-mousesupport+border-20220824.diff
