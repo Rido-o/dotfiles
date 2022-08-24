@@ -22,6 +22,7 @@
           # https://tools.suckless.org/dmenu/patches/line-height/dmenu-lineheight-5.0.diff
           # https://tools.suckless.org/dmenu/patches/password/dmenu-password-5.0.diff
           # https://tools.suckless.org/dmenu/patches/case-insensitive/dmenu-caseinsensitive-5.0.diff
+          ## https://tools.suckless.org/dmenu/patches/xresources-alt/dmenu-xresources-alt-5.0.diff
           ./patches/dmenu-center+lineheight+password+caseinsensitive-20220824.diff
         ];
         configFile = ./config.def.h;
