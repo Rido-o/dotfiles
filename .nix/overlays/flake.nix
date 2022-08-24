@@ -6,6 +6,7 @@
     dwmblocks.url = "path:./dwmblocks";
     nsxiv.url = "path:./nsxiv";
     xmenu.url = "path:./xmenu";
+    dmenu.url = "path:./dmenu";
   };
 
   outputs = inputs@{ self, ... }: {
@@ -15,6 +16,7 @@
       dwmblocks.overlay
       nsxiv.overlay
       xmenu.overlay
+      dmenu.overlay
     ] ++ [
       # Normal overlays
       (import ./st)

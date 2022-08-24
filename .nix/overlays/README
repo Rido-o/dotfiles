@@ -1,0 +1,16 @@
+# Resolving patches
+# Clone repo
+git clone example
+# Create a branch in that repo
+git branch patch1+patch2
+git checkout patch1+patch2
+# Apply patches
+curl https://patch1.url.diff | git apply --reject
+curl https://patch2.url.diff | git apply --reject
+# Manually resolve conflicts
+# Create a new diff
+git add filechanges
+git commit <patch description>
+git format-patch --stdout HEAD^ > toolname-patchname-YYYYMMDD.diff
+# Diff name example
+dmenu-centered+mousesupport-20220824.diff

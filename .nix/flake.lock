@@ -1,5 +1,36 @@
 {
   "nodes": {
+    "dmenu": {
+      "inputs": {
+        "dmenu-src": "dmenu-src"
+      },
+      "locked": {
+        "lastModified": 1,
+        "narHash": "sha256-Nf61fYDvoZdEe2CFCzqFJw005XEUhEUQ/mkP+gaDGJg=",
+        "path": "./dmenu",
+        "type": "path"
+      },
+      "original": {
+        "path": "./dmenu",
+        "type": "path"
+      }
+    },
+    "dmenu-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1659948174,
+        "narHash": "sha256-ume1/j4u1g3Jb3YAzsdUABF+0gtwK1QCsakFOKHH6Ug=",
+        "ref": "refs/heads/master",
+        "rev": "e35976f4a50f884c2162f71e4128d7c273e3e042",
+        "revCount": 598,
+        "type": "git",
+        "url": "https://git.suckless.org/dmenu"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://git.suckless.org/dmenu"
+      }
+    },
     "dwm": {
       "inputs": {
         "dwm-src": "dwm-src"
@@ -116,11 +147,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1661201353,
-        "narHash": "sha256-hee34c72DNz1Otj86b2NEc4s1JQ+qnIb1XyWuUD4v6o=",
+        "lastModified": 1661284925,
+        "narHash": "sha256-DKxOkYrhbdBt2t+C3rpJrEBsM6A63jP92TM+XnUKyho=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "0160a0cef076294127f8cc0750019410ab94370d",
+        "rev": "353d21e108790a4823c9fae9812dc953e8994399",
         "type": "github"
       },
       "original": {
@@ -191,11 +222,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1661088761,
-        "narHash": "sha256-5DGKX81wIPAAiLwUmUYECpA3vop94AHHR7WmGXSsQok=",
+        "lastModified": 1661239211,
+        "narHash": "sha256-pNJzBlSNpWEiFJZnLF2oETYq8cGWx1DJPW33aMtG6n8=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "a7855f2235a1876f97473a76151fec2afa02b287",
+        "rev": "5e804cd8a27f835a402b22e086e36e797716ef8b",
         "type": "github"
       },
       "original": {
@@ -238,6 +269,7 @@
     },
     "overlays": {
       "inputs": {
+        "dmenu": "dmenu",
         "dwm": "dwm",
         "dwmblocks": "dwmblocks",
         "nsxiv": "nsxiv",
@@ -245,7 +277,7 @@
       },
       "locked": {
         "lastModified": 1,
-        "narHash": "sha256-69lbnnTSTXyB+48T8geRQ1bL7Db6GgrM91sjxmfvlWM=",
+        "narHash": "sha256-m6qxOUihme+U9i24mtwlzvko1s0JN6vXzAtv3mWbGrI=",
         "path": "./overlays",
         "type": "path"
       },
