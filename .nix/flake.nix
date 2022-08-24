@@ -75,11 +75,43 @@
 
       commands = [
         {
-          name = "dev:install";
+          name = "dev:switch";
           category = "Install";
-          help = "Will install";
+          help = "Updates changes made to configuration.nix";
           command = "
             sudo nixos-rebuild switch --flake .#nixos
+          ";
+        }
+        {
+          name = "dev:update";
+          category = "Install";
+          help = "Updates the entire system and all packages";
+          command = "
+            sudo nixos-rebuild switch --flake .#nixos --recreate-lockfile
+          ";
+        }
+        {
+          name = "dev:lock";
+          category = "Install";
+          help = "Updates lock file only";
+          command = "
+            nix flake update
+          ";
+        }
+        {
+          name = "dev:input-switch";
+          category = "Install";
+          help = "Updates input and switch";
+          command = "
+            sudo nixos-rebuild switch --flake .#nixos --update-input $1
+          ";
+        }
+        {
+          name = "dev:clean";
+          category = "Maintenance";
+          help = "Perform garbage collection and delete all old generations";
+          command = "
+            sudo nix-collect-garbage
           ";
         }
       ];
