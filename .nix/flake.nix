@@ -87,33 +87,33 @@
           name = "dev:update";
           category = "Install";
           help = "Updates the entire system and all packages";
-          command = "
-            sudo nixos-rebuild switch --flake .#nixos --recreate-lockfile
-          ";
+          command = ''
+            sudo nixos-rebuild switch --flake .#nixos --recreate-lock-file
+          '';
         }
         {
           name = "dev:lock";
           category = "Install";
           help = "Updates lock file only";
-          command = "
+          command = ''
             nix flake update
-          ";
+          '';
         }
         {
           name = "dev:input-switch";
           category = "Install";
           help = "Updates input and switch";
-          command = "
+          command = ''
             sudo nixos-rebuild switch --flake .#nixos --update-input $1
-          ";
+          '';
         }
         {
           name = "dev:clean";
           category = "Maintenance";
           help = "Perform garbage collection and delete all old generations";
-          command = "
+          command = ''
             sudo nix-collect-garbage
-          ";
+          '';
         }
       ];
     };
