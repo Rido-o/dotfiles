@@ -54,7 +54,7 @@ map('n', '<leader>l', '<CMD>wincmd l<CR>', { desc = 'Move right' })
 map('n', '<leader>w', '<CMD>w<CR>', { desc = 'Write' })
 map('n', '<leader>q', '<CMD>q<CR>', { desc = 'Quit' })
 map('n', '<leader>U', '<CMD>UndotreeToggle<CR>', { desc = 'Open undo tree' })
-map('n', '<leader>c', require("Comment.api").toggle.linewise.current, { desc = 'Toggle comment' })
+map('n', '<leader>c', require('Comment.api').toggle.linewise.current, { desc = 'Toggle comment' })
 
 -- Buffer management mappings
 map('n', '<leader>bQ', '<CMD>w|%bd|e#|bd#<CR>', { desc = 'Close all except current' })
@@ -62,7 +62,7 @@ map('n', '<leader>bQ', '<CMD>w|%bd|e#|bd#<CR>', { desc = 'Close all except curre
 -- Lsp mappings
 map('n', '<leader>aa', '<CMD>Lspsaga code_action<CR>', { desc = 'Code action' })
 map('n', '<leader>ar', '<CMD>Lspsaga rename<CR>', { desc = 'Rename' })
-map('n', '<leader>af', '<CMD>lua vim.lsp.buf.formatting()<CR>', { desc = 'Format' })
+map('n', '<leader>af', '<CMD>lua vim.lsp.buf.format { async = true }<CR>', { desc = 'Format' })
 
 -- Git mappings
 -- map('n', '<leader>gi', '<CMD>Git init<CR>', { desc = 'Git init' })
@@ -101,19 +101,12 @@ end
 map('n', '<leader>tc', toggle_color_column, { desc = 'Toggle color column' })
 
 -- Visual mode single key leader mappings
-local esc = vim.api.nvim_replace_termcodes(
-    '<ESC>', true, false, true
-)
+local esc = vim.api.nvim_replace_termcodes('<ESC>', true, false, true)
 
-map(
-    'x',
-    '<leader>c',
-    function()
-        vim.api.nvim_feedkeys(esc, 'nx', false)
-        require("Comment.api").toggle.linewise(vim.fn.visualmode())
-    end,
-    { desc = 'Toggle comment' }
-)
+map('x', '<leader>c', function()
+    vim.api.nvim_feedkeys(esc, 'nx', false)
+    require('Comment.api').toggle.linewise(vim.fn.visualmode())
+end, { desc = 'Toggle comment' })
 
 -- Mouse keybinds
 map('n', '<ScrollWheelUp>', 'k', { desc = 'Scroll up' })
