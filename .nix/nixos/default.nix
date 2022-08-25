@@ -5,8 +5,9 @@
 { inputs, pkgs, host, user, ... }:
 
 {
-  imports = [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
   ];
 
   # Bootloader
@@ -41,8 +42,8 @@
   services.xserver = {
     enable = true;
     displayManager = {
-        lightdm.enable = true;
-        defaultSession = "xfce";
+      lightdm.enable = true;
+      defaultSession = "xfce";
     };
     desktopManager = {
       xfce.enable = true;
@@ -82,11 +83,11 @@
   }];
 
   nix = {
-      settings = {
-        # Enable flakes and new 'nix' command
-        experimental-features = ["nix-command" "flakes"];
-        # Deduplicate and optimizse nix store
-        auto-optimise-store = true;
+    settings = {
+      # Enable flakes and new 'nix' command
+      experimental-features = [ "nix-command" "flakes" ];
+      # Deduplicate and optimizse nix store
+      auto-optimise-store = true;
     };
   };
 
@@ -109,11 +110,21 @@
   environment.systemPackages = with pkgs; [
     dmenu
     killall
-    dwmblocks sd fd ripgrep pamixer mpd ncmpcpp mpc-cli pulsemixer
+    dwmblocks
+    sd
+    fd
+    ripgrep
+    pamixer
+    mpd
+    ncmpcpp
+    mpc-cli
+    pulsemixer
     st
     nsxiv
     xmenu
-    zsh zsh-syntax-highlighting zsh-autosuggestions
+    zsh
+    zsh-syntax-highlighting
+    zsh-autosuggestions
     most
     git
     neovim
@@ -122,8 +133,8 @@
     lazygit
     xclip # for putting ssh github key to clipboard
     qutebrowser
-  #   wget
-  #   firefox
+    #   wget
+    #   firefox
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
