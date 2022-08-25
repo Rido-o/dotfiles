@@ -3,6 +3,7 @@
 
   inputs = {
     dwm-src.url = "github:Rido-o/dwm-flexipatch";
+    # dwm-src.url = "path:/home/reid/.local/src/dwm-flexipatch";
     dwm-src.flake = false;
   };
 

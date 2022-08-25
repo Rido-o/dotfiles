@@ -56,7 +56,7 @@
       },
       "locked": {
         "lastModified": 1,
-        "narHash": "sha256-asCWrAr1ZHftHLyye+I4NLgx7xtwUYVJ2DntFnP9YwU=",
+        "narHash": "sha256-4VUy2vxF2jZgYUBjQ7HwOqOPNPSO7O6spqtmoHr9HNA=",
         "path": "./dwm",
         "type": "path"
       },
@@ -68,11 +68,11 @@
     "dwm-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1661342735,
-        "narHash": "sha256-d1/bEcBSuN9LO+3B3eQELAkaEO/FzFBn8oEPlc23iGM=",
+        "lastModified": 1661424531,
+        "narHash": "sha256-CXY3AbMSoKeNakXDCEdkgs47V2EDEk1k5LLMvr3auT0=",
         "owner": "Rido-o",
         "repo": "dwm-flexipatch",
-        "rev": "45ce57f77e67fc4219f14b3d6c7f307c54ec4ae9",
+        "rev": "514c837648dfc21bf24a00ad9b2cc486b67efd36",
         "type": "github"
       },
       "original": {
@@ -99,11 +99,11 @@
     "dwmblocks-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1657679052,
-        "narHash": "sha256-y0Pr4r/4Qegfeg3P38jap2DOx+1tdvBORCedlPEQNnI=",
+        "lastModified": 1661359058,
+        "narHash": "sha256-9Odmn4ux09Po3tzzINtKfDO28jpXlogIed/q2U88pF4=",
         "owner": "UtkarshVerma",
         "repo": "dwmblocks-async",
-        "rev": "f1c037037d0ab60b219ca2c39c1beb77371ca2fe",
+        "rev": "098184d0c35c491e1872d10646f6094c122b8f4f",
         "type": "github"
       },
       "original": {
@@ -196,11 +196,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1661323822,
-        "narHash": "sha256-1UGGcQ00uSo5cPTwL7C3S1zkcScbpF0WzspvnceWkbQ=",
+        "lastModified": 1661371005,
+        "narHash": "sha256-PfWRIyJQhBtVhENqmVcI+C9kisctmzos+nrH+feGX3U=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "1d81e6295ca530603478114f4977402d51299ad8",
+        "rev": "b382b59faf717c5b36f4cd8e1c5d96cdabd382c9",
         "type": "github"
       },
       "original": {
@@ -219,11 +219,11 @@
       },
       "locked": {
         "dir": "contrib",
-        "lastModified": 1661328735,
-        "narHash": "sha256-yObSBzkrN9oM0G7ck/RlAPDaM3EnXoAeHorps3SbKw8=",
+        "lastModified": 1661412054,
+        "narHash": "sha256-UZ/T3XoC0qef3ljv+vRGZ04i3JgwvMxj54hyu6+Jn9Y=",
         "owner": "neovim",
         "repo": "neovim",
-        "rev": "79f32c20f03965e2733a8c778b8e3478acf9467f",
+        "rev": "f0658fd552ec2d72cdd3f09942fe104bc6265115",
         "type": "github"
       },
       "original": {
@@ -240,11 +240,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1661328998,
-        "narHash": "sha256-q8+nWtnSd4WOrTljvfCDk3cTNX0BvZT+K5sTr1MeI8w=",
+        "lastModified": 1661415525,
+        "narHash": "sha256-yYhkMt27GYcV1jUqxxFz7Fbzii/xJnMM4BmWM6qsCtA=",
         "owner": "nix-community",
         "repo": "neovim-nightly-overlay",
-        "rev": "76defe3d40e81fd02a250581844e5e43b4077226",
+        "rev": "7336d24a5b5bab373e1e6e6df775e261766775c7",
         "type": "github"
       },
       "original": {
@@ -271,11 +271,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1661239211,
-        "narHash": "sha256-pNJzBlSNpWEiFJZnLF2oETYq8cGWx1DJPW33aMtG6n8=",
+        "lastModified": 1661328374,
+        "narHash": "sha256-GGMupfk/lGzPBQ/dRrcQEhiFZ0F5KPg0j5Q4Fb5coxc=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "5e804cd8a27f835a402b22e086e36e797716ef8b",
+        "rev": "f034b5693a26625f56068af983ed7727a60b5f8b",
         "type": "github"
       },
       "original": {
@@ -287,11 +287,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1661239211,
-        "narHash": "sha256-pNJzBlSNpWEiFJZnLF2oETYq8cGWx1DJPW33aMtG6n8=",
+        "lastModified": 1661328374,
+        "narHash": "sha256-GGMupfk/lGzPBQ/dRrcQEhiFZ0F5KPg0j5Q4Fb5coxc=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "5e804cd8a27f835a402b22e086e36e797716ef8b",
+        "rev": "f034b5693a26625f56068af983ed7727a60b5f8b",
         "type": "github"
       },
       "original": {
@@ -342,7 +342,7 @@
       },
       "locked": {
         "lastModified": 1,
-        "narHash": "sha256-aRPbyMSzi/NPA88MWS9OiSJtC7thpl3hE61I7QR9hlk=",
+        "narHash": "sha256-VgeOIRTODUbwBXj73eHonqZMj/KfEe+3s37Qi+9WObk=",
         "path": "./overlays",
         "type": "path"
       },
