@@ -71,6 +71,12 @@ dwm.tagsselfgcolor: #1a1b26
 dwm.tagsselbgcolor: #7AA2F7
 dwm.tagsselbordercolor: #7AA2F7
 
+dwm.scratchselbordercolor: #ad8ee6
+dwm.scratchselfloatcolor: #ad8ee6
+
+dwm.scratchnormbordercolor: #4e5173
+dwm.scratchnormfloatcolor: #4e5173
+
 ! font settings
 
 !Xft.dpi: 96
