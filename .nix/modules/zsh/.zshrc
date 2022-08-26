@@ -33,34 +33,15 @@ zstyle ':vcs_info:*' enable git
 PROMPT='%F{yellow}%n%B%F{cyan}⟩ %F{blue}%1~ $vcs_info_msg_0_%F{red}→ '
 #RPROMPT='%B%F{cyan}%~'
 
-# Spaceship prompt settings
-#autoload -U promptinit; promptinit
-#prompt spaceship
-#SPACESHIP_PROMPT_ADD_NEWLINE=false
-#SPACESHIP_PROMPT_SEPARATE_LINE=false
-#SPACESHIP_USER_SHOW=always
-#SPACESHIP_USER_PREFIX=""
-#SPACESHIP_HOST_SHOW=needed
-#SPACESHIP_DIR_PREFIX=""
-#SPACESHIP_VI_MODE_SHOW=false
-#SPACESHIP_PROMPT_ORDER=(
-  #host          # Hostname section
-  #user          # Username section
-  #dir           # Current directory section
-  #git           # Git section (git_branch + git_status)
-  #jobs          # Background jobs indicator
-  #char          # Prompt character
-#)
-
 # Vi mode
 bindkey -v
 export KEYTIMEOUT=1
 
 # Vim key binds
-bindkey -M menuselect 'h' vi-backward-char
-bindkey -M menuselect 'k' vi-up-line-or-history
-bindkey -M menuselect 'l' vi-foward-char
-bindkey -M menuselect 'j' vi-down-line-or-history
+# bindkey -M menuselect 'h' vi-backward-char
+# bindkey -M menuselect 'k' vi-up-line-or-history
+# bindkey -M menuselect 'l' vi-foward-char
+# bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
 
 # Vim different cursors for different modes
@@ -150,11 +131,7 @@ alias gcc='config commit -m'
 alias gcp='config push origin'
 
 # Plugins
-# source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 [[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
 
 # Keybinds
 bindkey '^[[Z' autosuggest-accept
-
-# Zsh syntax highlighting should go last
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
