@@ -1,5 +1,6 @@
 { inputs, pkgs, user, ... }: {
   imports = [
+    ../modules/git
     ../modules/zsh
   ];
   home = {
@@ -11,11 +12,6 @@
   };
   # Let home-manager install and manage itself
   programs.home-manager.enable = true;
-  programs.git = {
-    enable = true;
-    userName = "Rido";
-    userEmail = "rido@airmail.cc";
-  };
   programs.neovim = {
     enable = true;
     extraPackages = with pkgs; [

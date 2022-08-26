@@ -108,24 +108,6 @@ alias tl='trash-list'
 alias tre='trash-restore'
 alias trm='trash-rm'
 
-# Git aliases
-alias gs='git status'
-alias gl='git log --decorate --pretty=format:"%h - %an, %ar : %s"'
-alias ga='git add'
-alias gaa='git add -A'
-alias gau='git add -u'
-alias gc='git commit -m'
-alias gp='git push origin'
-
-# Config git aliases
-alias gcs='config status'
-alias gcl='config log --decorate --pretty=format:"%h - %an, %ar : %s"'
-alias gca='config add'
-alias gcaa='config add -A'
-alias gcau='config add -u'
-alias gcc='config commit -m'
-alias gcp='config push origin'
-
 # Plugins
 [[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
 
