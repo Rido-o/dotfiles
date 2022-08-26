@@ -2,9 +2,25 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ inputs, pkgs, host, user, ... }:
+{ inputs, pkgs, user, ... }:
 
 {
+  # Define a user account. Don't forget to set a password with ‘passwd’.
+  users.users.${user} = {
+    isNormalUser = true;
+    extraGroups = [ "networkmanager" "wheel" ];
+    shell = pkgs.zsh;
+  };
+
+  # Disable certain wheel users from needing to enter a password on sudo commands
+  security.sudo.extraRules = [{
+    users = [ "${user}" ];
+    commands = [{
+      command = "ALL";
+      options = [ "NOPASSWD" ];
+    }];
+  }];
+
   # Set your time zone.
   time.timeZone = "Australia/Melbourne";
 
@@ -17,15 +33,6 @@
     xkbVariant = "";
   };
 
-  # Disable certain wheel users from needing to enter a password on sudo commands
-  security.sudo.extraRules = [{
-    users = [ "${user}" ];
-    commands = [{
-      command = "ALL";
-      options = [ "NOPASSWD" ];
-    }];
-  }];
-
   nix = {
     settings = {
       # Enable flakes and new 'nix' command
@@ -33,22 +40,16 @@
       # Deduplicate and optimizse nix store
       auto-optimise-store = true;
     };
-  };
-
-  # Zsh Shell
-  programs.zsh = {
-    enable = true;
-    autosuggestions.enable = true;
-    syntaxHighlighting.enable = true;
-    histFile = "$HOME/.cache/zsh_history"; # #TODO Create zsh folder
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 7d";
+    };
   };
 
   # List packages installed in system profile. To search, run: $ nix search wget
   environment.systemPackages = with pkgs; [
     killall
-    zsh
-    zsh-syntax-highlighting
-    zsh-autosuggestions
     git
     neovim
   ];

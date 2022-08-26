@@ -1,11 +1,8 @@
 { inputs, nixpkgs, home-manager, system, user, pkgs }:
-let
-  host = "nixos";
-in
 {
   vm = nixpkgs.lib.nixosSystem {
     inherit system pkgs;
-    specialArgs = { inherit inputs host user; };
+    specialArgs = { inherit inputs user; };
     modules = [
       ./configuration.nix
       ./vm

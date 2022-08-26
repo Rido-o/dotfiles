@@ -1,4 +1,7 @@
 { inputs, pkgs, user, ... }: {
+  imports = [
+    ../modules/zsh
+  ];
   home = {
     username = "${user}";
     homeDirectory = "/home/${user}";
