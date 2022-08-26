@@ -1,6 +1,0 @@
-#!/bin/sh
-
-[ -f ~/.xprofile] && . ~/.xprofile
-
-exec dwm
-# exec fvwm
