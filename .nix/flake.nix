@@ -25,7 +25,6 @@
 
   outputs = inputs@{ self, nixpkgs, home-manager, flake-utils, devshell, overlays, ... }:
     let
-      host = "nixos";
       user = "reid";
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -39,34 +38,20 @@
     in
     {
       # NixOS configurations
-      nixosConfigurations = {
-        ${host} = nixpkgs.lib.nixosSystem {
-          inherit system pkgs;
-          specialArgs = { inherit inputs host user; };
-          modules = [
-            ./nixos
-            # Default home-manager user configuration
-            home-manager.nixosModules.home-manager
-            {
-              home-manager = {
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                extraSpecialArgs = { inherit inputs user; };
-                users.${user} = import ./home-manager;
-              };
-            }
-          ];
-        };
-      };
+      nixosConfigurations = (
+        import ./nixos {
+          # inherit (nixpkgs) lib;
+          inherit inputs nixpkgs home-manager system user pkgs;
+        }
+      );
 
       # Standalone home-manager configurations
-      homeConfigurations = {
-        "${user}@${host}" = home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          extraSpecialArgs = { inherit inputs user; };
-          modules = [ ./home-manager/home.nix ];
-        };
-      };
+      homeConfigurations = (
+        import ./home-manager {
+          # inherit (nixpkgs) lib;
+          inherit inputs nixpkgs home-manager pkgs;
+        }
+      );
     } //
     # Commands
     flake-utils.lib.eachDefaultSystem (system: {
@@ -82,7 +67,7 @@
             category = "Install";
             help = "Updates changes made to configuration.nix";
             command = ''
-              sudo nixos-rebuild switch --flake .#nixos
+              sudo nixos-rebuild switch --flake .#$1
             '';
           }
           {
@@ -90,7 +75,7 @@
             category = "Install";
             help = "Updates the entire system and all packages";
             command = ''
-              sudo nixos-rebuild switch --flake .#nixos --recreate-lock-file
+              sudo nixos-rebuild switch --flake .#$1 --recreate-lock-file
             '';
           }
           {
@@ -106,7 +91,7 @@
             category = "Install";
             help = "Updates input and switch";
             command = ''
-              sudo nixos-rebuild switch --flake .#nixos --update-input $1
+              sudo nixos-rebuild switch --flake .#$1 --update-input $2
             '';
           }
           {
