@@ -24,6 +24,7 @@
       pulsemixer
       gotop
       transmission
+      networkmanager_dmenu
     ];
   };
 }
