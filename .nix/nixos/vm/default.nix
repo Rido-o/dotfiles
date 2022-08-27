@@ -74,7 +74,6 @@
     lazygit
     xclip # for putting ssh github key to clipboard
     qutebrowser
-    pfetch
   ];
 
   # This value determines the NixOS release from which the default

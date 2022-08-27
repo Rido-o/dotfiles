@@ -13,7 +13,9 @@
           useGlobalPkgs = true;
           useUserPackages = true;
           extraSpecialArgs = { inherit inputs user; };
-          users.${user} = import ./home.nix;
+          users.${user} = {
+            imports = [ ./home.nix ./vm/home.nix ];
+          };
         };
       }
     ];
