@@ -1,7 +1,19 @@
 #!/usr/bin/env bash
 
+# Exit script if transmission is not installed
+if ! [ -x "$(command -v transmission-remote)" ] ; then
+    exit
+fi
+
+# Launch transmission tui
+tui () {
+    if stig; then
+    setsid -f "$TERMINAL" -n floatcenter -g 120x50 stig ;
+    fi
+}
+
 case $BLOCK_BUTTON in
-	1) setsid -f "$TERMINAL" -n floatcenter -g 120x50 stig ;;
+    1) tui ;;
 esac
 
 # Get upload and download speeds
