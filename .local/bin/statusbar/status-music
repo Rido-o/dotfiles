@@ -1,5 +1,10 @@
 #!/bin/sh
 
+# Exit script if mpc is not installed
+if ! [ -x "$(command -v mpc)" ] ; then
+    exit
+fi
+
 case $BLOCK_BUTTON in
 	1) mpc toggle ;;
 	2) "$TERMINAL" -n floatcenter -g 100x50 ncmpcpp -c $HOME/.config/ncmpcpp/config-play ;;

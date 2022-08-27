@@ -1,5 +1,10 @@
 #!/bin/sh
 
+# Exit script if newsboat is not installed
+if ! [ -x "$(command -v newsboat)" ] ; then
+    exit
+fi
+
 case $BLOCK_BUTTON in
 	1) pidof newsboat 2>/dev/null >/dev/null || setsid "$TERMINAL" -n floatcenter -g 120x50 -e newsboat ;;
 esac

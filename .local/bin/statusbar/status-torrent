@@ -8,7 +8,7 @@ fi
 # Launch transmission tui
 tui () {
     if stig; then
-    setsid -f "$TERMINAL" -n floatcenter -g 120x50 stig ;
+        setsid -f "$TERMINAL" -n floatcenter -g 120x50 stig ;
     fi
 }
 

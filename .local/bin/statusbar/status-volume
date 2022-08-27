@@ -1,7 +1,15 @@
 #!/bin/sh
 
+# Launch pulsemixer tui
+tui () {
+    if ; then
+        setsid -f "$TERMINAL" -n floatcenter -g 120x50 -e pulsemixer ;
+    fi
+}
+
+# TODO add functions for pamixer to only work when it's installed
 case $BLOCK_BUTTON in
-	1) setsid -f "$TERMINAL" -n floatcenter -g 120x50 -e pulsemixer ;;
+	1) tui ;;
 	2) pamixer -t ;;
 	4) pamixer --allow-boost -i 5 ;;
 	5) pamixer --allow-boost -d 5 ;;

@@ -1,5 +1,10 @@
 #!/bin/sh
 
+# Exit script if networkmanager_dmenu is not installed
+if ! [ -x "$(command -v networkmanager_dmenu)" ] ; then
+    exit
+fi
+
 case $BLOCK_BUTTON in
 	1) networkmanager_dmenu;;
 esac
