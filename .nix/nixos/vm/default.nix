@@ -55,25 +55,6 @@
 
   # List packages installed in system profile. To search, run: $ nix search wget
   environment.systemPackages = with pkgs; [
-    dmenu
-    dwmblocks
-    sd
-    fd
-    ripgrep
-    pamixer
-    mpd
-    ncmpcpp
-    mpc-cli
-    pulsemixer
-    st
-    nsxiv
-    xmenu
-    most
-    qutebrowser
-    gcc # nvim treesitter
-    lazygit
-    xclip # for putting ssh github key to clipboard
-    qutebrowser
   ];
 
   # This value determines the NixOS release from which the default
