@@ -21,9 +21,9 @@ require('lspsaga').init_lsp_saga({
     -- { bufnr, code, col, end_col, end_lnum, lnum, message, severity, source }
     diagnostic_header = { ' ', '⚠ ', ' ', ' ' }, -- ﴞ
     -- show diagnostic source
-    show_diagnostic_source = true,
+    -- show_diagnostic_source = true,
     -- add bracket or something with diagnostic source, just have 2 elements
-    diagnostic_source_bracket = {},
+    -- diagnostic_source_bracket = {},
     -- use emoji lightbulb in default
     code_action_icon = '', -- "💡" , "🌳"
     -- if true can press number to execute the codeaction in codeaction window
@@ -53,7 +53,7 @@ require('lspsaga').init_lsp_saga({
         exec = '<CR>',
     },
     rename_action_quit = '<C-c>',
-    definition_preview_icon = '  ',
+    -- definition_preview_icon = '  ',
     -- show symbols in winbar must nightly
     symbol_in_winbar = {
         in_custom = false,
