@@ -16,7 +16,7 @@
       dwmblocks.overlay
       nsxiv.overlay
       xmenu.overlay
-      dmenu.overlay
+      # dmenu.overlay
     ] ++ [
       # Normal overlays
       (import ./st)
