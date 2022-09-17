@@ -16,10 +16,11 @@
             sha256 = "MrCUJlGt660CdMF/saeZzpshPiOKvbefWB7kCUdgDq4=";
           })
         ];
-        configFile = super.fetchurl {
-          url = "https://raw.githubusercontent.com/Rido-o/nsxiv/master/config.def.h";
-          sha256 = "Zo7EqtQ+JywJZQdmzGN79h6MEh7JPcuRQkuKxH1+x/k=";
-        };
+        configFile = ./config.def.h;
+        # configFile = super.fetchurl {
+        #   url = "https://raw.githubusercontent.com/Rido-o/nsxiv/master/config.def.h";
+        #   sha256 = "Zo7EqtQ+JywJZQdmzGN79h6MEh7JPcuRQkuKxH1+x/k=";
+        # };
         preBuild = "cp ${configFile} config.def.h";
       });
     };
