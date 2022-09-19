@@ -1,5 +1,8 @@
 { pkgs, ... }:
 {
+  imports = [
+    ../../modules/nsxiv
+  ];
   home = {
     packages = with pkgs; [
       pfetch

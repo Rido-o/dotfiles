@@ -1,0 +1,10 @@
+#!/bin/sh
+
+case "$1" in
+    # Need to add keys to nsxiv config.def.h for them to work without using the keyhandler <c-x>
+    "C-w") while read file; do wallpaper-set -d "$file"; done;; # Desktop wallpaper
+    "C-l") while read file; do wallpaper-set -l "$file"; done;; # Lockscreen wallpaper
+    # "p") cp "$file" "$HOME/.cache/wallpaper.png" && set-wallpaper && color-dark-pywal ;;
+    # "P") cp "$file" "$HOME/.cache/wallpaper.png" && set-wallpaper && color-light-pywal ;;
+    # "r") qutebrowser "https://yandex.com/images/search?source=collections&rpt=imageview&url=$file" ;;
+esac
