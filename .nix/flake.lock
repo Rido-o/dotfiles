@@ -37,11 +37,11 @@
     "dmenu-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1662138590,
-        "narHash": "sha256-CAT9PS+Igwq1QohL31P908Zs0WByPSq1sY3i7jxri3w=",
+        "lastModified": 1663421546,
+        "narHash": "sha256-ZL8yAOpEwrh5XoP1TbHRDyZPPB1rxOMIRSBmcwVJhcw=",
         "ref": "refs/heads/master",
-        "rev": "1e8c5b68f4881bd4ae257c780fd41f129c79f419",
-        "revCount": 601,
+        "rev": "fce06f437dcec646ee0a2728fe695f3084cc6ccb",
+        "revCount": 602,
         "type": "git",
         "url": "https://git.suckless.org/dmenu"
       },
@@ -307,7 +307,7 @@
       },
       "locked": {
         "lastModified": 1,
-        "narHash": "sha256-2zWpQhV6e4MsOPamo8JHEvvf00GSdbsri5+SiJw0xms=",
+        "narHash": "sha256-XxEMknzlO9An2nbRnpR5QbufOeu7MB5Hu17jY80imko=",
         "path": "./nsxiv",
         "type": "path"
       },
@@ -342,7 +342,7 @@
       },
       "locked": {
         "lastModified": 1,
-        "narHash": "sha256-ws+eL2KiGavWdLsiwurP3XIIL6pLSjoxpglHlZP9bHw=",
+        "narHash": "sha256-5UxmxOlqaGbhbQHmPOW0XVOozBlXFeYxWWuK+ZJuKco=",
         "path": "./overlays",
         "type": "path"
       },
