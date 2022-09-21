@@ -2,6 +2,7 @@
 {
   imports = [
     ../../modules/nsxiv
+    ../../modules/nnn
   ];
   home = {
     packages = with pkgs; [

@@ -41,13 +41,6 @@ export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
 # Weechat settings
 export WEECHAT_HOME="$HOME/.config/weechat"
 
-# NNN settings
-export LC_COLLATE="C"
-export NNN_PLUG_PLUGINS="d:fzcd;f:fzopen;j:fzz"
-export NNN_PLUG_COMMANDS='s:_git status;u:_git add -u;c:_git commit;p:_git push origin master;l:_lazygit*;e:_sudoedit $nnn*'
-export NNN_PLUG="$NNN_PLUG_PLUGINS;$NNN_PLUG_COMMANDS"
-export NNN_TRASH=1
-
 # Pfetch settings
 export PF_INFO="ascii title os host kernel uptime pkgs memory shell wm editor palette"
 
