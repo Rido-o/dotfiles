@@ -17,7 +17,7 @@
     devshell.url = "github:numtide/devshell";
 
     # Neovim-nightly flake
-    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+    # neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
 
     # Overlays flake
     overlays.url = "path:./overlays";
@@ -32,7 +32,7 @@
         config.allowUnfree = true;
         overlays = with inputs; [
           devshell.overlay
-          neovim-nightly-overlay.overlay
+          # neovim-nightly-overlay.overlay
         ] ++ overlays.overlays;
       };
     in
