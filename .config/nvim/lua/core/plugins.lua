@@ -112,6 +112,16 @@ return packer.startup({
             },
             config = plugin_config('cokeline'),
         })
+        use({
+            'utilyre/barbecue.nvim',
+            requires = {
+                'smiteshp/nvim-navic',
+                'kyazdani42/nvim-web-devicons',
+            },
+            config = function()
+                require('barbecue').setup()
+            end,
+        })
 
         -----------------
         -- Filetype
