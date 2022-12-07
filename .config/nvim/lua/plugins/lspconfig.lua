@@ -18,6 +18,7 @@ local on_attach = function(client, bufnr)
     local function nmap(keys, func, desc)
         vim.keymap.set('n', keys, func, { noremap = true, silent = true, buffer = bufnr, desc = desc })
     end
+
     -- See `:help vim.diagnostic.*` for documentation on any of the below functions
     nmap('<leader>ae', vim.diagnostic.open_float, 'Popup diagnostic')
     nmap('[d', vim.diagnostic.goto_prev, 'Previous diagnostic')
@@ -42,7 +43,7 @@ local on_attach = function(client, bufnr)
 end
 
 -- Add additional capabilities supported by nvim-cmp
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 -- Individual server settings
 local settings = {
