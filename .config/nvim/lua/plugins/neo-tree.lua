@@ -82,6 +82,9 @@ neo_tree.setup({
             },
         },
     },
+    source_selector = {
+        winbar = true,
+    },
 })
 
 -- Open neo-tree if closed, focus if unfocused and close if focused -- From neo-tree v2.0 reddit post
