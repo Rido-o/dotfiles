@@ -29,6 +29,7 @@
       gotop
       transmission
       networkmanager_dmenu
+      xfce.xfwm4-themes
     ];
   };
 }
