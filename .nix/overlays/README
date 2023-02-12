@@ -1,4 +1,5 @@
 # Resolving patches
+# lib.fakeSha256 or use a proper sha from somewhere else that is wrong
 # Clone repo
 git clone example
 # Create a branch in that repo
