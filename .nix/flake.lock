@@ -228,11 +228,11 @@
     "nsxiv-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1673516294,
-        "narHash": "sha256-9Qo0CGgvqvgeGozIph6qcPzQpOytFI3h+xHFNrNueak=",
+        "lastModified": 1674901883,
+        "narHash": "sha256-X1ZMr5OADs9GIe/kp/kEqKMMHZMymd58m9+f0SPzn7s=",
         "ref": "refs/heads/master",
-        "rev": "75849adb88187ab93ab2224706693676a3ea0fb3",
-        "revCount": 973,
+        "rev": "8f0322c2e33cd39208bd2693fde968ba47a93e6e",
+        "revCount": 983,
         "type": "git",
         "url": "https://codeberg.org/nsxiv/nsxiv"
       },
@@ -251,7 +251,7 @@
       },
       "locked": {
         "lastModified": 1,
-        "narHash": "sha256-mifkrTVZoFaHogJzh0sTy1J60mPX34XvanrfUqoB9cI=",
+        "narHash": "sha256-OMwRRiPKL2Y+Oww0cbNScxUIr7ApoBgX/Thzc7wFwrM=",
         "path": "./overlays",
         "type": "path"
       },
@@ -303,11 +303,11 @@
     "xmenu-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1671638069,
-        "narHash": "sha256-UUCnv7rcAo1LX9IF0YizPWlTdMgvFRFhUxwtFP0EGIo=",
+        "lastModified": 1674521559,
+        "narHash": "sha256-jbAEJZvZVSDfTvEniiSKIGs0OmUkfy8dhrvErrYLPEo=",
         "owner": "phillbush",
         "repo": "xmenu",
-        "rev": "15fadd8840d0e92415b66133e73a0197957c1139",
+        "rev": "6ec875019d44af7faeb895415b37a5f4f9fc3a2b",
         "type": "github"
       },
       "original": {
