@@ -13,7 +13,7 @@ static struct Config config = {
 	/* sizes in pixels */
 	.width_pixels = 130,        /* minimum width of a menu */
 	.height_pixels = 25,        /* height of a single menu item */
-	.border_pixels = 1,         /* menu border */
+	.border_pixels = 2,         /* menu border */
 	.separator_pixels = 3,      /* space around separator */
 	.gap_pixels = 0,            /* gap between menus */
 	.max_items = 0,             /* maximum number of items of a menu, 0 to compute based on monitor height */
