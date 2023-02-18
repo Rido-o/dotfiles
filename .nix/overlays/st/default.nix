@@ -21,6 +21,10 @@ self: super: {
         url = "https://st.suckless.org/patches/scrollback/st-scrollback-mouse-altscreen-20220127-2c5edf2.diff";
         sha256 = "8oVLgbsYCfMhNEOGadb5DFajdDKPxwgf3P/4vOXfUFo=";
       })
+      (super.fetchpatch {
+        url = "https://st.suckless.org/patches/boxdraw/st-boxdraw_v2-0.8.5.diff";
+        sha256 = "WN/R6dPuw1eviHOvVVBw2VBSMDtfi1LCkXyX36EJKi4=";
+      })
     ];
     configFile = ./config.def.h;
     postPatch = "cp ${configFile} config.def.h";
