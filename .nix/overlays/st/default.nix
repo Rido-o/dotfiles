@@ -25,6 +25,11 @@ self: super: {
         url = "https://st.suckless.org/patches/boxdraw/st-boxdraw_v2-0.8.5.diff";
         sha256 = "WN/R6dPuw1eviHOvVVBw2VBSMDtfi1LCkXyX36EJKi4=";
       })
+      (super.fetchpatch {
+        # Not sure if this patch is really doing anything
+        url = "https://st.suckless.org/patches/sync/st-appsync-20200618-b27a383.diff";
+        sha256 = "lys7/nup7a+GcmW+CutX0kjmbbOis2stkuhw02beuPs=";
+      })
     ];
     configFile = ./config.def.h;
     postPatch = "cp ${configFile} config.def.h";
