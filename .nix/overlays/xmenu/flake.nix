@@ -10,10 +10,7 @@
     overlay = self: super: {
       xmenu = super.xmenu.overrideAttrs (oldAttrs: rec {
         src = xmenu-src;
-        configFile = super.fetchurl {
-          url = "https://raw.githubusercontent.com/Rido-o/xmenu/master/config.h";
-          sha256 = "x2KBNUw051JBunrpW1tvaAuuX+KGPK1O5VMJgYYRLdE=";
-        };
+        configFile = ./config.h;
         postPatch = "
           sed -i \"s:/usr/local:$out:\" Makefile
           cp ${configFile} config.h
