@@ -25,6 +25,14 @@ self: super: {
         url = "https://st.suckless.org/patches/boxdraw/st-boxdraw_v2-0.8.5.diff";
         sha256 = "WN/R6dPuw1eviHOvVVBw2VBSMDtfi1LCkXyX36EJKi4=";
       })
+      # (super.fetchpatch {
+      #   url = "https://st.suckless.org/patches/rightclickpaste/st-rightclickpaste-0.8.2.diff";
+      #   sha256 = "dubUsI7HUYdYcawZ7UkP3r8F9mvtTNPeS0VgMFcbpQQ=";
+      # })
+      # (super.fetchpatch {
+      #   url = "https://st.suckless.org/patches/vertcenter/st-vertcenter-20180320-6ac8c8a.diff";
+      #   sha256 = "BOakaWKT9mgmCy9UpyQON52/q7wgneB71dTVfp9RM2A=";
+      # })
       (super.fetchpatch {
         # Not sure if this patch is really doing anything
         url = "https://st.suckless.org/patches/sync/st-appsync-20200618-b27a383.diff";
