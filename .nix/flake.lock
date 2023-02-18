@@ -99,11 +99,11 @@
     "dwmblocks-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1669037861,
-        "narHash": "sha256-98jNhV1HvWKHucIHxD/8Q0rz74vu5W3MQ4Nd7LmwDyA=",
+        "lastModified": 1676342130,
+        "narHash": "sha256-pYRu5Q+8N1UKrJDEDDKgno1ag0t5MVUnWMUQtzviv0M=",
         "owner": "UtkarshVerma",
         "repo": "dwmblocks-async",
-        "rev": "3e4e4dbbbe4680f9f71401b993070d6d1cbeca00",
+        "rev": "83cd341783bfda3858d6cacd99f271a5ed13fdcf",
         "type": "github"
       },
       "original": {
@@ -251,7 +251,7 @@
       },
       "locked": {
         "lastModified": 1,
-        "narHash": "sha256-OMwRRiPKL2Y+Oww0cbNScxUIr7ApoBgX/Thzc7wFwrM=",
+        "narHash": "sha256-pEW8bDZNIr/x+X2ND/RiD9BCAa3NSZ8EBIhUTwlO0NE=",
         "path": "./overlays",
         "type": "path"
       },
