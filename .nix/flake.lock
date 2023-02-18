@@ -216,7 +216,7 @@
       },
       "locked": {
         "lastModified": 1,
-        "narHash": "sha256-2zWpQhV6e4MsOPamo8JHEvvf00GSdbsri5+SiJw0xms=",
+        "narHash": "sha256-FBSo2uj0frhKnzR4RIZcK44tMCSH3Y+VLd1K2B3mhbE=",
         "path": "./nsxiv",
         "type": "path"
       },
@@ -251,7 +251,7 @@
       },
       "locked": {
         "lastModified": 1,
-        "narHash": "sha256-pEW8bDZNIr/x+X2ND/RiD9BCAa3NSZ8EBIhUTwlO0NE=",
+        "narHash": "sha256-ffnw9FTnSBC8aPQGLpZpb5xEDVuoj1gPvUn/+uKK47k=",
         "path": "./overlays",
         "type": "path"
       },
@@ -291,7 +291,7 @@
       },
       "locked": {
         "lastModified": 1,
-        "narHash": "sha256-WPoRkZegFVQmoXkJ3THFrXQIi7l6nGKJwCxxxH+cna4=",
+        "narHash": "sha256-8oJ2LxOubwKg/MDUmYmvXGfWSXNxWey7P9Cn1Jm6+Vs=",
         "path": "./xmenu",
         "type": "path"
       },
