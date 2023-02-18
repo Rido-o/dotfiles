@@ -14,7 +14,7 @@
       # Flakes
       dwm.overlay
       dwmblocks.overlay
-      # nsxiv.overlay
+      nsxiv.overlay
       xmenu.overlay
       # dmenu.overlay
     ] ++ [
