@@ -17,6 +17,7 @@ This will install and setup the vast majority of the system with just a few rema
 * with the key in the clipboard add it to your github account
 * ~ ssh -T git@github.com # test connection
 * switch repository origins with - ~/.cfg/install/extras/ssh-switch
+* update git repo origin to be "git@github.com:Rido-o/dotfiles.git"
 ### Install private repository
 * requires ssh key to be correctly setup
 * run `$HOME/.cfg/install/install-private`
